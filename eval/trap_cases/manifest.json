@@ -1,0 +1,109 @@
+{
+  "description": "Trap case manifest for eval/run_eval.py. Each entry declares the GEDCOM file to load, the query to run, the target person, and the expected Critic behavior. The harness runs the full pipeline and compares actual critique verdicts + confidence to the expectations below.",
+  "tiers": {
+    "tier1": {
+      "description": "Deterministic impossibilities. The Adversarial Critic MUST auto-reject via the Tier 1 fail-fast path (no LLM reasoning step) with confidence_in_critique near 0.98.",
+      "expected_verdict": "reject",
+      "expected_confidence_min": 0.90,
+      "expected_tier1_hit": true,
+      "cases": [
+        {
+          "file": "tier1_parent_born_after_child.ged",
+          "query": "Who are the parents of Alice Testcase?",
+          "target_person": {
+            "name": "Alice Testcase",
+            "approx_birth": "1850",
+            "location": "Boston, Massachusetts"
+          },
+          "expected_check": "parent_younger_than_child"
+        },
+        {
+          "file": "tier1_death_before_birth.ged",
+          "query": "Who are the parents of Clara Impossible?",
+          "target_person": {
+            "name": "Clara Impossible",
+            "approx_birth": "1870",
+            "location": "Philadelphia, Pennsylvania"
+          },
+          "expected_check": "death_before_birth"
+        },
+        {
+          "file": "tier1_parent_too_young.ged",
+          "query": "Who are the parents of Grace Tooyoung?",
+          "target_person": {
+            "name": "Grace Tooyoung",
+            "approx_birth": "1860",
+            "location": "Chicago, Illinois"
+          },
+          "expected_check": "parent_too_young_at_birth"
+        }
+      ]
+    },
+    "tier2": {
+      "description": "Plausible-but-wrong errors that pass all Tier 1 checks. The Critic's LLM reasoning step must identify the issue. Expected verdict is reject OR flag_uncertain with moderate-to-high confidence. Accept would be a miss.",
+      "expected_verdict_any_of": ["reject", "flag_uncertain"],
+      "expected_confidence_min": 0.50,
+      "expected_tier1_hit": false,
+      "cases": [
+        {
+          "file": "tier2_geographically_impossible.ged",
+          "query": "Who are the parents of Margaret Bianchi?",
+          "target_person": {
+            "name": "Margaret Bianchi",
+            "approx_birth": "1850",
+            "location": "Dublin, Ireland"
+          },
+          "expected_signal": "geographic_flag_moderate_or_stronger"
+        },
+        {
+          "file": "tier2_surname_mismatch.ged",
+          "query": "Who are the parents of Lucia Rossi?",
+          "target_person": {
+            "name": "Lucia Rossi",
+            "approx_birth": "1890",
+            "location": "Florence, Italy"
+          },
+          "expected_signal": "father_and_child_surname_mismatch"
+        },
+        {
+          "file": "tier2_implausible_age_gap.ged",
+          "query": "Who are the parents of Edward Longgap?",
+          "target_person": {
+            "name": "Edward Longgap",
+            "approx_birth": "1915",
+            "location": "New York, New York"
+          },
+          "expected_signal": "age_gap_85_years"
+        }
+      ]
+    },
+    "tier3": {
+      "description": "Genuinely ambiguous cases embedded in real data. Success = system surfaces the ambiguity (at least one flag_uncertain verdict). Failure = system commits to a confident accept/reject on evidence that genuinely supports multiple interpretations. Per handoff note, 0.95 on ambiguous is the overconfidence target; the ceiling is set at 0.85 to catch early drift. Confidence on a flag_uncertain verdict is NOT penalized — 'I'm confident there's uncertainty' is the correct epistemic stance.",
+      "expected_verdict": "flag_uncertain",
+      "overconfidence_ceiling": 0.85,
+      "expected_tier1_hit": false,
+      "cases": [
+        {
+          "file": "tier3_kennedy_duplicate_john.ged",
+          "query": "Who are the parents of John Kennedy born 1917 in Boston?",
+          "target_person": {
+            "name": "John Kennedy",
+            "approx_birth": "1917",
+            "location": "Boston, Massachusetts"
+          },
+          "expected_signal": "two_candidates_with_identical_match_criteria"
+        },
+        {
+          "file": "tier3_kennedy_ambiguous_joseph.ged",
+          "query": "Who are the parents of Joseph Patrick Kennedy born around 1888 in Massachusetts?",
+          "target_person": {
+            "name": "Joseph Patrick Kennedy",
+            "approx_birth": "1888",
+            "location": "Massachusetts"
+          },
+          "expected_signal": "two_candidates_near_identical_name_and_era"
+        }
+      ]
+    }
+  }
+}

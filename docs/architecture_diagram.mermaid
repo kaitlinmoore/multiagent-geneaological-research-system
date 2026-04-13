@@ -1,0 +1,47 @@
+%%
+%% Architecture diagram for the Multi-Agent Genealogical Research System.
+%%
+%% Source of truth:
+%%   graph.py                         — LangGraph wiring (nodes, edges, router)
+%%   agents/hypothesis_schema.py      — filter_hypothesis_for_critic (isolation boundary)
+%%   agents/adversarial_critic.py     — Tier 1 fail-fast path inside the Critic
+%%   agents/final_report_writer.py    — deterministic final report composition
+%%
+%% Embed in docs/phase2_architecture.md and docs/evaluation_plan.md.
+%% Detailed role definitions and state contracts belong in the prose.
+%%
+
+```mermaid
+---
+config:
+  theme: forest
+  look: neo
+---
+flowchart TD
+    Start(["query + target + GEDCOM"])
+
+    Scout["Record Scout"]
+    Synth["Profile Synthesizer"]
+    Hypo["Relationship Hypothesizer"]
+    Boundary{{"Isolation Filter<br/>strips internal fields"}}
+    Critic["Adversarial Critic<br/>Tier 1 · geo · LLM"]
+    Router{"reject AND<br/>revisions < 2?"}
+    Writer["Final Report Writer"]
+    End(["final_report"])
+
+    Start --> Scout
+    Scout -->|"records"| Synth
+    Synth -->|"profiles"| Hypo
+    Hypo ==>|"hypotheses<br/>public + internal"| Boundary
+    Boundary ==>|"public only"| Critic
+    Critic --> Router
+    Router -->|"yes"| Hypo
+    Router -->|"no"| Writer
+    Writer --> End
+
+    style Start fill:#d4edda,stroke:#155724,stroke-width:2px
+    style End fill:#d4edda,stroke:#155724,stroke-width:2px
+    style Boundary fill:#fff3cd,stroke:#856404,stroke-width:3px
+    style Critic fill:#f8d7da,stroke:#721c24,stroke-width:1px
+    style Router fill:#d1ecf1,stroke:#0c5460
+```

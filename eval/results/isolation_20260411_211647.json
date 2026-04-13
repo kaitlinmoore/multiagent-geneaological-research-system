@@ -1,0 +1,318 @@
+{
+  "run_label": "20260411_211647",
+  "timestamp": "2026-04-11T21:16:47.862490",
+  "gedcom": "The Kennedy Family.ged",
+  "query": "Who were the parents of John F. Kennedy?",
+  "target_person": {
+    "name": "John F. Kennedy",
+    "approx_birth": "1917",
+    "location": "Brookline, MA"
+  },
+  "seed": {
+    "hypothesis_count": 2,
+    "profile_count": 1,
+    "retrieved_record_count": 18,
+    "elapsed_sec": 54.7
+  },
+  "condition_a": {
+    "isolation_mode": "filtered",
+    "elapsed_sec": 24.81,
+    "critiques": [
+      {
+        "hypothesis_id": "hyp:@I0@:@I1@:father",
+        "verdict": "flag_uncertain",
+        "issues_found": [
+          "All evidence derives exclusively from a single GEDCOM file with unknown provenance; there are no independent documentary sources (birth certificates, census records, vital records) present in the supplied data to corroborate the father-child relationship.",
+          "The GEDCOM structural links (father_id, children_ids, famc/fams) are internally consistent but circular \u2014 they all originate from the same data entry in the same file, so consistency does not add independent evidentiary weight.",
+          "No external corroborating records are cited despite the subject being a historically prominent individual for whom substantial public records (birth certificates, census data, published genealogies from multiple independent sources) would be readily available and expected.",
+          "The hypothesis confidence score of 0.88 appears inflated given that all evidence reduces to a single-source GEDCOM with no independent corroboration; the logical independence of the six cited evidence items is largely illusory.",
+          "The absence of any biographical attributes (occupation, political office, military service) that would further confirm the identity match between the GEDCOM individual and the historical John F. Kennedy introduces a small but non-zero identity ambiguity."
+        ],
+        "evidence_cited": [
+          "gedcom:@I0@",
+          "gedcom:@I1@",
+          "check:death_before_birth",
+          "check:parent_younger_than_child",
+          "check:parent_too_young_at_birth",
+          "check:parent_died_before_conception",
+          "check:geographic_plausibility"
+        ],
+        "confidence_in_critique": 0.72,
+        "justification": "All Tier 1 deterministic checks pass and geographic plausibility is strong, and the proposed relationship is historically well-known and almost certainly correct in the real world. However, the supplied evidence record is entirely single-source (one GEDCOM file of unknown provenance), and the six evidence items cited are not logically independent \u2014 they all reduce to internal cross-references within the same file. Without at least one corroborating external document, the hypothesis must be flagged as unverifiable from the supplied records alone, warranting 'flag_uncertain' rather than 'accept'. Confidence in this critique is moderate (0.72) because the weakness is clear but the hypothesis is substantively very likely correct given historical knowledge external to the supplied records.",
+        "tier1_results": [
+          {
+            "check": "death_before_birth",
+            "verdict": "ok",
+            "reason": "death is not before birth"
+          },
+          {
+            "check": "implausible_lifespan",
+            "verdict": "ok",
+            "reason": "lifespan within 120 years"
+          },
+          {
+            "check": "parent_younger_than_child",
+            "verdict": "ok",
+            "reason": "parent is not younger than child",
+            "role": "father"
+          },
+          {
+            "check": "parent_too_young_at_birth",
+            "verdict": "ok",
+            "reason": "parent age plausible (>= 12)",
+            "role": "father"
+          },
+          {
+            "check": "parent_died_before_conception",
+            "verdict": "ok",
+            "reason": "father alive ~9mo before birth holds",
+            "role": "father"
+          }
+        ],
+        "geo_result": {
+          "check": "geographic_plausibility",
+          "verdict": "ok",
+          "reason": "6km apart (within intra-regional range)",
+          "distance_km": 6
+        },
+        "isolation_mode": "filtered"
+      },
+      {
+        "hypothesis_id": "hyp:@I0@:@I2@:mother",
+        "verdict": "accept",
+        "issues_found": [
+          "All evidence derives exclusively from a single GEDCOM file with no independent corroboration (birth certificate, census, vital records, newspaper birth announcement, or other primary source). The structural GEDCOM pointers could reflect a data-entry assumption rather than verified documentation.",
+          "No source citation quality metadata is provided for family record @F0@, making it impossible to assess whether the GEDCOM links were drawn from primary, secondary, or tertiary sources.",
+          "Rose Fitzgerald's recorded lifespan (1890\u20131995, age 104) is exceptional, which could indicate record conflation or date errors, though this does not directly contradict the mother-child relationship for a 1917 birth.",
+          "No DNA or biological corroboration is available; however, this is a standard limitation for historical GEDCOM-based genealogical data and not unusual for well-documented historical figures.",
+          "The hypothesis involves a historically well-known relationship (Rose Fitzgerald Kennedy as mother of JFK), which makes the GEDCOM data highly likely to reflect established historical consensus \u2014 but the supplied evidence itself does not independently prove this; it merely encodes it."
+        ],
+        "evidence_cited": [
+          "gedcom:@I0@",
+          "gedcom:@I2@",
+          "check:death_before_birth",
+          "check:implausible_lifespan",
+          "check:parent_younger_than_child",
+          "check:parent_too_young_at_birth",
+          "check:parent_died_before_conception",
+          "check:geographic_plausibility"
+        ],
+        "confidence_in_critique": 0.72,
+        "justification": "All Tier 1 deterministic checks pass, the age gap (27 years) and geographic proximity (6 km) are biologically and logistically plausible, and the GEDCOM structure is internally consistent with reciprocal mother-child and family-unit linkages. The sole substantive weakness is single-source provenance \u2014 the entire hypothesis rests on one GEDCOM file with no independent documentary corroboration \u2014 which prevents a fully confident acceptance but does not warrant rejection given that the relationship is historically well-attested and no conflicting evidence exists in the supplied records.",
+        "tier1_results": [
+          {
+            "check": "death_before_birth",
+            "verdict": "ok",
+            "reason": "death is not before birth"
+          },
+          {
+            "check": "implausible_lifespan",
+            "verdict": "ok",
+            "reason": "lifespan within 120 years"
+          },
+          {
+            "check": "parent_younger_than_child",
+            "verdict": "ok",
+            "reason": "parent is not younger than child",
+            "role": "mother"
+          },
+          {
+            "check": "parent_too_young_at_birth",
+            "verdict": "ok",
+            "reason": "parent age plausible (>= 12)",
+            "role": "mother"
+          },
+          {
+            "check": "parent_died_before_conception",
+            "verdict": "ok",
+            "reason": "mother alive at birth holds",
+            "role": "mother"
+          }
+        ],
+        "geo_result": {
+          "check": "geographic_plausibility",
+          "verdict": "ok",
+          "reason": "6km apart (within intra-regional range)",
+          "distance_km": 6
+        },
+        "isolation_mode": "filtered"
+      }
+    ]
+  },
+  "condition_b": {
+    "isolation_mode": "unfiltered",
+    "elapsed_sec": 23.34,
+    "critiques": [
+      {
+        "hypothesis_id": "hyp:@I0@:@I1@:father",
+        "verdict": "flag_uncertain",
+        "issues_found": [
+          "All evidence derives from a single GEDCOM file with no independent corroborating documentary sources (birth certificate, census record, vital records) present in the supplied record set. The hypothesis rests entirely on internally consistent but unverified GEDCOM structure.",
+          "The GEDCOM file's provenance is unknown; it may itself be a derivative of secondary or tertiary sources of varying reliability, meaning the internal consistency of father_id, children_ids, and famc/fams links does not constitute independent corroboration \u2014 it is the same data viewed from multiple angles.",
+          "The relationship type cannot be distinguished from adoptive or step-paternity based on the available records alone; GEDCOM does not flag any adoption or step-parent qualifier here, but absence of such a flag is not proof of biological paternity.",
+          "Although Joseph Patrick Kennedy is a historically well-known figure and this relationship is a matter of public record, no external documentary evidence is present in the supplied records to formally confirm it \u2014 the system must evaluate only what is provided.",
+          "Nine children are listed under Joseph Patrick Kennedy; without corroborating records, a misattributed child entry cannot be entirely excluded, though the bidirectional linkage reduces this risk."
+        ],
+        "evidence_cited": [
+          "gedcom:@I0@",
+          "gedcom:@I1@",
+          "check:death_before_birth",
+          "check:implausible_lifespan",
+          "check:parent_younger_than_child",
+          "check:parent_too_young_at_birth",
+          "check:parent_died_before_conception",
+          "check:geographic_plausibility"
+        ],
+        "confidence_in_critique": 0.72,
+        "justification": "All Tier 1 deterministic checks pass and geographic proximity is consistent, but the entire evidence chain collapses to a single GEDCOM source with no independently supplied documentary corroboration, making formal acceptance impossible under rigorous genealogical standards. The hypothesis is almost certainly correct given historical knowledge, but the supplied records alone only permit a 'flag_uncertain' verdict rather than 'accept' because single-source GEDCOM structural links \u2014 however internally consistent \u2014 do not meet the evidentiary threshold for confident acceptance without at least one independent confirming document.",
+        "tier1_results": [
+          {
+            "check": "death_before_birth",
+            "verdict": "ok",
+            "reason": "death is not before birth"
+          },
+          {
+            "check": "implausible_lifespan",
+            "verdict": "ok",
+            "reason": "lifespan within 120 years"
+          },
+          {
+            "check": "parent_younger_than_child",
+            "verdict": "ok",
+            "reason": "parent is not younger than child",
+            "role": "father"
+          },
+          {
+            "check": "parent_too_young_at_birth",
+            "verdict": "ok",
+            "reason": "parent age plausible (>= 12)",
+            "role": "father"
+          },
+          {
+            "check": "parent_died_before_conception",
+            "verdict": "ok",
+            "reason": "father alive ~9mo before birth holds",
+            "role": "father"
+          }
+        ],
+        "geo_result": {
+          "check": "geographic_plausibility",
+          "verdict": "ok",
+          "reason": "6km apart (within intra-regional range)",
+          "distance_km": 6
+        },
+        "isolation_mode": "unfiltered"
+      },
+      {
+        "hypothesis_id": "hyp:@I0@:@I2@:mother",
+        "verdict": "accept",
+        "issues_found": [
+          "All evidence derives from a single GEDCOM file with no independent documentary corroboration (birth certificate, census record, vital records) present in the supplied data \u2014 this is the most significant weakness.",
+          "The GEDCOM linkage is structural/pointer-based and could in principle reflect a data-entry assumption rather than a verified primary source; no source citation quality metadata is provided.",
+          "Biological versus legal maternity cannot be distinguished from the available evidence alone (no birth certificate to confirm biological relationship).",
+          "Rose Fitzgerald's recorded lifespan of 104 years (1890\u20131995) is exceptional but falls within the Tier 1 implausible-lifespan check threshold and is historically attested for this individual.",
+          "Nine children are listed under Rose (@I2@), which is consistent with historical record but adds relational complexity; none of the sibling links are independently verified in the supplied data."
+        ],
+        "evidence_cited": [
+          "gedcom:@I0@",
+          "gedcom:@I2@",
+          "check:death_before_birth",
+          "check:implausible_lifespan",
+          "check:parent_younger_than_child",
+          "check:parent_too_young_at_birth",
+          "check:parent_died_before_conception",
+          "check:geographic_plausibility"
+        ],
+        "confidence_in_critique": 0.72,
+        "justification": "All Tier 1 deterministic checks pass, the age gap (27 years) is biologically plausible, geographic proximity is consistent (6 km), and the bidirectional GEDCOM pointer structure (mother_id on @I0@, @I0@ in children_ids of @I2@, shared family unit @F0@, matching spouse pointer to @I1@) is internally coherent. The hypothesis is well-supported for a GEDCOM-only dataset and concerns a historically well-documented relationship. The sole substantive issue \u2014 single-source reliance without independent documentary corroboration \u2014 is a data-availability limitation rather than a logical or factual contradiction, warranting acceptance at moderate confidence rather than rejection or flagging.",
+        "tier1_results": [
+          {
+            "check": "death_before_birth",
+            "verdict": "ok",
+            "reason": "death is not before birth"
+          },
+          {
+            "check": "implausible_lifespan",
+            "verdict": "ok",
+            "reason": "lifespan within 120 years"
+          },
+          {
+            "check": "parent_younger_than_child",
+            "verdict": "ok",
+            "reason": "parent is not younger than child",
+            "role": "mother"
+          },
+          {
+            "check": "parent_too_young_at_birth",
+            "verdict": "ok",
+            "reason": "parent age plausible (>= 12)",
+            "role": "mother"
+          },
+          {
+            "check": "parent_died_before_conception",
+            "verdict": "ok",
+            "reason": "mother alive at birth holds",
+            "role": "mother"
+          }
+        ],
+        "geo_result": {
+          "check": "geographic_plausibility",
+          "verdict": "ok",
+          "reason": "6km apart (within intra-regional range)",
+          "distance_km": 6
+        },
+        "isolation_mode": "unfiltered"
+      }
+    ]
+  },
+  "comparison": {
+    "per_hypothesis": [
+      {
+        "hypothesis_id": "hyp:@I0@:@I1@:father",
+        "a": {
+          "verdict": "flag_uncertain",
+          "confidence_in_critique": 0.72,
+          "issues_count": 5,
+          "isolation_mode": "filtered",
+          "reasoning_leakage_score": 1
+        },
+        "b": {
+          "verdict": "flag_uncertain",
+          "confidence_in_critique": 0.72,
+          "issues_count": 5,
+          "isolation_mode": "unfiltered",
+          "reasoning_leakage_score": 2
+        },
+        "verdict_changed": false,
+        "confidence_delta": 0.0,
+        "leakage_delta": 1
+      },
+      {
+        "hypothesis_id": "hyp:@I0@:@I2@:mother",
+        "a": {
+          "verdict": "accept",
+          "confidence_in_critique": 0.72,
+          "issues_count": 5,
+          "isolation_mode": "filtered",
+          "reasoning_leakage_score": 0
+        },
+        "b": {
+          "verdict": "accept",
+          "confidence_in_critique": 0.72,
+          "issues_count": 5,
+          "isolation_mode": "unfiltered",
+          "reasoning_leakage_score": 0
+        },
+        "verdict_changed": false,
+        "confidence_delta": 0.0,
+        "leakage_delta": 0
+      }
+    ],
+    "aggregate": {
+      "total_reasoning_leakage_a": 1,
+      "total_reasoning_leakage_b": 2,
+      "any_verdict_changed": false,
+      "leakage_ratio_b_to_a": 2.0
+    }
+  }
+}

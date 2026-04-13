@@ -1,0 +1,316 @@
+{
+  "run_label": "20260411_213529",
+  "preset": "tier3_joseph",
+  "timestamp": "2026-04-11T21:35:29.719677",
+  "gedcom": "tier3_kennedy_ambiguous_joseph.ged",
+  "query": "Who are the parents of Joseph Patrick Kennedy born around 1888 in Massachusetts?",
+  "target_person": {
+    "name": "Joseph Patrick Kennedy",
+    "approx_birth": "1888",
+    "location": "Massachusetts"
+  },
+  "seed": {
+    "hypothesis_count": 2,
+    "profile_count": 1,
+    "retrieved_record_count": 18,
+    "elapsed_sec": 55.19
+  },
+  "condition_a": {
+    "isolation_mode": "filtered",
+    "elapsed_sec": 26.27,
+    "critiques": [
+      {
+        "hypothesis_id": "hyp:@I1@:@I44@:father",
+        "verdict": "accept",
+        "issues_found": [
+          "All evidence derives from a single GEDCOM file with no independent primary source corroboration (birth certificate, baptismal record, census, probate). A single-source GEDCOM is susceptible to undetectable transcription or data-entry errors.",
+          "The disambiguation step identified a second 'Joseph Patrick Kennedy' (gedcom:@I110@) born within 2 years (1886) also in Massachusetts, with an equal disambiguation score of 2.0. This near-tie raises a non-trivial risk that the correct subject record was selected but the paternal linkage could have been data-conflated during GEDCOM construction.",
+          "Subject @I1@ also has a child named 'Joseph Patrick Kennedy' (gedcom:@I3@), creating a naming collision within the same GEDCOM that could cause confusion in record interpretation, though this does not directly undermine the father-child link.",
+          "The 30-year age gap (P.J. born 1858, Joseph born 1888) is biologically plausible and historically attested for this well-known family, but no independent document confirms no generational skip occurred.",
+          "Patrick Joseph Kennedy's death place is null in the GEDCOM, which forecloses corroboration via obituary or probate records within this dataset.",
+          "Despite these weaknesses, the structural consistency is strong: bidirectional GEDCOM linkage (father_id on subject, children_ids on candidate, shared family unit @F1@), all Tier 1 checks pass, geographic distance is 0km, and the proposed relationship matches historically documented fact for this prominent family."
+        ],
+        "evidence_cited": [
+          "gedcom:@I1@",
+          "gedcom:@I44@",
+          "gedcom:@I110@",
+          "check:death_before_birth",
+          "check:parent_younger_than_child",
+          "check:parent_too_young_at_birth",
+          "check:parent_died_before_conception",
+          "check:geographic_plausibility"
+        ],
+        "confidence_in_critique": 0.72,
+        "justification": "The hypothesis is accepted: all Tier 1 deterministic checks pass, geography is consistent, the age gap is biologically normal, and the GEDCOM structure is internally coherent with bidirectional linkage. The primary weakness \u2014 sole-source GEDCOM evidence with no primary documents \u2014 is real but insufficient to reject a relationship that is also historically well-attested for the Kennedy family. Confidence is held at 0.72 rather than higher because the absence of corroborating primary documents and the existence of a near-identical disambiguation candidate (gedcom:@I110@) prevent full certainty.",
+        "tier1_results": [
+          {
+            "check": "death_before_birth",
+            "verdict": "ok",
+            "reason": "death is not before birth"
+          },
+          {
+            "check": "implausible_lifespan",
+            "verdict": "ok",
+            "reason": "lifespan within 120 years"
+          },
+          {
+            "check": "parent_younger_than_child",
+            "verdict": "ok",
+            "reason": "parent is not younger than child",
+            "role": "father"
+          },
+          {
+            "check": "parent_too_young_at_birth",
+            "verdict": "ok",
+            "reason": "parent age plausible (>= 12)",
+            "role": "father"
+          },
+          {
+            "check": "parent_died_before_conception",
+            "verdict": "ok",
+            "reason": "father alive ~9mo before birth holds",
+            "role": "father"
+          }
+        ],
+        "geo_result": {
+          "check": "geographic_plausibility",
+          "verdict": "ok",
+          "reason": "0km apart (within intra-regional range)",
+          "distance_km": 0
+        },
+        "isolation_mode": "filtered"
+      },
+      {
+        "hypothesis_id": "hyp:@I1@:@I45@:mother",
+        "verdict": "flag_uncertain",
+        "issues_found": [
+          "All evidence derives from a single GEDCOM file with no independent primary source corroboration (no birth certificate, baptismal record, census record, or other documentary evidence cited). A single data-entry error in the GEDCOM could propagate across all structural links simultaneously.",
+          "Mary Augusta Hickey's birth place is entirely missing from her record, preventing any geographic corroboration of her presence in Boston, MA at the time of Joseph's birth in 1888.",
+          "The subject shares the full name 'Joseph Patrick Kennedy' with a child listed in his own family (gedcom:@I3@), raising a concrete risk of record conflation within the GEDCOM. It is unclear whether the GEDCOM correctly distinguishes Joseph P. Kennedy Sr. (b. 1888) from Joseph P. Kennedy Jr. (b. ~1915).",
+          "A second excluded candidate (gedcom:@I110@) also bears the name 'Joseph Patrick Kennedy' with a birth year of 1886 and a Massachusetts birth place match, scoring equally to the selected record. The correct disambiguation between @I1@ and @I110@ is not firmly established by the available evidence.",
+          "No death place or death date context for Mary Augusta Hickey (d. 6 MAY 1923) is recorded, limiting the ability to cross-check her life circumstances against the subject's documented biography.",
+          "The bidirectional GEDCOM pointer structure (mother_id in @I1@, @I1@ in children_ids of @I45@, shared @F1@ family unit) is consistent but not independently corroborating \u2014 all three links trace back to the same single source file."
+        ],
+        "evidence_cited": [
+          "gedcom:@I1@",
+          "gedcom:@I45@",
+          "gedcom:@I110@",
+          "gedcom:@I3@",
+          "check:death_before_birth",
+          "check:parent_younger_than_child",
+          "check:parent_too_young_at_birth",
+          "check:parent_died_before_conception"
+        ],
+        "confidence_in_critique": 0.72,
+        "justification": "All Tier 1 deterministic checks pass and the age/timeline arithmetic is biologically plausible, but the hypothesis rests entirely on a single GEDCOM file with no primary document corroboration. The name collision between @I1@ and @I3@ (both 'Joseph Patrick Kennedy'), combined with an equally-scoring disambiguation candidate @I110@, introduces genuine uncertainty about whether the correct individual was selected and whether the GEDCOM pointers are free of conflation errors. The relationship is plausible and consistent with historical knowledge of the Kennedy family, but cannot be verified with confidence from the cited evidence alone.",
+        "tier1_results": [
+          {
+            "check": "death_before_birth",
+            "verdict": "ok",
+            "reason": "death is not before birth"
+          },
+          {
+            "check": "implausible_lifespan",
+            "verdict": "ok",
+            "reason": "lifespan within 120 years"
+          },
+          {
+            "check": "parent_younger_than_child",
+            "verdict": "ok",
+            "reason": "parent is not younger than child",
+            "role": "mother"
+          },
+          {
+            "check": "parent_too_young_at_birth",
+            "verdict": "ok",
+            "reason": "parent age plausible (>= 12)",
+            "role": "mother"
+          },
+          {
+            "check": "parent_died_before_conception",
+            "verdict": "ok",
+            "reason": "mother alive at birth holds",
+            "role": "mother"
+          }
+        ],
+        "geo_result": null,
+        "isolation_mode": "filtered"
+      }
+    ]
+  },
+  "condition_b": {
+    "isolation_mode": "unfiltered",
+    "elapsed_sec": 27.33,
+    "critiques": [
+      {
+        "hypothesis_id": "hyp:@I1@:@I44@:father",
+        "verdict": "flag_uncertain",
+        "issues_found": [
+          "All evidence derives exclusively from a single GEDCOM file with no independent primary sources (birth certificate, baptismal record, census record, probate record) cited to corroborate the father-child link. A single-source genealogy cannot be treated as verified.",
+          "The disambiguation step identified a second 'Joseph Patrick Kennedy' (gedcom:@I110@) born around 1886 in Massachusetts with a near-identical score to the selected subject. If records from this individual were conflated during GEDCOM construction, the father assignment could be erroneous.",
+          "Subject (@I1@) shares the full name 'Joseph Patrick Kennedy' with his own child (@I3@), creating a concrete risk of intra-file record confusion that could have introduced errors into the father_id assignment.",
+          "Patrick Joseph Kennedy's death place is missing from his record, limiting the ability to cross-check against probate, obituary, or death certificate records that might independently name his children.",
+          "The 30-year age gap (Patrick born 1858, Joseph born 1888) is biologically plausible but sits at the upper end of typical father-child intervals; without external corroboration, a generational skip (grandfather recorded as father) cannot be entirely ruled out.",
+          "All Tier 1 deterministic checks pass and the geographic check is 0km, which is consistent with the hypothesis but adds no independent evidentiary weight since all data originates from the same GEDCOM file.",
+          "The bidirectional structural linkage within the GEDCOM (father_id, children_ids, shared family unit @F1@) is internally consistent but represents only one logical entry point \u2014 a data-entry error in a single location would propagate coherently to all three fields simultaneously."
+        ],
+        "evidence_cited": [
+          "gedcom:@I1@",
+          "gedcom:@I44@",
+          "gedcom:@I110@",
+          "gedcom:@I3@",
+          "check:death_before_birth",
+          "check:parent_younger_than_child",
+          "check:parent_too_young_at_birth",
+          "check:parent_died_before_conception",
+          "check:geographic_plausibility"
+        ],
+        "confidence_in_critique": 0.72,
+        "justification": "The hypothesis is internally coherent and all deterministic checks pass, but the evidence is entirely single-source (one GEDCOM file) with no cited primary documents, and a near-identical disambiguation candidate (gedcom:@I110@) introduces meaningful ambiguity about which 'Joseph Patrick Kennedy' is correctly linked. The relationship is historically well-known and likely correct, but the available evidence as presented cannot support a verified 'accept' verdict without independent corroboration; 'flag_uncertain' is the appropriate epistemic position.",
+        "tier1_results": [
+          {
+            "check": "death_before_birth",
+            "verdict": "ok",
+            "reason": "death is not before birth"
+          },
+          {
+            "check": "implausible_lifespan",
+            "verdict": "ok",
+            "reason": "lifespan within 120 years"
+          },
+          {
+            "check": "parent_younger_than_child",
+            "verdict": "ok",
+            "reason": "parent is not younger than child",
+            "role": "father"
+          },
+          {
+            "check": "parent_too_young_at_birth",
+            "verdict": "ok",
+            "reason": "parent age plausible (>= 12)",
+            "role": "father"
+          },
+          {
+            "check": "parent_died_before_conception",
+            "verdict": "ok",
+            "reason": "father alive ~9mo before birth holds",
+            "role": "father"
+          }
+        ],
+        "geo_result": {
+          "check": "geographic_plausibility",
+          "verdict": "ok",
+          "reason": "0km apart (within intra-regional range)",
+          "distance_km": 0
+        },
+        "isolation_mode": "unfiltered"
+      },
+      {
+        "hypothesis_id": "hyp:@I1@:@I45@:mother",
+        "verdict": "flag_uncertain",
+        "issues_found": [
+          "All evidence derives from a single GEDCOM file with no independent primary source documents (birth certificate, baptismal record, census record) cited. The bidirectional pointer agreement between @I1@ and @I45@ and their shared family unit @F1@ are structurally corroborating but not truly independent \u2014 they all originate from the same data entry and a single upstream error would propagate to all apparent confirmations simultaneously.",
+          "Mary Augusta Hickey's birth place is entirely absent from her record, preventing any geographic corroboration of her presence in Boston, MA at the time of Joseph's 1888 birth. Her death place is also missing, further limiting independent verification.",
+          "The subject (@I1@) shares the full name 'Joseph Patrick Kennedy' with a child in his own family tree (@I3@), creating a non-trivial risk of record conflation within the GEDCOM. If the compiler confused these two individuals, the parent-child pointer assignments could be misapplied.",
+          "A separate disambiguation candidate (@I110@, born 1886 in Massachusetts) was excluded but scores equally with the selected record. If @I110@ is a distinct individual from the same era and region with the same name, this raises questions about whether the correct 'Joseph Patrick Kennedy' was selected as subject.",
+          "Mary Augusta Hickey's own parentage fields (father_id, mother_id) are null and her famc list is empty, meaning her own ancestry is entirely unverified within the GEDCOM, reducing confidence in the overall reliability of her record entry.",
+          "No geographic plausibility data was returned, leaving the geographic dimension entirely unverified rather than confirmed."
+        ],
+        "evidence_cited": [
+          "gedcom:@I1@",
+          "gedcom:@I45@",
+          "gedcom:@I3@",
+          "gedcom:@I110@",
+          "check:death_before_birth",
+          "check:parent_younger_than_child",
+          "check:parent_too_young_at_birth",
+          "check:parent_died_before_conception"
+        ],
+        "confidence_in_critique": 0.72,
+        "justification": "All Tier 1 deterministic checks pass and the age gap (mother ~30-31 at birth) is biologically plausible, but the relationship rests entirely on a single GEDCOM source with no independent documentary corroboration. The name-sharing ambiguity with @I3@ and the equally-scoring disambiguation candidate @I110@ introduce genuine uncertainty that prevents acceptance at this evidence level; however, no specific contradicting evidence emerges to justify outright rejection, warranting flag_uncertain.",
+        "tier1_results": [
+          {
+            "check": "death_before_birth",
+            "verdict": "ok",
+            "reason": "death is not before birth"
+          },
+          {
+            "check": "implausible_lifespan",
+            "verdict": "ok",
+            "reason": "lifespan within 120 years"
+          },
+          {
+            "check": "parent_younger_than_child",
+            "verdict": "ok",
+            "reason": "parent is not younger than child",
+            "role": "mother"
+          },
+          {
+            "check": "parent_too_young_at_birth",
+            "verdict": "ok",
+            "reason": "parent age plausible (>= 12)",
+            "role": "mother"
+          },
+          {
+            "check": "parent_died_before_conception",
+            "verdict": "ok",
+            "reason": "mother alive at birth holds",
+            "role": "mother"
+          }
+        ],
+        "geo_result": null,
+        "isolation_mode": "unfiltered"
+      }
+    ]
+  },
+  "comparison": {
+    "per_hypothesis": [
+      {
+        "hypothesis_id": "hyp:@I1@:@I44@:father",
+        "a": {
+          "verdict": "accept",
+          "confidence_in_critique": 0.72,
+          "issues_count": 6,
+          "isolation_mode": "filtered",
+          "reasoning_leakage_score": 3
+        },
+        "b": {
+          "verdict": "flag_uncertain",
+          "confidence_in_critique": 0.72,
+          "issues_count": 7,
+          "isolation_mode": "unfiltered",
+          "reasoning_leakage_score": 4
+        },
+        "verdict_changed": true,
+        "confidence_delta": 0.0,
+        "leakage_delta": 1
+      },
+      {
+        "hypothesis_id": "hyp:@I1@:@I45@:mother",
+        "a": {
+          "verdict": "flag_uncertain",
+          "confidence_in_critique": 0.72,
+          "issues_count": 6,
+          "isolation_mode": "filtered",
+          "reasoning_leakage_score": 1
+        },
+        "b": {
+          "verdict": "flag_uncertain",
+          "confidence_in_critique": 0.72,
+          "issues_count": 6,
+          "isolation_mode": "unfiltered",
+          "reasoning_leakage_score": 1
+        },
+        "verdict_changed": false,
+        "confidence_delta": 0.0,
+        "leakage_delta": 0
+      }
+    ],
+    "aggregate": {
+      "total_reasoning_leakage_a": 4,
+      "total_reasoning_leakage_b": 5,
+      "any_verdict_changed": true,
+      "leakage_ratio_b_to_a": 1.25
+    }
+  }
+}

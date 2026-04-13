@@ -1,0 +1,320 @@
+{
+  "run_label": "20260411_213524",
+  "preset": "tier2_surname",
+  "timestamp": "2026-04-11T21:35:24.538471",
+  "gedcom": "tier2_surname_mismatch.ged",
+  "query": "Who are the parents of Lucia Rossi?",
+  "target_person": {
+    "name": "Lucia Rossi",
+    "approx_birth": "1890",
+    "location": "Florence, Italy"
+  },
+  "seed": {
+    "hypothesis_count": 2,
+    "profile_count": 1,
+    "retrieved_record_count": 3,
+    "elapsed_sec": 52.24
+  },
+  "condition_a": {
+    "isolation_mode": "filtered",
+    "elapsed_sec": 29.46,
+    "critiques": [
+      {
+        "hypothesis_id": "hyp:@I1@:@I2@:father",
+        "verdict": "flag_uncertain",
+        "issues_found": [
+          "All evidence derives exclusively from a single GEDCOM file with no independent corroboration from civil registry, church baptismal records, or any other primary source. A GEDCOM entry alone, especially one without cited source documentation, cannot establish a relationship with confidence.",
+          "Lucia Rossi carries the surname 'Rossi', which differs from the alleged father's surname 'Bianchi' AND the alleged mother's surname 'Verdi'. In Italian naming conventions, a legitimate child would carry the father's surname. All three individuals in the same family unit bear completely different surnames, which is highly anomalous and unexplained. This raises serious concerns about data entry error, name recording conventions, adoption, illegitimacy, or a conflation of unrelated individuals.",
+          "The GEDCOM internal consistency (father_id, children_ids, famc/fams) is circular self-referential evidence \u2014 the same dataset confirming itself across multiple fields does not constitute independent corroboration. All six evidence chain items ultimately trace back to a single source file.",
+          "No mother's maiden name or marriage record for family '@F1@' is provided to validate the family unit as a whole. The family record itself is unverified.",
+          "The hypothesis confidence score of 0.62 is arguably too high given that the sole evidence base is an unverified GEDCOM with an unexplained surname discrepancy affecting all three family members.",
+          "No occupation, religion, burial, or any secondary biographical detail is available for Lucia Rossi to enable cross-referencing with independent records that might confirm or deny the paternity claim."
+        ],
+        "evidence_cited": [
+          "gedcom:@I1@",
+          "gedcom:@I2@",
+          "check:death_before_birth",
+          "check:parent_younger_than_child",
+          "check:parent_too_young_at_birth",
+          "check:parent_died_before_conception",
+          "check:geographic_plausibility"
+        ],
+        "confidence_in_critique": 0.78,
+        "justification": "All Tier 1 chronological checks pass and geography is unproblematic, so the relationship is not demonstrably impossible. However, the surname discrepancy across all three family members (Rossi, Bianchi, Verdi) is a substantial unexplained anomaly in an Italian 19th-century context, and the entire evidence chain collapses to a single unverified GEDCOM file with no primary source citations. This warrants 'flag_uncertain' rather than acceptance; the hypothesis cannot be verified or confidently rejected without independent documentary evidence.",
+        "tier1_results": [
+          {
+            "check": "death_before_birth",
+            "verdict": "ok",
+            "reason": "death is not before birth"
+          },
+          {
+            "check": "implausible_lifespan",
+            "verdict": "ok",
+            "reason": "lifespan within 120 years"
+          },
+          {
+            "check": "parent_younger_than_child",
+            "verdict": "ok",
+            "reason": "parent is not younger than child",
+            "role": "father"
+          },
+          {
+            "check": "parent_too_young_at_birth",
+            "verdict": "ok",
+            "reason": "parent age plausible (>= 12)",
+            "role": "father"
+          },
+          {
+            "check": "parent_died_before_conception",
+            "verdict": "ok",
+            "reason": "father alive ~9mo before birth holds",
+            "role": "father"
+          }
+        ],
+        "geo_result": {
+          "check": "geographic_plausibility",
+          "verdict": "ok",
+          "reason": "0km apart (within intra-regional range)",
+          "distance_km": 0
+        },
+        "isolation_mode": "filtered"
+      },
+      {
+        "hypothesis_id": "hyp:@I1@:@I3@:mother",
+        "verdict": "flag_uncertain",
+        "issues_found": [
+          "All evidence derives exclusively from a single GEDCOM file; no independent civil registration records, church baptismal records, or other primary sources corroborate the mother-child relationship.",
+          "The surname discrepancy is a material unresolved problem: Lucia bears the surname 'Rossi', her stated father is 'Bianchi', and her stated mother is 'Verdi'. In Italian naming conventions a legitimate child would typically carry the father's surname 'Bianchi', not 'Rossi'. This anomaly could indicate adoption, illegitimacy, data entry error, or conflation of two different individuals, and no source explains it.",
+          "The GEDCOM linkage is internally self-corroborating only \u2014 both records pointing to each other within the same file constitutes a single source expressed twice, not independent corroboration.",
+          "Anna Verdi's parentage is entirely unknown (null father_id, null mother_id), making it impossible to verify her identity through collateral relatives or cross-checks.",
+          "No DNA, no census, no marriage record, and no death certificate are provided; the hypothesis rests entirely on unverified compiled genealogy data.",
+          "The GEDCOM may itself be a secondary or tertiary compilation of unverified assumptions; the underlying primary research basis is unknown."
+        ],
+        "evidence_cited": [
+          "gedcom:@I1@",
+          "gedcom:@I3@",
+          "check:death_before_birth",
+          "check:parent_younger_than_child",
+          "check:parent_too_young_at_birth",
+          "check:parent_died_before_conception",
+          "check:geographic_plausibility"
+        ],
+        "confidence_in_critique": 0.72,
+        "justification": "All Tier 1 deterministic checks pass and geography is consistent, so the hypothesis cannot be rejected on biological or spatial grounds. However, the exclusive reliance on a single self-referential GEDCOM file, combined with the unexplained surname anomaly ('Rossi' vs. expected paternal surname 'Bianchi'), introduces sufficient doubt to preclude acceptance. The relationship is plausible but unverifiable without independent primary documentation.",
+        "tier1_results": [
+          {
+            "check": "death_before_birth",
+            "verdict": "ok",
+            "reason": "death is not before birth"
+          },
+          {
+            "check": "implausible_lifespan",
+            "verdict": "ok",
+            "reason": "lifespan within 120 years"
+          },
+          {
+            "check": "parent_younger_than_child",
+            "verdict": "ok",
+            "reason": "parent is not younger than child",
+            "role": "mother"
+          },
+          {
+            "check": "parent_too_young_at_birth",
+            "verdict": "ok",
+            "reason": "parent age plausible (>= 12)",
+            "role": "mother"
+          },
+          {
+            "check": "parent_died_before_conception",
+            "verdict": "ok",
+            "reason": "mother alive at birth holds",
+            "role": "mother"
+          }
+        ],
+        "geo_result": {
+          "check": "geographic_plausibility",
+          "verdict": "ok",
+          "reason": "0km apart (within intra-regional range)",
+          "distance_km": 0
+        },
+        "isolation_mode": "filtered"
+      }
+    ]
+  },
+  "condition_b": {
+    "isolation_mode": "unfiltered",
+    "elapsed_sec": 26.33,
+    "critiques": [
+      {
+        "hypothesis_id": "hyp:@I1@:@I2@:father",
+        "verdict": "flag_uncertain",
+        "issues_found": [
+          "All six evidence claims collapse into a single GEDCOM file with no independent corroboration. The GEDCOM's internal consistency (father_id, children_ids, famc/fams all pointing to each other) is self-referential and proves only that someone entered this relationship into the file, not that the relationship is factually correct.",
+          "The surname discrepancy is the most critical unresolved issue: Lucia bears the surname 'Rossi', while her putative father is 'Bianchi' and her putative mother is 'Verdi'. Under Italian civil registration law (post-1865 Codice Civile), a legitimate child would inherit the father's surname 'Bianchi'. Neither 'Rossi' nor the discrepancy is explained by any record provided. This raises genuine doubt about whether the GEDCOM linkage reflects a real relationship.",
+          "No primary or secondary sources (birth certificate, baptismal record, civil registry entry, notarial act) have been provided to independently validate the father-child link. The hypothesis depends entirely on a derivative source of unknown provenance.",
+          "The mother recorded in the GEDCOM (@I3@, Anna Verdi) also has a different surname from the child, compounding the surname anomaly and making a simple data-entry error less likely as an explanation, since all three surnames differ.",
+          "Marco Bianchi's parentage is completely unknown (father_id and mother_id null), preventing any upstream chain-of-evidence validation and limiting the ability to detect misidentification.",
+          "No corroborating biographical data (occupation, religion, burial) is available for Lucia Rossi, ruling out cross-referencing with independent record sets that might confirm or refute the paternity claim."
+        ],
+        "evidence_cited": [
+          "gedcom:@I1@",
+          "gedcom:@I2@",
+          "check:death_before_birth",
+          "check:parent_younger_than_child",
+          "check:parent_too_young_at_birth",
+          "check:parent_died_before_conception",
+          "check:geographic_plausibility"
+        ],
+        "confidence_in_critique": 0.72,
+        "justification": "All Tier 1 checks pass and geographic plausibility is perfect, so the relationship is not demonstrably impossible. However, the evidence is entirely single-source and self-referential within a GEDCOM of unverified provenance, and the unexplained triple surname discrepancy (Rossi / Bianchi / Verdi across child, father, mother) is a concrete, unresolved anomaly that prevents confident acceptance. The hypothesis cannot be rejected outright but should not be accepted without at least one primary source explaining the surname discrepancy.",
+        "tier1_results": [
+          {
+            "check": "death_before_birth",
+            "verdict": "ok",
+            "reason": "death is not before birth"
+          },
+          {
+            "check": "implausible_lifespan",
+            "verdict": "ok",
+            "reason": "lifespan within 120 years"
+          },
+          {
+            "check": "parent_younger_than_child",
+            "verdict": "ok",
+            "reason": "parent is not younger than child",
+            "role": "father"
+          },
+          {
+            "check": "parent_too_young_at_birth",
+            "verdict": "ok",
+            "reason": "parent age plausible (>= 12)",
+            "role": "father"
+          },
+          {
+            "check": "parent_died_before_conception",
+            "verdict": "ok",
+            "reason": "father alive ~9mo before birth holds",
+            "role": "father"
+          }
+        ],
+        "geo_result": {
+          "check": "geographic_plausibility",
+          "verdict": "ok",
+          "reason": "0km apart (within intra-regional range)",
+          "distance_km": 0
+        },
+        "isolation_mode": "unfiltered"
+      },
+      {
+        "hypothesis_id": "hyp:@I1@:@I3@:mother",
+        "verdict": "flag_uncertain",
+        "issues_found": [
+          "All evidence derives exclusively from a single GEDCOM file. There are no independent civil registration records, church baptismal records, or other documentary sources to corroborate the mother-child relationship. GEDCOM files are compiled genealogies that may encode unverified assumptions.",
+          "The surname discrepancy is a significant unexplained anomaly: the subject is 'Lucia Rossi', her recorded mother is 'Anna Verdi', and her recorded father is 'Marco Bianchi'. No source explains why Lucia carries the surname 'Rossi' when neither parent's surname matches. This raises plausible alternatives including data entry error, adoption, illegitimacy, or conflation with a different individual.",
+          "The mutual GEDCOM cross-references (mother_id in @I1@ pointing to @I3@, and children_ids in @I3@ listing @I1@) are not independent corroboration \u2014 they are almost certainly derived from the same data entry event in the same file, providing only circular internal consistency rather than two independent attestations.",
+          "Anna Verdi's parentage is entirely unknown (null father_id and mother_id), making identity verification through collateral lines impossible and raising the risk that 'Anna Verdi' may itself be an incompletely identified or incorrectly assigned individual.",
+          "No marriage record or civil registration links Anna Verdi (surname Verdi) to Marco Bianchi (surname Bianchi), and no record explains how Lucia acquired the surname Rossi from this union, leaving the family unit @F1@ structurally asserted but documentarily unverified.",
+          "The possibility that the child '@I1@' listed in Anna Verdi's children_ids refers to a different Lucia conflated with the subject cannot be ruled out given the common given name 'Lucia' in late 19th-century Florence and the absence of corroborating documentation."
+        ],
+        "evidence_cited": [
+          "gedcom:@I1@",
+          "gedcom:@I3@",
+          "check:death_before_birth",
+          "check:parent_younger_than_child",
+          "check:parent_too_young_at_birth",
+          "check:parent_died_before_conception",
+          "check:geographic_plausibility"
+        ],
+        "confidence_in_critique": 0.72,
+        "justification": "All Tier 1 deterministic checks pass and geographic plausibility is strong, so the hypothesis is not demonstrably impossible. However, the entire evidentiary basis collapses to a single GEDCOM source with internally circular cross-references, and the unexplained surname discrepancy (Rossi vs. Verdi/Bianchi) is a concrete unresolved anomaly that prevents confident acceptance. The relationship may well be correct but cannot be verified without independent documentary corroboration, warranting flag_uncertain rather than accept.",
+        "tier1_results": [
+          {
+            "check": "death_before_birth",
+            "verdict": "ok",
+            "reason": "death is not before birth"
+          },
+          {
+            "check": "implausible_lifespan",
+            "verdict": "ok",
+            "reason": "lifespan within 120 years"
+          },
+          {
+            "check": "parent_younger_than_child",
+            "verdict": "ok",
+            "reason": "parent is not younger than child",
+            "role": "mother"
+          },
+          {
+            "check": "parent_too_young_at_birth",
+            "verdict": "ok",
+            "reason": "parent age plausible (>= 12)",
+            "role": "mother"
+          },
+          {
+            "check": "parent_died_before_conception",
+            "verdict": "ok",
+            "reason": "mother alive at birth holds",
+            "role": "mother"
+          }
+        ],
+        "geo_result": {
+          "check": "geographic_plausibility",
+          "verdict": "ok",
+          "reason": "0km apart (within intra-regional range)",
+          "distance_km": 0
+        },
+        "isolation_mode": "unfiltered"
+      }
+    ]
+  },
+  "comparison": {
+    "per_hypothesis": [
+      {
+        "hypothesis_id": "hyp:@I1@:@I2@:father",
+        "a": {
+          "verdict": "flag_uncertain",
+          "confidence_in_critique": 0.78,
+          "issues_count": 6,
+          "isolation_mode": "filtered",
+          "reasoning_leakage_score": 1
+        },
+        "b": {
+          "verdict": "flag_uncertain",
+          "confidence_in_critique": 0.72,
+          "issues_count": 6,
+          "isolation_mode": "unfiltered",
+          "reasoning_leakage_score": 3
+        },
+        "verdict_changed": false,
+        "confidence_delta": -0.06,
+        "leakage_delta": 2
+      },
+      {
+        "hypothesis_id": "hyp:@I1@:@I3@:mother",
+        "a": {
+          "verdict": "flag_uncertain",
+          "confidence_in_critique": 0.72,
+          "issues_count": 6,
+          "isolation_mode": "filtered",
+          "reasoning_leakage_score": 1
+        },
+        "b": {
+          "verdict": "flag_uncertain",
+          "confidence_in_critique": 0.72,
+          "issues_count": 6,
+          "isolation_mode": "unfiltered",
+          "reasoning_leakage_score": 3
+        },
+        "verdict_changed": false,
+        "confidence_delta": 0.0,
+        "leakage_delta": 2
+      }
+    ],
+    "aggregate": {
+      "total_reasoning_leakage_a": 2,
+      "total_reasoning_leakage_b": 6,
+      "any_verdict_changed": false,
+      "leakage_ratio_b_to_a": 3.0
+    }
+  }
+}
