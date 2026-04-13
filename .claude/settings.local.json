@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c ':*)",
+      "Bash(python -c \"import jellyfish; import dateutil; import geopy; print\\('jellyfish', jellyfish.__version__\\); print\\('dateutil', dateutil.__version__\\); print\\('geopy', geopy.__version__\\)\")",
+      "Bash(pip install:*)",
+      "Bash(python -c \"import jellyfish; print\\('jellyfish:', dir\\(jellyfish\\)[:10]\\); import dateutil; print\\('dateutil ok'\\); import geopy; print\\('geopy:', geopy.__version__\\)\")",
+      "Bash(\"./.venv/Scripts/python.exe\" eval/isolation_experiment.py --preset tier2_surname)",
+      "Bash(\"./.venv/Scripts/python.exe\" eval/isolation_experiment.py --preset tier3_joseph)",
+      "Bash(\"./.venv/Scripts/python.exe\" eval/build_isolation_summary.py)"
+    ]
+  }
+}

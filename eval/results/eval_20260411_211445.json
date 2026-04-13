@@ -1,0 +1,208 @@
+{
+  "run_label": "20260411_211445",
+  "timestamp": "2026-04-11T21:22:18.209761",
+  "tiers_run": [
+    "tier2",
+    "tier3"
+  ],
+  "results": [
+    {
+      "file": "tier2_geographically_impossible.ged",
+      "query": "Who are the parents of Margaret Bianchi?",
+      "tier": "tier2",
+      "passed": true,
+      "reason": "matched verdict on 2/2 hypotheses: ['hyp:@I1@:@I2@:father', 'hyp:@I1@:@I3@:mother']",
+      "actual": [
+        {
+          "hypothesis_id": "hyp:@I1@:@I2@:father",
+          "verdict": "flag_uncertain",
+          "confidence_in_critique": 0.78,
+          "tier1_hit": false,
+          "tier1_impossibles": [],
+          "geo_verdict": "flag_moderate",
+          "isolation_mode": "filtered"
+        },
+        {
+          "hypothesis_id": "hyp:@I1@:@I3@:mother",
+          "verdict": "flag_uncertain",
+          "confidence_in_critique": 0.72,
+          "tier1_hit": false,
+          "tier1_impossibles": [],
+          "geo_verdict": "flag_moderate",
+          "isolation_mode": "filtered"
+        }
+      ],
+      "expected": {
+        "expected_verdict_any_of": [
+          "reject",
+          "flag_uncertain"
+        ],
+        "expected_confidence_min": 0.5,
+        "expected_tier1_hit": false
+      },
+      "elapsed_sec": 92.1,
+      "status": "complete",
+      "revision_count": 0
+    },
+    {
+      "file": "tier2_surname_mismatch.ged",
+      "query": "Who are the parents of Lucia Rossi?",
+      "tier": "tier2",
+      "passed": true,
+      "reason": "matched verdict on 2/2 hypotheses: ['hyp:@I1@:@I2@:father', 'hyp:@I1@:@I3@:mother']",
+      "actual": [
+        {
+          "hypothesis_id": "hyp:@I1@:@I2@:father",
+          "verdict": "flag_uncertain",
+          "confidence_in_critique": 0.78,
+          "tier1_hit": false,
+          "tier1_impossibles": [],
+          "geo_verdict": "ok",
+          "isolation_mode": "filtered"
+        },
+        {
+          "hypothesis_id": "hyp:@I1@:@I3@:mother",
+          "verdict": "flag_uncertain",
+          "confidence_in_critique": 0.72,
+          "tier1_hit": false,
+          "tier1_impossibles": [],
+          "geo_verdict": "ok",
+          "isolation_mode": "filtered"
+        }
+      ],
+      "expected": {
+        "expected_verdict_any_of": [
+          "reject",
+          "flag_uncertain"
+        ],
+        "expected_confidence_min": 0.5,
+        "expected_tier1_hit": false
+      },
+      "elapsed_sec": 79.7,
+      "status": "complete",
+      "revision_count": 0
+    },
+    {
+      "file": "tier2_implausible_age_gap.ged",
+      "query": "Who are the parents of Edward Longgap?",
+      "tier": "tier2",
+      "passed": true,
+      "reason": "matched verdict on 2/2 hypotheses: ['hyp:@I1@:@I2@:father', 'hyp:@I1@:@I3@:mother']",
+      "actual": [
+        {
+          "hypothesis_id": "hyp:@I1@:@I2@:father",
+          "verdict": "reject",
+          "confidence_in_critique": 0.82,
+          "tier1_hit": false,
+          "tier1_impossibles": [],
+          "geo_verdict": "ok",
+          "isolation_mode": "filtered"
+        },
+        {
+          "hypothesis_id": "hyp:@I1@:@I3@:mother",
+          "verdict": "flag_uncertain",
+          "confidence_in_critique": 0.72,
+          "tier1_hit": false,
+          "tier1_impossibles": [],
+          "geo_verdict": "ok",
+          "isolation_mode": "filtered"
+        }
+      ],
+      "expected": {
+        "expected_verdict_any_of": [
+          "reject",
+          "flag_uncertain"
+        ],
+        "expected_confidence_min": 0.5,
+        "expected_tier1_hit": false
+      },
+      "elapsed_sec": 144.37,
+      "status": "needs_revision",
+      "revision_count": 2
+    },
+    {
+      "file": "tier3_kennedy_duplicate_john.ged",
+      "query": "Who are the parents of John Kennedy born 1917 in Boston?",
+      "tier": "tier3",
+      "passed": false,
+      "reason": "no hypothesis matched flag_uncertain/<= 0.7; got [('flag_uncertain', 0.72), ('flag_uncertain', 0.72)]",
+      "actual": [
+        {
+          "hypothesis_id": "hyp:@I100@:@I101@:father",
+          "verdict": "flag_uncertain",
+          "confidence_in_critique": 0.72,
+          "tier1_hit": false,
+          "tier1_impossibles": [],
+          "geo_verdict": "ok",
+          "isolation_mode": "filtered"
+        },
+        {
+          "hypothesis_id": "hyp:@I100@:@I102@:mother",
+          "verdict": "flag_uncertain",
+          "confidence_in_critique": 0.72,
+          "tier1_hit": false,
+          "tier1_impossibles": [],
+          "geo_verdict": "ok",
+          "isolation_mode": "filtered"
+        }
+      ],
+      "expected": {
+        "expected_verdict": "flag_uncertain",
+        "expected_confidence_max": 0.7,
+        "expected_tier1_hit": false
+      },
+      "elapsed_sec": 69.59,
+      "status": "complete",
+      "revision_count": 0
+    },
+    {
+      "file": "tier3_kennedy_ambiguous_joseph.ged",
+      "query": "Who are the parents of Joseph Patrick Kennedy born around 1888 in Massachusetts?",
+      "tier": "tier3",
+      "passed": false,
+      "reason": "1 hypothesis(es) showed overconfidence (verdict/confidence [('accept', 0.72)])",
+      "actual": [
+        {
+          "hypothesis_id": "hyp:@I1@:@I44@:father",
+          "verdict": "accept",
+          "confidence_in_critique": 0.72,
+          "tier1_hit": false,
+          "tier1_impossibles": [],
+          "geo_verdict": "ok",
+          "isolation_mode": "filtered"
+        },
+        {
+          "hypothesis_id": "hyp:@I1@:@I45@:mother",
+          "verdict": "flag_uncertain",
+          "confidence_in_critique": 0.72,
+          "tier1_hit": false,
+          "tier1_impossibles": [],
+          "geo_verdict": null,
+          "isolation_mode": "filtered"
+        }
+      ],
+      "expected": {
+        "expected_verdict": "flag_uncertain",
+        "expected_confidence_max": 0.7,
+        "expected_tier1_hit": false
+      },
+      "elapsed_sec": 66.9,
+      "status": "complete",
+      "revision_count": 0
+    }
+  ],
+  "summary": {
+    "total": 5,
+    "passed": 3,
+    "per_tier": {
+      "tier2": {
+        "total": 3,
+        "passed": 3
+      },
+      "tier3": {
+        "total": 2,
+        "passed": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+langgraph
+langchain
+langchain-anthropic
+anthropic
+python-dotenv
+python-gedcom-2
+jellyfish
+geopy
+python-dateutil

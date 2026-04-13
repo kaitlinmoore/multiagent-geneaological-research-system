@@ -1,0 +1,136 @@
+{
+  "run_label": "20260411_210223",
+  "timestamp": "2026-04-11T21:07:10.008811",
+  "tiers_run": [
+    "tier1"
+  ],
+  "results": [
+    {
+      "file": "tier1_parent_born_after_child.ged",
+      "query": "Who are the parents of Alice Testcase?",
+      "tier": "tier1",
+      "passed": true,
+      "reason": "all 2 hypotheses rejected via Tier 1 fail-fast with confidence >= 0.9",
+      "actual": [
+        {
+          "hypothesis_id": "hyp:@I1@:@I2@:father",
+          "verdict": "reject",
+          "confidence_in_critique": 0.98,
+          "tier1_hit": true,
+          "tier1_impossibles": [
+            "parent_younger_than_child",
+            "parent_too_young_at_birth"
+          ],
+          "geo_verdict": "ok",
+          "isolation_mode": "filtered"
+        },
+        {
+          "hypothesis_id": "hyp:@I1@:@I3@:mother",
+          "verdict": "reject",
+          "confidence_in_critique": 0.98,
+          "tier1_hit": true,
+          "tier1_impossibles": [
+            "parent_younger_than_child",
+            "parent_too_young_at_birth"
+          ],
+          "geo_verdict": "ok",
+          "isolation_mode": "filtered"
+        }
+      ],
+      "expected": {
+        "expected_verdict": "reject",
+        "expected_confidence_min": 0.9,
+        "expected_tier1_hit": true
+      },
+      "elapsed_sec": 91.57,
+      "status": "needs_revision",
+      "revision_count": 2
+    },
+    {
+      "file": "tier1_death_before_birth.ged",
+      "query": "Who are the parents of Clara Impossible?",
+      "tier": "tier1",
+      "passed": true,
+      "reason": "all 2 hypotheses rejected via Tier 1 fail-fast with confidence >= 0.9",
+      "actual": [
+        {
+          "hypothesis_id": "hyp:@I1@:@I2@:father",
+          "verdict": "reject",
+          "confidence_in_critique": 0.98,
+          "tier1_hit": true,
+          "tier1_impossibles": [
+            "death_before_birth"
+          ],
+          "geo_verdict": "ok",
+          "isolation_mode": "filtered"
+        },
+        {
+          "hypothesis_id": "hyp:@I1@:@I3@:mother",
+          "verdict": "reject",
+          "confidence_in_critique": 0.98,
+          "tier1_hit": true,
+          "tier1_impossibles": [
+            "death_before_birth"
+          ],
+          "geo_verdict": "ok",
+          "isolation_mode": "filtered"
+        }
+      ],
+      "expected": {
+        "expected_verdict": "reject",
+        "expected_confidence_min": 0.9,
+        "expected_tier1_hit": true
+      },
+      "elapsed_sec": 85.36,
+      "status": "needs_revision",
+      "revision_count": 2
+    },
+    {
+      "file": "tier1_parent_too_young.ged",
+      "query": "Who are the parents of Grace Tooyoung?",
+      "tier": "tier1",
+      "passed": false,
+      "reason": "hypothesis hyp:@I1@:@I3@:mother verdict=flag_uncertain (expected reject)",
+      "actual": [
+        {
+          "hypothesis_id": "hyp:@I1@:@I2@:father",
+          "verdict": "reject",
+          "confidence_in_critique": 0.98,
+          "tier1_hit": true,
+          "tier1_impossibles": [
+            "parent_too_young_at_birth"
+          ],
+          "geo_verdict": "ok",
+          "isolation_mode": "filtered"
+        },
+        {
+          "hypothesis_id": "hyp:@I1@:@I3@:mother",
+          "verdict": "flag_uncertain",
+          "confidence_in_critique": 0.78,
+          "tier1_hit": false,
+          "tier1_impossibles": [],
+          "geo_verdict": "ok",
+          "isolation_mode": "filtered"
+        }
+      ],
+      "expected": {
+        "expected_verdict": "reject",
+        "expected_confidence_min": 0.9,
+        "expected_tier1_hit": true
+      },
+      "elapsed_sec": 109.6,
+      "status": "needs_revision",
+      "revision_count": 2
+    }
+  ],
+  "summary": {
+    "total": 3,
+    "passed": 2,
+    "per_tier": {
+      "tier1": {
+        "total": 3,
+        "passed": 2
+      }
+    }
+  }
+}

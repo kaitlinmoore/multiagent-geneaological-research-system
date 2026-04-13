@@ -1,0 +1,89 @@
+{
+  "run_label": "20260411_212419",
+  "timestamp": "2026-04-11T21:26:54.101609",
+  "tiers_run": [
+    "tier3"
+  ],
+  "results": [
+    {
+      "file": "tier3_kennedy_duplicate_john.ged",
+      "query": "Who are the parents of John Kennedy born 1917 in Boston?",
+      "tier": "tier3",
+      "passed": true,
+      "reason": "2/2 hypotheses flag_uncertain, no overconfident accept/reject above 0.85",
+      "actual": [
+        {
+          "hypothesis_id": "hyp:@I100@:@I101@:father",
+          "verdict": "flag_uncertain",
+          "confidence_in_critique": 0.72,
+          "tier1_hit": false,
+          "tier1_impossibles": [],
+          "geo_verdict": "ok",
+          "isolation_mode": "filtered"
+        },
+        {
+          "hypothesis_id": "hyp:@I100@:@I102@:mother",
+          "verdict": "flag_uncertain",
+          "confidence_in_critique": 0.72,
+          "tier1_hit": false,
+          "tier1_impossibles": [],
+          "geo_verdict": "ok",
+          "isolation_mode": "filtered"
+        }
+      ],
+      "expected": {
+        "expected_verdict": "flag_uncertain",
+        "overconfidence_ceiling": 0.85,
+        "expected_tier1_hit": false
+      },
+      "elapsed_sec": 75.49,
+      "status": "complete",
+      "revision_count": 0
+    },
+    {
+      "file": "tier3_kennedy_ambiguous_joseph.ged",
+      "query": "Who are the parents of Joseph Patrick Kennedy born around 1888 in Massachusetts?",
+      "tier": "tier3",
+      "passed": true,
+      "reason": "2/2 hypotheses flag_uncertain, no overconfident accept/reject above 0.85",
+      "actual": [
+        {
+          "hypothesis_id": "hyp:@I1@:@I44@:father",
+          "verdict": "flag_uncertain",
+          "confidence_in_critique": 0.72,
+          "tier1_hit": false,
+          "tier1_impossibles": [],
+          "geo_verdict": "ok",
+          "isolation_mode": "filtered"
+        },
+        {
+          "hypothesis_id": "hyp:@I1@:@I45@:mother",
+          "verdict": "flag_uncertain",
+          "confidence_in_critique": 0.72,
+          "tier1_hit": false,
+          "tier1_impossibles": [],
+          "geo_verdict": null,
+          "isolation_mode": "filtered"
+        }
+      ],
+      "expected": {
+        "expected_verdict": "flag_uncertain",
+        "overconfidence_ceiling": 0.85,
+        "expected_tier1_hit": false
+      },
+      "elapsed_sec": 78.62,
+      "status": "complete",
+      "revision_count": 0
+    }
+  ],
+  "summary": {
+    "total": 2,
+    "passed": 2,
+    "per_tier": {
+      "tier3": {
+        "total": 2,
+        "passed": 2
+      }
+    }
+  }
+}
