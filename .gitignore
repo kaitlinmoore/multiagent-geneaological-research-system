@@ -1,15 +1,8 @@
-<<<<<<< HEAD
 # Environment / secrets
 .env
 .env.*
 !.env.example
 
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-=======
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -19,7 +12,6 @@ __pycache__/
 *.so
 
 # Distribution / packaging
->>>>>>> 160bdc507a0ab0f41b50630f08ca44670b87cff4
 .Python
 build/
 develop-eggs/
@@ -33,10 +25,11 @@ parts/
 sdist/
 var/
 wheels/
-<<<<<<< HEAD
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
 # Virtual environments
 venv/
@@ -60,12 +53,6 @@ traces/
 
 # Personal GEDCOM files (PII — never commit)
 data/PII Trees/
-=======
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -246,4 +233,7 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
->>>>>>> 160bdc507a0ab0f41b50630f08ca44670b87cff4
+
+# Newberry Atlas shapefiles (too large for repo)
+data/geodata/counties/
+data/geodata/states/

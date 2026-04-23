@@ -7,3 +7,7 @@ python-gedcom-2
 jellyfish
 geopy
 python-dateutil
+geopandas
+folium
+streamlit
+streamlit-folium
