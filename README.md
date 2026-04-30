@@ -18,21 +18,26 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Once the app loads, in the sidebar select **Mode → Replay (no API key)**. The Pipeline tab will offer a trace dropdown; pick one and the Pipeline / Family Tree / DNA Analysis tabs render from the saved state.
+Once the app loads, in the sidebar select **Mode → Replay (no API key)**. The Pipeline tab will offer a **Trace category** toggle (Query mode / Gap detection mode) plus a trace dropdown filtered to the chosen category. Pick a trace and the Pipeline / Family Tree / DNA Analysis tabs render from the saved state.
 
-#### Available replay traces (Pipeline tab dropdown)
+#### Available replay traces — Query mode
 
-| Demo | Mode | What to look for |
-|---|---|---|
-| `Demo: trace_*_jfk_parents_with_synthetic_dna` | Query + DNA | Clean accept on JFK's parents; DNA cross-references render in the DNA Analysis tab |
-| `Demo: trace_*_habsburg_maria_theresia_synthetic_dna` | Query + DNA | **Escalation case.** Critic disagreed across hypotheses for the same subject; pipeline force-finalized after 2 revision cycles. Triggers human-review flags 1 and 3. |
-| `Demo: trace_*_queen_victoria_synthetic_dna` | Query + DNA | Clean accept on Queen Victoria's parents (English-language royal data) |
-| `Demo: trace_*_kennedy_gap_demo` | Gap detection | **Escalation case.** Robert Sargent Shriver missing both parents; Critic rejected on both revisions, pipeline force-finalized. |
-| `Demo: trace_*_habsburg_gap_demo` | Gap detection | Albert I von Ungarn (b. 1016), missing mother. flag_uncertain at 0.75 — medieval source ambiguity. |
-| `Demo: trace_*_queen_gap_demo` | Gap detection | Bodilan of Burgundy, missing mother. flag_uncertain at 0.72 — same pattern. |
-| `Redacted: moore_myheritage_dna_redacted` | Query + DNA | Pseudonymized real-tree run; demonstrates the redactor + real-data behavior without exposing identity. |
+| Demo | What to look for |
+|---|---|
+| `Demo: trace_*_jfk_parents_with_synthetic_dna` | Clean accept on JFK's parents; DNA cross-references render in the DNA Analysis tab |
+| `Demo: trace_*_habsburg_maria_theresia_synthetic_dna` | **Escalation case.** Critic disagreed across hypotheses for the same subject; pipeline force-finalized after 2 revision cycles. Triggers human-review flags 1 and 3. |
+| `Demo: trace_*_queen_victoria_synthetic_dna` | Clean accept on Queen Victoria's parents (English-language royal data) |
+| `Redacted: moore_myheritage_dna_redacted` | Pseudonymized real-tree run; demonstrates the redactor + real-data behavior without exposing identity. |
 
-The Family Tree and DNA Analysis tabs auto-render from whichever trace is selected.
+#### Available replay traces — Gap detection mode
+
+| Demo | What to look for |
+|---|---|
+| `Demo: trace_*_kennedy_gap_demo` | **Escalation case.** Robert Sargent Shriver missing both parents; Critic rejected on both revisions, pipeline force-finalized. |
+| `Demo: trace_*_habsburg_gap_demo` | Albert I von Ungarn (b. 1016), missing mother. flag_uncertain at 0.75 — medieval source ambiguity. |
+| `Demo: trace_*_queen_gap_demo` | Bodilan of Burgundy, missing mother. flag_uncertain at 0.72 — same pattern. |
+
+The Family Tree and DNA Analysis tabs auto-render from whichever trace is selected. The Family Tree tab visualizes parental relationships in three distinct visual states: solid borders for relationships in the source GEDCOM, dashed-filled borders for gap-mode proposals (color-coded by Critic verdict), and dashed-hollow placeholders for parental slots that remain unfilled.
 
 #### Audit replay (separate loader on the Audit tab)
 
