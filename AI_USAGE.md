@@ -78,7 +78,7 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ## Phase 2: Architecture, Prototype, and Evaluation Plan
 
-### Entry 4 — Phase 2 Design Decisions and Evaluation Planning
+### Entry 6 — Phase 2 Design Decisions and Evaluation Planning
 
 | Field | Details |
 |-------|---------|
@@ -90,7 +90,7 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ---
 
-### Entry 5 — Implementation via Claude Code
+### Entry 7 — Implementation via Claude Code
 
 | Field | Details |
 |-------|---------|
@@ -102,7 +102,7 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ---
 
-### Entry 6 — Pipeline Testing on Developer's Family Tree
+### Entry 8 — Pipeline Testing on Developer's Family Tree
 
 | Field | Details |
 |-------|---------|
@@ -114,7 +114,7 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ---
 
-### Entry 7 — Stress Testing on European Royal Trees
+### Entry 9 — Stress Testing on European Royal Trees
 
 | Field | Details |
 |-------|---------|
@@ -126,7 +126,7 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ---
 
-### Entry 8 — Phase 2 Written Deliverables
+### Entry 10 — Phase 2 Written Deliverables
 
 | Field | Details |
 |-------|---------|
@@ -140,7 +140,7 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ## Phase 3: Final Product, Evidence, and Reflection
 
-### Entry 9 — Streamlit four-tab application
+### Entry 11 — Streamlit four-tab application
 
 | Field | Details |
 |-------|---------|
@@ -152,7 +152,7 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ---
 
-### Entry 10 — DNA Analyst agent (initial reporter mode)
+### Entry 12 — DNA Analyst agent (initial reporter mode)
 
 | Field | Details |
 |-------|---------|
@@ -164,7 +164,7 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ---
 
-### Entry 11 — DNA Analyst integration into the reasoning loop
+### Entry 13 — DNA Analyst integration into the reasoning loop
 
 | Field | Details |
 |-------|---------|
@@ -176,7 +176,7 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ---
 
-### Entry 12 — Multi-source retrieval (FindAGrave, Wikidata, WikiTree)
+### Entry 14 — Multi-source retrieval (FindAGrave, Wikidata, WikiTree)
 
 | Field | Details |
 |-------|---------|
@@ -188,7 +188,7 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ---
 
-### Entry 13 — Gap detection mode
+### Entry 15 — Gap detection mode
 
 | Field | Details |
 |-------|---------|
@@ -200,7 +200,7 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ---
 
-### Entry 14 — Subtree audit mode
+### Entry 16 — Subtree audit mode
 
 | Field | Details |
 |-------|---------|
@@ -212,7 +212,7 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ---
 
-### Entry 15 — Three-trigger human escalation
+### Entry 17 — Three-trigger human escalation
 
 | Field | Details |
 |-------|---------|
@@ -224,7 +224,7 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ---
 
-### Entry 16 — Critic isolation enforcement as a code guarantee
+### Entry 18 — Critic isolation enforcement as a code guarantee
 
 | Field | Details |
 |-------|---------|
@@ -236,7 +236,7 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ---
 
-### Entry 17 — Critic model upgrade: Sonnet 4.6 → Opus 4.0 → Opus 4.7
+### Entry 19 — Critic model upgrade: Sonnet 4.6 → Opus 4.0 → Opus 4.7
 
 | Field | Details |
 |-------|---------|
@@ -248,7 +248,7 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ---
 
-### Entry 18 — Cross-vendor Critic experiment
+### Entry 20 — Cross-vendor Critic experiment
 
 | Field | Details |
 |-------|---------|
@@ -260,7 +260,7 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ---
 
-### Entry 19 — Asymmetric pairing experiment (weak Hypothesizer + strong Critic)
+### Entry 21 — Asymmetric pairing experiment (weak Hypothesizer + strong Critic)
 
 | Field | Details |
 |-------|---------|
@@ -272,7 +272,7 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ---
 
-### Entry 20 — Multi-Critic ensemble
+### Entry 22 — Multi-Critic ensemble
 
 | Field | Details |
 |-------|---------|
@@ -284,7 +284,7 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ---
 
-### Entry 21 — Bug fixes (surname gate, Habsburg encoding, shared_cm aliases)
+### Entry 23 — Bug fixes (surname gate, Habsburg encoding, shared_cm aliases)
 
 | Field | Details |
 |-------|---------|
@@ -296,7 +296,7 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ---
 
-### Entry 22 — Synthetic DNA demos and PII redactor
+### Entry 24 — Synthetic DNA demos and PII redactor
 
 | Field | Details |
 |-------|---------|
@@ -308,7 +308,7 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ---
 
-### Entry 23 — Architecture diagram regeneration
+### Entry 25 — Architecture diagram regeneration
 
 | Field | Details |
 |-------|---------|
