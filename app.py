@@ -11,6 +11,7 @@ Run with: streamlit run app.py
 from __future__ import annotations
 
 import io
+import json
 import re
 import sys
 import time
@@ -809,6 +810,39 @@ if not is_replay:
     available_gedcoms = discover_gedcom_files()
     available_dna = discover_dna_files()
 
+    # Mode selector lives OUTSIDE the form so changing it triggers an
+    # immediate rerun. Inside the form, the query and target-person inputs
+    # disable when Gap detection is selected, giving the user a clear
+    # visual signal that those fields are not used in that mode.
+    mode_choice = st.radio(
+        "Mode",
+        options=["Auto-detect", "Query", "Audit", "Gap detection"],
+        horizontal=True,
+        index=0,
+        key="pipeline_mode",
+        help=(
+            "**Auto-detect** routes based on query keywords "
+            "(`audit`, `questionable`, `N generations`, …) — "
+            "convenient but invisible.\n\n"
+            "**Query** — investigate a specific person/relationship "
+            "(full pipeline).\n\n"
+            "**Audit** — walk every parent-child link in a subtree "
+            "rooted at the target person.\n\n"
+            "**Gap detection** — scan the GEDCOM for persons missing "
+            "parent links and rank them by available evidence."
+        ),
+    )
+    is_gap_mode = mode_choice == "Gap detection"
+    if is_gap_mode:
+        st.info(
+            "Gap detection scans the entire GEDCOM for persons missing "
+            "parent links and ranks candidates by available evidence. "
+            "**No query or target person needed** — pick a GEDCOM and "
+            "click Run. The query and target-person fields below are "
+            "disabled in this mode.",
+            icon="🔍",
+        )
+
     with st.form("pipeline_form"):
         st.markdown("### Inputs")
 
@@ -834,45 +868,32 @@ if not is_replay:
                     "Personal files in data/DNA/ are gitignored — "
                     "they only appear if you've populated that folder."
                 ),
+                disabled=is_gap_mode,
             )
             dna_upload = st.file_uploader(
                 "...or upload (.csv)", type=["csv"], key="pipeline_dna_upload",
                 help="GEDmatch or MyHeritage match list. Upload takes precedence.",
+                disabled=is_gap_mode,
             )
 
-        mode_choice = st.radio(
-            "Mode",
-            options=["Auto-detect", "Query", "Audit", "Gap detection"],
-            horizontal=True,
-            index=0,
-            help=(
-                "**Auto-detect** routes based on query keywords "
-                "(`audit`, `questionable`, `N generations`, …) — "
-                "convenient but invisible.\n\n"
-                "**Query** — investigate a specific person/relationship "
-                "(full pipeline).\n\n"
-                "**Audit** — walk every parent-child link in a subtree "
-                "rooted at the target person.\n\n"
-                "**Gap detection** — scan the GEDCOM for persons missing "
-                "parent links and rank them by available evidence."
-            ),
-        )
         query = st.text_input(
             "Research query",
             value="Who were the parents of John F. Kennedy?",
             help=(
                 "In Auto-detect, phrases like 'audit my tree' or "
-                "'going back 3 generations' will trigger Audit mode."
+                "'going back 3 generations' will trigger Audit mode. "
+                "Ignored in Gap detection mode."
             ),
+            disabled=is_gap_mode,
         )
-        st.markdown("**Target person**")
+        st.markdown("**Target person**" + (" _(not used in Gap detection mode)_" if is_gap_mode else ""))
         c1, c2, c3 = st.columns([2, 1, 2])
         with c1:
-            tp_name = st.text_input("Name", value="John F. Kennedy")
+            tp_name = st.text_input("Name", value="John F. Kennedy", disabled=is_gap_mode)
         with c2:
-            tp_birth = st.text_input("Approx. birth year", value="1917")
+            tp_birth = st.text_input("Approx. birth year", value="1917", disabled=is_gap_mode)
         with c3:
-            tp_loc = st.text_input("Location", value="Brookline, MA")
+            tp_loc = st.text_input("Location", value="Brookline, MA", disabled=is_gap_mode)
 
         submitted = st.form_submit_button("Run", type="primary")
 
@@ -942,14 +963,9 @@ if not is_replay:
             )
 
         if gap_mode:
-            # Gap detection — summary view only. Per-gap pipeline runs are
-            # available via the CLI today; wiring them into Streamlit needs
-            # a multi-run UI (progress per gap, results comparison) that is
-            # out of scope for this UX session.
-            # TODO: dispatch top-N selected gaps to graph.invoke() per
-            # gap_search.py main(), with a progress bar across gaps.
-            st.info(f"Routing: **gap detection** ({mode_reason}).")
-
+            # Gap detection — submit handler does the scan once, then caches
+            # the result in session_state so the picker UI below can survive
+            # reruns triggered by widget interactions (selectbox / button).
             from tools.gap_scanner import find_research_candidates
             from tools.gedcom_parser import parse_gedcom_text
 
@@ -957,46 +973,16 @@ if not is_replay:
                 gap_persons = parse_gedcom_text(gedcom_text)
                 candidates = find_research_candidates(gap_persons)
 
-            st.write(
-                f"Parsed **{len(gap_persons)}** persons; found "
-                f"**{len(candidates)}** with missing parent links and "
-                f"enough data to investigate."
-            )
+            st.session_state["gap_candidates"] = candidates
+            st.session_state["gap_gedcom_text"] = gedcom_text
+            st.session_state["gap_persons_count"] = len(gap_persons)
+            st.session_state["gap_mode_reason"] = mode_reason
+            # No st.stop() and no further branches: gap mode is a scan-only
+            # path on submit. The persistent picker UI below renders the
+            # table and the single-gap-pipeline button. The elif on the
+            # next line ensures the standard pipeline does NOT also fire.
 
-            if candidates:
-                import pandas as pd
-                rows = []
-                for cand in candidates[:50]:
-                    p = cand["person"]
-                    rows.append({
-                        "Name": p.get("name") or "(unknown)",
-                        "Born": p.get("birth_date") or "-",
-                        "Place": p.get("birth_place") or "-",
-                        "Missing": cand["missing_role"],
-                        "Data fields": cand["data_fields"],
-                        "Auto-query": cand["query"],
-                    })
-                df = pd.DataFrame(rows)
-                st.dataframe(df, use_container_width=True, hide_index=True)
-                if len(candidates) > 50:
-                    st.caption(
-                        f"Showing top 50 of {len(candidates)} gaps "
-                        "(sorted by available evidence)."
-                    )
-                st.info(
-                    "To run the full pipeline on the top N gaps, use the CLI: "
-                    f"`python gap_search.py <gedcom> --run <N>`. "
-                    "(Streamlit dispatch for per-gap pipeline runs is TODO.)"
-                )
-            else:
-                st.success(
-                    "No gaps found that meet the data-richness threshold "
-                    "— every person with missing parents lacks enough fields "
-                    "to investigate productively."
-                )
-            st.stop()  # gap mode does not feed pipeline_result/family-tree
-
-        if audit_mode:
+        elif audit_mode:
             gens = extract_generations_from_query(query)
             st.info(
                 f"Routing: **audit mode** ({mode_reason}; {gens} generations). "
@@ -1110,6 +1096,179 @@ if not is_replay:
                 )
             render_audit_results(problems, pass2=pass2)
 
+    # ------------------------------------------------------------------
+    # Persistent gap-detection picker
+    # Renders whenever Gap detection is the active mode AND we've scanned
+    # a GEDCOM (results cached in session_state on form submit). Survives
+    # reruns triggered by selectbox / button interactions.
+    # ------------------------------------------------------------------
+    if is_gap_mode and st.session_state.get("gap_candidates") is not None:
+        gap_candidates = st.session_state["gap_candidates"]
+        gap_gedcom_text = st.session_state["gap_gedcom_text"]
+        gap_persons_count = st.session_state.get("gap_persons_count", 0)
+        gap_mode_reason = st.session_state.get("gap_mode_reason", "explicit Gap detection mode")
+
+        st.markdown("---")
+        st.info(f"Routing: **gap detection** ({gap_mode_reason}).")
+        st.write(
+            f"Parsed **{gap_persons_count}** persons; found "
+            f"**{len(gap_candidates)}** with missing parent links and "
+            f"enough data to investigate."
+        )
+
+        if not gap_candidates:
+            st.success(
+                "No gaps found that meet the data-richness threshold "
+                "— every person with missing parents lacks enough fields "
+                "to investigate productively."
+            )
+        else:
+            # Paginated view — 50 candidates per page, ranked by data-field
+            # count. Both the table and the per-gap selectbox draw from the
+            # same page slice, so picking a candidate from the selectbox
+            # always corresponds to a row visible in the table.
+            total = len(gap_candidates)
+            PAGE_SIZE = 50
+            total_pages = max(1, (total + PAGE_SIZE - 1) // PAGE_SIZE)
+
+            page = st.number_input(
+                f"Page (50 per page; {total_pages} total)",
+                min_value=1,
+                max_value=total_pages,
+                value=1,
+                step=1,
+                key="gap_page",
+                help=(
+                    f"All {total} candidates are ranked by data-field count "
+                    "(max 7). Page 1 shows the richest candidates."
+                ),
+            )
+            page = int(page)
+            page_start = (page - 1) * PAGE_SIZE
+            page_end = min(page_start + PAGE_SIZE, total)
+            visible_candidates = gap_candidates[page_start:page_end]
+
+            # Candidate table.
+            import pandas as pd
+            rows = []
+            for cand in visible_candidates:
+                p = cand["person"]
+                rows.append({
+                    "Name": p.get("name") or "(unknown)",
+                    "Born": p.get("birth_date") or "-",
+                    "Place": p.get("birth_place") or "-",
+                    "Missing": cand["missing_role"],
+                    "Data fields": cand["data_fields"],
+                    "Auto-query": cand["query"],
+                })
+            df = pd.DataFrame(rows)
+            st.dataframe(df, use_container_width=True, hide_index=True)
+            st.caption(
+                f"Showing candidates {page_start + 1}–{page_end} of {total} "
+                f"(page {page} of {total_pages})."
+            )
+
+            # Single-gap pipeline picker. The selectbox lists exactly the 50
+            # candidates visible in the table above on the current page.
+            st.markdown("### Investigate a single gap")
+            st.caption(
+                "Pick one candidate from the current page and run the full "
+                "pipeline on it. Each run takes 30–90 seconds and uses API "
+                "credits. Family Tree and DNA Analysis tabs render from the "
+                "result. To investigate a candidate from a different page, "
+                "change the page number above first."
+            )
+            cand_labels = [
+                f"{c['person'].get('name') or '(unknown)'} — missing "
+                f"{c['missing_role']}  ({c['data_fields']} fields)"
+                for c in visible_candidates
+            ]
+            selected_idx = st.selectbox(
+                "Gap candidate",
+                options=list(range(len(cand_labels))),
+                format_func=lambda i: cand_labels[i],
+                key="gap_pick_idx",
+            )
+            selected_cand = visible_candidates[selected_idx]
+            role = selected_cand["missing_role"]
+            if role == "both":
+                role = st.radio(
+                    "This person is missing both parents — investigate which first?",
+                    options=["father", "mother"],
+                    horizontal=True,
+                    key="gap_role_pick",
+                )
+
+            if st.button(
+                "Run full pipeline on this gap",
+                type="primary",
+                key="btn_gap_run_one",
+            ):
+                person = selected_cand["person"]
+                gap_initial_state = {
+                    "query": selected_cand["query"],
+                    "target_person": {
+                        "name": person.get("name") or "(unknown)",
+                        "approx_birth": person.get("birth_date"),
+                        "location": person.get("birth_place"),
+                        "gap_mode": True,
+                        "child_id": person["id"],
+                        "missing_role": role,
+                    },
+                    "gedcom_text": gap_gedcom_text,
+                    "gedcom_persons": [],
+                    "dna_csv": None,
+                    "retrieved_records": [],
+                    "profiles": [],
+                    "hypotheses": [],
+                    "critiques": [],
+                    "dna_analysis": None,
+                    "final_report": "",
+                    "revision_count": 0,
+                    "status": "running",
+                    "trace_log": [],
+                    "isolation_mode": None,
+                }
+
+                # Per-agent progress UI matching the live-pipeline tab.
+                with st.container(border=True):
+                    gap_status_placeholders = {}
+                    for agent_id, label in AGENT_ORDER:
+                        gap_status_placeholders[agent_id] = st.empty()
+                        render_agent_row(
+                            gap_status_placeholders[agent_id], label, "waiting"
+                        )
+
+                with st.spinner(
+                    f"Investigating {person.get('name') or 'this gap'}..."
+                ):
+                    try:
+                        gap_result = run_pipeline(
+                            gap_initial_state, gap_status_placeholders
+                        )
+                    except Exception as exc:
+                        st.error(
+                            f"Pipeline failed: {type(exc).__name__}: {exc}"
+                        )
+                        raise
+
+                # Save trace under the standard path.
+                safe_label = "".join(
+                    ch if ch.isalnum() or ch in "-_" else "_"
+                    for ch in (
+                        f"gap_{person.get('name') or 'unknown'}_{role}"
+                    )
+                )
+                gap_trace_paths = save_trace(gap_result, label=safe_label)
+                st.session_state["pipeline_result"] = gap_result
+                st.session_state["trace_paths"] = gap_trace_paths
+
+                st.success(
+                    "Pipeline complete. Results below; Family Tree and DNA "
+                    "Analysis tabs also render from this run."
+                )
+                render_results(gap_result)
+
 
 # =====================================================================
 # TAB 2: FAMILY TREE
@@ -1143,9 +1302,90 @@ with tab_audit:
             "**Replay mode note:** Audit Pass 1 (deterministic Tier 1 + "
             "geographic checks) runs without an API key. Audit Pass 2 "
             "(LLM deep audit) requires `ANTHROPIC_API_KEY`; switch to "
-            "Live mode for that.",
+            "Live mode for it. Or load a saved audit run below to see "
+            "Pass 1 + Pass 2 results without any API calls.",
             icon="ℹ️",
         )
+
+    # ------------------------------------------------------------------
+    # Load saved audit (replay)
+    # Available in both Live and Replay modes — saved audits are useful
+    # reference artifacts in either mode.
+    # ------------------------------------------------------------------
+    saved_audits: list[tuple[str, Path]] = []
+    for src in (TRACES_DEMOS_DIR, TRACES_REDACTED_DIR):
+        if src.is_dir():
+            for jp in sorted(src.glob("audit_*.json")):
+                if jp.is_file() and not jp.name.endswith(".map.json"):
+                    label_prefix = "Demo" if src is TRACES_DEMOS_DIR else "Redacted"
+                    saved_audits.append((f"{label_prefix}: {jp.stem}", jp))
+
+    if saved_audits:
+        with st.expander("📂 Load a saved audit run (no API calls needed)", expanded=is_replay):
+            audit_options = ["(none — run live below)"] + [label for label, _ in saved_audits]
+            audit_path_by_label = {label: path for label, path in saved_audits}
+            selected_audit_label = st.selectbox(
+                "Saved audit",
+                options=audit_options,
+                index=0,
+                key="audit_replay_pick",
+                help=(
+                    "Picks a previously-saved audit run from "
+                    "`traces/demos/audit_*.json`. Loads Pass 1 + Pass 2 "
+                    "results directly — no GEDCOM parsing, no LLM calls."
+                ),
+            )
+            if (
+                selected_audit_label
+                and selected_audit_label != "(none — run live below)"
+            ):
+                audit_path = audit_path_by_label[selected_audit_label]
+                try:
+                    saved = json.loads(audit_path.read_text(encoding="utf-8"))
+                except Exception as exc:
+                    st.error(f"Could not load audit JSON: {exc}")
+                else:
+                    meta = saved.get("audit_metadata") or {}
+                    st.success(
+                        f"Loaded **{meta.get('label', '?')}** "
+                        f"(timestamp {meta.get('timestamp', '?')}). "
+                        f"Pass 1 ran in {meta.get('pass1_elapsed_sec', '?')}s; "
+                        f"Pass 2 in "
+                        f"{meta.get('pass2_elapsed_sec', '— skipped')}s."
+                    )
+
+                    # Push into the same session_state slots the live path uses,
+                    # so the existing render_audit_results path renders without
+                    # changes.
+                    pass1 = saved.get("pass1_results") or []
+                    pass2 = saved.get("pass2_results")
+                    root_loaded = saved.get("root") or {}
+                    subtree_loaded = saved.get("subtree") or {}
+                    gens_loaded = saved.get("generations", "?")
+
+                    st.write(
+                        f"Root: **{root_loaded.get('name', '?')}** "
+                        f"(`{root_loaded.get('id', '?')}`); "
+                        f"{len(subtree_loaded.get('persons') or [])} persons in "
+                        f"the {gens_loaded}-generation subtree; "
+                        f"{len(pass1)} relationships audited."
+                    )
+
+                    n_imp = sum(1 for r in pass1 if r.get("severity") == "impossible")
+                    n_flag = sum(1 for r in pass1 if r.get("severity") == "flagged")
+                    n_ok = sum(1 for r in pass1 if r.get("severity") == "ok")
+                    st.caption(
+                        f"Pass 1: {n_imp} impossible, {n_flag} flagged, {n_ok} ok."
+                    )
+
+                    render_audit_results(pass1, pass2=pass2)
+
+                    if pass2 is None:
+                        st.caption(
+                            "_(This saved run skipped Pass 2 because Pass 1 found "
+                            "no questionable relationships.)_"
+                        )
+        st.markdown("---")
 
     aud_gedcoms = discover_gedcom_files()
     c_sel, c_up = st.columns(2)
