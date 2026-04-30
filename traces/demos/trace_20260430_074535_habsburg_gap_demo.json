@@ -1,0 +1,1302 @@
+{
+  "trace_metadata": {
+    "timestamp": "20260430_074535",
+    "label": "habsburg_gap_demo",
+    "saved_by": "tools.trace_writer.save_trace"
+  },
+  "query": "Who is the mother of Albert I von Ungarn, born 1016 in Gnesen?",
+  "target_person": {
+    "name": "Albert I von Ungarn",
+    "approx_birth": "1016",
+    "location": "Gnesen",
+    "gap_mode": true,
+    "child_id": "@I65@",
+    "missing_role": "mother"
+  },
+  "status": "complete",
+  "revision_count": 0,
+  "gedcom_source": {
+    "sha256": "8e1b2e53d406207ae6ba57192625043e47b3257d52f6751e6f5a59426190678a",
+    "length_chars": 9833137
+  },
+  "gedcom_persons_count": 34020,
+  "retrieved_records": [
+    {
+      "record_id": "gedcom:@I65@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "subject",
+      "match_score": 1.0,
+      "data": {
+        "id": "@I65@",
+        "name": "Albert I von Ungarn",
+        "first_name": "Albert I von",
+        "surname": "Ungarn",
+        "sex": "M",
+        "birth_date": "1016",
+        "birth_place": "Gnesen",
+        "death_date": "JUL 1063",
+        "death_place": "Wieselburg",
+        "father_id": "@I8926@",
+        "mother_id": "@I8918@",
+        "spouse_ids": [
+          "@I4215@",
+          "@I21423@"
+        ],
+        "children_ids": [
+          "@I8945@",
+          "@I109@",
+          "@I8947@",
+          "@I4220@",
+          "@I111@",
+          "@I8951@",
+          "@I8949@",
+          "@I8943@",
+          "@I64@"
+        ],
+        "famc": [
+          "@F4535@"
+        ],
+        "fams": [
+          "@F65@",
+          "@F9426@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I8926@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "father",
+      "match_score": null,
+      "data": {
+        "id": "@I8926@",
+        "name": "Vasilius von Ungarn",
+        "first_name": "Vasilius von",
+        "surname": "Ungarn",
+        "sex": "M",
+        "birth_date": null,
+        "birth_place": null,
+        "death_date": "1037",
+        "death_place": null,
+        "father_id": "@I4209@",
+        "mother_id": "@I4203@",
+        "spouse_ids": [],
+        "children_ids": [
+          "@I8927@",
+          "@I4212@",
+          "@I65@"
+        ],
+        "famc": [
+          "@F2507@"
+        ],
+        "fams": [
+          "@F4535@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I8918@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "mother",
+      "match_score": 0.6014,
+      "data": {
+        "id": "@I8918@",
+        "name": "Maria von Ungarn",
+        "first_name": "Maria von",
+        "surname": "Ungarn",
+        "sex": "F",
+        "birth_date": "989",
+        "birth_place": null,
+        "death_date": "1026",
+        "death_place": null,
+        "father_id": "@I4201@",
+        "mother_id": "@I4202@",
+        "spouse_ids": [
+          "@I4207@"
+        ],
+        "children_ids": [
+          "@I1621@",
+          "@I4208@"
+        ],
+        "famc": [
+          "@F2505@",
+          "@F2506@"
+        ],
+        "fams": [
+          "@F4531@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I4207@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I4207@",
+        "name": "Otto Orseolo",
+        "first_name": "Otto",
+        "surname": "Orseolo",
+        "sex": "M",
+        "birth_date": null,
+        "birth_place": null,
+        "death_date": "1032",
+        "death_place": null,
+        "father_id": "@I34947@",
+        "mother_id": "@I34952@",
+        "spouse_ids": [
+          "@I8918@"
+        ],
+        "children_ids": [
+          "@I1621@",
+          "@I4208@"
+        ],
+        "famc": [
+          "@F15505@"
+        ],
+        "fams": [
+          "@F4531@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I1621@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I1621@",
+        "name": "Frowiza Orseolo",
+        "first_name": "Frowiza",
+        "surname": "Orseolo",
+        "sex": "F",
+        "birth_date": "1015",
+        "birth_place": null,
+        "death_date": "1071",
+        "death_place": null,
+        "father_id": "@I4207@",
+        "mother_id": "@I8918@",
+        "spouse_ids": [
+          "@I1619@"
+        ],
+        "children_ids": [],
+        "famc": [
+          "@F4531@"
+        ],
+        "fams": [
+          "@F1067@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I4208@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I4208@",
+        "name": "Peter von Ungarn",
+        "first_name": "Peter von",
+        "surname": "Ungarn",
+        "sex": "M",
+        "birth_date": "ABT 1008",
+        "birth_place": null,
+        "death_date": "1046",
+        "death_place": null,
+        "father_id": "@I4207@",
+        "mother_id": "@I8918@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F4531@"
+        ],
+        "fams": []
+      }
+    },
+    {
+      "record_id": "gedcom:@I1125@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "alt_mother",
+      "match_score": 0.4993,
+      "data": {
+        "id": "@I1125@",
+        "name": "Mathilde von Schwaben",
+        "first_name": "Mathilde von",
+        "surname": "Schwaben",
+        "sex": "F",
+        "birth_date": "ABT 988",
+        "birth_place": null,
+        "death_date": "29 JUL 1032",
+        "death_place": null,
+        "father_id": "@I1146@",
+        "mother_id": "@I1044@",
+        "spouse_ids": [
+          "@I1124@",
+          "@I9071@"
+        ],
+        "children_ids": [
+          "@I1151@",
+          "@I9068@",
+          "@I9197@",
+          "@I9198@"
+        ],
+        "famc": [
+          "@F713@"
+        ],
+        "fams": [
+          "@F767@",
+          "@F768@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I1124@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I1124@",
+        "name": "Konrad I von Kärnten",
+        "first_name": "Konrad I von",
+        "surname": "Kärnten",
+        "sex": "M",
+        "birth_date": null,
+        "birth_place": null,
+        "death_date": "1011",
+        "death_place": null,
+        "father_id": "@I1102@",
+        "mother_id": "@I1103@",
+        "spouse_ids": [
+          "@I1125@"
+        ],
+        "children_ids": [
+          "@I1151@"
+        ],
+        "famc": [
+          "@F749@"
+        ],
+        "fams": [
+          "@F767@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I9071@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I9071@",
+        "name": "Esiko von Ballenstedt",
+        "first_name": "Esiko von",
+        "surname": "Ballenstedt",
+        "sex": "M",
+        "birth_date": null,
+        "birth_place": null,
+        "death_date": "ABT 1060",
+        "death_place": null,
+        "father_id": "@I9072@",
+        "mother_id": "@I9073@",
+        "spouse_ids": [
+          "@I1125@"
+        ],
+        "children_ids": [
+          "@I9068@",
+          "@I9197@",
+          "@I9198@"
+        ],
+        "famc": [
+          "@F4597@"
+        ],
+        "fams": [
+          "@F768@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I1151@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I1151@",
+        "name": "Konrad II von Kärnten",
+        "first_name": "Konrad II von",
+        "surname": "Kärnten",
+        "sex": "M",
+        "birth_date": null,
+        "birth_place": null,
+        "death_date": "1039",
+        "death_place": null,
+        "father_id": "@I1124@",
+        "mother_id": "@I1125@",
+        "spouse_ids": [],
+        "children_ids": [
+          "@I1127@"
+        ],
+        "famc": [
+          "@F767@"
+        ],
+        "fams": [
+          "@F778@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I9068@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I9068@",
+        "name": "Adalbert II von Ballenstedt",
+        "first_name": "Adalbert II von",
+        "surname": "Ballenstedt",
+        "sex": "M",
+        "birth_date": "BEF 1032",
+        "birth_place": null,
+        "death_date": "ABT 1080",
+        "death_place": null,
+        "father_id": "@I9071@",
+        "mother_id": "@I1125@",
+        "spouse_ids": [
+          "@I9069@"
+        ],
+        "children_ids": [
+          "@I61@",
+          "@I9191@"
+        ],
+        "famc": [
+          "@F768@"
+        ],
+        "fams": [
+          "@F4595@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I9197@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I9197@",
+        "name": "Otto von Ballenstedt",
+        "first_name": "Otto von",
+        "surname": "Ballenstedt",
+        "sex": "M",
+        "birth_date": null,
+        "birth_place": null,
+        "death_date": null,
+        "death_place": null,
+        "father_id": "@I9071@",
+        "mother_id": "@I1125@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F768@"
+        ],
+        "fams": []
+      }
+    },
+    {
+      "record_id": "gedcom:@I9198@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I9198@",
+        "name": "Adelheid von Ballenstedt",
+        "first_name": "Adelheid von",
+        "surname": "Ballenstedt",
+        "sex": "F",
+        "birth_date": null,
+        "birth_place": null,
+        "death_date": null,
+        "death_place": null,
+        "father_id": "@I9071@",
+        "mother_id": "@I1125@",
+        "spouse_ids": [
+          "@I9199@"
+        ],
+        "children_ids": [],
+        "famc": [
+          "@F768@"
+        ],
+        "fams": [
+          "@F4648@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I1139@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "alt_mother",
+      "match_score": 0.4749,
+      "data": {
+        "id": "@I1139@",
+        "name": "Gisela von Bayern",
+        "first_name": "Gisela von",
+        "surname": "Bayern",
+        "sex": "F",
+        "birth_date": "985",
+        "birth_place": null,
+        "death_date": "07 MAY 1033",
+        "death_place": null,
+        "father_id": "@I1135@",
+        "mother_id": "@I1136@",
+        "spouse_ids": [
+          "@I1140@"
+        ],
+        "children_ids": [
+          "@I8913@",
+          "@I8914@"
+        ],
+        "famc": [
+          "@F772@"
+        ],
+        "fams": [
+          "@F774@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I1140@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I1140@",
+        "name": "Stephan I von Ungarn",
+        "first_name": "Stephan I von",
+        "surname": "Ungarn",
+        "sex": "M",
+        "birth_date": "975",
+        "birth_place": null,
+        "death_date": "14 AUG 1038",
+        "death_place": null,
+        "father_id": "@I4201@",
+        "mother_id": "@I4202@",
+        "spouse_ids": [
+          "@I1139@"
+        ],
+        "children_ids": [
+          "@I8913@",
+          "@I8914@"
+        ],
+        "famc": [
+          "@F2505@"
+        ],
+        "fams": [
+          "@F774@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I8913@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I8913@",
+        "name": "Otto von Ungarn",
+        "first_name": "Otto von",
+        "surname": "Ungarn",
+        "sex": "M",
+        "birth_date": "BEF 1002",
+        "birth_place": null,
+        "death_date": null,
+        "death_place": null,
+        "father_id": "@I1140@",
+        "mother_id": "@I1139@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F774@"
+        ],
+        "fams": []
+      }
+    },
+    {
+      "record_id": "gedcom:@I8914@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I8914@",
+        "name": "Emmerich von Ungarn",
+        "first_name": "Emmerich von",
+        "surname": "Ungarn",
+        "sex": "M",
+        "birth_date": "1007",
+        "birth_place": null,
+        "death_date": "02 NOV 1031",
+        "death_place": null,
+        "father_id": "@I1140@",
+        "mother_id": "@I1139@",
+        "spouse_ids": [
+          "@I8915@"
+        ],
+        "children_ids": [],
+        "famc": [
+          "@F774@"
+        ],
+        "fams": [
+          "@F4529@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I3024@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "alt_mother",
+      "match_score": 0.4728,
+      "data": {
+        "id": "@I3024@",
+        "name": "Emma von der Normandie",
+        "first_name": "Emma von der",
+        "surname": "Normandie",
+        "sex": "F",
+        "birth_date": "986",
+        "birth_place": null,
+        "death_date": "1052",
+        "death_place": null,
+        "father_id": "@I3019@",
+        "mother_id": "@I3018@",
+        "spouse_ids": [
+          "@I3025@",
+          "@I3026@"
+        ],
+        "children_ids": [
+          "@I3027@"
+        ],
+        "famc": [
+          "@F1891@"
+        ],
+        "fams": [
+          "@F1894@",
+          "@F1895@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I3025@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I3025@",
+        "name": "Ethelred II von England",
+        "first_name": "Ethelred II von",
+        "surname": "England",
+        "sex": "M",
+        "birth_date": "968",
+        "birth_place": null,
+        "death_date": "1016",
+        "death_place": null,
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I3024@"
+        ],
+        "children_ids": [
+          "@I3027@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F1894@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I3026@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I3026@",
+        "name": "Knut von Dänemark und Norwegen",
+        "first_name": "Knut von",
+        "surname": "Dänemark und Norwegen",
+        "sex": "M",
+        "birth_date": null,
+        "birth_place": null,
+        "death_date": "12 NOV 1035",
+        "death_place": null,
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I3024@"
+        ],
+        "children_ids": [],
+        "famc": [],
+        "fams": [
+          "@F1895@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I3027@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I3027@",
+        "name": "Eduard III von England",
+        "first_name": "Eduard III von",
+        "surname": "England",
+        "sex": "M",
+        "birth_date": "1004",
+        "birth_place": null,
+        "death_date": "1066",
+        "death_place": null,
+        "father_id": "@I3025@",
+        "mother_id": "@I3024@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F1894@"
+        ],
+        "fams": []
+      }
+    },
+    {
+      "record_id": "gedcom:@I1107@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "alt_mother",
+      "match_score": 0.472,
+      "data": {
+        "id": "@I1107@",
+        "name": "Gisela von Schwaben",
+        "first_name": "Gisela von",
+        "surname": "Schwaben",
+        "sex": "F",
+        "birth_date": "11 NOV 990",
+        "birth_place": null,
+        "death_date": "14 FEB 1043",
+        "death_place": null,
+        "father_id": "@I1146@",
+        "mother_id": "@I1044@",
+        "spouse_ids": [
+          "@I1106@",
+          "@I1126@",
+          "@I1150@"
+        ],
+        "children_ids": [
+          "@I1108@",
+          "@I29933@",
+          "@I1153@",
+          "@I29932@",
+          "@I1149@",
+          "@I1148@"
+        ],
+        "famc": [
+          "@F713@"
+        ],
+        "fams": [
+          "@F751@",
+          "@F752@",
+          "@F753@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I1106@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I1106@",
+        "name": "Konrad II des Heiligen Römischen Reiches",
+        "first_name": "Konrad II des",
+        "surname": "Heiligen Römischen Reiches",
+        "sex": "M",
+        "birth_date": "990",
+        "birth_place": null,
+        "death_date": "1039",
+        "death_place": null,
+        "father_id": "@I1104@",
+        "mother_id": "@I1105@",
+        "spouse_ids": [
+          "@I1107@"
+        ],
+        "children_ids": [
+          "@I1108@",
+          "@I29933@"
+        ],
+        "famc": [
+          "@F750@"
+        ],
+        "fams": [
+          "@F751@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I1126@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I1126@",
+        "name": "Brun I von Braunschweig",
+        "first_name": "Brun I von",
+        "surname": "Braunschweig",
+        "sex": "M",
+        "birth_date": "BET 960 AND 980",
+        "birth_place": null,
+        "death_date": "1016",
+        "death_place": null,
+        "father_id": "@I21358@",
+        "mother_id": "@I23859@",
+        "spouse_ids": [
+          "@I1107@"
+        ],
+        "children_ids": [
+          "@I1153@",
+          "@I29932@"
+        ],
+        "famc": [
+          "@F9390@"
+        ],
+        "fams": [
+          "@F752@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I1150@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I1150@",
+        "name": "Ernst I von Schwaben",
+        "first_name": "Ernst I von",
+        "surname": "Schwaben",
+        "sex": "M",
+        "birth_date": "BEF 984",
+        "birth_place": null,
+        "death_date": "31 MAY 1015",
+        "death_place": null,
+        "father_id": "@I862@",
+        "mother_id": "@I863@",
+        "spouse_ids": [
+          "@I1107@"
+        ],
+        "children_ids": [
+          "@I1149@",
+          "@I1148@"
+        ],
+        "famc": [
+          "@F605@"
+        ],
+        "fams": [
+          "@F753@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I1108@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I1108@",
+        "name": "Heinrich III des Heiligen Römischen Reiches",
+        "first_name": "Heinrich III des",
+        "surname": "Heiligen Römischen Reiches",
+        "sex": "M",
+        "birth_date": "28 OCT 1017",
+        "birth_place": null,
+        "death_date": "05 OCT 1056",
+        "death_place": "Bodfeld, Elbingerode, Oberharz am Brocken, Harz, Sachsen-Anhalt, Deutschland",
+        "father_id": "@I1106@",
+        "mother_id": "@I1107@",
+        "spouse_ids": [
+          "@I1110@",
+          "@I1109@"
+        ],
+        "children_ids": [
+          "@I1111@",
+          "@I1113@",
+          "@I591@"
+        ],
+        "famc": [
+          "@F751@"
+        ],
+        "fams": [
+          "@F755@",
+          "@F754@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I29933@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I29933@",
+        "name": "Mathilde von Speyer",
+        "first_name": "Mathilde von",
+        "surname": "Speyer",
+        "sex": "F",
+        "birth_date": "1000",
+        "birth_place": null,
+        "death_date": "1043",
+        "death_place": null,
+        "father_id": "@I1106@",
+        "mother_id": "@I1107@",
+        "spouse_ids": [
+          "@I29934@"
+        ],
+        "children_ids": [],
+        "famc": [
+          "@F751@"
+        ],
+        "fams": [
+          "@F13070@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I1153@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I1153@",
+        "name": "Ludolf Billungen von Braunschweig",
+        "first_name": "Ludolf Billungen von",
+        "surname": "Braunschweig",
+        "sex": "M",
+        "birth_date": "1006",
+        "birth_place": null,
+        "death_date": "12 APR 1038",
+        "death_place": null,
+        "father_id": "@I1126@",
+        "mother_id": "@I1107@",
+        "spouse_ids": [
+          "@I23858@"
+        ],
+        "children_ids": [
+          "@I23852@",
+          "@I23924@",
+          "@I34933@"
+        ],
+        "famc": [
+          "@F752@"
+        ],
+        "fams": [
+          "@F779@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I29932@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I29932@",
+        "name": "Liudolf von Friesland",
+        "first_name": "Liudolf von",
+        "surname": "Friesland",
+        "sex": "M",
+        "birth_date": null,
+        "birth_place": null,
+        "death_date": "23 APR 1038",
+        "death_place": null,
+        "father_id": "@I1126@",
+        "mother_id": "@I1107@",
+        "spouse_ids": [
+          "@I34932@"
+        ],
+        "children_ids": [
+          "@I34934@",
+          "@I29931@",
+          "@I27063@",
+          "@I34933@"
+        ],
+        "famc": [
+          "@F752@"
+        ],
+        "fams": [
+          "@F13069@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I1149@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I1149@",
+        "name": "Ernst II von Schwaben",
+        "first_name": "Ernst II von",
+        "surname": "Schwaben",
+        "sex": "M",
+        "birth_date": "1010",
+        "birth_place": null,
+        "death_date": "17 AUG 1030",
+        "death_place": null,
+        "father_id": "@I1150@",
+        "mother_id": "@I1107@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F753@"
+        ],
+        "fams": []
+      }
+    },
+    {
+      "record_id": "gedcom:@I1148@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I1148@",
+        "name": "Hermann IV von Schwaben",
+        "first_name": "Hermann IV von",
+        "surname": "Schwaben",
+        "sex": "M",
+        "birth_date": "1015",
+        "birth_place": null,
+        "death_date": "28 JUL 1038",
+        "death_place": "Trento",
+        "father_id": "@I1150@",
+        "mother_id": "@I1107@",
+        "spouse_ids": [
+          "@I1152@"
+        ],
+        "children_ids": [
+          "@I10683@",
+          "@I10744@",
+          "@I10851@"
+        ],
+        "famc": [
+          "@F753@"
+        ],
+        "fams": [
+          "@F777@"
+        ]
+      }
+    }
+  ],
+  "profiles": [
+    {
+      "profile_id": "profile:@I65@",
+      "subject_record_id": "gedcom:@I65@",
+      "subject_name": "Albert I von Ungarn",
+      "disambiguation": {
+        "query": "Who is the mother of Albert I von Ungarn, born 1016 in Gnesen?",
+        "query_criteria": {
+          "name": "Albert I von Ungarn",
+          "approx_birth": "1016",
+          "location": "Gnesen",
+          "gap_mode": true,
+          "child_id": "@I65@",
+          "missing_role": "mother"
+        },
+        "candidates_considered": [
+          {
+            "record_id": "gedcom:@I65@",
+            "name": "Albert I von Ungarn",
+            "score": 2.5,
+            "reasons": [
+              "name similarity 1.0",
+              "exact birth year match (1016)",
+              "birth place tokens match: ['gnesen']"
+            ],
+            "status": "SELECTED"
+          }
+        ]
+      },
+      "facts": [
+        {
+          "field": "name",
+          "value": "Albert I von Ungarn",
+          "sources": [
+            "gedcom:@I65@"
+          ]
+        },
+        {
+          "field": "first_name",
+          "value": "Albert I von",
+          "sources": [
+            "gedcom:@I65@"
+          ]
+        },
+        {
+          "field": "surname",
+          "value": "Ungarn",
+          "sources": [
+            "gedcom:@I65@"
+          ]
+        },
+        {
+          "field": "sex",
+          "value": "M",
+          "sources": [
+            "gedcom:@I65@"
+          ]
+        },
+        {
+          "field": "birth_date",
+          "value": "1016",
+          "sources": [
+            "gedcom:@I65@"
+          ]
+        },
+        {
+          "field": "birth_place",
+          "value": "Gnesen",
+          "sources": [
+            "gedcom:@I65@"
+          ]
+        },
+        {
+          "field": "death_date",
+          "value": "JUL 1063",
+          "sources": [
+            "gedcom:@I65@"
+          ]
+        },
+        {
+          "field": "death_place",
+          "value": "Wieselburg",
+          "sources": [
+            "gedcom:@I65@"
+          ]
+        }
+      ],
+      "family": {
+        "father": {
+          "name": "Vasilius von Ungarn",
+          "record_id": "gedcom:@I8926@"
+        },
+        "mother": {
+          "name": "Maria von Ungarn",
+          "record_id": "gedcom:@I8918@"
+        },
+        "spouses": [],
+        "children": []
+      },
+      "gaps": [
+        "Birth date (1016) is a year only with no month or day; no corroborating source beyond the single GEDCOM record.",
+        "Death date is month and year only (JUL 1063); exact day is unknown.",
+        "No independent source corroborates birth place (Gnesen) or death place (Wieselburg).",
+        "No occupation, religion, or burial information recorded.",
+        "All biographical data derives from a single source (gedcom:@I65@); no external records provide corroboration.",
+        "The record lists two spouses, but no marriage dates, marriage places, or details are provided.",
+        "Mother listed in subject record (gedcom:@I8918@) does not include the subject among her children_ids, suggesting a possible inconsistency in the family linkage.",
+        "Mother's death date (1026) predates the subject's birth date (1016) by only ten years, which is plausible but unverified by any additional source."
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "hypothesis_id": "hyp:@I65@:@I8918@:mother",
+      "subject_id": "@I65@",
+      "related_id": "@I8918@",
+      "proposed_relationship": "mother of",
+      "evidence_chain": [
+        {
+          "claim": "Subject Albert I von Ungarn (born 1016) has mother_id field referencing @I8918@, directly linking Maria von Ungarn as his mother in the GEDCOM record.",
+          "source": "gedcom:@I65@"
+        },
+        {
+          "claim": "Maria von Ungarn (born 989, died 1026) is a female individual whose lifespan is consistent with having borne a child in 1016.",
+          "source": "gedcom:@I8918@"
+        },
+        {
+          "claim": "The age delta of 27 years between Maria (born 989) and Albert (born 1016) is biologically and historically plausible for a mother-child relationship.",
+          "source": "gedcom:@I65@"
+        },
+        {
+          "claim": "Maria von Ungarn shares the surname 'Ungarn' consistent with the subject's own name 'Albert I von Ungarn', suggesting a familial connection within the same dynastic house.",
+          "source": "gedcom:@I8918@"
+        },
+        {
+          "claim": "Maria von Ungarn died in 1026, ten years after Albert's recorded birth of 1016, meaning she was alive at the time of his birth and for his early childhood, which is consistent with a maternal relationship.",
+          "source": "gedcom:@I8918@"
+        }
+      ],
+      "confidence_score": 0.52,
+      "stated_weaknesses": [
+        "Critical inconsistency: Maria von Ungarn's children_ids (@I1621@ and @I4208@) do not include the subject @I65@, directly contradicting the mother_id link in the subject's record.",
+        "All evidence derives from a single GEDCOM file; no independent external historical or documentary sources corroborate this mother-child relationship.",
+        "Maria's birth place is unknown, so geographic proximity to the subject's birth place of Gnesen cannot be assessed.",
+        "The subject's birth date (1016) is a year-only estimate with no corroborating source, making precise age-gap calculations unreliable.",
+        "No marriage or family record (FAMC/FAMS cross-reference) unambiguously links Maria as mother in a shared family unit with the subject; the subject's FAMC references @F4535@ but Maria's FAMS only lists @F4531@, not @F4535@.",
+        "The relationship may reflect a data entry error or a mis-transcription in the GEDCOM source, given the bidirectional inconsistency."
+      ],
+      "reasoning_narrative": "The primary evidence for this hypothesis is the mother_id field in Albert I von Ungarn's GEDCOM record, which explicitly points to Maria von Ungarn (@I8918@). This direct linkage is the strongest single piece of evidence available. Supporting this, the age gap of 27 years between Maria (born 989) and Albert (born 1016) falls well within the biologically plausible range for a mother-child relationship in medieval Europe, and Maria was still alive at Albert's birth and for approximately the first ten years of his life. The shared dynastic surname 'Ungarn' is also consistent with familial membership in the same house. However, a serious inconsistency undermines confidence: Maria's own record lists only two children (@I1621@ and @I4208@), and Albert (@I65@) is absent from that list. This bidirectional inconsistency — where the child record claims a mother who does not reciprocally claim that child — strongly suggests either a GEDCOM data entry error, a later editorial addition without cross-referencing, or a possible confusion with another individual. Furthermore, the subject's FAMC family (@F4535@) does not correspond to Maria's FAMS family (@F4531@), further weakening the structural linkage. Until a corroborating source resolves the children_ids discrepancy, confidence must remain below 0.6 despite the explicit mother_id reference.",
+      "intermediate_steps": [],
+      "alternatives_considered": [
+        "Maria von Ungarn could be a stepmother or adoptive mother rather than biological mother, which might explain why she is not listed among her biological children.",
+        "The mother_id field may have been incorrectly assigned to @I8918@ when the actual mother was a different, unrecorded individual, possibly another woman of the Ungarn dynasty.",
+        "Albert's father (@I8926@) may have had a different wife who was Albert's biological mother, and the Maria link may be a research error conflating two women with similar names or affiliations.",
+        "Maria von Ungarn could be a maternal aunt or close female relative whose identity was confused with the mother in later genealogical compilation."
+      ],
+      "llm_raw_response": "```json\n{\n  \"proposed_relationship\": \"mother of\",\n  \"evidence_chain\": [\n    {\n      \"claim\": \"Subject Albert I von Ungarn (born 1016) has mother_id field referencing @I8918@, directly linking Maria von Ungarn as his mother in the GEDCOM record.\",\n      \"source\": \"gedcom:@I65@\"\n    },\n    {\n      \"claim\": \"Maria von Ungarn (born 989, died 1026) is a female individual whose lifespan is consistent with having borne a child in 1016.\",\n      \"source\": \"gedcom:@I8918@\"\n    },\n    {\n      \"claim\": \"The age delta of 27 years between Maria (born 989) and Albert (born 1016) is biologically and historically plausible for a mother-child relationship.\",\n      \"source\": \"gedcom:@I65@\"\n    },\n    {\n      \"claim\": \"Maria von Ungarn shares the surname 'Ungarn' consistent with the subject's own name 'Albert I von Ungarn', suggesting a familial connection within the same dynastic house.\",\n      \"source\": \"gedcom:@I8918@\"\n    },\n    {\n      \"claim\": \"Maria von Ungarn died in 1026, ten years after Albert's recorded birth of 1016, meaning she was alive at the time of his birth and for his early childhood, which is consistent with a maternal relationship.\",\n      \"source\": \"gedcom:@I8918@\"\n    }\n  ],\n  \"confidence_score\": 0.52,\n  \"stated_weaknesses\": [\n    \"Critical inconsistency: Maria von Ungarn's children_ids (@I1621@ and @I4208@) do not include the subject @I65@, directly contradicting the mother_id link in the subject's record.\",\n    \"All evidence derives from a single GEDCOM file; no independent external historical or documentary sources corroborate this mother-child relationship.\",\n    \"Maria's birth place is unknown, so geographic proximity to the subject's birth place of Gnesen cannot be assessed.\",\n    \"The subject's birth date (1016) is a year-only estimate with no corroborating source, making precise age-gap calculations unreliable.\",\n    \"No marriage or family record (FAMC/FAMS cross-reference) unambiguously links Maria as mother in a shared family unit with the subject; the subject's FAMC references @F4535@ but Maria's FAMS only lists @F4531@, not @F4535@.\",\n    \"The relationship may reflect a data entry error or a mis-transcription in the GEDCOM source, given the bidirectional inconsistency.\"\n  ],\n  \"reasoning_narrative\": \"The primary evidence for this hypothesis is the mother_id field in Albert I von Ungarn's GEDCOM record, which explicitly points to Maria von Ungarn (@I8918@). This direct linkage is the strongest single piece of evidence available. Supporting this, the age gap of 27 years between Maria (born 989) and Albert (born 1016) falls well within the biologically plausible range for a mother-child relationship in medieval Europe, and Maria was still alive at Albert's birth and for approximately the first ten years of his life. The shared dynastic surname 'Ungarn' is also consistent with familial membership in the same house. However, a serious inconsistency undermines confidence: Maria's own record lists only two children (@I1621@ and @I4208@), and Albert (@I65@) is absent from that list. This bidirectional inconsistency — where the child record claims a mother who does not reciprocally claim that child — strongly suggests either a GEDCOM data entry error, a later editorial addition without cross-referencing, or a possible confusion with another individual. Furthermore, the subject's FAMC family (@F4535@) does not correspond to Maria's FAMS family (@F4531@), further weakening the structural linkage. Until a corroborating source resolves the children_ids discrepancy, confidence must remain below 0.6 despite the explicit mother_id reference.\",\n  \"alternatives_considered\": [\n    \"Maria von Ungarn could be a stepmother or adoptive mother rather than biological mother, which might explain why she is not listed among her biological children.\",\n    \"The mother_id field may have been incorrectly assigned to @I8918@ when the actual mother was a different, unrecorded individual, possibly another woman of the Ungarn dynasty.\",\n    \"Albert's father (@I8926@) may have had a different wife who was Albert's biological mother, and the Maria link may be a research error conflating two women with similar names or affiliations.\",\n    \"Maria von Ungarn could be a maternal aunt or close female relative whose identity was confused with the mother in later genealogical compilation.\"\n  ]\n}\n```"
+    }
+  ],
+  "critiques": [
+    {
+      "hypothesis_id": "hyp:@I65@:@I8918@:mother",
+      "verdict": "flag_uncertain",
+      "issues_found": [
+        "Bidirectional inconsistency: subject @I65@ lists @I8918@ as mother_id, but Maria's children_ids (@I1621@, @I4208@) do not include @I65@",
+        "Family unit mismatch: subject's FAMC is @F4535@, but Maria's FAMS is @F4531@ — they do not share a family record, which is the standard GEDCOM mechanism for confirming parent-child links",
+        "Subject's father is listed as Vasilius von Ungarn (@I8926@), but Maria's only spouse is @I4207@, not @I8926@ — the parental triangle does not close",
+        "Maria died in 1026, when Albert would have been ~10; this is plausible but means no later corroborating events exist",
+        "Shared surname 'von Ungarn' is a toponymic/dynastic label, not evidence of a direct mother-child link — many unrelated members of the Hungarian royal house carry it",
+        "Single-source GEDCOM with no external corroboration; the historical Albert I (likely Adalbert, son of Béla I, or a confusion with another Árpád) has well-documented parentage that should be checkable",
+        "Birth in Gnesen (Poland) for an 'Árpád' Hungarian is unusual and itself suggests possible record confusion or conflation"
+      ],
+      "evidence_cited": [
+        "gedcom:@I65@",
+        "gedcom:@I8918@",
+        "FAMC @F4535@",
+        "FAMS @F4531@",
+        "spouse_ids of @I8918@",
+        "children_ids of @I8918@"
+      ],
+      "confidence_in_critique": 0.75,
+      "justification": "The mother_id pointer exists in the subject's record and Tier 1 checks pass, but three independent structural inconsistencies (Maria's children list excludes the subject, the FAMC/FAMS family records do not match, and Maria's spouse is not the subject's father) collectively undermine the link. The relationship cannot be confirmed or definitively rejected from the GEDCOM alone, warranting flag_uncertain rather than accept or reject.",
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "mother"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "mother"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "mother alive at birth holds",
+          "role": "mother"
+        }
+      ],
+      "geo_result": null,
+      "dna_relevant": null,
+      "isolation_mode": "filtered"
+    }
+  ],
+  "dna_analysis": null,
+  "trace_log": [
+    "record_scout: enter",
+    "record_scout: parsed 34020 persons from GEDCOM",
+    "record_scout: gap_mode — searching for mother of Albert I von Ungarn (@I65@)",
+    "record_scout: gap_mode — 5 parent candidates (top score 0.6014)",
+    "record_scout: gap_mode — injected mother_id=@I8918@ into subject record for downstream agents",
+    "record_scout: built 31 GEDCOM record objects (including family context)",
+    "record_scout: gap_mode — skipping external source search",
+    "record_scout: exit",
+    "dna_analyst: enter",
+    "dna_analyst: no DNA data provided — skipping",
+    "dna_analyst: exit",
+    "profile_synthesizer: enter",
+    "profile_synthesizer: disambiguated 1 candidates -> selected Albert I von Ungarn (score 2.5)",
+    "profile_synthesizer: LLM synthesis produced 8 facts, 8 gaps",
+    "profile_synthesizer: built profile with 8 cited facts, 8 gaps",
+    "profile_synthesizer: exit",
+    "relationship_hypothesizer: enter",
+    "relationship_hypothesizer: 1 targets for Albert I von Ungarn: ['mother']",
+    "relationship_hypothesizer: built hypothesis hyp:@I65@:@I8918@:mother (confidence 0.52, 5 evidence items)",
+    "relationship_hypothesizer: generated 1 hypotheses",
+    "relationship_hypothesizer: exit",
+    "adversarial_critic: enter",
+    "adversarial_critic: isolation_mode=filtered, filtered 1 hypotheses, stripped 4 internal field types",
+    "adversarial_critic: hyp:@I65@:@I8918@:mother tier1 (5 checks, 0 impossible)",
+    "adversarial_critic: hyp:@I65@:@I8918@:mother LLM verdict=flag_uncertain conf=0.75",
+    "adversarial_critic: no rejects; status=complete",
+    "adversarial_critic: produced 1 critiques",
+    "adversarial_critic: exit",
+    "final_report_writer: enter",
+    "final_report_writer: composed report (5944 chars, 81 lines)",
+    "final_report_writer: exit"
+  ],
+  "final_report": "# Genealogical Research Report\n\n**Query:** Who is the mother of Albert I von Ungarn, born 1016 in Gnesen?\n**Target:** Albert I von Ungarn (approx. born 1016), Gnesen\n**Pipeline status:** complete  (revision count 0)\n**Report status: All findings accepted**\n\n## Subject Profiles\n\n### Albert I von Ungarn\n`profile:@I65@` — source record `gedcom:@I65@`\n\n**Disambiguation:** selected from 1 candidates\n- ✓ `gedcom:@I65@` Albert I von Ungarn — score 2.5\n    - name similarity 1.0\n    - exact birth year match (1016)\n    - birth place tokens match: ['gnesen']\n\n**Facts:**\n- name: Albert I von Ungarn  _(gedcom:@I65@)_\n- first_name: Albert I von  _(gedcom:@I65@)_\n- surname: Ungarn  _(gedcom:@I65@)_\n- sex: M  _(gedcom:@I65@)_\n- birth_date: 1016  _(gedcom:@I65@)_\n- birth_place: Gnesen  _(gedcom:@I65@)_\n- death_date: JUL 1063  _(gedcom:@I65@)_\n- death_place: Wieselburg  _(gedcom:@I65@)_\n\n**Family references:** father=Vasilius von Ungarn; mother=Maria von Ungarn\n\n**Gaps and concerns (from Synthesizer):**\n- Birth date (1016) is a year only with no month or day; no corroborating source beyond the single GEDCOM record.\n- Death date is month and year only (JUL 1063); exact day is unknown.\n- No independent source corroborates birth place (Gnesen) or death place (Wieselburg).\n- No occupation, religion, or burial information recorded.\n- All biographical data derives from a single source (gedcom:@I65@); no external records provide corroboration.\n- The record lists two spouses, but no marriage dates, marriage places, or details are provided.\n- Mother listed in subject record (gedcom:@I8918@) does not include the subject among her children_ids, suggesting a possible inconsistency in the family linkage.\n- Mother's death date (1026) predates the subject's birth date (1016) by only ten years, which is plausible but unverified by any additional source.\n\n## Accepted Findings\n\n### mother of — `hyp:@I65@:@I8918@:mother`\n**Subject:** `@I65@`  **Related:** `@I8918@`  **Hypothesizer confidence:** 0.52\n\n**Evidence chain:**\n- (gedcom:@I65@) Subject Albert I von Ungarn (born 1016) has mother_id field referencing @I8918@, directly linking Maria von Ungarn as his mother in the GEDCOM record.\n- (gedcom:@I8918@) Maria von Ungarn (born 989, died 1026) is a female individual whose lifespan is consistent with having borne a child in 1016.\n- (gedcom:@I65@) The age delta of 27 years between Maria (born 989) and Albert (born 1016) is biologically and historically plausible for a mother-child relationship.\n- (gedcom:@I8918@) Maria von Ungarn shares the surname 'Ungarn' consistent with the subject's own name 'Albert I von Ungarn', suggesting a familial connection within the same dynastic house.\n- (gedcom:@I8918@) Maria von Ungarn died in 1026, ten years after Albert's recorded birth of 1016, meaning she was alive at the time of his birth and for his early childhood, which is consistent with a maternal relationship.\n\n**Stated weaknesses (Hypothesizer's own):**\n- Critical inconsistency: Maria von Ungarn's children_ids (@I1621@ and @I4208@) do not include the subject @I65@, directly contradicting the mother_id link in the subject's record.\n- All evidence derives from a single GEDCOM file; no independent external historical or documentary sources corroborate this mother-child relationship.\n- Maria's birth place is unknown, so geographic proximity to the subject's birth place of Gnesen cannot be assessed.\n- The subject's birth date (1016) is a year-only estimate with no corroborating source, making precise age-gap calculations unreliable.\n- No marriage or family record (FAMC/FAMS cross-reference) unambiguously links Maria as mother in a shared family unit with the subject; the subject's FAMC references @F4535@ but Maria's FAMS only lists @F4531@, not @F4535@.\n- The relationship may reflect a data entry error or a mis-transcription in the GEDCOM source, given the bidirectional inconsistency.\n\n### Critique: ? FLAG UNCERTAIN\n**Critic self-confidence:** 0.75  **Isolation mode:** `filtered`\n\n**Justification:** The mother_id pointer exists in the subject's record and Tier 1 checks pass, but three independent structural inconsistencies (Maria's children list excludes the subject, the FAMC/FAMS family records do not match, and Maria's spouse is not the subject's father) collectively undermine the link. The relationship cannot be confirmed or definitively rejected from the GEDCOM alone, warranting flag_uncertain rather than accept or reject.\n\n**Tier 1 deterministic checks:**\n- [ok] death_before_birth: death is not before birth\n- [ok] implausible_lifespan: lifespan within 120 years\n- [ok] [mother] parent_younger_than_child: parent is not younger than child\n- [ok] [mother] parent_too_young_at_birth: parent age plausible (>= 12)\n- [ok] [mother] parent_died_before_conception: mother alive at birth holds\n\n**Issues found by the Critic:**\n- Bidirectional inconsistency: subject @I65@ lists @I8918@ as mother_id, but Maria's children_ids (@I1621@, @I4208@) do not include @I65@\n- Family unit mismatch: subject's FAMC is @F4535@, but Maria's FAMS is @F4531@ — they do not share a family record, which is the standard GEDCOM mechanism for confirming parent-child links\n- Subject's father is listed as Vasilius von Ungarn (@I8926@), but Maria's only spouse is @I4207@, not @I8926@ — the parental triangle does not close\n- Maria died in 1026, when Albert would have been ~10; this is plausible but means no later corroborating events exist\n- Shared surname 'von Ungarn' is a toponymic/dynastic label, not evidence of a direct mother-child link — many unrelated members of the Hungarian royal house carry it\n- Single-source GEDCOM with no external corroboration; the historical Albert I (likely Adalbert, son of Béla I, or a confusion with another Árpád) has well-documented parentage that should be checkable\n- Birth in Gnesen (Poland) for an 'Árpád' Hungarian is unusual and itself suggests possible record confusion or conflation\n"
+}

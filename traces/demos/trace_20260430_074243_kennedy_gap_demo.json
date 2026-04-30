@@ -1,0 +1,941 @@
+{
+  "trace_metadata": {
+    "timestamp": "20260430_074243",
+    "label": "kennedy_gap_demo",
+    "saved_by": "tools.trace_writer.save_trace"
+  },
+  "query": "Who are the parents of Robert Sargent Shriver, born 9 NOV 1915 in Westminster, MD?",
+  "target_person": {
+    "name": "Robert Sargent Shriver",
+    "approx_birth": "9 NOV 1915",
+    "location": "Westminster, MD",
+    "gap_mode": true,
+    "child_id": "@I7@",
+    "missing_role": "father"
+  },
+  "status": "needs_revision",
+  "revision_count": 2,
+  "gedcom_source": {
+    "sha256": "8374c078ee19eeb591fe26f9cd70a058bb66220d3273e0253a3ea2b80ef76edd",
+    "length_chars": 33979
+  },
+  "gedcom_persons_count": 70,
+  "retrieved_records": [
+    {
+      "record_id": "gedcom:@I7@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "subject",
+      "match_score": 1.0,
+      "data": {
+        "id": "@I7@",
+        "name": "Robert Sargent Shriver",
+        "first_name": "Robert Sargent",
+        "surname": "Shriver",
+        "sex": "M",
+        "birth_date": "9 NOV 1915",
+        "birth_place": "Westminster, MD",
+        "death_date": "18 JAN 2011",
+        "death_place": "Bethesda, MD",
+        "father_id": "@I48@",
+        "mother_id": null,
+        "spouse_ids": [
+          "@I8@"
+        ],
+        "children_ids": [
+          "@I9@",
+          "@I11@",
+          "@I12@",
+          "@I13@",
+          "@I14@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F3@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I48@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "father",
+      "match_score": 0.5059,
+      "data": {
+        "id": "@I48@",
+        "name": "John Vernou Bouvier",
+        "first_name": "John Vernou",
+        "surname": "Bouvier",
+        "sex": "M",
+        "birth_date": "19 MAY 1891",
+        "birth_place": "East Hampton, New York",
+        "death_date": "3 AUG 1957",
+        "death_place": "New York City, New York",
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I49@"
+        ],
+        "children_ids": [
+          "@I52@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F9@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I49@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I49@",
+        "name": "Janet Norton Lee",
+        "first_name": "Janet Norton",
+        "surname": "Lee",
+        "sex": "F",
+        "birth_date": "3 DEC 1907",
+        "birth_place": "Manhattan, New York",
+        "death_date": "22 JUL 1987",
+        "death_place": "Newport, Rhode Island",
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I48@",
+          "@I67@"
+        ],
+        "children_ids": [
+          "@I52@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F9@",
+          "@F13@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I52@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I52@",
+        "name": "Jacqueline Lee Kennedy Bouvier",
+        "first_name": "Jacqueline Lee Kennedy",
+        "surname": "Bouvier",
+        "sex": "F",
+        "birth_date": "28 JUL 1929",
+        "birth_place": "Southampton, Long Island, NY",
+        "death_date": "19 MAY 1994",
+        "death_place": "New York",
+        "father_id": "@I48@",
+        "mother_id": "@I49@",
+        "spouse_ids": [
+          "@I0@",
+          "@I58@"
+        ],
+        "children_ids": [
+          "@I53@",
+          "@I54@",
+          "@I55@"
+        ],
+        "famc": [
+          "@F9@"
+        ],
+        "fams": [
+          "@F10@",
+          "@F14@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I1@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "alt_father",
+      "match_score": 0.4814,
+      "data": {
+        "id": "@I1@",
+        "name": "Joseph Patrick Kennedy",
+        "first_name": "Joseph Patrick",
+        "surname": "Kennedy",
+        "sex": "M",
+        "birth_date": "6 SEP 1888",
+        "birth_place": "Boston, MA",
+        "death_date": "18 NOV 1969",
+        "death_place": "Hyannis Port, MA",
+        "father_id": "@I44@",
+        "mother_id": "@I45@",
+        "spouse_ids": [
+          "@I2@"
+        ],
+        "children_ids": [
+          "@I0@",
+          "@I3@",
+          "@I4@",
+          "@I6@",
+          "@I8@",
+          "@I16@",
+          "@I21@",
+          "@I35@",
+          "@I39@"
+        ],
+        "famc": [
+          "@F1@"
+        ],
+        "fams": [
+          "@F0@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I2@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I2@",
+        "name": "Rose Elizabeth Fitzgerald",
+        "first_name": "Rose Elizabeth",
+        "surname": "Fitzgerald",
+        "sex": "F",
+        "birth_date": "22 JUL 1890",
+        "birth_place": "North End, Boston, MA",
+        "death_date": "22 JAN 1995",
+        "death_place": "Hyannis Port, MA",
+        "father_id": "@I50@",
+        "mother_id": "@I51@",
+        "spouse_ids": [
+          "@I1@"
+        ],
+        "children_ids": [
+          "@I0@",
+          "@I3@",
+          "@I4@",
+          "@I6@",
+          "@I8@",
+          "@I16@",
+          "@I21@",
+          "@I35@",
+          "@I39@"
+        ],
+        "famc": [
+          "@F2@"
+        ],
+        "fams": [
+          "@F0@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I0@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I0@",
+        "name": "John Fitzgerald Kennedy",
+        "first_name": "John Fitzgerald",
+        "surname": "Kennedy",
+        "sex": "M",
+        "birth_date": "29 MAY 1917",
+        "birth_place": "Brookline, MA",
+        "death_date": "22 NOV 1963",
+        "death_place": "Dallas, TX",
+        "father_id": "@I1@",
+        "mother_id": "@I2@",
+        "spouse_ids": [
+          "@I52@"
+        ],
+        "children_ids": [
+          "@I53@",
+          "@I54@",
+          "@I55@"
+        ],
+        "famc": [
+          "@F0@"
+        ],
+        "fams": [
+          "@F10@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I3@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I3@",
+        "name": "Joseph Patrick Kennedy",
+        "first_name": "Joseph Patrick",
+        "surname": "Kennedy",
+        "sex": "M",
+        "birth_date": "1 JUL 1915",
+        "birth_place": "Boston, MA",
+        "death_date": "2 AUG 1944",
+        "death_place": "Suffolk, England",
+        "father_id": "@I1@",
+        "mother_id": "@I2@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F0@"
+        ],
+        "fams": []
+      }
+    },
+    {
+      "record_id": "gedcom:@I4@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I4@",
+        "name": "Rose Marie Kennedy",
+        "first_name": "Rose Marie",
+        "surname": "Kennedy",
+        "sex": "F",
+        "birth_date": "13 SEP 1918",
+        "birth_place": "Boston, MA",
+        "death_date": "7 JAN 2005",
+        "death_place": null,
+        "father_id": "@I1@",
+        "mother_id": "@I2@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F0@"
+        ],
+        "fams": []
+      }
+    },
+    {
+      "record_id": "gedcom:@I6@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I6@",
+        "name": "Kathleen Angus Kennedy",
+        "first_name": "Kathleen Angus",
+        "surname": "Kennedy",
+        "sex": "F",
+        "birth_date": "20 FEB 1920",
+        "birth_place": "Boston, MA",
+        "death_date": "13 MAY 1948",
+        "death_place": "France",
+        "father_id": "@I1@",
+        "mother_id": "@I2@",
+        "spouse_ids": [
+          "@I5@"
+        ],
+        "children_ids": [],
+        "famc": [
+          "@F0@"
+        ],
+        "fams": [
+          "@F11@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I8@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I8@",
+        "name": "Eunice Mary Kennedy",
+        "first_name": "Eunice Mary",
+        "surname": "Kennedy",
+        "sex": "F",
+        "birth_date": "10 JUL 1921",
+        "birth_place": "Boston, MA",
+        "death_date": "11 AUG 2009",
+        "death_place": null,
+        "father_id": "@I1@",
+        "mother_id": "@I2@",
+        "spouse_ids": [
+          "@I7@"
+        ],
+        "children_ids": [
+          "@I9@",
+          "@I11@",
+          "@I12@",
+          "@I13@",
+          "@I14@"
+        ],
+        "famc": [
+          "@F0@"
+        ],
+        "fams": [
+          "@F3@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I16@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I16@",
+        "name": "Patricia Helen Kennedy",
+        "first_name": "Patricia Helen",
+        "surname": "Kennedy",
+        "sex": "F",
+        "birth_date": "6 MAY 1924",
+        "birth_place": "Boston, MA",
+        "death_date": "17 SEP 2006",
+        "death_place": "Manhattan, New York, U.S.",
+        "father_id": "@I1@",
+        "mother_id": "@I2@",
+        "spouse_ids": [
+          "@I15@"
+        ],
+        "children_ids": [
+          "@I17@",
+          "@I18@",
+          "@I19@",
+          "@I20@"
+        ],
+        "famc": [
+          "@F0@"
+        ],
+        "fams": [
+          "@F4@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I21@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I21@",
+        "name": "Robert Francis Kennedy",
+        "first_name": "Robert Francis",
+        "surname": "Kennedy",
+        "sex": "M",
+        "birth_date": "20 NOV 1925",
+        "birth_place": "Boston, MA",
+        "death_date": "6 JUN 1968",
+        "death_place": "Los Angeles, CA",
+        "father_id": "@I1@",
+        "mother_id": "@I2@",
+        "spouse_ids": [
+          "@I22@"
+        ],
+        "children_ids": [
+          "@I23@",
+          "@I24@",
+          "@I25@",
+          "@I26@",
+          "@I27@",
+          "@I28@",
+          "@I29@",
+          "@I30@",
+          "@I31@",
+          "@I32@",
+          "@I33@"
+        ],
+        "famc": [
+          "@F0@"
+        ],
+        "fams": [
+          "@F5@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I35@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I35@",
+        "name": "Jean Ann Kennedy",
+        "first_name": "Jean Ann",
+        "surname": "Kennedy",
+        "sex": "F",
+        "birth_date": "20 FEB 1928",
+        "birth_place": "Boston, MA",
+        "death_date": null,
+        "death_place": null,
+        "father_id": "@I1@",
+        "mother_id": "@I2@",
+        "spouse_ids": [
+          "@I34@"
+        ],
+        "children_ids": [
+          "@I36@",
+          "@I37@",
+          "@I38@",
+          "@I69@"
+        ],
+        "famc": [
+          "@F0@"
+        ],
+        "fams": [
+          "@F6@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I39@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I39@",
+        "name": "Edward Moore Kennedy",
+        "first_name": "Edward Moore",
+        "surname": "Kennedy",
+        "sex": "M",
+        "birth_date": "22 FEB 1932",
+        "birth_place": "Brookline, MA",
+        "death_date": "25 AUG 2009",
+        "death_place": "Hyannis Port, MA",
+        "father_id": "@I1@",
+        "mother_id": "@I2@",
+        "spouse_ids": [
+          "@I40@"
+        ],
+        "children_ids": [
+          "@I41@",
+          "@I42@",
+          "@I43@"
+        ],
+        "famc": [
+          "@F0@"
+        ],
+        "fams": [
+          "@F7@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I57@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "alt_father",
+      "match_score": 0.4047,
+      "data": {
+        "id": "@I57@",
+        "name": "Charles Joseph Burke",
+        "first_name": "Charles Joseph",
+        "surname": "Burke",
+        "sex": "M",
+        "birth_date": "23 AUG 1899",
+        "birth_place": null,
+        "death_date": "5 APR 1967",
+        "death_place": null,
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I56@"
+        ],
+        "children_ids": [],
+        "famc": [],
+        "fams": [
+          "@F15@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I56@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I56@",
+        "name": "Margaret Louise Kennedy",
+        "first_name": "Margaret Louise",
+        "surname": "Kennedy",
+        "sex": "F",
+        "birth_date": "22 OCT 1898",
+        "birth_place": null,
+        "death_date": "14 NOV 1974",
+        "death_place": null,
+        "father_id": "@I44@",
+        "mother_id": "@I45@",
+        "spouse_ids": [
+          "@I57@"
+        ],
+        "children_ids": [],
+        "famc": [
+          "@F1@"
+        ],
+        "fams": [
+          "@F15@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I67@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "alt_father",
+      "match_score": 0.4008,
+      "data": {
+        "id": "@I67@",
+        "name": "Hugh Achincloss",
+        "first_name": "Hugh",
+        "surname": "Achincloss",
+        "sex": "M",
+        "birth_date": "15 AUG 1897",
+        "birth_place": null,
+        "death_date": "20 NOV 1976",
+        "death_place": null,
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I49@"
+        ],
+        "children_ids": [],
+        "famc": [],
+        "fams": [
+          "@F13@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I9@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "alt_father",
+      "match_score": 0.38,
+      "data": {
+        "id": "@I9@",
+        "name": "Robert Sargent Shriver",
+        "first_name": "Robert Sargent",
+        "surname": "Shriver",
+        "sex": "M",
+        "birth_date": "28 APR 1954",
+        "birth_place": "Chicago, Illinois",
+        "death_date": null,
+        "death_place": null,
+        "father_id": "@I7@",
+        "mother_id": "@I8@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F3@"
+        ],
+        "fams": []
+      }
+    }
+  ],
+  "profiles": [
+    {
+      "profile_id": "profile:@I7@",
+      "subject_record_id": "gedcom:@I7@",
+      "subject_name": "Robert Sargent Shriver",
+      "disambiguation": {
+        "query": "Who are the parents of Robert Sargent Shriver, born 9 NOV 1915 in Westminster, MD?",
+        "query_criteria": {
+          "name": "Robert Sargent Shriver",
+          "approx_birth": "9 NOV 1915",
+          "location": "Westminster, MD",
+          "gap_mode": true,
+          "child_id": "@I7@",
+          "missing_role": "father"
+        },
+        "candidates_considered": [
+          {
+            "record_id": "gedcom:@I7@",
+            "name": "Robert Sargent Shriver",
+            "score": 2.5,
+            "reasons": [
+              "name similarity 1.0",
+              "exact birth year match (1915)",
+              "birth place tokens match: ['md', 'westminster']"
+            ],
+            "status": "SELECTED"
+          }
+        ]
+      },
+      "facts": [
+        {
+          "field": "name",
+          "value": "Robert Sargent Shriver",
+          "sources": [
+            "gedcom:@I7@"
+          ]
+        },
+        {
+          "field": "first_name",
+          "value": "Robert Sargent",
+          "sources": [
+            "gedcom:@I7@"
+          ]
+        },
+        {
+          "field": "surname",
+          "value": "Shriver",
+          "sources": [
+            "gedcom:@I7@"
+          ]
+        },
+        {
+          "field": "sex",
+          "value": "M",
+          "sources": [
+            "gedcom:@I7@"
+          ]
+        },
+        {
+          "field": "birth_date",
+          "value": "9 NOV 1915",
+          "sources": [
+            "gedcom:@I7@"
+          ]
+        },
+        {
+          "field": "birth_place",
+          "value": "Westminster, MD",
+          "sources": [
+            "gedcom:@I7@"
+          ]
+        },
+        {
+          "field": "death_date",
+          "value": "18 JAN 2011",
+          "sources": [
+            "gedcom:@I7@"
+          ]
+        },
+        {
+          "field": "death_place",
+          "value": "Bethesda, MD",
+          "sources": [
+            "gedcom:@I7@"
+          ]
+        }
+      ],
+      "family": {
+        "father": {
+          "name": "John Vernou Bouvier",
+          "record_id": "gedcom:@I48@"
+        },
+        "mother": null,
+        "spouses": [
+          {
+            "name": "Eunice Mary Kennedy",
+            "record_id": "gedcom:@I8@"
+          }
+        ],
+        "children": [
+          {
+            "name": "Robert Sargent Shriver",
+            "record_id": "gedcom:@I9@"
+          }
+        ]
+      },
+      "gaps": [
+        "Mother is not recorded (mother_id is null in gedcom:@I7@); no maternal lineage can be established.",
+        "No corroborating source records for birth date (9 NOV 1915) beyond a single GEDCOM entry.",
+        "No corroborating source records for birth place (Westminster, MD) beyond a single GEDCOM entry.",
+        "No corroborating source records for death date (18 JAN 2011) beyond a single GEDCOM entry.",
+        "No corroborating source records for death place (Bethesda, MD) beyond a single GEDCOM entry.",
+        "The record gedcom:@I48@ is identified as the subject's father but contains the name 'John Vernou Bouvier', which does not correspond to any known father of Robert Sargent Shriver; this may indicate a data integrity or record-linking error.",
+        "No biographical facts present for occupation, religion, or burial.",
+        "The relation_to_target value 'child' is assigned to gedcom:@I8@ (Eunice Mary Kennedy), who is listed as spouse in the subject's record; this is a metadata inconsistency.",
+        "The relation_to_target value 'alt_father' is assigned to gedcom:@I9@ (Robert Sargent Shriver Jr.), who is listed as a child of the subject; this is a metadata inconsistency.",
+        "famc list is empty for the subject, providing no formal family-as-child linkage to corroborate parentage."
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "hypothesis_id": "hyp:@I7@:@I48@:father",
+      "subject_id": "@I7@",
+      "related_id": "@I48@",
+      "proposed_relationship": "father of",
+      "evidence_chain": [
+        {
+          "claim": "Subject Robert Sargent Shriver is recorded with birth date 9 NOV 1915 and birth place Westminster, MD.",
+          "source": "gedcom:@I7@"
+        },
+        {
+          "claim": "Candidate John Vernou Bouvier is recorded with birth date 19 MAY 1891 and birth place East Hampton, New York.",
+          "source": "gedcom:@I48@"
+        },
+        {
+          "claim": "The age delta between candidate (born 1891) and subject (born 1915) is 24 years, which is biologically plausible for a father-child relationship.",
+          "source": "gedcom:@I7@"
+        },
+        {
+          "claim": "The candidate John Vernou Bouvier is flagged in the subject's profile as a potential father link, though no formal FAMC record ties them.",
+          "source": "gedcom:@I48@"
+        }
+      ],
+      "confidence_score": 0.05,
+      "stated_weaknesses": [
+        "John Vernou Bouvier is historically documented as the father of Jacqueline Bouvier (Kennedy Onassis), not of Robert Sargent Shriver; this is a well-known biographical fact that directly contradicts the proposed relationship.",
+        "Robert Sargent Shriver's surname is 'Shriver', not 'Bouvier'; no name or surname continuity supports paternity from a Bouvier father.",
+        "The subject's FAMC list is entirely empty (gedcom:@I7@), meaning no formal family-as-child record links Shriver to Bouvier.",
+        "The subject's father_id is null in gedcom:@I7@, and the candidate is not referenced in any parental field of the subject's record.",
+        "The subject's own profile gap notes explicitly flag that the gedcom:@I48@ linkage to Shriver 'may indicate a data integrity or record-linking error.'",
+        "Birthplaces are 436 km apart with no evidence of a connection between Westminster, MD and East Hampton, NY for these individuals.",
+        "Only a single GEDCOM file is the source for both records; no independent corroboration exists for any claimed relationship.",
+        "No DNA evidence, census co-residence, or documentary evidence of any kind supports this pairing."
+      ],
+      "reasoning_narrative": "The sole basis for hypothesizing a father-child relationship between John Vernou Bouvier (@I48@) and Robert Sargent Shriver (@I7@) is that the candidate's record appears as a linked individual in the subject's GEDCOM dataset and the 24-year age gap is biologically plausible. However, the inferential chain collapses at every other step. John Vernou Bouvier is a historically documented individual whose known children are Jacqueline and Caroline Bouvier; Robert Sargent Shriver is a separately documented public figure whose paternal lineage is Shriver, not Bouvier. The subject carries the surname 'Shriver' with no documented Bouvier connection. The subject's FAMC field is empty, providing no structural genealogical link to any father. The subject's own profile gap analysis explicitly warns that the appearance of gedcom:@I48@ as a father-linked record is likely a data integrity or record-linking error in the source GEDCOM. Given the strong biographical contradictions, the absence of any supporting documentary, geographical, or DNA evidence, and the explicit data integrity warning in the source material, this hypothesis must be assigned an extremely low confidence score and is most plausibly explained as a GEDCOM data error rather than a genuine genealogical relationship.",
+      "intermediate_steps": [],
+      "alternatives_considered": [
+        "The link between gedcom:@I48@ and gedcom:@I7@ is most likely a GEDCOM data entry or record-linking error, with Bouvier records being erroneously associated with the Shriver family tree.",
+        "John Vernou Bouvier's true children (e.g., Jacqueline Bouvier) may have been the intended subject of this relationship link, and a record swap occurred in the GEDCOM file.",
+        "The candidate record gedcom:@I48@ may have been imported from a separate Kennedy/Bouvier family dataset and incorrectly merged or cross-linked with Shriver family nodes."
+      ],
+      "llm_raw_response": "```json\n{\n  \"proposed_relationship\": \"father of\",\n  \"evidence_chain\": [\n    {\n      \"claim\": \"Subject Robert Sargent Shriver is recorded with birth date 9 NOV 1915 and birth place Westminster, MD.\",\n      \"source\": \"gedcom:@I7@\"\n    },\n    {\n      \"claim\": \"Candidate John Vernou Bouvier is recorded with birth date 19 MAY 1891 and birth place East Hampton, New York.\",\n      \"source\": \"gedcom:@I48@\"\n    },\n    {\n      \"claim\": \"The age delta between candidate (born 1891) and subject (born 1915) is 24 years, which is biologically plausible for a father-child relationship.\",\n      \"source\": \"gedcom:@I7@\"\n    },\n    {\n      \"claim\": \"The candidate John Vernou Bouvier is flagged in the subject's profile as a potential father link, though no formal FAMC record ties them.\",\n      \"source\": \"gedcom:@I48@\"\n    }\n  ],\n  \"confidence_score\": 0.05,\n  \"stated_weaknesses\": [\n    \"John Vernou Bouvier is historically documented as the father of Jacqueline Bouvier (Kennedy Onassis), not of Robert Sargent Shriver; this is a well-known biographical fact that directly contradicts the proposed relationship.\",\n    \"Robert Sargent Shriver's surname is 'Shriver', not 'Bouvier'; no name or surname continuity supports paternity from a Bouvier father.\",\n    \"The subject's FAMC list is entirely empty (gedcom:@I7@), meaning no formal family-as-child record links Shriver to Bouvier.\",\n    \"The subject's father_id is null in gedcom:@I7@, and the candidate is not referenced in any parental field of the subject's record.\",\n    \"The subject's own profile gap notes explicitly flag that the gedcom:@I48@ linkage to Shriver 'may indicate a data integrity or record-linking error.'\",\n    \"Birthplaces are 436 km apart with no evidence of a connection between Westminster, MD and East Hampton, NY for these individuals.\",\n    \"Only a single GEDCOM file is the source for both records; no independent corroboration exists for any claimed relationship.\",\n    \"No DNA evidence, census co-residence, or documentary evidence of any kind supports this pairing.\"\n  ],\n  \"reasoning_narrative\": \"The sole basis for hypothesizing a father-child relationship between John Vernou Bouvier (@I48@) and Robert Sargent Shriver (@I7@) is that the candidate's record appears as a linked individual in the subject's GEDCOM dataset and the 24-year age gap is biologically plausible. However, the inferential chain collapses at every other step. John Vernou Bouvier is a historically documented individual whose known children are Jacqueline and Caroline Bouvier; Robert Sargent Shriver is a separately documented public figure whose paternal lineage is Shriver, not Bouvier. The subject carries the surname 'Shriver' with no documented Bouvier connection. The subject's FAMC field is empty, providing no structural genealogical link to any father. The subject's own profile gap analysis explicitly warns that the appearance of gedcom:@I48@ as a father-linked record is likely a data integrity or record-linking error in the source GEDCOM. Given the strong biographical contradictions, the absence of any supporting documentary, geographical, or DNA evidence, and the explicit data integrity warning in the source material, this hypothesis must be assigned an extremely low confidence score and is most plausibly explained as a GEDCOM data error rather than a genuine genealogical relationship.\",\n  \"alternatives_considered\": [\n    \"The link between gedcom:@I48@ and gedcom:@I7@ is most likely a GEDCOM data entry or record-linking error, with Bouvier records being erroneously associated with the Shriver family tree.\",\n    \"John Vernou Bouvier's true children (e.g., Jacqueline Bouvier) may have been the intended subject of this relationship link, and a record swap occurred in the GEDCOM file.\",\n    \"The candidate record gedcom:@I48@ may have been imported from a separate Kennedy/Bouvier family dataset and incorrectly merged or cross-linked with Shriver family nodes.\"\n  ]\n}\n```"
+    }
+  ],
+  "critiques": [
+    {
+      "hypothesis_id": "hyp:@I7@:@I48@:father",
+      "verdict": "reject",
+      "issues_found": [
+        "John Vernou Bouvier is historically the father of Jacqueline Bouvier Kennedy Onassis, not Robert Sargent Shriver; this is a well-documented biographical fact contradicting the link.",
+        "Subject's surname is 'Shriver', candidate's is 'Bouvier' — no surname continuity expected via patrilineal descent.",
+        "Subject's FAMC list is empty, indicating no formal family-as-child structural linkage in the GEDCOM despite the father_id pointer.",
+        "The candidate's children_ids list contains only @I52@ and does NOT include @I7@ (the subject), creating an internal GEDCOM inconsistency between father_id and reciprocal children_ids.",
+        "Subject profile gaps explicitly flag this linkage as a likely 'data integrity or record-linking error.'",
+        "Robert Sargent Shriver's actual father is historically Robert Sargent Shriver Sr. (1878–1942), not Bouvier.",
+        "Single-GEDCOM source with no external corroboration."
+      ],
+      "evidence_cited": [
+        "gedcom:@I7@",
+        "gedcom:@I48@",
+        "profile:@I7@ gaps",
+        "children_ids reciprocity check"
+      ],
+      "confidence_in_critique": 0.95,
+      "justification": "The hypothesis contradicts well-established biographical fact (Bouvier is Jackie Kennedy's father, not Shriver's), the GEDCOM itself shows reciprocal inconsistency (Bouvier's children_ids do not include @I7@), and the subject's profile explicitly flags this as a likely record-linking error. This is a clear rejection.",
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "father alive ~9mo before birth holds",
+          "role": "father"
+        }
+      ],
+      "geo_result": {
+        "check": "geographic_plausibility",
+        "verdict": "ok",
+        "reason": "436km apart (within intra-regional range)",
+        "distance_km": 436
+      },
+      "dna_relevant": null,
+      "isolation_mode": "filtered"
+    }
+  ],
+  "dna_analysis": null,
+  "trace_log": [
+    "record_scout: enter",
+    "record_scout: parsed 70 persons from GEDCOM",
+    "record_scout: gap_mode — searching for father of Robert Sargent Shriver (@I7@)",
+    "record_scout: gap_mode — 5 parent candidates (top score 0.5059)",
+    "record_scout: gap_mode — injected father_id=@I48@ into subject record for downstream agents",
+    "record_scout: built 19 GEDCOM record objects (including family context)",
+    "record_scout: gap_mode — skipping external source search",
+    "record_scout: exit",
+    "dna_analyst: enter",
+    "dna_analyst: no DNA data provided — skipping",
+    "dna_analyst: exit",
+    "profile_synthesizer: enter",
+    "profile_synthesizer: disambiguated 1 candidates -> selected Robert Sargent Shriver (score 2.5)",
+    "profile_synthesizer: LLM synthesis produced 8 facts, 10 gaps",
+    "profile_synthesizer: built profile with 8 cited facts, 10 gaps",
+    "profile_synthesizer: exit",
+    "relationship_hypothesizer: enter",
+    "relationship_hypothesizer: 1 targets for Robert Sargent Shriver: ['father']",
+    "relationship_hypothesizer: built hypothesis hyp:@I7@:@I48@:father (confidence 0.03, 5 evidence items)",
+    "relationship_hypothesizer: generated 1 hypotheses",
+    "relationship_hypothesizer: exit",
+    "adversarial_critic: enter",
+    "adversarial_critic: isolation_mode=filtered, filtered 1 hypotheses, stripped 4 internal field types",
+    "adversarial_critic: hyp:@I7@:@I48@:father tier1 (5 checks, 0 impossible)",
+    "adversarial_critic: hyp:@I7@:@I48@:father geo -> ok: 436km apart (within intra-regional range)",
+    "adversarial_critic: hyp:@I7@:@I48@:father LLM verdict=reject conf=0.92",
+    "adversarial_critic: at least one reject; revision_count 0 -> 1, status=needs_revision",
+    "adversarial_critic: produced 1 critiques",
+    "adversarial_critic: exit",
+    "relationship_hypothesizer: enter",
+    "relationship_hypothesizer: 1 targets for Robert Sargent Shriver: ['father']",
+    "relationship_hypothesizer: built hypothesis hyp:@I7@:@I48@:father (confidence 0.05, 4 evidence items)",
+    "relationship_hypothesizer: generated 1 hypotheses",
+    "relationship_hypothesizer: exit",
+    "adversarial_critic: enter",
+    "adversarial_critic: isolation_mode=filtered, filtered 1 hypotheses, stripped 4 internal field types",
+    "adversarial_critic: hyp:@I7@:@I48@:father tier1 (5 checks, 0 impossible)",
+    "adversarial_critic: hyp:@I7@:@I48@:father geo -> ok: 436km apart (within intra-regional range)",
+    "adversarial_critic: hyp:@I7@:@I48@:father LLM verdict=reject conf=0.95",
+    "adversarial_critic: at least one reject; revision_count 1 -> 2, status=needs_revision",
+    "adversarial_critic: produced 1 critiques",
+    "adversarial_critic: exit",
+    "final_report_writer: enter",
+    "final_report_writer: composed report (6332 chars, 94 lines)",
+    "final_report_writer: exit"
+  ],
+  "final_report": "# Genealogical Research Report\n\n**Query:** Who are the parents of Robert Sargent Shriver, born 9 NOV 1915 in Westminster, MD?\n**Target:** Robert Sargent Shriver (approx. born 9 NOV 1915), Westminster, MD\n**Pipeline status:** needs_revision  (revision count 2)\n**Report status: Contains unresolved findings — human review recommended** (1 of 1 hypotheses flagged)\n\n## Subject Profiles\n\n### Robert Sargent Shriver\n`profile:@I7@` — source record `gedcom:@I7@`\n\n**Disambiguation:** selected from 1 candidates\n- ✓ `gedcom:@I7@` Robert Sargent Shriver — score 2.5\n    - name similarity 1.0\n    - exact birth year match (1915)\n    - birth place tokens match: ['md', 'westminster']\n\n**Facts:**\n- name: Robert Sargent Shriver  _(gedcom:@I7@)_\n- first_name: Robert Sargent  _(gedcom:@I7@)_\n- surname: Shriver  _(gedcom:@I7@)_\n- sex: M  _(gedcom:@I7@)_\n- birth_date: 9 NOV 1915  _(gedcom:@I7@)_\n- birth_place: Westminster, MD  _(gedcom:@I7@)_\n- death_date: 18 JAN 2011  _(gedcom:@I7@)_\n- death_place: Bethesda, MD  _(gedcom:@I7@)_\n\n**Family references:** father=John Vernou Bouvier; spouse(s)=Eunice Mary Kennedy; children=Robert Sargent Shriver\n\n**Gaps and concerns (from Synthesizer):**\n- Mother is not recorded (mother_id is null in gedcom:@I7@); no maternal lineage can be established.\n- No corroborating source records for birth date (9 NOV 1915) beyond a single GEDCOM entry.\n- No corroborating source records for birth place (Westminster, MD) beyond a single GEDCOM entry.\n- No corroborating source records for death date (18 JAN 2011) beyond a single GEDCOM entry.\n- No corroborating source records for death place (Bethesda, MD) beyond a single GEDCOM entry.\n- The record gedcom:@I48@ is identified as the subject's father but contains the name 'John Vernou Bouvier', which does not correspond to any known father of Robert Sargent Shriver; this may indicate a data integrity or record-linking error.\n- No biographical facts present for occupation, religion, or burial.\n- The relation_to_target value 'child' is assigned to gedcom:@I8@ (Eunice Mary Kennedy), who is listed as spouse in the subject's record; this is a metadata inconsistency.\n- The relation_to_target value 'alt_father' is assigned to gedcom:@I9@ (Robert Sargent Shriver Jr.), who is listed as a child of the subject; this is a metadata inconsistency.\n- famc list is empty for the subject, providing no formal family-as-child linkage to corroborate parentage.\n\n## Accepted Findings\n\n_No findings passed without escalation flags._\n\n## Findings Requiring Human Review\n\n### ⚠ UNRESOLVED — father of — `hyp:@I7@:@I48@:father`\n\n**Escalation reasons:**\n- Rejected by Adversarial Critic after 2 revision cycle(s) — pipeline force-finalized\n\n**Subject:** `@I7@`  **Related:** `@I48@`  **Hypothesizer confidence:** 0.05\n\n**Evidence chain:**\n- (gedcom:@I7@) Subject Robert Sargent Shriver is recorded with birth date 9 NOV 1915 and birth place Westminster, MD.\n- (gedcom:@I48@) Candidate John Vernou Bouvier is recorded with birth date 19 MAY 1891 and birth place East Hampton, New York.\n- (gedcom:@I7@) The age delta between candidate (born 1891) and subject (born 1915) is 24 years, which is biologically plausible for a father-child relationship.\n- (gedcom:@I48@) The candidate John Vernou Bouvier is flagged in the subject's profile as a potential father link, though no formal FAMC record ties them.\n\n**Stated weaknesses (Hypothesizer's own):**\n- John Vernou Bouvier is historically documented as the father of Jacqueline Bouvier (Kennedy Onassis), not of Robert Sargent Shriver; this is a well-known biographical fact that directly contradicts the proposed relationship.\n- Robert Sargent Shriver's surname is 'Shriver', not 'Bouvier'; no name or surname continuity supports paternity from a Bouvier father.\n- The subject's FAMC list is entirely empty (gedcom:@I7@), meaning no formal family-as-child record links Shriver to Bouvier.\n- The subject's father_id is null in gedcom:@I7@, and the candidate is not referenced in any parental field of the subject's record.\n- The subject's own profile gap notes explicitly flag that the gedcom:@I48@ linkage to Shriver 'may indicate a data integrity or record-linking error.'\n- Birthplaces are 436 km apart with no evidence of a connection between Westminster, MD and East Hampton, NY for these individuals.\n- Only a single GEDCOM file is the source for both records; no independent corroboration exists for any claimed relationship.\n- No DNA evidence, census co-residence, or documentary evidence of any kind supports this pairing.\n\n#### Critique: ✗ REJECT\n**Critic self-confidence:** 0.95  **Isolation mode:** `filtered`\n\n**Justification:** The hypothesis contradicts well-established biographical fact (Bouvier is Jackie Kennedy's father, not Shriver's), the GEDCOM itself shows reciprocal inconsistency (Bouvier's children_ids do not include @I7@), and the subject's profile explicitly flags this as a likely record-linking error. This is a clear rejection.\n\n**Tier 1 deterministic checks:**\n- [ok] death_before_birth: death is not before birth\n- [ok] implausible_lifespan: lifespan within 120 years\n- [ok] [father] parent_younger_than_child: parent is not younger than child\n- [ok] [father] parent_too_young_at_birth: parent age plausible (>= 12)\n- [ok] [father] parent_died_before_conception: father alive ~9mo before birth holds\n\n**Geographic check:** [ok] 436km apart (within intra-regional range)\n\n**Issues found by the Critic:**\n- John Vernou Bouvier is historically the father of Jacqueline Bouvier Kennedy Onassis, not Robert Sargent Shriver; this is a well-documented biographical fact contradicting the link.\n- Subject's surname is 'Shriver', candidate's is 'Bouvier' — no surname continuity expected via patrilineal descent.\n- Subject's FAMC list is empty, indicating no formal family-as-child structural linkage in the GEDCOM despite the father_id pointer.\n- The candidate's children_ids list contains only @I52@ and does NOT include @I7@ (the subject), creating an internal GEDCOM inconsistency between father_id and reciprocal children_ids.\n- Subject profile gaps explicitly flag this linkage as a likely 'data integrity or record-linking error.'\n- Robert Sargent Shriver's actual father is historically Robert Sargent Shriver Sr. (1878–1942), not Bouvier.\n- Single-GEDCOM source with no external corroboration.\n"
+}

@@ -1,9 +1,11 @@
-"""Tiny driver to run the full pipeline against an arbitrary GEDCOM + DNA
-combo and save the resulting trace into `traces/demos/`. Used to generate
+"""Tiny driver to run the full pipeline against an arbitrary GEDCOM and
+save the resulting trace into `traces/demos/`. Used to generate
 committable, reproducible demo artifacts on public-data trees (Kennedy,
 Queen, Habsburg) so graders can re-run them without any PII.
 
-Usage:
+Two modes: query (default) and gap.
+
+Query mode example (with optional DNA):
     python scripts/run_demo.py \\
         --gedcom "data/Habsburg.ged" --encoding latin-1 \\
         --query "Who are the parents of Maria Theresia of Austria?" \\
@@ -12,9 +14,15 @@ Usage:
         --dna "data/DNA_demo/Maria_Theresia_synthetic_DNA.csv" \\
         --label "habsburg_maria_theresia_synthetic_dna"
 
-If --dna is omitted, the run is run without DNA. The trace JSON + MD are
-written to traces/demos/ via the standard trace_writer; this script just
-moves them there so the gitignore allow-list keeps them committable.
+Gap mode example (no query / target — picks the top candidate from
+find_research_candidates):
+    python scripts/run_demo.py --gap \\
+        --gedcom "data/The Kennedy Family.ged" --encoding utf-8 \\
+        --label "kennedy_gap_demo"
+
+The trace JSON + MD are written by the standard trace_writer; this script
+just moves them into traces/demos/ so the gitignore allow-list keeps
+them committable.
 """
 
 from __future__ import annotations
@@ -39,12 +47,20 @@ def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--gedcom", required=True)
     p.add_argument("--encoding", default="utf-8")
-    p.add_argument("--query", required=True)
-    p.add_argument("--name", required=True)
+    p.add_argument("--query", default=None,
+                   help="Required for query mode; ignored in gap mode.")
+    p.add_argument("--name", default=None,
+                   help="Required for query mode; ignored in gap mode.")
     p.add_argument("--birth", default="")
     p.add_argument("--location", default="")
     p.add_argument("--dna", default=None)
     p.add_argument("--label", required=True)
+    p.add_argument("--gap", action="store_true",
+                   help="Gap-mode: pick the top candidate from "
+                        "find_research_candidates and run the pipeline on it.")
+    p.add_argument("--gap-pick", type=int, default=0,
+                   help="In gap mode, which ranked candidate to investigate "
+                        "(0=top, 1=second, …).")
     args = p.parse_args()
 
     gedcom_text = Path(args.gedcom).read_text(encoding=args.encoding, errors="replace")
@@ -57,26 +73,83 @@ def main() -> int:
             except UnicodeDecodeError:
                 continue
 
-    initial_state = {
-        "query": args.query,
-        "target_person": {
-            "name": args.name,
-            "approx_birth": args.birth,
-            "location": args.location,
-        },
-        "gedcom_text": gedcom_text,
-        "gedcom_persons": [],
-        "dna_csv": dna_csv,
-        "retrieved_records": [],
-        "profiles": [],
-        "hypotheses": [],
-        "critiques": [],
-        "dna_analysis": None,
-        "final_report": "",
-        "revision_count": 0,
-        "status": "running",
-        "trace_log": [],
-    }
+    if args.gap:
+        # Gap mode: scan deterministically, pick a candidate, build the
+        # gap-mode initial_state matching gap_search.py's pattern.
+        from tools.gap_scanner import find_research_candidates
+        from tools.gedcom_parser import parse_gedcom_text
+
+        persons = parse_gedcom_text(gedcom_text)
+        candidates = find_research_candidates(persons)
+        if not candidates:
+            print("No gap candidates found in GEDCOM "
+                  "(try lowering min_data_fields).")
+            return 1
+        if args.gap_pick >= len(candidates):
+            print(f"--gap-pick {args.gap_pick} out of range "
+                  f"({len(candidates)} candidates).")
+            return 1
+        cand = candidates[args.gap_pick]
+        person = cand["person"]
+        # If missing both, default to investigating the father first.
+        role = cand["missing_role"]
+        if role == "both":
+            role = "father"
+
+        print(f"Gap mode picked: {person.get('name')!r} "
+              f"(missing {cand['missing_role']}, "
+              f"investigating {role}, "
+              f"{cand['data_fields']} data fields)")
+
+        initial_state = {
+            "query": cand["query"],
+            "target_person": {
+                "name": person.get("name") or "(unknown)",
+                "approx_birth": person.get("birth_date"),
+                "location": person.get("birth_place"),
+                "gap_mode": True,
+                "child_id": person["id"],
+                "missing_role": role,
+            },
+            "gedcom_text": gedcom_text,
+            "gedcom_persons": [],
+            "dna_csv": dna_csv,
+            "retrieved_records": [],
+            "profiles": [],
+            "hypotheses": [],
+            "critiques": [],
+            "dna_analysis": None,
+            "final_report": "",
+            "revision_count": 0,
+            "status": "running",
+            "trace_log": [],
+        }
+    else:
+        # Query mode (original behavior).
+        if not args.query or not args.name:
+            print("--query and --name are required in query mode.")
+            return 2
+
+        initial_state = {
+            "query": args.query,
+            "target_person": {
+                "name": args.name,
+                "approx_birth": args.birth,
+                "location": args.location,
+            },
+            "gedcom_text": gedcom_text,
+            "gedcom_persons": [],
+            "dna_csv": dna_csv,
+            "retrieved_records": [],
+            "profiles": [],
+            "hypotheses": [],
+            "critiques": [],
+            "dna_analysis": None,
+            "final_report": "",
+            "revision_count": 0,
+            "status": "running",
+            "trace_log": [],
+        }
 
     graph = build_graph()
     final_state = graph.invoke(initial_state)

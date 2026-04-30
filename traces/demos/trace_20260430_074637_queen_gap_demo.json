@@ -1,0 +1,826 @@
+{
+  "trace_metadata": {
+    "timestamp": "20260430_074637",
+    "label": "queen_gap_demo",
+    "saved_by": "tools.trace_writer.save_trace"
+  },
+  "query": "Who is the mother of Bodilan of Burgundy, born 585 in Vexin, Normandy, France?",
+  "target_person": {
+    "name": "Bodilan of Burgundy",
+    "approx_birth": "585",
+    "location": "Vexin, Normandy, France",
+    "gap_mode": true,
+    "child_id": "@I467@",
+    "missing_role": "mother"
+  },
+  "status": "complete",
+  "revision_count": 0,
+  "gedcom_source": {
+    "sha256": "421d9cb36e7ca34b9b338b89aea5116bfb0c35950cebaeb97562b45c3f74c6cc",
+    "length_chars": 2449106
+  },
+  "gedcom_persons_count": 4683,
+  "retrieved_records": [
+    {
+      "record_id": "gedcom:@I467@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "subject",
+      "match_score": 1.0,
+      "data": {
+        "id": "@I467@",
+        "name": "Bodilan of Burgundy",
+        "first_name": "Bodilan of Burgundy",
+        "surname": null,
+        "sex": "M",
+        "birth_date": "585",
+        "birth_place": "Vexin, Normandy, France",
+        "death_date": "642",
+        "death_place": "Mans, France",
+        "father_id": "@I1008@",
+        "mother_id": "@I4356@",
+        "spouse_ids": [
+          "@I468@"
+        ],
+        "children_ids": [
+          "@I465@"
+        ],
+        "famc": [
+          "@F464@"
+        ],
+        "fams": [
+          "@F427@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I1008@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "father",
+      "match_score": null,
+      "data": {
+        "id": "@I1008@",
+        "name": "ANSOUND (Bishop) ST LUITVIN",
+        "first_name": "ANSOUND (Bishop) ST LUITVIN",
+        "surname": null,
+        "sex": "M",
+        "birth_date": null,
+        "birth_place": null,
+        "death_date": null,
+        "death_place": null,
+        "father_id": "@I1009@",
+        "mother_id": "@I1010@",
+        "spouse_ids": [],
+        "children_ids": [
+          "@I467@"
+        ],
+        "famc": [
+          "@F465@"
+        ],
+        "fams": [
+          "@F464@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I4356@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "mother",
+      "match_score": 0.4064,
+      "data": {
+        "id": "@I4356@",
+        "name": "Oda Of Saxony or Dode de Heristal Of Swabia",
+        "first_name": "Oda Of Saxony or Dode de Heristal Of Swabia",
+        "surname": null,
+        "sex": "F",
+        "birth_date": "556",
+        "birth_place": "Heristal, Leige, Belgium",
+        "death_date": "640",
+        "death_place": "Heristall, Metz, Austrasia, France",
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I4355@"
+        ],
+        "children_ids": [
+          "@I4353@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F2051@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I4355@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I4355@",
+        "name": "Saint Arnoaldus XXVII De Schelde, evêque de Metz, Marquis de Schelde[",
+        "first_name": "Saint Arnoaldus XXVII De Schelde, evêque de Metz, Marquis de Schelde[",
+        "surname": null,
+        "sex": "M",
+        "birth_date": "532",
+        "birth_place": "Landen, Austrasia, France",
+        "death_date": "601",
+        "death_place": "Metz, Austrasia, France",
+        "father_id": "@I4357@",
+        "mother_id": "@I4358@",
+        "spouse_ids": [
+          "@I4356@"
+        ],
+        "children_ids": [
+          "@I4353@"
+        ],
+        "famc": [
+          "@F2052@"
+        ],
+        "fams": [
+          "@F2051@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I4353@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I4353@",
+        "name": "Saint Arnoul or Arnulf De Heristal, bishop of Metz",
+        "first_name": "Saint Arnoul or Arnulf De Heristal, bishop of Metz",
+        "surname": null,
+        "sex": "M",
+        "birth_date": "13 AUG 582",
+        "birth_place": "near, Nancy, Austrasia, France",
+        "death_date": "18 JUL 641",
+        "death_place": "Remiremont Monastery, Habendum, France Find all individuals with events at this location",
+        "father_id": "@I4355@",
+        "mother_id": "@I4356@",
+        "spouse_ids": [
+          "@I4354@"
+        ],
+        "children_ids": [
+          "@I4351@"
+        ],
+        "famc": [
+          "@F2051@"
+        ],
+        "fams": [
+          "@F2050@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I4340@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "alt_mother",
+      "match_score": 0.3991,
+      "data": {
+        "id": "@I4340@",
+        "name": "Tassilon De Daviere (De Bavière)",
+        "first_name": "Tassilon De Daviere (De Bavière)",
+        "surname": null,
+        "sex": "F",
+        "birth_date": "560",
+        "birth_place": null,
+        "death_date": "630",
+        "death_place": null,
+        "father_id": null,
+        "mother_id": "@I4341@",
+        "spouse_ids": [
+          "@I4339@"
+        ],
+        "children_ids": [
+          "@I4338@"
+        ],
+        "famc": [
+          "@F2044@"
+        ],
+        "fams": [
+          "@F2043@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I4339@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I4339@",
+        "name": "Tassilon",
+        "first_name": "Tassilon",
+        "surname": null,
+        "sex": "M",
+        "birth_date": "570",
+        "birth_place": null,
+        "death_date": "609",
+        "death_place": null,
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I4340@"
+        ],
+        "children_ids": [
+          "@I4338@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F2043@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I4338@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I4338@",
+        "name": "Garibald Agilofinges",
+        "first_name": "Garibald Agilofinges",
+        "surname": null,
+        "sex": "M",
+        "birth_date": "581",
+        "birth_place": null,
+        "death_date": "660",
+        "death_place": null,
+        "father_id": "@I4339@",
+        "mother_id": "@I4340@",
+        "spouse_ids": [],
+        "children_ids": [
+          "@I4337@"
+        ],
+        "famc": [
+          "@F2043@"
+        ],
+        "fams": [
+          "@F2042@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I5979@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "alt_mother",
+      "match_score": 0.3309,
+      "data": {
+        "id": "@I5979@",
+        "name": "Yrsa HELGASDOTTIR",
+        "first_name": "Yrsa HELGASDOTTIR",
+        "surname": null,
+        "sex": "F",
+        "birth_date": "ABT 565",
+        "birth_place": null,
+        "death_date": null,
+        "death_place": null,
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I5978@"
+        ],
+        "children_ids": [
+          "@I5977@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F3104@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I5978@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I5978@",
+        "name": "Adils `the Great' OTTARSSON of SWEDEN",
+        "first_name": "Adils `the Great' OTTARSSON of SWEDEN",
+        "surname": null,
+        "sex": "M",
+        "birth_date": "ABT 572",
+        "birth_place": null,
+        "death_date": "ABT 640",
+        "death_place": null,
+        "father_id": "@I5980@",
+        "mother_id": "@I5981@",
+        "spouse_ids": [
+          "@I5979@"
+        ],
+        "children_ids": [
+          "@I5977@"
+        ],
+        "famc": [
+          "@F3105@"
+        ],
+        "fams": [
+          "@F3104@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I5977@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I5977@",
+        "name": "Eystein (Oystein) ADILSSON of SWEDEN",
+        "first_name": "Eystein (Oystein) ADILSSON of SWEDEN",
+        "surname": null,
+        "sex": "M",
+        "birth_date": "ABT 600",
+        "birth_place": null,
+        "death_date": "ABT 671",
+        "death_place": null,
+        "father_id": "@I5978@",
+        "mother_id": "@I5979@",
+        "spouse_ids": [],
+        "children_ids": [
+          "@I5976@"
+        ],
+        "famc": [
+          "@F3104@"
+        ],
+        "fams": [
+          "@F3103@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I1015@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "alt_mother",
+      "match_score": 0.3245,
+      "data": {
+        "id": "@I1015@",
+        "name": "Gerberge, Lady of Burgundy",
+        "first_name": "Gerberge, Lady of Burgundy",
+        "surname": null,
+        "sex": "F",
+        "birth_date": "564",
+        "birth_place": "Franconia",
+        "death_date": "646",
+        "death_place": null,
+        "father_id": null,
+        "mother_id": "@I1016@",
+        "spouse_ids": [
+          "@I1014@"
+        ],
+        "children_ids": [
+          "@I1012@"
+        ],
+        "famc": [
+          "@F219@"
+        ],
+        "fams": [
+          "@F468@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I1014@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I1014@",
+        "name": "Leutharius de Moselle",
+        "first_name": "Leutharius de Moselle",
+        "surname": null,
+        "sex": "M",
+        "birth_date": null,
+        "birth_place": "Alsace, France",
+        "death_date": "646",
+        "death_place": null,
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I1015@"
+        ],
+        "children_ids": [
+          "@I1012@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F468@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I1012@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I1012@",
+        "name": "daughter of Leutharius",
+        "first_name": "daughter of Leutharius",
+        "surname": null,
+        "sex": "F",
+        "birth_date": "587",
+        "birth_place": null,
+        "death_date": null,
+        "death_place": null,
+        "father_id": "@I1014@",
+        "mother_id": "@I1015@",
+        "spouse_ids": [
+          "@I1011@"
+        ],
+        "children_ids": [
+          "@I468@"
+        ],
+        "famc": [
+          "@F468@"
+        ],
+        "fams": [
+          "@F466@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I6581@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "alt_mother",
+      "match_score": 0.3245,
+      "data": {
+        "id": "@I6581@",
+        "name": "Lady Lassar Ingen Ailill Orgaill",
+        "first_name": "Lady Lassar Ingen Ailill Orgaill",
+        "surname": null,
+        "sex": "F",
+        "birth_date": "550",
+        "birth_place": "Orgaill, Leinster, Ireland",
+        "death_date": null,
+        "death_place": "Leinster, Ireland",
+        "father_id": "@I6582@",
+        "mother_id": null,
+        "spouse_ids": [
+          "@I6580@"
+        ],
+        "children_ids": [
+          "@I6579@"
+        ],
+        "famc": [
+          "@F3463@"
+        ],
+        "fams": [
+          "@F3462@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I6580@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I6580@",
+        "name": "Ronan Rigfhlaith Leinster",
+        "first_name": "Ronan Rigfhlaith Leinster",
+        "surname": null,
+        "sex": "M",
+        "birth_date": "564",
+        "birth_place": "Kinsale, Cork, Ireland",
+        "death_date": "613",
+        "death_place": "Baile Átha Cliath, 5302, Ireland",
+        "father_id": "@I6583@",
+        "mother_id": "@I6584@",
+        "spouse_ids": [
+          "@I6581@"
+        ],
+        "children_ids": [
+          "@I6579@"
+        ],
+        "famc": [
+          "@F3464@"
+        ],
+        "fams": [
+          "@F3462@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I6579@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I6579@",
+        "name": "Crundmael Erbulic MacRonan Osraige",
+        "first_name": "Crundmael Erbulic MacRonan Osraige",
+        "surname": null,
+        "sex": "M",
+        "birth_date": "586",
+        "birth_place": "Ossory, Ireland",
+        "death_date": "656",
+        "death_place": "Ossory, Ireland",
+        "father_id": "@I6580@",
+        "mother_id": "@I6581@",
+        "spouse_ids": [
+          "@I6585@"
+        ],
+        "children_ids": [
+          "@I6577@"
+        ],
+        "famc": [
+          "@F3462@"
+        ],
+        "fams": [
+          "@F3461@"
+        ]
+      }
+    }
+  ],
+  "profiles": [
+    {
+      "profile_id": "profile:@I467@",
+      "subject_record_id": "gedcom:@I467@",
+      "subject_name": "Bodilan of Burgundy",
+      "disambiguation": {
+        "query": "Who is the mother of Bodilan of Burgundy, born 585 in Vexin, Normandy, France?",
+        "query_criteria": {
+          "name": "Bodilan of Burgundy",
+          "approx_birth": "585",
+          "location": "Vexin, Normandy, France",
+          "gap_mode": true,
+          "child_id": "@I467@",
+          "missing_role": "mother"
+        },
+        "candidates_considered": [
+          {
+            "record_id": "gedcom:@I467@",
+            "name": "Bodilan of Burgundy",
+            "score": 2.5,
+            "reasons": [
+              "name similarity 1.0",
+              "exact birth year match (585)",
+              "birth place tokens match: ['france', 'normandy', 'vexin']"
+            ],
+            "status": "SELECTED"
+          }
+        ]
+      },
+      "facts": [
+        {
+          "field": "name",
+          "value": "Bodilan of Burgundy",
+          "sources": [
+            "gedcom:@I467@"
+          ]
+        },
+        {
+          "field": "first_name",
+          "value": "Bodilan of Burgundy",
+          "sources": [
+            "gedcom:@I467@"
+          ]
+        },
+        {
+          "field": "surname",
+          "value": null,
+          "sources": [
+            "gedcom:@I467@"
+          ]
+        },
+        {
+          "field": "sex",
+          "value": "M",
+          "sources": [
+            "gedcom:@I467@"
+          ]
+        },
+        {
+          "field": "birth_date",
+          "value": "585",
+          "sources": [
+            "gedcom:@I467@"
+          ]
+        },
+        {
+          "field": "birth_place",
+          "value": "Vexin, Normandy, France",
+          "sources": [
+            "gedcom:@I467@"
+          ]
+        },
+        {
+          "field": "death_date",
+          "value": "642",
+          "sources": [
+            "gedcom:@I467@"
+          ]
+        },
+        {
+          "field": "death_place",
+          "value": "Mans, France",
+          "sources": [
+            "gedcom:@I467@"
+          ]
+        }
+      ],
+      "family": {
+        "father": {
+          "name": "ANSOUND (Bishop) ST LUITVIN",
+          "record_id": "gedcom:@I1008@"
+        },
+        "mother": {
+          "name": "Oda Of Saxony or Dode de Heristal Of Swabia",
+          "record_id": "gedcom:@I4356@"
+        },
+        "spouses": [],
+        "children": []
+      },
+      "gaps": [
+        "Surname is null; no surname recorded for the subject.",
+        "Birth date '585' and death date '642' are year-only approximations with no corroborating source beyond the single GEDCOM record.",
+        "Birth place 'Vexin, Normandy, France' has no corroborating source beyond the single GEDCOM record.",
+        "Death place 'Mans, France' is ambiguous (likely Le Mans) and has no corroborating source beyond the single GEDCOM record.",
+        "No occupation, religion, or burial information is recorded for the subject.",
+        "The subject's first_name field contains 'Bodilan of Burgundy' rather than a proper given name, suggesting the name field may conflate a given name with a regional descriptor.",
+        "The father record (gedcom:@I1008@) lists no birth date, birth place, death date, or death place, making paternal lineage verification impossible.",
+        "The mother record (gedcom:@I4356@) identifies the individual as 'Oda Of Saxony or Dode de Heristal Of Swabia', indicating ambiguity or conflation of two distinct individuals as the subject's mother.",
+        "The mother record (gedcom:@I4356@) does not list the subject among her children_ids, creating an inconsistency between the subject's father_id/mother_id references and the mother's children_ids list.",
+        "No independent documentary or secondary sources are cited; all facts derive solely from a single GEDCOM file with no external corroboration."
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "hypothesis_id": "hyp:@I467@:@I4356@:mother",
+      "subject_id": "@I467@",
+      "related_id": "@I4356@",
+      "proposed_relationship": "mother of",
+      "evidence_chain": [
+        {
+          "claim": "Subject Bodilan of Burgundy (born 585) has mother_id field referencing @I4356@, directly linking the candidate as his mother in the GEDCOM data.",
+          "source": "gedcom:@I467@"
+        },
+        {
+          "claim": "Candidate Oda Of Saxony or Dode de Heristal Of Swabia is recorded as female (sex: F), born 556, died 640, making her biologically eligible as a mother figure.",
+          "source": "gedcom:@I4356@"
+        },
+        {
+          "claim": "The age delta of 29 years between candidate (born 556) and subject (born 585) is within normal biological range for a mother-child relationship.",
+          "source": "gedcom:@I4356@"
+        },
+        {
+          "claim": "Candidate's death date of 640 post-dates subject's birth date of 585, meaning she was alive at the time of his birth.",
+          "source": "gedcom:@I4356@"
+        }
+      ],
+      "confidence_score": 0.32,
+      "stated_weaknesses": [
+        "Critical structural inconsistency: the candidate's children_ids list contains only @I4353@, not @I467@ (the subject), meaning the GEDCOM data is internally contradictory on this relationship.",
+        "The candidate's own name field records two distinct individuals — 'Oda Of Saxony' and 'Dode de Heristal Of Swabia' — suggesting this record may conflate two separate historical persons, making any derived relationship unreliable.",
+        "Subject's birth place (Vexin, Normandy, France) and candidate's birth place (Heristal, Liège, Belgium) are geographically distant, and no evidence of geographic connection or marriage to a father based in Normandy is provided for the candidate.",
+        "All evidence derives from a single GEDCOM file with no external documentary, prosopographical, or DNA corroboration whatsoever.",
+        "The subject's name 'Bodilan of Burgundy' conflicts with his birth place in Normandy, suggesting possible record conflation or data entry error that undermines confidence in all associated fields including parentage.",
+        "The candidate's father_id and mother_id are both null, providing no broader genealogical context to validate her placement in this family structure.",
+        "Year-only dates for both individuals are approximations; a true 29-year gap cannot be confirmed given the uncertainty range typical of early medieval records."
+      ],
+      "reasoning_narrative": "The sole positive evidence for this relationship is the mother_id field in the subject's GEDCOM record (@I467@), which points directly to @I4356@. The candidate is female, born approximately 29 years before the subject, and was still living at the time of his birth in 585 — all of which are necessary (though not sufficient) conditions for a mother-child relationship. However, the hypothesis is severely undermined by a fundamental internal contradiction: the candidate's own record does not list the subject among her children_ids, recording only @I4353@ as her child. This bidirectional inconsistency in the GEDCOM data strongly suggests either a data entry error in one or both records, or that the mother_id assignment in the subject's record was made in error. Further compounding the uncertainty, the candidate's record conflates two potentially distinct historical identities ('Oda Of Saxony' and 'Dode de Heristal Of Swabia'), meaning the record itself may be a composite of two different women, neither of whom may be the subject's actual mother. Geographic discontinuity between Normandy and Liège provides no supporting connective tissue. Given that all evidence traces to a single uncorroborated GEDCOM file and the data is internally inconsistent, confidence must remain very low despite the GEDCOM pointer existing.",
+      "intermediate_steps": [],
+      "alternatives_considered": [
+        "The mother_id field in the subject's record may have been entered in error, and Oda/Dode may have no actual relationship to the subject.",
+        "The candidate record may represent a conflation of two historical individuals, one of whom (Dode de Heristal) is a historically attested figure associated with the Pippinid lineage — the subject's mother could be one of these two distinct women rather than the composite record.",
+        "The subject's actual mother may be an entirely unrecorded individual, with the @I4356@ assignment being a speculative or mistaken genealogical inference by the GEDCOM compiler.",
+        "Oda Of Saxony or Dode de Heristal could be a more distant maternal ancestor (grandmother or great-grandmother) rather than the direct mother, with an intervening generation omitted from the record."
+      ],
+      "llm_raw_response": "```json\n{\n  \"proposed_relationship\": \"mother of\",\n  \"evidence_chain\": [\n    {\n      \"claim\": \"Subject Bodilan of Burgundy (born 585) has mother_id field referencing @I4356@, directly linking the candidate as his mother in the GEDCOM data.\",\n      \"source\": \"gedcom:@I467@\"\n    },\n    {\n      \"claim\": \"Candidate Oda Of Saxony or Dode de Heristal Of Swabia is recorded as female (sex: F), born 556, died 640, making her biologically eligible as a mother figure.\",\n      \"source\": \"gedcom:@I4356@\"\n    },\n    {\n      \"claim\": \"The age delta of 29 years between candidate (born 556) and subject (born 585) is within normal biological range for a mother-child relationship.\",\n      \"source\": \"gedcom:@I4356@\"\n    },\n    {\n      \"claim\": \"Candidate's death date of 640 post-dates subject's birth date of 585, meaning she was alive at the time of his birth.\",\n      \"source\": \"gedcom:@I4356@\"\n    }\n  ],\n  \"confidence_score\": 0.32,\n  \"stated_weaknesses\": [\n    \"Critical structural inconsistency: the candidate's children_ids list contains only @I4353@, not @I467@ (the subject), meaning the GEDCOM data is internally contradictory on this relationship.\",\n    \"The candidate's own name field records two distinct individuals — 'Oda Of Saxony' and 'Dode de Heristal Of Swabia' — suggesting this record may conflate two separate historical persons, making any derived relationship unreliable.\",\n    \"Subject's birth place (Vexin, Normandy, France) and candidate's birth place (Heristal, Liège, Belgium) are geographically distant, and no evidence of geographic connection or marriage to a father based in Normandy is provided for the candidate.\",\n    \"All evidence derives from a single GEDCOM file with no external documentary, prosopographical, or DNA corroboration whatsoever.\",\n    \"The subject's name 'Bodilan of Burgundy' conflicts with his birth place in Normandy, suggesting possible record conflation or data entry error that undermines confidence in all associated fields including parentage.\",\n    \"The candidate's father_id and mother_id are both null, providing no broader genealogical context to validate her placement in this family structure.\",\n    \"Year-only dates for both individuals are approximations; a true 29-year gap cannot be confirmed given the uncertainty range typical of early medieval records.\"\n  ],\n  \"reasoning_narrative\": \"The sole positive evidence for this relationship is the mother_id field in the subject's GEDCOM record (@I467@), which points directly to @I4356@. The candidate is female, born approximately 29 years before the subject, and was still living at the time of his birth in 585 — all of which are necessary (though not sufficient) conditions for a mother-child relationship. However, the hypothesis is severely undermined by a fundamental internal contradiction: the candidate's own record does not list the subject among her children_ids, recording only @I4353@ as her child. This bidirectional inconsistency in the GEDCOM data strongly suggests either a data entry error in one or both records, or that the mother_id assignment in the subject's record was made in error. Further compounding the uncertainty, the candidate's record conflates two potentially distinct historical identities ('Oda Of Saxony' and 'Dode de Heristal Of Swabia'), meaning the record itself may be a composite of two different women, neither of whom may be the subject's actual mother. Geographic discontinuity between Normandy and Liège provides no supporting connective tissue. Given that all evidence traces to a single uncorroborated GEDCOM file and the data is internally inconsistent, confidence must remain very low despite the GEDCOM pointer existing.\",\n  \"alternatives_considered\": [\n    \"The mother_id field in the subject's record may have been entered in error, and Oda/Dode may have no actual relationship to the subject.\",\n    \"The candidate record may represent a conflation of two historical individuals, one of whom (Dode de Heristal) is a historically attested figure associated with the Pippinid lineage — the subject's mother could be one of these two distinct women rather than the composite record.\",\n    \"The subject's actual mother may be an entirely unrecorded individual, with the @I4356@ assignment being a speculative or mistaken genealogical inference by the GEDCOM compiler.\",\n    \"Oda Of Saxony or Dode de Heristal could be a more distant maternal ancestor (grandmother or great-grandmother) rather than the direct mother, with an intervening generation omitted from the record.\"\n  ]\n}\n```"
+    }
+  ],
+  "critiques": [
+    {
+      "hypothesis_id": "hyp:@I467@:@I4356@:mother",
+      "verdict": "flag_uncertain",
+      "issues_found": [
+        "Mother record @I4356@ lists children_ids as [@I4353@] only, not including subject @I467@ — internal GEDCOM inconsistency between subject's mother_id pointer and mother's children list.",
+        "Mother's name field 'Oda Of Saxony or Dode de Heristal Of Swabia' explicitly conflates two distinct historical figures, indicating the compiler was uncertain which person this record represents.",
+        "Subject's name 'Bodilan of Burgundy' combined with birth place in Vexin/Normandy is geographically/titularly inconsistent for the era (Burgundy vs Normandy are distinct Merovingian regions).",
+        "All evidence is from a single unsourced GEDCOM; early medieval (6th-7th c.) non-royal genealogies of this period are notoriously fabricated/speculative in hobbyist files.",
+        "Mother's birth place (Heristal, Belgium) and subject's birth place (Vexin, Normandy) are ~300km apart — plausible for Merovingian aristocracy but unsupported by any marriage/migration evidence.",
+        "No Tier 1 violations, but biological plausibility alone does not establish the relationship given the structural inconsistency."
+      ],
+      "evidence_cited": [
+        "gedcom:@I467@",
+        "gedcom:@I4356@",
+        "parent_died_before_conception",
+        "parent_too_young_at_birth"
+      ],
+      "confidence_in_critique": 0.72,
+      "justification": "The GEDCOM contains a one-sided pointer (subject→mother) without reciprocation in the mother's children list, and the mother record itself conflates two named individuals. While Tier 1 biology checks pass, the structural inconsistency and conflated identity prevent acceptance; however, asymmetric children_ids lists are common GEDCOM artifacts and do not definitively disprove the link, so outright rejection is unwarranted.",
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "mother"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "mother"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "mother alive at birth holds",
+          "role": "mother"
+        }
+      ],
+      "geo_result": {
+        "check": "geographic_plausibility",
+        "verdict": "insufficient_data",
+        "reason": "one or both places could not be geocoded",
+        "distance_km": null
+      },
+      "dna_relevant": null,
+      "isolation_mode": "filtered"
+    }
+  ],
+  "dna_analysis": null,
+  "trace_log": [
+    "record_scout: enter",
+    "record_scout: parsed 4683 persons from GEDCOM",
+    "record_scout: gap_mode — searching for mother of Bodilan of Burgundy (@I467@)",
+    "record_scout: gap_mode — 5 parent candidates (top score 0.4064)",
+    "record_scout: gap_mode — injected mother_id=@I4356@ into subject record for downstream agents",
+    "record_scout: built 17 GEDCOM record objects (including family context)",
+    "record_scout: gap_mode — skipping external source search",
+    "record_scout: exit",
+    "dna_analyst: enter",
+    "dna_analyst: no DNA data provided — skipping",
+    "dna_analyst: exit",
+    "profile_synthesizer: enter",
+    "profile_synthesizer: disambiguated 1 candidates -> selected Bodilan of Burgundy (score 2.5)",
+    "profile_synthesizer: LLM synthesis produced 8 facts, 10 gaps",
+    "profile_synthesizer: built profile with 8 cited facts, 10 gaps",
+    "profile_synthesizer: exit",
+    "relationship_hypothesizer: enter",
+    "relationship_hypothesizer: 1 targets for Bodilan of Burgundy: ['mother']",
+    "relationship_hypothesizer: built hypothesis hyp:@I467@:@I4356@:mother (confidence 0.32, 4 evidence items)",
+    "relationship_hypothesizer: generated 1 hypotheses",
+    "relationship_hypothesizer: exit",
+    "adversarial_critic: enter",
+    "adversarial_critic: isolation_mode=filtered, filtered 1 hypotheses, stripped 4 internal field types",
+    "adversarial_critic: hyp:@I467@:@I4356@:mother tier1 (5 checks, 0 impossible)",
+    "adversarial_critic: hyp:@I467@:@I4356@:mother geo -> insufficient_data: one or both places could not be geocoded",
+    "adversarial_critic: hyp:@I467@:@I4356@:mother LLM verdict=flag_uncertain conf=0.72",
+    "adversarial_critic: no rejects; status=complete",
+    "adversarial_critic: produced 1 critiques",
+    "adversarial_critic: exit",
+    "final_report_writer: enter",
+    "final_report_writer: composed report (6768 chars, 84 lines)",
+    "final_report_writer: exit"
+  ],
+  "final_report": "# Genealogical Research Report\n\n**Query:** Who is the mother of Bodilan of Burgundy, born 585 in Vexin, Normandy, France?\n**Target:** Bodilan of Burgundy (approx. born 585), Vexin, Normandy, France\n**Pipeline status:** complete  (revision count 0)\n**Report status: All findings accepted**\n\n## Subject Profiles\n\n### Bodilan of Burgundy\n`profile:@I467@` — source record `gedcom:@I467@`\n\n**Disambiguation:** selected from 1 candidates\n- ✓ `gedcom:@I467@` Bodilan of Burgundy — score 2.5\n    - name similarity 1.0\n    - exact birth year match (585)\n    - birth place tokens match: ['france', 'normandy', 'vexin']\n\n**Facts:**\n- name: Bodilan of Burgundy  _(gedcom:@I467@)_\n- first_name: Bodilan of Burgundy  _(gedcom:@I467@)_\n- surname: None  _(gedcom:@I467@)_\n- sex: M  _(gedcom:@I467@)_\n- birth_date: 585  _(gedcom:@I467@)_\n- birth_place: Vexin, Normandy, France  _(gedcom:@I467@)_\n- death_date: 642  _(gedcom:@I467@)_\n- death_place: Mans, France  _(gedcom:@I467@)_\n\n**Family references:** father=ANSOUND (Bishop) ST LUITVIN; mother=Oda Of Saxony or Dode de Heristal Of Swabia\n\n**Gaps and concerns (from Synthesizer):**\n- Surname is null; no surname recorded for the subject.\n- Birth date '585' and death date '642' are year-only approximations with no corroborating source beyond the single GEDCOM record.\n- Birth place 'Vexin, Normandy, France' has no corroborating source beyond the single GEDCOM record.\n- Death place 'Mans, France' is ambiguous (likely Le Mans) and has no corroborating source beyond the single GEDCOM record.\n- No occupation, religion, or burial information is recorded for the subject.\n- The subject's first_name field contains 'Bodilan of Burgundy' rather than a proper given name, suggesting the name field may conflate a given name with a regional descriptor.\n- The father record (gedcom:@I1008@) lists no birth date, birth place, death date, or death place, making paternal lineage verification impossible.\n- The mother record (gedcom:@I4356@) identifies the individual as 'Oda Of Saxony or Dode de Heristal Of Swabia', indicating ambiguity or conflation of two distinct individuals as the subject's mother.\n- The mother record (gedcom:@I4356@) does not list the subject among her children_ids, creating an inconsistency between the subject's father_id/mother_id references and the mother's children_ids list.\n- No independent documentary or secondary sources are cited; all facts derive solely from a single GEDCOM file with no external corroboration.\n\n## Accepted Findings\n\n### mother of — `hyp:@I467@:@I4356@:mother`\n**Subject:** `@I467@`  **Related:** `@I4356@`  **Hypothesizer confidence:** 0.32\n\n**Evidence chain:**\n- (gedcom:@I467@) Subject Bodilan of Burgundy (born 585) has mother_id field referencing @I4356@, directly linking the candidate as his mother in the GEDCOM data.\n- (gedcom:@I4356@) Candidate Oda Of Saxony or Dode de Heristal Of Swabia is recorded as female (sex: F), born 556, died 640, making her biologically eligible as a mother figure.\n- (gedcom:@I4356@) The age delta of 29 years between candidate (born 556) and subject (born 585) is within normal biological range for a mother-child relationship.\n- (gedcom:@I4356@) Candidate's death date of 640 post-dates subject's birth date of 585, meaning she was alive at the time of his birth.\n\n**Stated weaknesses (Hypothesizer's own):**\n- Critical structural inconsistency: the candidate's children_ids list contains only @I4353@, not @I467@ (the subject), meaning the GEDCOM data is internally contradictory on this relationship.\n- The candidate's own name field records two distinct individuals — 'Oda Of Saxony' and 'Dode de Heristal Of Swabia' — suggesting this record may conflate two separate historical persons, making any derived relationship unreliable.\n- Subject's birth place (Vexin, Normandy, France) and candidate's birth place (Heristal, Liège, Belgium) are geographically distant, and no evidence of geographic connection or marriage to a father based in Normandy is provided for the candidate.\n- All evidence derives from a single GEDCOM file with no external documentary, prosopographical, or DNA corroboration whatsoever.\n- The subject's name 'Bodilan of Burgundy' conflicts with his birth place in Normandy, suggesting possible record conflation or data entry error that undermines confidence in all associated fields including parentage.\n- The candidate's father_id and mother_id are both null, providing no broader genealogical context to validate her placement in this family structure.\n- Year-only dates for both individuals are approximations; a true 29-year gap cannot be confirmed given the uncertainty range typical of early medieval records.\n\n### Critique: ? FLAG UNCERTAIN\n**Critic self-confidence:** 0.72  **Isolation mode:** `filtered`\n\n**Justification:** The GEDCOM contains a one-sided pointer (subject→mother) without reciprocation in the mother's children list, and the mother record itself conflates two named individuals. While Tier 1 biology checks pass, the structural inconsistency and conflated identity prevent acceptance; however, asymmetric children_ids lists are common GEDCOM artifacts and do not definitively disprove the link, so outright rejection is unwarranted.\n\n**Tier 1 deterministic checks:**\n- [ok] death_before_birth: death is not before birth\n- [ok] implausible_lifespan: lifespan within 120 years\n- [ok] [mother] parent_younger_than_child: parent is not younger than child\n- [ok] [mother] parent_too_young_at_birth: parent age plausible (>= 12)\n- [ok] [mother] parent_died_before_conception: mother alive at birth holds\n\n**Geographic check:** [insufficient_data] one or both places could not be geocoded\n\n**Issues found by the Critic:**\n- Mother record @I4356@ lists children_ids as [@I4353@] only, not including subject @I467@ — internal GEDCOM inconsistency between subject's mother_id pointer and mother's children list.\n- Mother's name field 'Oda Of Saxony or Dode de Heristal Of Swabia' explicitly conflates two distinct historical figures, indicating the compiler was uncertain which person this record represents.\n- Subject's name 'Bodilan of Burgundy' combined with birth place in Vexin/Normandy is geographically/titularly inconsistent for the era (Burgundy vs Normandy are distinct Merovingian regions).\n- All evidence is from a single unsourced GEDCOM; early medieval (6th-7th c.) non-royal genealogies of this period are notoriously fabricated/speculative in hobbyist files.\n- Mother's birth place (Heristal, Belgium) and subject's birth place (Vexin, Normandy) are ~300km apart — plausible for Merovingian aristocracy but unsupported by any marriage/migration evidence.\n- No Tier 1 violations, but biological plausibility alone does not establish the relationship given the structural inconsistency.\n"
+}
