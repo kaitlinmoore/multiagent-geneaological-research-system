@@ -700,9 +700,30 @@ with tab_pipeline:
                 help="GEDmatch or MyHeritage match list. Upload takes precedence.",
             )
 
+        mode_choice = st.radio(
+            "Mode",
+            options=["Auto-detect", "Query", "Audit", "Gap detection"],
+            horizontal=True,
+            index=0,
+            help=(
+                "**Auto-detect** routes based on query keywords "
+                "(`audit`, `questionable`, `N generations`, …) — "
+                "convenient but invisible.\n\n"
+                "**Query** — investigate a specific person/relationship "
+                "(full pipeline).\n\n"
+                "**Audit** — walk every parent-child link in a subtree "
+                "rooted at the target person.\n\n"
+                "**Gap detection** — scan the GEDCOM for persons missing "
+                "parent links and rank them by available evidence."
+            ),
+        )
         query = st.text_input(
             "Research query",
             value="Who were the parents of John F. Kennedy?",
+            help=(
+                "In Auto-detect, phrases like 'audit my tree' or "
+                "'going back 3 generations' will trigger Audit mode."
+            ),
         )
         st.markdown("**Target person**")
         c1, c2, c3 = st.columns([2, 1, 2])
@@ -759,11 +780,88 @@ with tab_pipeline:
         if dna_source_label:
             st.caption(f"DNA source: `{dna_source_label}`")
 
-        # Query routing.
-        audit_mode = is_audit_query(query)
+        # Resolve mode. Explicit choice overrides keyword auto-detection.
+        if mode_choice == "Query":
+            audit_mode, gap_mode = False, False
+            mode_reason = "explicit Query mode"
+        elif mode_choice == "Audit":
+            audit_mode, gap_mode = True, False
+            mode_reason = "explicit Audit mode"
+        elif mode_choice == "Gap detection":
+            audit_mode, gap_mode = False, True
+            mode_reason = "explicit Gap detection mode"
+        else:  # Auto-detect
+            audit_mode = is_audit_query(query)
+            gap_mode = False
+            # TODO: also auto-detect gap-mode keywords ("missing parents",
+            # "broken links", "who are the parents of <unknown person>") and
+            # route to gap_mode when matched.
+            mode_reason = (
+                "auto-detected: keyword match" if audit_mode
+                else "auto-detected: standard query"
+            )
+
+        if gap_mode:
+            # Gap detection — summary view only. Per-gap pipeline runs are
+            # available via the CLI today; wiring them into Streamlit needs
+            # a multi-run UI (progress per gap, results comparison) that is
+            # out of scope for this UX session.
+            # TODO: dispatch top-N selected gaps to graph.invoke() per
+            # gap_search.py main(), with a progress bar across gaps.
+            st.info(f"Routing: **gap detection** ({mode_reason}).")
+
+            from tools.gap_scanner import find_research_candidates
+            from tools.gedcom_parser import parse_gedcom_text
+
+            with st.spinner("Scanning GEDCOM for missing parent links..."):
+                gap_persons = parse_gedcom_text(gedcom_text)
+                candidates = find_research_candidates(gap_persons)
+
+            st.write(
+                f"Parsed **{len(gap_persons)}** persons; found "
+                f"**{len(candidates)}** with missing parent links and "
+                f"enough data to investigate."
+            )
+
+            if candidates:
+                import pandas as pd
+                rows = []
+                for cand in candidates[:50]:
+                    p = cand["person"]
+                    rows.append({
+                        "Name": p.get("name") or "(unknown)",
+                        "Born": p.get("birth_date") or "-",
+                        "Place": p.get("birth_place") or "-",
+                        "Missing": cand["missing_role"],
+                        "Data fields": cand["data_fields"],
+                        "Auto-query": cand["query"],
+                    })
+                df = pd.DataFrame(rows)
+                st.dataframe(df, use_container_width=True, hide_index=True)
+                if len(candidates) > 50:
+                    st.caption(
+                        f"Showing top 50 of {len(candidates)} gaps "
+                        "(sorted by available evidence)."
+                    )
+                st.info(
+                    "To run the full pipeline on the top N gaps, use the CLI: "
+                    f"`python gap_search.py <gedcom> --run <N>`. "
+                    "(Streamlit dispatch for per-gap pipeline runs is TODO.)"
+                )
+            else:
+                st.success(
+                    "No gaps found that meet the data-richness threshold "
+                    "— every person with missing parents lacks enough fields "
+                    "to investigate productively."
+                )
+            st.stop()  # gap mode does not feed pipeline_result/family-tree
+
         if audit_mode:
             gens = extract_generations_from_query(query)
-            st.info(f"Routing: **audit mode** ({gens} generations). Running subtree audit.")
+            st.info(
+                f"Routing: **audit mode** ({mode_reason}; {gens} generations). "
+                "Running subtree audit."
+            )
 
             from tools.gedcom_parser import parse_gedcom_text
             from tools.subtree_extractor import extract_all_relationships, extract_subtree
@@ -802,7 +900,7 @@ with tab_pipeline:
 
         else:
             # Standard pipeline.
-            st.caption("Routing: standard pipeline")
+            st.caption(f"Routing: standard pipeline ({mode_reason})")
 
             initial_state = {
                 "query": query.strip(),
