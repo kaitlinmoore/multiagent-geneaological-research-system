@@ -263,7 +263,9 @@ from `state["retrieved_records"]`. The pipeline ran cleanly with no
 errors but produced zero hypotheses on every gap query. Detected by
 running gap detection on the Moore tree and seeing 1,875 gaps reported
 in the summary table but no Hypothesizer output downstream. Fixed by
-having the Hypothesizer accept either key (preferred:
-`retrieved_records`; fallback: `gap_candidates`). The narrow lesson:
-state-key contracts between agents need to be tested with a passing
-end-to-end run, not just unit tests on each agent in isolation.
+normalizing the Scout's gap-mode output to write to the standard
+`retrieved_records` state key (the same key it uses in query mode), so
+the Hypothesizer reads from a single source of truth regardless of
+mode. The narrow lesson: state-key contracts between agents need to be
+tested with a passing end-to-end run, not just unit tests on each
+agent in isolation.
