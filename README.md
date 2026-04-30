@@ -98,9 +98,16 @@ python eval/cross_vendor_critic_experiment.py
 # Multi-Critic ensemble (Anthropic + OpenAI + Google Gemini) with a
 # conservative aggregation rule (any reject → reject).
 python eval/multi_critic_ensemble_experiment.py
+
+# Single-agent baseline ablation — one LLM call vs the full pipeline on
+# the same 8 trap cases. The justification-of-complexity experiment.
+python eval/single_agent_baseline.py
+
+# Asymmetric pairing — weak OpenAI Hypothesizer + strong Anthropic Critic.
+python eval/cross_vendor_hypothesizer_experiment.py
 ```
 
-Results are written to `eval/results/`, which is gitignored — output traces may include cross-references to personal tree content from sanity-check runs.
+Results are written to `eval/results/`. Public-data result files (trap suite, isolation A/B, JFK and Tier 3 cross-vendor and multi-Critic, ablation) are committed; anything matching `*moore*` or other personal-tree patterns stays gitignored.
 
 ## Project Structure
 
@@ -136,6 +143,7 @@ A more detailed tree, including per-file responsibilities, lives in `CLAUDE.md`.
 - **Trap suite**: 8/8 cases passing (3 Tier 1 deterministic, 3 Tier 2 plausible-but-wrong, 2 Tier 3 genuinely ambiguous). Tier 3 success criterion is appropriate uncertainty (no overconfident accept or reject), not getting a "right" answer.
 - **Critic isolation A/B**: 1 of 6 hypotheses flipped verdict under the unfiltered condition; reasoning-narrative leakage from Hypothesizer to Critic measurably higher in unfiltered runs (linguistic n-gram overlap roughly doubled).
 - **Multi-Critic ensemble**: 2 of 2 ambiguous Tier 3 cases correctly escalated to flag_uncertain by the conservative aggregation rule, where a single Critic running Opus 4.7 alone would have accepted.
+- **Single-agent baseline ablation**: full pipeline 8/8 vs single-LLM-call baseline 4/8 on the same trap suite. Tier 1 tied (3/3 vs 3/3 — fail-fast layer wins on operational cost, not detection uniqueness); multi-agent +2 on Tier 2 (geographic + naming plausibility) and +2 on Tier 3 (ambiguity calibration).
 
 ## Tech Stack
 
