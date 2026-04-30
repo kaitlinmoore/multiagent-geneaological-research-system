@@ -2,6 +2,56 @@
 
 A multi-agent pipeline that investigates genealogical questions using GEDCOM family tree data, multi-source web retrieval, and DNA match data. The pipeline pairs a Hypothesizer with an isolated Adversarial Critic, runs deterministic checks before LLM reasoning, and produces cited research reports with calibrated confidence and explicit escalation triggers for human review. Built for **94815 Agentic Technologies** (CMU Heinz College, Prof. Anand S. Rao). Track A technical build, solo project.
 
+## For Graders — Evaluate Without an API Key
+
+The system supports a **replay mode** that loads previously-saved pipeline traces and renders them through the same UI a live run would produce. **No LLM calls are made; no API key is required.** Reproducibility without dependence on API access was a stated requirement from the project's outset.
+
+### Streamlit replay (recommended)
+
+```bash
+git clone https://github.com/kaitlinmoore/multiagent-geneaological-research-system.git
+cd multiagent-geneaological-research-system
+python -m venv .venv
+source .venv/bin/activate          # Mac/Linux
+# .venv\Scripts\activate           # Windows
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+Once the app loads, in the sidebar select **Mode → Replay (no API key)**. The Pipeline tab will offer a trace dropdown; pick one and the Pipeline / Family Tree / DNA Analysis tabs render from the saved state.
+
+Available replay traces:
+- **`Demo: trace_*_jfk_parents_with_synthetic_dna`** — clean accept on JFK's parents, DNA-supported
+- **`Demo: trace_*_habsburg_maria_theresia_synthetic_dna`** — exercises escalation triggers (Critic disagreed across hypotheses for the same subject; pipeline force-finalized after max revisions)
+- **`Demo: trace_*_queen_victoria_synthetic_dna`** — clean accept on English-language royal data
+- **`Redacted: moore_myheritage_dna_redacted`** — pseudonymized real-tree run; demonstrates real-data pipeline behavior without exposing identity
+
+### CLI replay
+
+```bash
+python main.py --replay traces/demos/trace_20260429_201521_jfk_parents_with_synthetic_dna.json
+python main.py --replay <any trace> --full-report     # dump entire saved report instead of head
+```
+
+Prints the agent trace log, the summary panel (status, hypothesis count, critique verdicts, DNA consistency), and the final report. Same output shape as a live run.
+
+### Read-only artifacts (no install required)
+
+For graders who want to review without setting up Python at all, every relevant artifact is committed and human-readable on GitHub:
+
+- **Phase 3 final report:** [`docs/phase3_report.md`](docs/phase3_report.md)
+- **Failure case analysis:** [`docs/failure_cases.md`](docs/failure_cases.md)
+- **Architecture diagram:** [`docs/architecture_diagram.png`](docs/architecture_diagram.png)
+- **Phase 2 deliverable PDF:** `docs/Multi-Agent Genealogy - Phase 2 - Kaitlin Moore.pdf`
+- **AI tool disclosure:** [`AI_USAGE.md`](AI_USAGE.md)
+- **Sample pipeline output:**
+  - [`traces/demos/`](traces/demos/) — three reproducible end-to-end traces (JFK / Maria Theresia / Queen Victoria, all with synthetic DNA)
+  - [`traces/redacted/`](traces/redacted/) — pseudonymized real-tree run
+- **Pre-rendered evaluation results:**
+  - [`eval/results/ablation_summary.md`](eval/results/ablation_summary.md) — single-agent baseline vs full pipeline
+  - [`eval/results/isolation_ab_summary.md`](eval/results/isolation_ab_summary.md) — Critic isolation A/B experiment
+  - [`eval/results/`](eval/results/) — JSON results for the trap suite, cross-vendor experiments, and multi-Critic ensemble
+
 ## Key Architectural Feature: Critic Isolation as a Code Guarantee
 
 The Adversarial Critic never sees the Hypothesizer's reasoning narrative, alternatives considered, or intermediate steps. This is the core agentic justification of the project — a Critic that can read the proposer's reasoning is no longer adversarial, it is a confirmation-bias amplifier.
@@ -27,12 +77,15 @@ The isolation is enforced as a code guarantee, not a naming convention. `agents/
 | Moore Family Tree | 8,759 | English / UTF-8 | No (gitignored) | Correct | Trans-Atlantic Irish migration flagged; verified against developer's personal knowledge |
 | Synthetic DNA demos | 10–50 matches each | n/a | Yes (`data/DNA_demo/`) | Reproducible | Hand-built ground truth for Kennedy, Maria Theresia, Victoria Hanover; lets graders exercise the DNA path without committing personal match data |
 
-## Setup
+## Setup (Live Mode)
+
+The instructions in this section are for running the pipeline live (which makes LLM calls). For evaluation without an API key, see the [For Graders](#for-graders--evaluate-without-an-api-key) section above.
 
 ### Prerequisites
 
 - Python 3.12+ (3.14 works but LangChain emits a Pydantic compatibility warning)
-- Anthropic API key (required); OpenAI or Google Gemini API keys (optional, for cross-vendor experiments)
+- Anthropic API key (required for live mode; replay mode does not need one)
+- Optional: OpenAI or Google Gemini API keys for the cross-vendor experiments
 
 ### Installation
 
@@ -57,12 +110,15 @@ ANTHROPIC_API_KEY=sk-ant-...
 
 ## Running the Pipeline
 
-The system supports three CLI entry modes plus a Streamlit GUI.
+The system supports three CLI entry modes plus a Streamlit GUI. `main.py` also supports a `--replay` flag for the no-API-key path documented above.
 
 ```bash
 # Query mode — full pipeline against a specific research question.
 # Defaults to JFK against the Kennedy GEDCOM with the synthetic DNA demo attached.
 python main.py
+
+# Replay mode — render a saved trace deterministically; no LLM calls.
+python main.py --replay traces/demos/trace_20260429_201521_jfk_parents_with_synthetic_dna.json
 
 # Subtree audit mode — walk every parent-child link in an N-generation subtree.
 # Two-pass: deterministic Tier 1 + geographic checks, then optional LLM
@@ -74,11 +130,12 @@ python audit.py
 # pipeline on the top-N broken links.
 python gap_search.py
 
-# Streamlit GUI.
+# Streamlit GUI. Sidebar toggle picks Live (runs the pipeline; needs API key)
+# or Replay (loads a saved trace; no API calls).
 streamlit run app.py
 ```
 
-Pipeline runs persist a JSON trace and a markdown summary to `traces/` (gitignored — the JSON contains structured copies of profiles, hypotheses, and critiques and may include personal tree content).
+Live pipeline runs persist a JSON trace and a markdown summary to `traces/` (top-level files are gitignored because traces from personal trees contain PII; `traces/demos/` and `traces/redacted/` are allow-listed for the committed reproducible artifacts).
 
 ## Running Evaluations
 
