@@ -38,8 +38,12 @@ from langchain_anthropic import ChatAnthropic
 from langchain_core.messages import HumanMessage, SystemMessage
 
 from state import GenealogyState
+from tools.findagrave_search import search_findagrave
 from tools.fuzzy_match import name_match_score
+from tools.gap_scanner import find_parent_candidates
 from tools.gedcom_parser import parse_gedcom_text
+from tools.wikidata_search import search_wikidata
+from tools.wikitree_search import search_wikitree
 
 
 llm = ChatAnthropic(model="claude-sonnet-4-6", max_tokens=1024)
@@ -66,23 +70,78 @@ Return ONLY valid JSON. No prose, no markdown fences, no commentary.
 
 
 def record_scout_node(state: GenealogyState) -> dict:
-    trace = list(state.get("trace_log") or [])
+    trace: list[str] = []
     trace.append("record_scout: enter")
 
     # 1. Parse GEDCOM (deterministic).
     gedcom_persons = parse_gedcom_text(state["gedcom_text"])
     trace.append(f"record_scout: parsed {len(gedcom_persons)} persons from GEDCOM")
 
-    # 2. LLM extracts structured search criteria.
-    criteria = _extract_search_criteria(
-        state["query"], state["target_person"], trace
+    target = state["target_person"]
+    gap_mode = isinstance(target, dict) and target.get("gap_mode", False)
+
+    if gap_mode:
+        retrieved_records = _gap_mode_search(
+            gedcom_persons, target, state["query"], trace
+        )
+    else:
+        retrieved_records = _query_mode_search(
+            gedcom_persons, target, state["query"], trace
+        )
+
+    trace.append(
+        f"record_scout: built {len(retrieved_records)} GEDCOM record objects "
+        f"(including family context)"
     )
 
-    # 3. Fuzzy match against all persons.
+    # Tag existing records with source_type for downstream agents.
+    for record in retrieved_records:
+        record.setdefault("source_type", "gedcom")
+
+    # External source corroboration: search FindAGrave and Wikidata for the
+    # top subject candidate. Only in query mode — external sources don't help
+    # for within-tree gap detection where the candidate is already in the GEDCOM.
+    if not gap_mode:
+        external = _search_external_sources(retrieved_records, trace)
+        retrieved_records.extend(external)
+        trace.append(
+            f"record_scout: total records after external corroboration: "
+            f"{len(retrieved_records)} "
+            f"({len(external)} external)"
+        )
+    else:
+        trace.append(
+            "record_scout: gap_mode — skipping external source search"
+        )
+    trace.append("record_scout: exit")
+
+    return {
+        "gedcom_persons": gedcom_persons,
+        "retrieved_records": retrieved_records,
+        "status": "running",
+        "trace_log": trace,
+    }
+
+
+# ---------------------------------------------------------------------------
+# Query mode — the original path: LLM criteria + fuzzy match
+# ---------------------------------------------------------------------------
+
+
+def _query_mode_search(
+    gedcom_persons: list[dict],
+    target: dict,
+    query: str,
+    trace: list[str],
+) -> list[dict]:
+    # LLM extracts structured search criteria.
+    criteria = _extract_search_criteria(query, target, trace)
+
+    # Fuzzy match against all persons.
     scored_candidates = _score_candidates(gedcom_persons, criteria)
     top_candidates = scored_candidates[:_MAX_CANDIDATES]
     trace.append(
-        f"record_scout: {len(scored_candidates)} candidates above "
+        f"record_scout: query_mode — {len(scored_candidates)} candidates above "
         f"threshold {_MATCH_THRESHOLD}, keeping top {len(top_candidates)}"
     )
     if top_candidates:
@@ -92,21 +151,127 @@ def record_scout_node(state: GenealogyState) -> dict:
             f"(score {top_candidates[0]['score']})"
         )
 
-    # 4. Expand to flat record list with citations and family context.
     person_by_id = {p["id"]: p for p in gedcom_persons}
-    retrieved_records = _build_records(top_candidates, person_by_id)
-    trace.append(
-        f"record_scout: built {len(retrieved_records)} record objects "
-        f"(including family context)"
-    )
-    trace.append("record_scout: exit")
+    return _build_records(top_candidates, person_by_id)
 
-    return {
-        "gedcom_persons": gedcom_persons,
-        "retrieved_records": retrieved_records,
-        "status": "running",
-        "trace_log": trace,
-    }
+
+# ---------------------------------------------------------------------------
+# Gap mode — find plausible parents for a child with missing links
+# ---------------------------------------------------------------------------
+
+
+def _gap_mode_search(
+    gedcom_persons: list[dict],
+    target: dict,
+    query: str,
+    trace: list[str],
+) -> list[dict]:
+    """Search for plausible parents of the target child using gap_scanner.
+
+    Triggered when target_person contains ``gap_mode: True``. The target
+    must also include ``child_id`` (GEDCOM pointer of the child) and
+    ``missing_role`` ("father" or "mother").
+
+    Outputs the same record format as query mode so downstream agents
+    (Synthesizer, Hypothesizer, Critic) work unchanged.
+    """
+    child_id = target.get("child_id")
+    missing_role = target.get("missing_role", "father")
+    person_by_id = {p["id"]: p for p in gedcom_persons}
+
+    child = person_by_id.get(child_id)
+    if not child:
+        trace.append(
+            f"record_scout: gap_mode — child_id {child_id} not found in GEDCOM"
+        )
+        return []
+
+    trace.append(
+        f"record_scout: gap_mode — searching for {missing_role} of "
+        f"{child.get('name')} ({child_id})"
+    )
+
+    # Use token-based geo (no live geocoding) for speed on large trees.
+    parent_candidates = find_parent_candidates(
+        gedcom_persons,
+        child,
+        missing_role,
+        max_results=_MAX_CANDIDATES,
+        use_geocoding=False,
+    )
+
+    trace.append(
+        f"record_scout: gap_mode — {len(parent_candidates)} parent candidates "
+        f"(top score {parent_candidates[0]['composite_score'] if parent_candidates else 'n/a'})"
+    )
+
+    # Build records: the CHILD is the subject, the top parent candidate is
+    # labeled as "father"/"mother" so the existing Synthesizer ->
+    # Hypothesizer chain picks it up naturally (the Synthesizer reads
+    # father_id/mother_id from the subject's person dict to build the
+    # profile's family block; the Hypothesizer reads that block to decide
+    # which hypotheses to generate).
+    #
+    # Key shim: we inject the top candidate's ID into a COPY of the child's
+    # person dict as father_id/mother_id. This lets the downstream pipeline
+    # treat the candidate as if the GEDCOM link existed, without mutating
+    # the real gedcom_persons list. The Critic will then independently
+    # evaluate whether the evidence supports the proposed link.
+    records: list[dict] = []
+
+    # Make a shallow copy of the child's data and inject the top candidate's
+    # ID as the missing parent link, so downstream agents see a family ref.
+    child_data = dict(child)
+    if parent_candidates:
+        top_candidate_id = parent_candidates[0]["person"]["id"]
+        if missing_role == "father":
+            child_data["father_id"] = top_candidate_id
+        else:
+            child_data["mother_id"] = top_candidate_id
+        trace.append(
+            f"record_scout: gap_mode — injected {missing_role}_id="
+            f"{top_candidate_id} into subject record for downstream agents"
+        )
+
+    # The child as subject — always included so the profile can be built.
+    records.append(_make_record(child_data, "subject", 1.0))
+
+    # Include the child's known parent (if any) for context.
+    other_role = "mother" if missing_role == "father" else "father"
+    other_parent_id = child.get(f"{other_role}_id")
+    if other_parent_id and other_parent_id in person_by_id:
+        records.append(
+            _make_record(person_by_id[other_parent_id], other_role, None)
+        )
+
+    # Parent candidates: label the top one with the standard role tag
+    # ("father"/"mother") so downstream agents treat it the same as a
+    # query-mode result. Additional candidates use "alt_{role}" to
+    # distinguish them from the primary without confusing the Synthesizer.
+    for rank, pc in enumerate(parent_candidates):
+        cand = pc["person"]
+        cand_score = pc["composite_score"]
+        role_tag = missing_role if rank == 0 else f"alt_{missing_role}"
+        records.append(_make_record(cand, role_tag, cand_score))
+        # Candidate's spouse(s) and children provide evidence the
+        # Hypothesizer can use (e.g. does the candidate already have
+        # a family unit in the right time/place?).
+        for sid in cand.get("spouse_ids") or []:
+            if sid in person_by_id and sid != child_id:
+                records.append(
+                    _make_record(person_by_id[sid], "spouse", None)
+                )
+        for cid in cand.get("children_ids") or []:
+            if cid in person_by_id and cid != child_id:
+                records.append(
+                    _make_record(person_by_id[cid], "child", None)
+                )
+
+    # Deduplicate by record_id.
+    seen: dict[str, dict] = {}
+    for record in records:
+        seen.setdefault(record["record_id"], record)
+    return list(seen.values())
 
 
 # ---------------------------------------------------------------------------
@@ -243,8 +408,114 @@ def _make_record(
     return {
         "record_id": f"gedcom:{person['id']}",
         "source": "gedcom",
+        "source_type": "gedcom",
         "record_type": "individual",
         "relation_to_target": relation,
         "match_score": match_score,
         "data": person,
     }
+
+
+# ---------------------------------------------------------------------------
+# External source corroboration
+# ---------------------------------------------------------------------------
+
+
+def _search_external_sources(
+    retrieved_records: list[dict], trace: list[str]
+) -> list[dict]:
+    """Search FindAGrave and FamilySearch for the top subject candidate.
+
+    Additive — returns a list of external records to append. Never modifies
+    existing records. Returns [] on any failure so the pipeline continues
+    with GEDCOM-only evidence if external sources are unavailable.
+    """
+    from tools.date_utils import get_year
+
+    # Find the top subject record to use as the search seed.
+    subject = next(
+        (r for r in retrieved_records if r.get("relation_to_target") == "subject"),
+        None,
+    )
+    if not subject:
+        trace.append("record_scout: no subject record for external corroboration")
+        return []
+
+    data = subject.get("data") or {}
+    first_name = data.get("first_name") or ""
+    surname = data.get("surname") or ""
+    if not first_name or not surname:
+        name_parts = (data.get("name") or "").rsplit(maxsplit=1)
+        if len(name_parts) == 2:
+            first_name = first_name or name_parts[0]
+            surname = surname or name_parts[1]
+    if not first_name or not surname:
+        trace.append("record_scout: insufficient name data for external search")
+        return []
+
+    birth_year = get_year(data.get("birth_date"))
+    death_year = get_year(data.get("death_date"))
+    birth_place = data.get("birth_place")
+
+    external: list[dict] = []
+
+    # FindAGrave
+    try:
+        fg_results = search_findagrave(
+            first_name=first_name.split()[0],  # use first token only
+            last_name=surname,
+            birth_year=birth_year,
+            death_year=death_year,
+            location=birth_place,
+        )
+        for r in fg_results:
+            r["relation_to_target"] = "external_corroboration"
+        external.extend(fg_results)
+        trace.append(
+            f"record_scout: FindAGrave returned {len(fg_results)} results"
+        )
+    except Exception as exc:
+        trace.append(
+            f"record_scout: FindAGrave search failed ({type(exc).__name__})"
+        )
+
+    # Wikidata
+    try:
+        wd_results = search_wikidata(
+            first_name=first_name,
+            last_name=surname,
+            birth_year=birth_year,
+            death_year=death_year,
+            birth_place=birth_place,
+        )
+        for r in wd_results:
+            r["relation_to_target"] = "external_corroboration"
+        external.extend(wd_results)
+        trace.append(
+            f"record_scout: Wikidata returned {len(wd_results)} results"
+        )
+    except Exception as exc:
+        trace.append(
+            f"record_scout: Wikidata search failed ({type(exc).__name__})"
+        )
+
+    # WikiTree
+    try:
+        wt_results = search_wikitree(
+            first_name=first_name.split()[0],
+            last_name=surname,
+            birth_year=birth_year,
+            death_year=death_year,
+        )
+        for r in wt_results:
+            r["relation_to_target"] = "external_corroboration"
+        external.extend(wt_results)
+        trace.append(
+            f"record_scout: WikiTree returned {len(wt_results)} results"
+        )
+    except Exception as exc:
+        trace.append(
+            f"record_scout: WikiTree search failed ({type(exc).__name__})"
+        )
+
+    return external
