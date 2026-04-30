@@ -56,8 +56,12 @@ AGENT_LABELS = dict(AGENT_ORDER)
 DATA_DIR = _REPO_ROOT / "data"
 DNA_DEMO_DIR = DATA_DIR / "DNA_demo"
 DNA_PERSONAL_DIR = DATA_DIR / "DNA"
+TRACES_DIR = _REPO_ROOT / "traces"
+TRACES_DEMOS_DIR = TRACES_DIR / "demos"
+TRACES_REDACTED_DIR = TRACES_DIR / "redacted"
 UPLOAD_SENTINEL = "-- upload instead --"
 DNA_NONE_SENTINEL = "-- no DNA file --"
+TRACE_NONE_SENTINEL = "-- pick a trace --"
 
 
 # =====================================================================
@@ -118,6 +122,42 @@ def load_dna_from_disk(absolute_path: str) -> str:
     if not any(root in full.parents for root in allowed_roots):
         raise ValueError(f"Path {absolute_path!r} is outside the DNA directories.")
     return full.read_text(encoding="utf-8-sig", errors="replace")
+
+
+# =====================================================================
+# Trace replay handling — loading saved pipeline runs without API calls
+# =====================================================================
+
+@st.cache_data(show_spinner=False)
+def discover_traces() -> list[tuple[str, str]]:
+    """Scan traces/demos/ and traces/redacted/ for replayable JSON traces.
+
+    Returns a list of (display_label, absolute_path) pairs. Demo traces
+    (synthetic DNA on public-data trees) come first; redacted traces
+    (pseudonymized real-tree runs) appear after. .map.json files are
+    excluded — those are re-identification mappings, not pipeline traces.
+    """
+    pairs: list[tuple[str, str]] = []
+    for label_prefix, src in (
+        ("Demo", TRACES_DEMOS_DIR),
+        ("Redacted", TRACES_REDACTED_DIR),
+    ):
+        if not src.is_dir():
+            continue
+        for p in sorted(src.glob("*.json")):
+            if p.is_file() and not p.name.endswith(".map.json"):
+                pairs.append((f"{label_prefix}: {p.stem}", str(p)))
+    return pairs
+
+
+def load_trace_from_disk(absolute_path: str) -> dict:
+    """Read a saved trace JSON. Guarded to live under traces/."""
+    import json
+    full = Path(absolute_path).resolve()
+    allowed_root = TRACES_DIR.resolve()
+    if allowed_root not in full.parents:
+        raise ValueError(f"Path {absolute_path!r} is outside traces/.")
+    return json.loads(full.read_text(encoding="utf-8"))
 
 
 def extract_gedcom_text(uploaded_file) -> str:
@@ -645,16 +685,59 @@ st.markdown(_CSS, unsafe_allow_html=True)
 st.title("Multi-Agent Genealogical Research")
 st.caption("v5 — reconciled: pipeline + family tree + audit + DNA")
 
+# =====================================================================
+# Mode selector — Live (runs the pipeline; requires an API key) vs
+# Replay (loads a saved pipeline trace; makes no LLM calls).
+#
+# Replay mode lets graders evaluate the system end-to-end against the
+# committed traces in traces/demos/ and traces/redacted/ without
+# configuring an Anthropic API key. This was a stated requirement from
+# the project's outset.
+# =====================================================================
+with st.sidebar:
+    st.markdown("### Mode")
+    app_mode = st.radio(
+        "How should the app run?",
+        options=["Live (run pipeline)", "Replay (no API key)"],
+        index=0,
+        key="app_mode",
+        help=(
+            "**Live** invokes the LangGraph pipeline against the GEDCOM "
+            "and DNA you choose. Requires `ANTHROPIC_API_KEY` in `.env` "
+            "(and optional vendor keys for cross-vendor experiments).\n\n"
+            "**Replay** loads a previously-saved pipeline trace from "
+            "`traces/demos/` or `traces/redacted/` and renders the same "
+            "tabs as a live run, with no LLM calls. Use this to evaluate "
+            "the system without configuring API access."
+        ),
+    )
+    is_replay = app_mode.startswith("Replay")
+    st.markdown("---")
+    st.caption(
+        "**Live**: Pipeline tab runs the graph and writes a new trace.\n\n"
+        "**Replay**: Pipeline / Family Tree / DNA Analysis tabs render "
+        "from a saved trace. Audit Pass 1 is deterministic and works in "
+        "either mode; Audit Pass 2 (LLM) requires Live."
+    )
+
 # Grader-facing one-liner: explain what's available on a fresh clone.
 # Public GEDCOMs (Kennedy/Queen/Habsburg/Middle Earth) and synthetic DNA demos
 # ship with the repo. Personal data dirs are gitignored — Personal entries
 # only appear in the dropdowns when you've populated them locally.
-st.info(
-    "**Data:** public GEDCOMs (Kennedy, Queen, Habsburg, Middle Earth) and "
-    "synthetic DNA demos ship with the repo. `data/PII Trees/` and `data/DNA/` "
-    "are gitignored — Personal entries only appear if you've populated those folders.",
-    icon="ℹ️",
-)
+if is_replay:
+    st.info(
+        "**Replay mode** — loading saved pipeline traces from "
+        "`traces/demos/` and `traces/redacted/`. **No LLM calls are made.** "
+        "To run the pipeline live, switch to Live mode in the sidebar.",
+        icon="🎬",
+    )
+else:
+    st.info(
+        "**Data:** public GEDCOMs (Kennedy, Queen, Habsburg, Middle Earth) and "
+        "synthetic DNA demos ship with the repo. `data/PII Trees/` and `data/DNA/` "
+        "are gitignored — Personal entries only appear if you've populated those folders.",
+        icon="ℹ️",
+    )
 
 tab_pipeline, tab_tree, tab_audit, tab_dna = st.tabs(
     ["Pipeline", "Family Tree", "Audit", "DNA Analysis"]
@@ -666,6 +749,63 @@ tab_pipeline, tab_tree, tab_audit, tab_dna = st.tabs(
 # =====================================================================
 
 with tab_pipeline:
+    # Replay branch — runs first if Replay mode is selected. Skips the live
+    # form entirely (gated below) and renders results from a saved trace.
+    if is_replay:
+        st.markdown("### Pick a saved pipeline trace")
+        available_traces = discover_traces()
+        if not available_traces:
+            st.error(
+                "No replay traces found under `traces/demos/` or "
+                "`traces/redacted/`. The repo ships three demo traces "
+                "(JFK, Maria Theresia, Queen Victoria) and one redacted "
+                "Moore-family trace; if they're missing, your clone may "
+                "be incomplete."
+            )
+        else:
+            trace_options = [TRACE_NONE_SENTINEL] + [label for label, _ in available_traces]
+            trace_label_to_path = {label: path for label, path in available_traces}
+            selected_trace = st.selectbox(
+                "Trace",
+                options=trace_options,
+                index=0,
+                help=(
+                    "**Demo:** synthetic DNA on public-data trees — fully "
+                    "reproducible, no PII.\n\n"
+                    "**Redacted:** real-tree run with names pseudonymized "
+                    "(PERSON_NNN) — demonstrates real-data behavior "
+                    "without exposing identity."
+                ),
+            )
+            if selected_trace and selected_trace != TRACE_NONE_SENTINEL:
+                trace_path = trace_label_to_path.get(selected_trace)
+                try:
+                    loaded = load_trace_from_disk(trace_path)
+                except Exception as exc:
+                    st.error(f"Could not load trace: {exc}")
+                else:
+                    metadata = loaded.get("trace_metadata") or {}
+                    timestamp = metadata.get("timestamp", "?")
+                    label = metadata.get("label", "?")
+                    st.success(
+                        f"Loaded trace **{label}** from {timestamp}. "
+                        "Family Tree and DNA Analysis tabs also render "
+                        "from this trace."
+                    )
+                    # Stash so Family Tree + DNA tabs auto-render.
+                    st.session_state["pipeline_result"] = loaded
+                    render_results(loaded)
+            else:
+                st.info(
+                    "Pick a trace from the dropdown above to render its "
+                    "saved pipeline output."
+                )
+
+# Live branch — original form-driven flow. Gated so it does not appear in
+# Replay mode. (Using `if not is_replay:` instead of an `else:` block keeps
+# the existing 300+ lines of form code at their current indentation.)
+if not is_replay:
+  with tab_pipeline:
     available_gedcoms = discover_gedcom_files()
     available_dna = discover_dna_files()
 
@@ -998,6 +1138,14 @@ with tab_tree:
 with tab_audit:
     st.header("Subtree Audit")
     st.caption("Select a GEDCOM, pick a root person, and audit N generations.")
+    if is_replay:
+        st.info(
+            "**Replay mode note:** Audit Pass 1 (deterministic Tier 1 + "
+            "geographic checks) runs without an API key. Audit Pass 2 "
+            "(LLM deep audit) requires `ANTHROPIC_API_KEY`; switch to "
+            "Live mode for that.",
+            icon="ℹ️",
+        )
 
     aud_gedcoms = discover_gedcom_files()
     c_sel, c_up = st.columns(2)
