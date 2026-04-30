@@ -1,17 +1,17 @@
-"""Gap detection entry point — discovers and investigates missing relationships.
+r"""Gap detection entry point — discovers and investigates missing relationships.
 
 Usage:
     # Show gap summary for a GEDCOM file:
-    ./.venv/Scripts/python.exe gap_search.py data/PII\ Trees/Moore\ Family\ Tree.ged
+    ./.venv/Scripts/python.exe gap_search.py "data/PII Trees/Moore Family Tree.ged"
 
     # Run the pipeline on the top N gaps:
-    ./.venv/Scripts/python.exe gap_search.py data/PII\ Trees/Moore\ Family\ Tree.ged --run 3
+    ./.venv/Scripts/python.exe gap_search.py "data/PII Trees/Moore Family Tree.ged" --run 3
 
     # Only scan for fathers / mothers:
-    ./.venv/Scripts/python.exe gap_search.py data/PII\ Trees/Moore\ Family\ Tree.ged --role father --run 5
+    ./.venv/Scripts/python.exe gap_search.py "data/PII Trees/Moore Family Tree.ged" --role father --run 5
 
     # Filter to gaps with a high-scoring candidate already in the tree:
-    ./.venv/Scripts/python.exe gap_search.py data/PII\ Trees/Moore\ Family\ Tree.ged --min-score 0.75 --run 3
+    ./.venv/Scripts/python.exe gap_search.py "data/PII Trees/Moore Family Tree.ged" --min-score 0.75 --run 3
 
 Pipeline integration:
     For each selected gap, gap_search builds a target_person dict with
