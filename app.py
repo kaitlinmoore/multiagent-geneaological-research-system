@@ -1723,8 +1723,27 @@ with tab_audit:
             r["severity"] != "ok" for r in st.session_state["aud_results"]
         ):
             probs = [r for r in st.session_state["aud_results"] if r["severity"] != "ok"]
-            dn = st.number_input(f"Deep audit top N (of {len(probs)})", 1, len(probs), min(5, len(probs)), key="aud_deep_n")
-            if st.button(f"Deep Audit Top {dn}", key="btn_aud_deep"):
+            dn = st.number_input(
+                f"Deep audit top N (of {len(probs)})",
+                1, len(probs), min(5, len(probs)),
+                key="aud_deep_n",
+                disabled=is_replay,
+            )
+            # Pass 2 needs LLM calls. Disable in Replay mode so a click
+            # doesn't bubble up an Anthropic-API exception. The
+            # Replay-mode banner above already explains this textually;
+            # the disabled button + tooltip is the visual reinforcement.
+            deep_button_help = (
+                "LLM Pass 2 requires an Anthropic API key. "
+                "Switch to Live mode in the sidebar to run a deep audit."
+                if is_replay else None
+            )
+            if st.button(
+                f"Deep Audit Top {dn}",
+                key="btn_aud_deep",
+                disabled=is_replay,
+                help=deep_button_help,
+            ):
                 from audit import pass2_audit, generate_report
                 with st.spinner(f"Running LLM on {dn} relationships..."):
                     p2 = pass2_audit(probs, st.session_state["aud_text"], st.session_state["aud_persons"], max_deep=dn)
