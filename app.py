@@ -797,6 +797,14 @@ with tab_pipeline:
                     st.session_state["pipeline_result"] = loaded
                     render_results(loaded)
             else:
+                # User moved back to the sentinel — clear any previously-loaded
+                # trace from session_state so the Family Tree and DNA Analysis
+                # tabs don't render stale data while this tab shows the
+                # "pick a trace" message.
+                if "pipeline_result" in st.session_state:
+                    del st.session_state["pipeline_result"]
+                if "trace_paths" in st.session_state:
+                    del st.session_state["trace_paths"]
                 st.info(
                     "Pick a trace from the dropdown above to render its "
                     "saved pipeline output."
@@ -977,6 +985,10 @@ if not is_replay:
             st.session_state["gap_gedcom_text"] = gedcom_text
             st.session_state["gap_persons_count"] = len(gap_persons)
             st.session_state["gap_mode_reason"] = mode_reason
+            # Source label fingerprint — used by the persistent picker
+            # below to invalidate the cache if the user changes GEDCOM
+            # without re-clicking Run.
+            st.session_state["gap_source_label"] = source_label
             # No st.stop() and no further branches: gap mode is a scan-only
             # path on submit. The persistent picker UI below renders the
             # table and the single-gap-pipeline button. The elif on the
@@ -1076,11 +1088,21 @@ if not is_replay:
             # Render results inline.
             render_results(result)
 
-    elif "pipeline_result" in st.session_state:
-        st.info("A previous run is cached. Submit again to re-run, or see the other tabs.")
+    elif "pipeline_result" in st.session_state and not is_gap_mode:
+        # Re-render the most recent live result so a user who navigates
+        # away (changes mode, scrolls, switches tabs) and back doesn't
+        # see only a "previous run cached" placeholder. Skipped in gap
+        # mode — the gap picker block below renders its own results.
+        st.caption(
+            "Showing the most recent run. Click Run to invoke the "
+            "pipeline again."
+        )
+        render_results(st.session_state["pipeline_result"])
 
     # Deep audit button (appears after audit routing flags problems).
-    if st.session_state.get("audit_problems"):
+    # Gated on Audit mode so leftover audit_problems from a previous run
+    # don't show a Deep Audit affordance below an unrelated query result.
+    if mode_choice == "Audit" and st.session_state.get("audit_problems"):
         problems = st.session_state["audit_problems"]
         deep_n = st.number_input(
             f"Deep audit top N (of {len(problems)} flagged)",
@@ -1102,7 +1124,35 @@ if not is_replay:
     # a GEDCOM (results cached in session_state on form submit). Survives
     # reruns triggered by selectbox / button interactions.
     # ------------------------------------------------------------------
+    # Detect GEDCOM-source change so we can hide stale gap-scan results
+    # if the user switched the file without re-clicking Run.
+    _gap_source_mismatch = False
     if is_gap_mode and st.session_state.get("gap_candidates") is not None:
+        _cached_source = st.session_state.get("gap_source_label", "")
+        _current_source: Optional[str] = None
+        if uploaded is not None:
+            _current_source = f"uploaded: {uploaded.name}"
+        elif selected_gedcom and selected_gedcom != UPLOAD_SENTINEL:
+            _current_source = f"data/{selected_gedcom}"
+        if (
+            _current_source
+            and _cached_source
+            and _current_source != _cached_source
+        ):
+            _gap_source_mismatch = True
+            st.markdown("---")
+            st.warning(
+                f"GEDCOM source changed from `{_cached_source}` to "
+                f"`{_current_source}` since the last gap scan. Click "
+                "**Run** above to re-scan against the new file. The "
+                "candidate table is hidden until you re-run."
+            )
+
+    if (
+        is_gap_mode
+        and st.session_state.get("gap_candidates") is not None
+        and not _gap_source_mismatch
+    ):
         gap_candidates = st.session_state["gap_candidates"]
         gap_gedcom_text = st.session_state["gap_gedcom_text"]
         gap_persons_count = st.session_state.get("gap_persons_count", 0)
@@ -1433,6 +1483,19 @@ with tab_audit:
                 st.warning(f"No match for '{aud_name}' (best {score:.2f})")
 
         if root_aud and st.button("Run Audit", type="primary", key="btn_audit"):
+            # Clear any stale audit state from a previous run before
+            # populating with fresh results. Without this, a Pass 2 click
+            # could replay against the previous root/subtree.
+            for _stale_key in (
+                "aud_results",
+                "aud_subtree",
+                "aud_root",
+                "aud_text",
+                "aud_persons",
+                "aud_gens",
+            ):
+                st.session_state.pop(_stale_key, None)
+
             from tools.subtree_extractor import extract_all_relationships, extract_subtree
             from audit import pass1_audit, pass2_audit, generate_report
 
