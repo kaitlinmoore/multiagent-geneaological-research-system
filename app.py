@@ -960,6 +960,12 @@ with tab_pipeline:
                                 "the Audit-tab loader instead; arbitrary "
                                 "JSON files cannot be replayed here."
                             )
+                            # Drop any previously-loaded result so the
+                            # Family Tree / DNA Analysis tabs don't keep
+                            # rendering an earlier trace while this tab
+                            # shows the validation-error message.
+                            st.session_state.pop("pipeline_result", None)
+                            st.session_state.pop("trace_paths", None)
                         else:
                             metadata = loaded.get("trace_metadata") or {}
                             timestamp = metadata.get("timestamp", "?")
