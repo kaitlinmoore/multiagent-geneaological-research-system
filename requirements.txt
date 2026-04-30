@@ -1,9 +1,15 @@
 langgraph
 langchain
 langchain-anthropic
+langchain-openai
+langchain-google-genai
 anthropic
 python-dotenv
 python-gedcom-2
 jellyfish
 geopy
 python-dateutil
+requests
+beautifulsoup4
+streamlit
+graphviz
