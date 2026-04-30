@@ -20,11 +20,39 @@ streamlit run app.py
 
 Once the app loads, in the sidebar select **Mode → Replay (no API key)**. The Pipeline tab will offer a trace dropdown; pick one and the Pipeline / Family Tree / DNA Analysis tabs render from the saved state.
 
-Available replay traces:
-- **`Demo: trace_*_jfk_parents_with_synthetic_dna`** — clean accept on JFK's parents, DNA-supported
-- **`Demo: trace_*_habsburg_maria_theresia_synthetic_dna`** — exercises escalation triggers (Critic disagreed across hypotheses for the same subject; pipeline force-finalized after max revisions)
-- **`Demo: trace_*_queen_victoria_synthetic_dna`** — clean accept on English-language royal data
-- **`Redacted: moore_myheritage_dna_redacted`** — pseudonymized real-tree run; demonstrates real-data pipeline behavior without exposing identity
+#### Available replay traces (Pipeline tab dropdown)
+
+| Demo | Mode | What to look for |
+|---|---|---|
+| `Demo: trace_*_jfk_parents_with_synthetic_dna` | Query + DNA | Clean accept on JFK's parents; DNA cross-references render in the DNA Analysis tab |
+| `Demo: trace_*_habsburg_maria_theresia_synthetic_dna` | Query + DNA | **Escalation case.** Critic disagreed across hypotheses for the same subject; pipeline force-finalized after 2 revision cycles. Triggers human-review flags 1 and 3. |
+| `Demo: trace_*_queen_victoria_synthetic_dna` | Query + DNA | Clean accept on Queen Victoria's parents (English-language royal data) |
+| `Demo: trace_*_kennedy_gap_demo` | Gap detection | **Escalation case.** Robert Sargent Shriver missing both parents; Critic rejected on both revisions, pipeline force-finalized. |
+| `Demo: trace_*_habsburg_gap_demo` | Gap detection | Albert I von Ungarn (b. 1016), missing mother. flag_uncertain at 0.75 — medieval source ambiguity. |
+| `Demo: trace_*_queen_gap_demo` | Gap detection | Bodilan of Burgundy, missing mother. flag_uncertain at 0.72 — same pattern. |
+| `Redacted: moore_myheritage_dna_redacted` | Query + DNA | Pseudonymized real-tree run; demonstrates the redactor + real-data behavior without exposing identity. |
+
+The Family Tree and DNA Analysis tabs auto-render from whichever trace is selected.
+
+#### Audit replay (separate loader on the Audit tab)
+
+Audit results have a different shape than pipeline traces, so audit replay uses a dedicated loader on the **Audit tab** rather than the Pipeline trace dropdown. In Replay mode the Audit tab opens with a "📂 Load a saved audit run" expander listing:
+
+| Demo | Subtree | Pass 1 result | Pass 2 |
+|---|---|---|---|
+| `Demo: audit_*_habsburg_maria_theresia` | 18 persons / 166 relationships, 3 generations | 0 impossible, 5 flagged, 161 ok | 5/5 deep-audited; all accepted at 0.75–0.93 confidence |
+| `Demo: audit_*_queen_edward_vii` | 19 / 23, 4 generations | 0 flagged (clean tree) | skipped (no problems) |
+| `Demo: audit_*_kennedy_jfk` | 9 / 11, 4 generations | 1 flagged | 1/1 deep-audited and accepted at 0.85 |
+
+Pass 1 (deterministic checks) also runs interactively without an API key in either mode — pick a GEDCOM and root person, click Run Audit. Pass 2 (LLM deep audit) requires Live mode.
+
+### Live Mode Workflow (with API key)
+
+For each entry mode, the Streamlit workflow is:
+
+- **Query mode** (default): pick a GEDCOM and optional DNA file, type a research question, click Run. Per-agent progress indicators advance; results render in the Pipeline tab; Family Tree and DNA Analysis tabs auto-update.
+- **Gap detection**: pick a GEDCOM, click Run. The candidate scan produces a paginated table (50 per page) of persons missing parent links, ranked by data richness. To investigate one, pick it from the **Investigate a single gap** selectbox below the table and click **Run full pipeline on this gap** — that triggers the same multi-agent flow as query mode.
+- **Subtree audit**: switch to the Audit tab. Pick a GEDCOM and a root person, set generations 1–5, click **Run Audit** (deterministic Pass 1; no API key needed). If problems are found, optionally click **Deep Audit Top N** to run the LLM pipeline on the top N flagged relationships (Pass 2; API key required).
 
 ### CLI Replay
 
@@ -45,7 +73,8 @@ For graders who want to review without setting up Python at all, every relevant 
 - **Phase 2 deliverable PDF:** `docs/Multi-Agent Genealogy - Phase 2 - Kaitlin Moore.pdf`
 - **AI tool disclosure:** [`AI_USAGE.md`](AI_USAGE.md)
 - **Sample pipeline output:**
-  - [`traces/demos/`](traces/demos/) — three reproducible end-to-end traces (JFK / Maria Theresia / Queen Victoria, all with synthetic DNA)
+  - [`traces/demos/trace_*`](traces/demos/) — six pipeline traces: three query-mode + DNA (JFK, Maria Theresia, Queen Victoria) and three gap-mode (Kennedy/Habsburg/Queen)
+  - [`traces/demos/audit_*`](traces/demos/) — three subtree-audit results (Habsburg/Queen/Kennedy) loadable from the Audit tab
   - [`traces/redacted/`](traces/redacted/) — pseudonymized real-tree run
 - **Pre-rendered evaluation results:**
   - [`eval/results/ablation_summary.md`](eval/results/ablation_summary.md) — single-agent baseline vs full pipeline
