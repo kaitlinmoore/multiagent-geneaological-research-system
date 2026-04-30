@@ -1,0 +1,1216 @@
+{
+  "trace_metadata": {
+    "timestamp": "20260423_075023",
+    "label": "moore_myheritage_dna",
+    "saved_by": "tools.trace_writer.save_trace"
+  },
+  "query": "Who were the parents of PERSON_001?",
+  "target_person": {
+    "name": "PERSON_001",
+    "approx_birth": "1883",
+    "location": "Pennsylvania, USA"
+  },
+  "status": "complete",
+  "revision_count": 0,
+  "gedcom_source": {
+    "sha256": "MATCH_001",
+    "length_chars": 12188819
+  },
+  "gedcom_persons_count": 8759,
+  "retrieved_records": [
+    {
+      "record_id": "gedcom:@I36494113439@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "subject",
+      "match_score": 1.0,
+      "data": {
+        "id": "@I36494113439@",
+        "name": "PERSON_001",
+        "first_name": "PERSON_002",
+        "surname": "FAMILY_001",
+        "sex": "M",
+        "birth_date": "08 Dec 1883",
+        "birth_place": "Pennsylvania, USA",
+        "death_date": "14 Aug 1959",
+        "death_place": "Philadelphia, Philadelphia, Pennsylvania, USA",
+        "father_id": "@I36494113424@",
+        "mother_id": "@I36494113423@",
+        "spouse_ids": [
+          "@I36494113898@"
+        ],
+        "children_ids": [
+          "@I36494113900@",
+          "@I36494113899@",
+          "@I36494113901@"
+        ],
+        "famc": [
+          "@F1111@"
+        ],
+        "fams": [
+          "@F687@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I36494113424@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "father",
+      "match_score": null,
+      "data": {
+        "id": "@I36494113424@",
+        "name": "PERSON_003",
+        "first_name": "PERSON_004",
+        "surname": "FAMILY_001",
+        "sex": "M",
+        "birth_date": "21 Dec 1859",
+        "birth_place": "PERSON_005, Pennsylvania, USA",
+        "death_date": "15 Apr 1920",
+        "death_place": "PERSON_005, Pennsylvania, USA",
+        "father_id": "@I36494113435@",
+        "mother_id": "@I36494113436@",
+        "spouse_ids": [
+          "@I36494113423@"
+        ],
+        "children_ids": [
+          "@I36494113439@",
+          "@I36494113437@",
+          "@I36510115765@",
+          "@I36494113434@",
+          "@I36494113406@",
+          "@I36494113433@",
+          "@I36494113438@"
+        ],
+        "famc": [
+          "@F1107@"
+        ],
+        "fams": [
+          "@F1111@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I36494113423@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "mother",
+      "match_score": null,
+      "data": {
+        "id": "@I36494113423@",
+        "name": "PERSON_006. FAMILY_063",
+        "first_name": "PERSON_006.",
+        "surname": "FAMILY_063",
+        "sex": "F",
+        "birth_date": "24 Apr 1860",
+        "birth_place": "Ireland",
+        "death_date": "14 Jul 1934",
+        "death_place": "Philadelphia, Philadelphia, Pennsylvania, USA",
+        "father_id": "@I36494113441@",
+        "mother_id": "@I36494113440@",
+        "spouse_ids": [
+          "@I36494113424@"
+        ],
+        "children_ids": [
+          "@I36494113439@",
+          "@I36494113437@",
+          "@I36510115765@",
+          "@I36494113434@",
+          "@I36494113406@",
+          "@I36494113433@",
+          "@I36494113438@"
+        ],
+        "famc": [
+          "@F1103@"
+        ],
+        "fams": [
+          "@F1111@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I36494113898@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I36494113898@",
+        "name": "PERSON_007",
+        "first_name": "PERSON_008",
+        "surname": "FAMILY_005",
+        "sex": "F",
+        "birth_date": "20 Jun 1888",
+        "birth_place": "Philadelphia, Pennsylvania, USA",
+        "death_date": "26 Jan 1946",
+        "death_place": "Philadelphia, Philadelphia, Pennsylvania, USA",
+        "father_id": "@I36504445745@",
+        "mother_id": "@I36504445773@",
+        "spouse_ids": [
+          "@I36494113439@"
+        ],
+        "children_ids": [
+          "@I36494113900@",
+          "@I36494113899@",
+          "@I36494113901@"
+        ],
+        "famc": [
+          "@F2600@"
+        ],
+        "fams": [
+          "@F687@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I36494113900@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I36494113900@",
+        "name": "PERSON_009",
+        "first_name": "PERSON_010",
+        "surname": "FAMILY_001",
+        "sex": "M",
+        "birth_date": "22 Dec 1912",
+        "birth_place": "Philadelphia, Philadelphia, Pennsylvania, USA",
+        "death_date": "16 Jul 1995",
+        "death_place": null,
+        "father_id": "@I36494113439@",
+        "mother_id": "@I36494113898@",
+        "spouse_ids": [
+          "@I372036791906@"
+        ],
+        "children_ids": [
+          "@I372036798453@"
+        ],
+        "famc": [
+          "@F687@"
+        ],
+        "fams": [
+          "@F686@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I36494113899@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I36494113899@",
+        "name": "PERSON_001",
+        "first_name": "PERSON_002",
+        "surname": "FAMILY_001",
+        "sex": "M",
+        "birth_date": "1916",
+        "birth_place": "Philadelphia, PERSON_005, Pennsylvania, USA",
+        "death_date": "26 Jan 1972",
+        "death_place": "Philadelphia, Pennsylvania, USA",
+        "father_id": "@I36494113439@",
+        "mother_id": "@I36494113898@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F687@"
+        ],
+        "fams": []
+      }
+    },
+    {
+      "record_id": "gedcom:@I36494113901@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I36494113901@",
+        "name": "PERSON_011",
+        "first_name": "PERSON_012",
+        "surname": "FAMILY_001",
+        "sex": "M",
+        "birth_date": "10 May 1927",
+        "birth_place": "Phila, Pennsylvania",
+        "death_date": "31 Mar 2004",
+        "death_place": "Collingswood, Camden, New Jersey, USA",
+        "father_id": "@I36494113439@",
+        "mother_id": "@I36494113898@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F687@"
+        ],
+        "fams": []
+      }
+    },
+    {
+      "record_id": "gedcom:@I36504893865@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "subject",
+      "match_score": 1.0,
+      "data": {
+        "id": "@I36504893865@",
+        "name": "PERSON_001",
+        "first_name": "PERSON_002",
+        "surname": "FAMILY_001",
+        "sex": "M",
+        "birth_date": "21 Apr 1918",
+        "birth_place": "Pennsylvania, USA",
+        "death_date": "14 May 1990",
+        "death_place": "Pasco, Florida, United States",
+        "father_id": "@I36504854855@",
+        "mother_id": "@I36504893581@",
+        "spouse_ids": [
+          "@I372360010074@"
+        ],
+        "children_ids": [],
+        "famc": [
+          "@F1289@"
+        ],
+        "fams": [
+          "@F1210@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I36504854855@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "father",
+      "match_score": null,
+      "data": {
+        "id": "@I36504854855@",
+        "name": "PERSON_013",
+        "first_name": "PERSON_014",
+        "surname": "FAMILY_001",
+        "sex": "M",
+        "birth_date": "1887",
+        "birth_place": "Philadelphia, Philadelphia, Pennsylvania, USA",
+        "death_date": "1952",
+        "death_place": "Philadelphia, Philadelphia, Pennsylvania, USA",
+        "father_id": "@I36494113446@",
+        "mother_id": "@I36504858394@",
+        "spouse_ids": [
+          "@I36504893581@"
+        ],
+        "children_ids": [
+          "@I36504893709@",
+          "@I36504893865@"
+        ],
+        "famc": [
+          "@F1101@"
+        ],
+        "fams": [
+          "@F1289@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I36504893581@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "mother",
+      "match_score": null,
+      "data": {
+        "id": "@I36504893581@",
+        "name": "PERSON_015",
+        "first_name": "PERSON_016",
+        "surname": "FAMILY_007",
+        "sex": "F",
+        "birth_date": "Abt. 1891",
+        "birth_place": "Pennsylvania, USA",
+        "death_date": "16 Sep 1965",
+        "death_place": "Bristol, Bucks, Pennsylvania, USA",
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I36504854855@"
+        ],
+        "children_ids": [
+          "@I36504893709@",
+          "@I36504893865@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F1289@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I372360010074@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I372360010074@",
+        "name": "PERSON_017",
+        "first_name": "Emma May",
+        "surname": "FAMILY_008",
+        "sex": "F",
+        "birth_date": "1915",
+        "birth_place": "Philadelphia, Pennsylvania, USA",
+        "death_date": "18 Dec 1990",
+        "death_place": "PERSON_018, Florida, USA",
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I36504893865@"
+        ],
+        "children_ids": [],
+        "famc": [],
+        "fams": [
+          "@F1210@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I36494113430@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "subject",
+      "match_score": 0.971,
+      "data": {
+        "id": "@I36494113430@",
+        "name": "PERSON_013",
+        "first_name": "PERSON_014",
+        "surname": "FAMILY_001",
+        "sex": "M",
+        "birth_date": "20 Jun 1915",
+        "birth_place": "Philadelphia, Pennsylvania, USA",
+        "death_date": "22 Mar 1972",
+        "death_place": "Norristown, Chester, Pennsylvania, United States",
+        "father_id": "@I36494113406@",
+        "mother_id": "@I36494113405@",
+        "spouse_ids": [
+          "@I36494113815@"
+        ],
+        "children_ids": [],
+        "famc": [
+          "@F1063@"
+        ],
+        "fams": [
+          "@F637@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I36494113406@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "father",
+      "match_score": null,
+      "data": {
+        "id": "@I36494113406@",
+        "name": "PERSON_003",
+        "first_name": "PERSON_004",
+        "surname": "FAMILY_001",
+        "sex": "M",
+        "birth_date": "12 Jul 1892",
+        "birth_place": "Philadelphia, Pennsylvania, USA",
+        "death_date": "15 Nov 1962",
+        "death_place": "Abington, Montgomery, Pennsylvania, USA",
+        "father_id": "@I36494113424@",
+        "mother_id": "@I36494113423@",
+        "spouse_ids": [
+          "@I36494113405@"
+        ],
+        "children_ids": [
+          "@I36494113430@",
+          "@I36494113429@",
+          "@I36494113426@",
+          "@I36494113975@",
+          "@I36494113422@",
+          "@I36494113428@",
+          "@I36494113401@",
+          "@I36494113425@"
+        ],
+        "famc": [
+          "@F1111@"
+        ],
+        "fams": [
+          "@F1063@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I36494113405@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "mother",
+      "match_score": null,
+      "data": {
+        "id": "@I36494113405@",
+        "name": "PERSON_019",
+        "first_name": "PERSON_020",
+        "surname": "FAMILY_009",
+        "sex": "F",
+        "birth_date": "Mar 1897",
+        "birth_place": "Pennsylvania, USA",
+        "death_date": "04 Jan 1952",
+        "death_place": "PERSON_005, Pennsylvania, USA",
+        "father_id": "@I36494113432@",
+        "mother_id": "@I36494113431@",
+        "spouse_ids": [
+          "@I36494113406@"
+        ],
+        "children_ids": [
+          "@I36494113430@",
+          "@I36494113429@",
+          "@I36494113426@",
+          "@I36494113975@",
+          "@I36494113422@",
+          "@I36494113428@",
+          "@I36494113401@",
+          "@I36494113425@"
+        ],
+        "famc": [
+          "@F1108@"
+        ],
+        "fams": [
+          "@F1063@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I36494113815@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I36494113815@",
+        "name": "PERSON_021",
+        "first_name": "PERSON_022.",
+        "surname": "FAMILY_001",
+        "sex": "F",
+        "birth_date": "12 Feb 1923",
+        "birth_place": "Everett, Middlesex, Massachusetts, USA",
+        "death_date": "20 Oct 2009",
+        "death_place": "PERSON_023, Montgomery, Pennsylvania, USA",
+        "father_id": "@I36494113827@",
+        "mother_id": "@I36494113826@",
+        "spouse_ids": [
+          "@I36494113430@"
+        ],
+        "children_ids": [],
+        "famc": [
+          "@F624@"
+        ],
+        "fams": [
+          "@F637@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I36494113446@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "father",
+      "match_score": null,
+      "data": {
+        "id": "@I36494113446@",
+        "name": "PERSON_024",
+        "first_name": "PERSON_025",
+        "surname": "FAMILY_001",
+        "sex": "M",
+        "birth_date": "10 Dec 1857",
+        "birth_place": "Pennsylvania, USA",
+        "death_date": "10 May 1950",
+        "death_place": "Philadelphia, Philadelphia, Pennsylvania, USA",
+        "father_id": "@I36494113435@",
+        "mother_id": "@I36494113436@",
+        "spouse_ids": [
+          "@I36504858394@"
+        ],
+        "children_ids": [
+          "@I36504854855@",
+          "@I36504854856@",
+          "@I36504854857@",
+          "@I36504858556@"
+        ],
+        "famc": [
+          "@F1107@"
+        ],
+        "fams": [
+          "@F1101@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I36504858394@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "mother",
+      "match_score": null,
+      "data": {
+        "id": "@I36504858394@",
+        "name": "PERSON_026",
+        "first_name": "Margaret",
+        "surname": "FAMILY_011",
+        "sex": "F",
+        "birth_date": "Abt. 1865",
+        "birth_place": "Ireland",
+        "death_date": "04 Jun 1944",
+        "death_place": "Philadelphia, Philadelphia, Pennsylvania, USA",
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I36494113446@"
+        ],
+        "children_ids": [
+          "@I36504854855@",
+          "@I36504854856@",
+          "@I36504854857@",
+          "@I36504858556@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F1101@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I36504893709@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I36504893709@",
+        "name": "PERSON_027",
+        "first_name": "PERSON_028",
+        "surname": "FAMILY_001",
+        "sex": "M",
+        "birth_date": "12 Feb 1914",
+        "birth_place": "Pennsylvania, USA",
+        "death_date": null,
+        "death_place": null,
+        "father_id": "@I36504854855@",
+        "mother_id": "@I36504893581@",
+        "spouse_ids": [
+          "@I372036675929@"
+        ],
+        "children_ids": [],
+        "famc": [
+          "@F1289@"
+        ],
+        "fams": [
+          "@F1245@"
+        ]
+      }
+    },
+    {
+      "record_id": "findagrave:9354664",
+      "source": "findagrave",
+      "source_type": "findagrave",
+      "record_type": "memorial",
+      "data": {
+        "name": "PERSON_029",
+        "birth_date": "29 Dec 1883",
+        "death_date": "4 May 1959",
+        "burial_location": "Danville, PERSON_030, PERSON_031",
+        "memorial_id": "9354664",
+        "memorial_url": "https://www.findagrave.com/memorial/9354664"
+      },
+      "relation_to_target": "external_corroboration"
+    },
+    {
+      "record_id": "findagrave:69137427",
+      "source": "findagrave",
+      "source_type": "findagrave",
+      "record_type": "memorial",
+      "data": {
+        "name": "PERSON_032",
+        "birth_date": "1883",
+        "death_date": "1959",
+        "burial_location": "Danville, PERSON_030, PERSON_031",
+        "memorial_id": "69137427",
+        "memorial_url": "https://www.findagrave.com/memorial/69137427"
+      },
+      "relation_to_target": "external_corroboration"
+    },
+    {
+      "record_id": "findagrave:81414552",
+      "source": "findagrave",
+      "source_type": "findagrave",
+      "record_type": "memorial",
+      "data": {
+        "name": "PERSON_033",
+        "birth_date": "22 May 1883",
+        "death_date": "14 Sep 1959",
+        "burial_location": "Danville, PERSON_030, PERSON_031",
+        "memorial_id": "81414552",
+        "memorial_url": "https://www.findagrave.com/memorial/81414552"
+      },
+      "relation_to_target": "external_corroboration"
+    },
+    {
+      "record_id": "findagrave:200329635",
+      "source": "findagrave",
+      "source_type": "findagrave",
+      "record_type": "memorial",
+      "data": {
+        "name": "PERSON_034 “Jim” FAMILY_001",
+        "birth_date": "6 Aug 1883",
+        "death_date": "10 Apr 1959",
+        "burial_location": "Danville, PERSON_030, PERSON_031",
+        "memorial_id": "200329635",
+        "memorial_url": "https://www.findagrave.com/memorial/200329635"
+      },
+      "relation_to_target": "external_corroboration"
+    },
+    {
+      "record_id": "findagrave:23972714",
+      "source": "findagrave",
+      "source_type": "findagrave",
+      "record_type": "memorial",
+      "data": {
+        "name": "PERSON_035",
+        "birth_date": "4 Jan 1883",
+        "death_date": "16 Apr 1959",
+        "burial_location": "Danville, PERSON_030, PERSON_031",
+        "memorial_id": "23972714",
+        "memorial_url": "https://www.findagrave.com/memorial/23972714"
+      },
+      "relation_to_target": "external_corroboration"
+    },
+    {
+      "record_id": "wikitree:FAMILY_001-97021",
+      "source": "wikitree",
+      "source_type": "wikitree",
+      "record_type": "person",
+      "data": {
+        "name": "PERSON_036",
+        "birth_date": null,
+        "death_date": null,
+        "birth_place": "",
+        "death_place": "",
+        "father": "PERSON_037",
+        "mother": "PERSON_038",
+        "spouse": null,
+        "wikitree_id": "FAMILY_001-97021",
+        "wikitree_url": "https://www.wikitree.com/wiki/FAMILY_001-97021"
+      },
+      "relation_to_target": "external_corroboration"
+    },
+    {
+      "record_id": "wikitree:FAMILY_001-5151",
+      "source": "wikitree",
+      "source_type": "wikitree",
+      "record_type": "person",
+      "data": {
+        "name": "PERSON_039",
+        "birth_date": null,
+        "death_date": null,
+        "birth_place": "",
+        "death_place": "",
+        "father": "PERSON_040",
+        "mother": "PERSON_041",
+        "spouse": null,
+        "wikitree_id": "FAMILY_001-5151",
+        "wikitree_url": "https://www.wikitree.com/wiki/FAMILY_001-5151"
+      },
+      "relation_to_target": "external_corroboration"
+    },
+    {
+      "record_id": "wikitree:FAMILY_001-7394",
+      "source": "wikitree",
+      "source_type": "wikitree",
+      "record_type": "person",
+      "data": {
+        "name": "PERSON_039",
+        "birth_date": null,
+        "death_date": null,
+        "birth_place": "",
+        "death_place": "",
+        "father": null,
+        "mother": null,
+        "spouse": null,
+        "wikitree_id": "FAMILY_001-7394",
+        "wikitree_url": "https://www.wikitree.com/wiki/FAMILY_001-7394"
+      },
+      "relation_to_target": "external_corroboration"
+    },
+    {
+      "record_id": "wikitree:FAMILY_001-8047",
+      "source": "wikitree",
+      "source_type": "wikitree",
+      "record_type": "person",
+      "data": {
+        "name": "PERSON_036",
+        "birth_date": null,
+        "death_date": null,
+        "birth_place": "",
+        "death_place": "",
+        "father": "PERSON_042",
+        "mother": "PERSON_043",
+        "spouse": null,
+        "wikitree_id": "FAMILY_001-8047",
+        "wikitree_url": "https://www.wikitree.com/wiki/FAMILY_001-8047"
+      },
+      "relation_to_target": "external_corroboration"
+    },
+    {
+      "record_id": "wikitree:FAMILY_001-7256",
+      "source": "wikitree",
+      "source_type": "wikitree",
+      "record_type": "person",
+      "data": {
+        "name": null,
+        "birth_date": null,
+        "death_date": null,
+        "birth_place": null,
+        "death_place": null,
+        "father": null,
+        "mother": null,
+        "spouse": null,
+        "wikitree_id": "FAMILY_001-7256",
+        "wikitree_url": "https://www.wikitree.com/wiki/FAMILY_001-7256"
+      },
+      "relation_to_target": "external_corroboration"
+    }
+  ],
+  "profiles": [
+    {
+      "profile_id": "profile:@I36494113439@",
+      "subject_record_id": "gedcom:@I36494113439@",
+      "subject_name": "PERSON_001",
+      "disambiguation": {
+        "query": "Who were the parents of PERSON_001?",
+        "query_criteria": {
+          "name": "PERSON_001",
+          "approx_birth": "1883",
+          "location": "Pennsylvania, USA"
+        },
+        "candidates_considered": [
+          {
+            "record_id": "gedcom:@I36494113439@",
+            "name": "PERSON_001",
+            "score": 2.5,
+            "reasons": [
+              "name similarity 1.0",
+              "exact birth year match (1883)",
+              "birth place tokens match: ['pennsylvania', 'usa']"
+            ],
+            "status": "SELECTED"
+          },
+          {
+            "record_id": "gedcom:@I36504893865@",
+            "name": "PERSON_001",
+            "score": 1.0,
+            "reasons": [
+              "name similarity 1.0",
+              "birth year mismatch (target 1883, candidate 1918, diff 35y)",
+              "birth place tokens match: ['pennsylvania', 'usa']"
+            ],
+            "status": "excluded"
+          },
+          {
+            "record_id": "gedcom:@I36494113430@",
+            "name": "PERSON_013",
+            "score": 0.866,
+            "reasons": [
+              "name similarity 0.866",
+              "birth year mismatch (target 1883, candidate 1915, diff 32y)",
+              "birth place tokens match: ['pennsylvania', 'usa']"
+            ],
+            "status": "excluded"
+          }
+        ]
+      },
+      "facts": [
+        {
+          "field": "name",
+          "value": "PERSON_001",
+          "sources": [
+            "gedcom:@I36494113439@"
+          ]
+        },
+        {
+          "field": "first_name",
+          "value": "PERSON_002",
+          "sources": [
+            "gedcom:@I36494113439@"
+          ]
+        },
+        {
+          "field": "surname",
+          "value": "FAMILY_001",
+          "sources": [
+            "gedcom:@I36494113439@"
+          ]
+        },
+        {
+          "field": "sex",
+          "value": "M",
+          "sources": [
+            "gedcom:@I36494113439@"
+          ]
+        },
+        {
+          "field": "birth_date",
+          "value": "08 Dec 1883",
+          "sources": [
+            "gedcom:@I36494113439@"
+          ]
+        },
+        {
+          "field": "birth_place",
+          "value": "Pennsylvania, USA",
+          "sources": [
+            "gedcom:@I36494113439@"
+          ]
+        },
+        {
+          "field": "death_date",
+          "value": "14 Aug 1959",
+          "sources": [
+            "gedcom:@I36494113439@"
+          ]
+        },
+        {
+          "field": "death_place",
+          "value": "Philadelphia, Philadelphia, Pennsylvania, USA",
+          "sources": [
+            "gedcom:@I36494113439@"
+          ]
+        }
+      ],
+      "family": {
+        "father": {
+          "name": "PERSON_003",
+          "record_id": "gedcom:@I36494113424@"
+        },
+        "mother": {
+          "name": "PERSON_006. FAMILY_063",
+          "record_id": "gedcom:@I36494113423@"
+        },
+        "spouses": [
+          {
+            "name": "PERSON_007",
+            "record_id": "gedcom:@I36494113898@"
+          }
+        ],
+        "children": [
+          {
+            "name": "PERSON_009",
+            "record_id": "gedcom:@I36494113900@"
+          },
+          {
+            "name": "PERSON_001",
+            "record_id": "gedcom:@I36494113899@"
+          },
+          {
+            "name": "PERSON_011",
+            "record_id": "gedcom:@I36494113901@"
+          }
+        ]
+      },
+      "gaps": [
+        "Birth place is vague ('Pennsylvania, USA') with no city or county specified; no corroborating source provides a more precise birth location.",
+        "No birth record or independent source corroborates the birth date of 08 Dec 1883.",
+        "No death record or independent source corroborates the death date of 14 Aug 1959.",
+        "No occupation recorded for the subject.",
+        "No religion recorded for the subject.",
+        "No burial information recorded for the subject.",
+        "Only a single GEDCOM record serves as the source for all biographical facts; no external records (census, vital records, etc.) are present to corroborate.",
+        "Marriage date and marriage place for the subject are not recorded.",
+        "No middle name disambiguation: subject shares the name 'PERSON_001' with one of his children (gedcom:@I36494113899@), which may cause record confusion."
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "hypothesis_id": "hyp:@I36494113439@:@I36494113424@:father",
+      "subject_id": "@I36494113439@",
+      "related_id": "@I36494113424@",
+      "proposed_relationship": "father of",
+      "evidence_chain": [
+        {
+          "claim": "PERSON_044 (born 08 Dec 1883) lists @I36494113424@ as his father_id, directly linking PERSON_003 as father in the GEDCOM structure.",
+          "source": "gedcom:@I36494113439@"
+        },
+        {
+          "claim": "PERSON_045 lists @I36494113439@ among his children_ids, confirming the reciprocal parent-child link in the GEDCOM record.",
+          "source": "gedcom:@I36494113424@"
+        },
+        {
+          "claim": "Both subject and candidate share the surname 'FAMILY_001', consistent with a patrilineal father-child relationship.",
+          "source": "gedcom:@I36494113439@"
+        },
+        {
+          "claim": "PERSON_003 was born 21 Dec 1859 in PERSON_005, Pennsylvania, USA, placing him 24 years older than PERSON_001 (born 1883), a biologically plausible paternal age gap.",
+          "source": "gedcom:@I36494113424@"
+        },
+        {
+          "claim": "Both individuals are associated with Pennsylvania, USA — PERSON_003 specifically with PERSON_005 — geographically consistent with a familial connection.",
+          "source": "gedcom:@I36494113424@"
+        },
+        {
+          "claim": "Subject and candidate share family unit @F1111@: subject lists it under famc (child of the family) and candidate lists it under fams (spouse/parent of the family), structurally confirming the parent-child relationship.",
+          "source": "gedcom:@I36494113439@"
+        }
+      ],
+      "confidence_score": 0.72,
+      "stated_weaknesses": [
+        "All evidence derives from a single GEDCOM file; no independent external records (birth certificates, census entries, vital records) are present to corroborate the parent-child link.",
+        "Subject's birth place is recorded only as 'Pennsylvania, USA' (no city or county), making geographic corroboration with FAMILY_006's PERSON_005 origin imprecise; the computed birthplace distance of 244 km may reflect a data quality issue rather than a true geographic separation.",
+        "No birth record or death record for PERSON_001 has been cited, so the birth date of 08 Dec 1883 and the resulting 24-year age delta are unverified.",
+        "Subject shares the name 'PERSON_001' with one of his own children (gedcom:@I36494113899@), raising a risk of record conflation that could propagate errors into the GEDCOM lineage links.",
+        "PERSON_003 died in 1920, and no marriage or family records external to the GEDCOM are provided to confirm he was present and active as James's father during James's childhood years.",
+        "No DNA evidence or corroborating documentary source (e.g., obituary naming FAMILY_006 as father, probate record) is available to independently validate the relationship."
+      ],
+      "reasoning_narrative": "The primary structural evidence is the bidirectional GEDCOM link: PERSON_001's record names @I36494113424@ as his father_id, and PERSON_003's record lists @I36494113439@ among his children_ids, with both individuals sharing family unit @F1111@ in the roles of child and parent respectively. This reciprocal linkage is the strongest single indicator of the relationship, as GEDCOM family structures are typically constructed deliberately rather than incidentally. The 24-year age gap between FAMILY_006 (born 1859) and James (born 1883) falls comfortably within the range of biological plausibility for a father-son pair, lending demographic support to the hypothesis. Both individuals are associated with Pennsylvania, and FAMILY_006 specifically with PERSON_005, which is geographically consistent with James's later death in Philadelphia — suggesting a shared regional footprint across generations. The shared surname 'FAMILY_001' further aligns with patrilineal inheritance. However, the entire evidentiary chain collapses to a single GEDCOM source, with no census records, vital records, or other documentary evidence available to independently verify any of the biographical facts or the relationship itself. The name-sharing between PERSON_001 and his son of the same name introduces an additional risk of record confusion that could have affected how GEDCOM links were established, warranting caution before treating this relationship as confirmed.",
+      "intermediate_steps": [],
+      "alternatives_considered": [
+        "PERSON_003 could be an uncle or other paternal-line relative of PERSON_001, with the GEDCOM link being an error introduced by a researcher who conflated a collateral relative with a direct parent.",
+        "The subject 'PERSON_001' born 1883 could be a different individual of the same name, with the GEDCOM record mistakenly combining two persons — particularly given the name overlap with his listed son (@I36494113899@).",
+        "PERSON_003 could be a step-father rather than a biological father, with the GEDCOM not distinguishing between step and biological parentage.",
+        "Given the vague birth place of 'Pennsylvania, USA', the subject could theoretically belong to a different FAMILY_001 family in Pennsylvania with no direct connection to PERSON_003 of PERSON_005."
+      ],
+      "llm_raw_response": "```json\n{\n  \"proposed_relationship\": \"father of\",\n  \"evidence_chain\": [\n    {\n      \"claim\": \"PERSON_044 (born 08 Dec 1883) lists @I36494113424@ as his father_id, directly linking PERSON_003 as father in the GEDCOM structure.\",\n      \"source\": \"gedcom:@I36494113439@\"\n    },\n    {\n      \"claim\": \"PERSON_045 lists @I36494113439@ among his children_ids, confirming the reciprocal parent-child link in the GEDCOM record.\",\n      \"source\": \"gedcom:@I36494113424@\"\n    },\n    {\n      \"claim\": \"Both subject and candidate share the surname 'FAMILY_001', consistent with a patrilineal father-child relationship.\",\n      \"source\": \"gedcom:@I36494113439@\"\n    },\n    {\n      \"claim\": \"PERSON_003 was born 21 Dec 1859 in PERSON_005, Pennsylvania, USA, placing him 24 years older than PERSON_001 (born 1883), a biologically plausible paternal age gap.\",\n      \"source\": \"gedcom:@I36494113424@\"\n    },\n    {\n      \"claim\": \"Both individuals are associated with Pennsylvania, USA — PERSON_003 specifically with PERSON_005 — geographically consistent with a familial connection.\",\n      \"source\": \"gedcom:@I36494113424@\"\n    },\n    {\n      \"claim\": \"Subject and candidate share family unit @F1111@: subject lists it under famc (child of the family) and candidate lists it under fams (spouse/parent of the family), structurally confirming the parent-child relationship.\",\n      \"source\": \"gedcom:@I36494113439@\"\n    }\n  ],\n  \"confidence_score\": 0.72,\n  \"stated_weaknesses\": [\n    \"All evidence derives from a single GEDCOM file; no independent external records (birth certificates, census entries, vital records) are present to corroborate the parent-child link.\",\n    \"Subject's birth place is recorded only as 'Pennsylvania, USA' (no city or county), making geographic corroboration with FAMILY_006's PERSON_005 origin imprecise; the computed birthplace distance of 244 km may reflect a data quality issue rather than a true geographic separation.\",\n    \"No birth record or death record for PERSON_001 has been cited, so the birth date of 08 Dec 1883 and the resulting 24-year age delta are unverified.\",\n    \"Subject shares the name 'PERSON_001' with one of his own children (gedcom:@I36494113899@), raising a risk of record conflation that could propagate errors into the GEDCOM lineage links.\",\n    \"PERSON_003 died in 1920, and no marriage or family records external to the GEDCOM are provided to confirm he was present and active as James's father during James's childhood years.\",\n    \"No DNA evidence or corroborating documentary source (e.g., obituary naming FAMILY_006 as father, probate record) is available to independently validate the relationship.\"\n  ],\n  \"reasoning_narrative\": \"The primary structural evidence is the bidirectional GEDCOM link: PERSON_001's record names @I36494113424@ as his father_id, and PERSON_003's record lists @I36494113439@ among his children_ids, with both individuals sharing family unit @F1111@ in the roles of child and parent respectively. This reciprocal linkage is the strongest single indicator of the relationship, as GEDCOM family structures are typically constructed deliberately rather than incidentally. The 24-year age gap between FAMILY_006 (born 1859) and James (born 1883) falls comfortably within the range of biological plausibility for a father-son pair, lending demographic support to the hypothesis. Both individuals are associated with Pennsylvania, and FAMILY_006 specifically with PERSON_005, which is geographically consistent with James's later death in Philadelphia — suggesting a shared regional footprint across generations. The shared surname 'FAMILY_001' further aligns with patrilineal inheritance. However, the entire evidentiary chain collapses to a single GEDCOM source, with no census records, vital records, or other documentary evidence available to independently verify any of the biographical facts or the relationship itself. The name-sharing between PERSON_001 and his son of the same name introduces an additional risk of record confusion that could have affected how GEDCOM links were established, warranting caution before treating this relationship as confirmed.\",\n  \"alternatives_considered\": [\n    \"PERSON_003 could be an uncle or other paternal-line relative of PERSON_001, with the GEDCOM link being an error introduced by a researcher who conflated a collateral relative with a direct parent.\",\n    \"The subject 'PERSON_001' born 1883 could be a different individual of the same name, with the GEDCOM record mistakenly combining two persons — particularly given the name overlap with his listed son (@I36494113899@).\",\n    \"PERSON_003 could be a step-father rather than a biological father, with the GEDCOM not distinguishing between step and biological parentage.\",\n    \"Given the vague birth place of 'Pennsylvania, USA', the subject could theoretically belong to a different FAMILY_001 family in Pennsylvania with no direct connection to PERSON_003 of PERSON_005.\"\n  ]\n}\n```"
+    },
+    {
+      "hypothesis_id": "hyp:@I36494113439@:@I36494113423@:mother",
+      "subject_id": "@I36494113439@",
+      "related_id": "@I36494113423@",
+      "proposed_relationship": "mother of",
+      "evidence_chain": [
+        {
+          "claim": "PERSON_001 (born 08 Dec 1883) has mother_id explicitly set to '@I36494113423@', directly linking PERSON_006. FAMILY_063 as his mother in the GEDCOM record.",
+          "source": "gedcom:@I36494113439@"
+        },
+        {
+          "claim": "PERSON_006. FAMILY_063's children_ids list includes '@I36494113439@' (PERSON_001), corroborating the mother-child link from the candidate's side.",
+          "source": "gedcom:@I36494113423@"
+        },
+        {
+          "claim": "PERSON_046 and PERSON_006. FAMILY_063 are recorded as members of family '@F1111@' — James as a child (famc) and Margaret as a spouse/parent (fams) — confirming their placement in the same family unit.",
+          "source": "gedcom:@I36494113439@"
+        },
+        {
+          "claim": "PERSON_006. FAMILY_063 is recorded as born 24 Apr 1860, making her 23 years older than PERSON_001 (born 1883), an age gap determined to be biologically plausible for a mother-child relationship.",
+          "source": "gedcom:@I36494113423@"
+        },
+        {
+          "claim": "PERSON_006. FAMILY_063 died 14 Jul 1934 in Philadelphia, Pennsylvania, and PERSON_001 died 14 Aug 1959 in Philadelphia, Pennsylvania, indicating shared geographic presence consistent with a family relationship.",
+          "source": "gedcom:@I36494113423@"
+        }
+      ],
+      "confidence_score": 0.72,
+      "stated_weaknesses": [
+        "All evidence derives from a single GEDCOM file; no independent external records (birth certificates, census entries, death certificates, church records) corroborate the mother-child relationship.",
+        "PERSON_001's birth place is vague ('Pennsylvania, USA') with no city specified, preventing precise geographic corroboration with Margaret's known Philadelphia residence.",
+        "PERSON_006. FAMILY_063 was born in Ireland and James in Pennsylvania — the 5,239 km birthplace gap means no shared birth-location evidence is available to reinforce the link.",
+        "The subject shares his name 'PERSON_001' with one of his own children (gedcom:@I36494113899@), raising the risk of record conflation within the GEDCOM itself.",
+        "No DNA evidence is available to corroborate the biological mother-child relationship.",
+        "The GEDCOM data may reflect a compiler's inference rather than documented primary-source linkage; no source citations within the GEDCOM records are described."
+      ],
+      "reasoning_narrative": "The GEDCOM record for PERSON_001 explicitly assigns PERSON_006. FAMILY_063's individual ID as his mother_id, and reciprocally, Margaret's record lists James's individual ID among her children_ids. Both individuals are further co-assigned to family unit @F1111@, with James listed as a child (famc) and Margaret as a parental spouse (fams), providing a structurally consistent, bidirectional link within the genealogical data. The age delta of 23 years between Margaret (born 1860) and James (born 1883) falls within normal biological parameters for a mother-child relationship, adding demographic plausibility. Their shared death location of Philadelphia further suggests a sustained geographic co-presence typical of close family. However, the entire evidentiary basis rests on a single GEDCOM source with no cited external primary records, which limits confidence substantially. The vague birth location for James and the name duplication with his son introduce additional uncertainty about record integrity. Until census records, vital records, or other independent documentation are identified linking Margaret FAMILY_063 to PERSON_001, the hypothesis remains well-supported structurally but not independently verified.",
+      "intermediate_steps": [],
+      "alternatives_considered": [
+        "PERSON_006. FAMILY_063 could be a step-mother rather than biological mother, with the GEDCOM compiler having recorded a social rather than biological relationship.",
+        "A data entry error in the GEDCOM could have linked the wrong 'PERSON_001' individual (given the name is shared with his son, gedcom:@I36494113899@), meaning the true child of Margaret may be the younger PERSON_001.",
+        "Margaret could be an adoptive or foster mother, particularly given the Irish immigrant background and Pennsylvania birth of the subject — such arrangements were not uncommon in this era."
+      ],
+      "llm_raw_response": "```json\n{\n  \"proposed_relationship\": \"mother of\",\n  \"evidence_chain\": [\n    {\n      \"claim\": \"PERSON_001 (born 08 Dec 1883) has mother_id explicitly set to '@I36494113423@', directly linking PERSON_006. FAMILY_063 as his mother in the GEDCOM record.\",\n      \"source\": \"gedcom:@I36494113439@\"\n    },\n    {\n      \"claim\": \"PERSON_006. FAMILY_063's children_ids list includes '@I36494113439@' (PERSON_001), corroborating the mother-child link from the candidate's side.\",\n      \"source\": \"gedcom:@I36494113423@\"\n    },\n    {\n      \"claim\": \"PERSON_046 and PERSON_006. FAMILY_063 are recorded as members of family '@F1111@' — James as a child (famc) and Margaret as a spouse/parent (fams) — confirming their placement in the same family unit.\",\n      \"source\": \"gedcom:@I36494113439@\"\n    },\n    {\n      \"claim\": \"PERSON_006. FAMILY_063 is recorded as born 24 Apr 1860, making her 23 years older than PERSON_001 (born 1883), an age gap determined to be biologically plausible for a mother-child relationship.\",\n      \"source\": \"gedcom:@I36494113423@\"\n    },\n    {\n      \"claim\": \"PERSON_006. FAMILY_063 died 14 Jul 1934 in Philadelphia, Pennsylvania, and PERSON_001 died 14 Aug 1959 in Philadelphia, Pennsylvania, indicating shared geographic presence consistent with a family relationship.\",\n      \"source\": \"gedcom:@I36494113423@\"\n    }\n  ],\n  \"confidence_score\": 0.72,\n  \"stated_weaknesses\": [\n    \"All evidence derives from a single GEDCOM file; no independent external records (birth certificates, census entries, death certificates, church records) corroborate the mother-child relationship.\",\n    \"PERSON_001's birth place is vague ('Pennsylvania, USA') with no city specified, preventing precise geographic corroboration with Margaret's known Philadelphia residence.\",\n    \"PERSON_006. FAMILY_063 was born in Ireland and James in Pennsylvania — the 5,239 km birthplace gap means no shared birth-location evidence is available to reinforce the link.\",\n    \"The subject shares his name 'PERSON_001' with one of his own children (gedcom:@I36494113899@), raising the risk of record conflation within the GEDCOM itself.\",\n    \"No DNA evidence is available to corroborate the biological mother-child relationship.\",\n    \"The GEDCOM data may reflect a compiler's inference rather than documented primary-source linkage; no source citations within the GEDCOM records are described.\"\n  ],\n  \"reasoning_narrative\": \"The GEDCOM record for PERSON_001 explicitly assigns PERSON_006. FAMILY_063's individual ID as his mother_id, and reciprocally, Margaret's record lists James's individual ID among her children_ids. Both individuals are further co-assigned to family unit @F1111@, with James listed as a child (famc) and Margaret as a parental spouse (fams), providing a structurally consistent, bidirectional link within the genealogical data. The age delta of 23 years between Margaret (born 1860) and James (born 1883) falls within normal biological parameters for a mother-child relationship, adding demographic plausibility. Their shared death location of Philadelphia further suggests a sustained geographic co-presence typical of close family. However, the entire evidentiary basis rests on a single GEDCOM source with no cited external primary records, which limits confidence substantially. The vague birth location for James and the name duplication with his son introduce additional uncertainty about record integrity. Until census records, vital records, or other independent documentation are identified linking Margaret FAMILY_063 to PERSON_001, the hypothesis remains well-supported structurally but not independently verified.\",\n  \"alternatives_considered\": [\n    \"PERSON_006. FAMILY_063 could be a step-mother rather than biological mother, with the GEDCOM compiler having recorded a social rather than biological relationship.\",\n    \"A data entry error in the GEDCOM could have linked the wrong 'PERSON_001' individual (given the name is shared with his son, gedcom:@I36494113899@), meaning the true child of Margaret may be the younger PERSON_001.\",\n    \"Margaret could be an adoptive or foster mother, particularly given the Irish immigrant background and Pennsylvania birth of the subject — such arrangements were not uncommon in this era.\"\n  ]\n}\n```"
+    }
+  ],
+  "critiques": [
+    {
+      "hypothesis_id": "hyp:@I36494113439@:@I36494113424@:father",
+      "verdict": "flag_uncertain",
+      "issues_found": [
+        "All evidence derives exclusively from a single GEDCOM file. No independent external records (birth certificates, census entries, vital records, obituaries, probate records) are cited to corroborate the parent-child relationship.",
+        "The 244km geographic distance between PERSON_003's birthplace (PERSON_005) and James's vague birthplace ('Pennsylvania, USA') is flagged as a potential data quality issue rather than a true separation. The subject's birth place is imprecisely recorded, making geographic corroboration unreliable.",
+        "The subject (PERSON_001, born 1883) shares his full name with one of his own children (gedcom:@I36494113899@), creating a concrete risk of record conflation or generational duplication errors propagating into the GEDCOM lineage structure.",
+        "No birth record for PERSON_001 (born 08 Dec 1883) is cited, meaning the stated 24-year paternal age gap is unverified and depends entirely on GEDCOM-asserted dates.",
+        "The GEDCOM structural links (father_id, children_ids, famc/fams in shared family @F1111@) are internally consistent but are mutually self-referential — they provide no independent corroboration, only redundant encoding of the same single-source assertion.",
+        "PERSON_003 died in 1920 when James was approximately 36 years old; while this does not disprove the relationship, the absence of any external record (census, city directory, school record) placing them together as father and son during James's upbringing is a notable evidentiary gap.",
+        "No DNA evidence or documentary source external to the GEDCOM (e.g., death certificate naming father, marriage record of parents, newspaper obituary) is available to independently validate the relationship."
+      ],
+      "evidence_cited": [
+        "gedcom:@I36494113439@",
+        "gedcom:@I36494113424@",
+        "check:death_before_birth",
+        "check:parent_younger_than_child",
+        "check:parent_too_young_at_birth",
+        "check:parent_died_before_conception",
+        "check:geographic_plausibility"
+      ],
+      "confidence_in_critique": 0.72,
+      "justification": "All Tier 1 deterministic checks pass, the age gap is biologically plausible, and the GEDCOM structure is internally consistent — but every piece of evidence traces back to a single GEDCOM file with no external corroboration. The name-sharing between subject and his child introduces a specific, concrete risk of record conflation that cannot be dismissed without external verification. The hypothesis is plausible but cannot be accepted with confidence absent independent documentary evidence.",
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "father alive ~9mo before birth holds",
+          "role": "father"
+        }
+      ],
+      "geo_result": {
+        "check": "geographic_plausibility",
+        "verdict": "ok",
+        "reason": "244km apart (within intra-regional range)",
+        "distance_km": 244
+      },
+      "isolation_mode": "filtered"
+    },
+    {
+      "hypothesis_id": "hyp:@I36494113439@:@I36494113423@:mother",
+      "verdict": "flag_uncertain",
+      "issues_found": [
+        "All evidence derives exclusively from a single GEDCOM file with no independent corroboration (no birth certificates, census records, church records, or death certificates cited). The GEDCOM may reflect a compiler's inference rather than documented primary-source linkage.",
+        "The geographic flag (5,239 km between Ireland birthplace and Pennsylvania birthplace) is expected and entirely plausible given late 19th-century Irish immigration patterns to Pennsylvania/Philadelphia. Margaret dying in Philadelphia and James also dying in Philadelphia strongly supports shared geographic presence. This flag should not weigh against the hypothesis.",
+        "The subject shares the name 'PERSON_001' with one of his own children (gedcom:@I36494113899@), creating a real risk of record conflation within the GEDCOM itself. It is possible that some data attributed to the father was compiled from the son's records or vice versa.",
+        "No independent census entry has been cited that would show PERSON_001 (born 1883) residing in the same household as PERSON_006. FAMILY_063, which would be the most straightforward corroboration available for this era.",
+        "The internal GEDCOM linkage is self-consistent (mother_id on subject matches children_ids on candidate, same family unit @F1111@), but self-consistency within a single compiled file does not constitute independent evidence — it only shows the compiler treated them as related.",
+        "PERSON_006. FAMILY_063 is listed with six other children besides PERSON_001; no external source confirms any of these sibling relationships, which would otherwise reinforce the family unit's validity.",
+        "No DNA evidence available, and no source citations within the GEDCOM records are described, leaving open the possibility this relationship was assumed or inferred by the GEDCOM compiler."
+      ],
+      "evidence_cited": [
+        "gedcom:@I36494113439@",
+        "gedcom:@I36494113423@",
+        "check:death_before_birth",
+        "check:parent_younger_than_child",
+        "check:parent_too_young_at_birth",
+        "check:parent_died_before_conception",
+        "check:geographic_plausibility"
+      ],
+      "confidence_in_critique": 0.72,
+      "justification": "The hypothesis is internally consistent and passes all Tier 1 deterministic checks, with a biologically plausible age gap (23 years) and shared Philadelphia death locations. However, the relationship rests entirely on a single GEDCOM file with no cited primary sources, and the name-sharing between subject and his child introduces a genuine conflation risk. The case warrants flag_uncertain rather than accept because the single-source dependency and lack of any external corroboration (census, vital records) means the hypothesis cannot be verified with confidence, even though it is plausible.",
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "mother"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "mother"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "mother alive at birth holds",
+          "role": "mother"
+        }
+      ],
+      "geo_result": {
+        "check": "geographic_plausibility",
+        "verdict": "flag_strong",
+        "reason": "5239km apart — trans-continental gap, requires migration-era or colonial context to be plausible",
+        "distance_km": 5239
+      },
+      "isolation_mode": "filtered"
+    }
+  ],
+  "trace_log": [
+    "record_scout: enter",
+    "record_scout: parsed 8759 persons from GEDCOM",
+    "record_scout: LLM criteria = {'primary_name': 'PERSON_001', 'surname': 'FAMILY_001', 'given_names': 'PERSON_002', 'alt_names': ['PERSON_047', 'J.J. FAMILY_001'], 'approx_birth_year': 1883, 'approx_location': 'Pennsylvania, USA'}",
+    "record_scout: query_mode — 165 candidates above threshold 0.7, keeping top 5",
+    "record_scout: top match = PERSON_001 (score 1.0)",
+    "record_scout: built 18 GEDCOM record objects (including family context)",
+    "record_scout: FindAGrave returned 5 results",
+    "record_scout: Wikidata returned 0 results",
+    "record_scout: WikiTree returned 5 results",
+    "record_scout: total records after external corroboration: 28 (10 external)",
+    "record_scout: exit",
+    "dna_analyst: enter",
+    "dna_analyst: parsed 50 matches from myheritage",
+    "dna_analyst: distribution — 2nd Cousin: 1, Distant (<40 cM): 49",
+    "dna_analyst: 29 cross-references found",
+    "dna_analyst: aggregate consistency = consistent — no contradictions found",
+    "dna_analyst: exit",
+    "profile_synthesizer: enter",
+    "profile_synthesizer: disambiguated 3 candidates -> selected PERSON_001 (score 2.5)",
+    "profile_synthesizer: excluded PERSON_001 (gedcom:@I36504893865@, score 1.0)",
+    "profile_synthesizer: excluded PERSON_013 (gedcom:@I36494113430@, score 0.866)",
+    "profile_synthesizer: LLM synthesis produced 8 facts, 9 gaps",
+    "profile_synthesizer: built profile with 8 cited facts, 9 gaps",
+    "profile_synthesizer: exit",
+    "final_report_writer: enter",
+    "final_report_writer: composed report (8722 chars, 132 lines)",
+    "final_report_writer: exit",
+    "relationship_hypothesizer: enter",
+    "relationship_hypothesizer: 2 targets for PERSON_001: ['father', 'mother']",
+    "relationship_hypothesizer: built hypothesis hyp:@I36494113439@:@I36494113424@:father (confidence 0.72, 6 evidence items)",
+    "relationship_hypothesizer: built hypothesis hyp:@I36494113439@:@I36494113423@:mother (confidence 0.72, 5 evidence items)",
+    "relationship_hypothesizer: generated 2 hypotheses",
+    "relationship_hypothesizer: exit",
+    "adversarial_critic: enter",
+    "adversarial_critic: isolation_mode=filtered, filtered 2 hypotheses, stripped 4 internal field types",
+    "adversarial_critic: hyp:@I36494113439@:@I36494113424@:father tier1 (5 checks, 0 impossible)",
+    "adversarial_critic: hyp:@I36494113439@:@I36494113424@:father geo -> ok: 244km apart (within intra-regional range)",
+    "adversarial_critic: hyp:@I36494113439@:@I36494113424@:father LLM verdict=flag_uncertain conf=0.72",
+    "adversarial_critic: hyp:@I36494113439@:@I36494113423@:mother tier1 (5 checks, 0 impossible)",
+    "adversarial_critic: hyp:@I36494113439@:@I36494113423@:mother geo -> flag_strong: 5239km apart — trans-continental gap, requires migration-era or colonial context to be plausible",
+    "adversarial_critic: hyp:@I36494113439@:@I36494113423@:mother LLM verdict=flag_uncertain conf=0.72",
+    "adversarial_critic: no rejects; status=complete",
+    "adversarial_critic: produced 2 critiques",
+    "adversarial_critic: exit",
+    "final_report_writer: enter",
+    "final_report_writer: composed report (19382 chars, 213 lines)",
+    "final_report_writer: exit"
+  ],
+  "final_report": "# Genealogical Research Report\n\n**Query:** Who were the parents of PERSON_001?\n**Target:** PERSON_001 (approx. born 1883), Pennsylvania, USA\n**Pipeline status:** complete  (revision count 0)\n**Report status: All findings accepted**\n\n## Subject Profiles\n\n### PERSON_001\n`profile:@I36494113439@` — source record `gedcom:@I36494113439@`\n\n**Disambiguation:** selected from 3 candidates\n- ✓ `gedcom:@I36494113439@` PERSON_001 — score 2.5\n    - name similarity 1.0\n    - exact birth year match (1883)\n    - birth place tokens match: ['pennsylvania', 'usa']\n- ✗ `gedcom:@I36504893865@` PERSON_001 — score 1.0\n    - name similarity 1.0\n    - birth year mismatch (target 1883, candidate 1918, diff 35y)\n    - birth place tokens match: ['pennsylvania', 'usa']\n- ✗ `gedcom:@I36494113430@` PERSON_013 — score 0.866\n    - name similarity 0.866\n    - birth year mismatch (target 1883, candidate 1915, diff 32y)\n    - birth place tokens match: ['pennsylvania', 'usa']\n\n**Facts:**\n- name: PERSON_001  _(gedcom:@I36494113439@)_\n- first_name: PERSON_002  _(gedcom:@I36494113439@)_\n- surname: FAMILY_001  _(gedcom:@I36494113439@)_\n- sex: M  _(gedcom:@I36494113439@)_\n- birth_date: 08 Dec 1883  _(gedcom:@I36494113439@)_\n- birth_place: Pennsylvania, USA  _(gedcom:@I36494113439@)_\n- death_date: 14 Aug 1959  _(gedcom:@I36494113439@)_\n- death_place: Philadelphia, Philadelphia, Pennsylvania, USA  _(gedcom:@I36494113439@)_\n\n**Family references:** father=PERSON_003; mother=PERSON_006. FAMILY_063; spouse(s)=PERSON_007; children=PERSON_009, PERSON_001, PERSON_011\n\n**Gaps and concerns (from Synthesizer):**\n- Birth place is vague ('Pennsylvania, USA') with no city or county specified; no corroborating source provides a more precise birth location.\n- No birth record or independent source corroborates the birth date of 08 Dec 1883.\n- No death record or independent source corroborates the death date of 14 Aug 1959.\n- No occupation recorded for the subject.\n- No religion recorded for the subject.\n- No burial information recorded for the subject.\n- Only a single GEDCOM record serves as the source for all biographical facts; no external records (census, vital records, etc.) are present to corroborate.\n- Marriage date and marriage place for the subject are not recorded.\n- No middle name disambiguation: subject shares the name 'PERSON_001' with one of his children (gedcom:@I36494113899@), which may cause record confusion.\n\n## Accepted Findings\n\n### father of — `hyp:@I36494113439@:@I36494113424@:father`\n**Subject:** `@I36494113439@`  **Related:** `@I36494113424@`  **Hypothesizer confidence:** 0.72\n\n**Evidence chain:**\n- (gedcom:@I36494113439@) PERSON_044 (born 08 Dec 1883) lists @I36494113424@ as his father_id, directly linking PERSON_003 as father in the GEDCOM structure.\n- (gedcom:@I36494113424@) PERSON_045 lists @I36494113439@ among his children_ids, confirming the reciprocal parent-child link in the GEDCOM record.\n- (gedcom:@I36494113439@) Both subject and candidate share the surname 'FAMILY_001', consistent with a patrilineal father-child relationship.\n- (gedcom:@I36494113424@) PERSON_003 was born 21 Dec 1859 in PERSON_005, Pennsylvania, USA, placing him 24 years older than PERSON_001 (born 1883), a biologically plausible paternal age gap.\n- (gedcom:@I36494113424@) Both individuals are associated with Pennsylvania, USA — PERSON_003 specifically with PERSON_005 — geographically consistent with a familial connection.\n- (gedcom:@I36494113439@) Subject and candidate share family unit @F1111@: subject lists it under famc (child of the family) and candidate lists it under fams (spouse/parent of the family), structurally confirming the parent-child relationship.\n\n**Stated weaknesses (Hypothesizer's own):**\n- All evidence derives from a single GEDCOM file; no independent external records (birth certificates, census entries, vital records) are present to corroborate the parent-child link.\n- Subject's birth place is recorded only as 'Pennsylvania, USA' (no city or county), making geographic corroboration with FAMILY_006's PERSON_005 origin imprecise; the computed birthplace distance of 244 km may reflect a data quality issue rather than a true geographic separation.\n- No birth record or death record for PERSON_001 has been cited, so the birth date of 08 Dec 1883 and the resulting 24-year age delta are unverified.\n- Subject shares the name 'PERSON_001' with one of his own children (gedcom:@I36494113899@), raising a risk of record conflation that could propagate errors into the GEDCOM lineage links.\n- PERSON_003 died in 1920, and no marriage or family records external to the GEDCOM are provided to confirm he was present and active as James's father during James's childhood years.\n- No DNA evidence or corroborating documentary source (e.g., obituary naming FAMILY_006 as father, probate record) is available to independently validate the relationship.\n\n### Critique: ? FLAG UNCERTAIN\n**Critic self-confidence:** 0.72  **Isolation mode:** `filtered`\n\n**Justification:** All Tier 1 deterministic checks pass, the age gap is biologically plausible, and the GEDCOM structure is internally consistent — but every piece of evidence traces back to a single GEDCOM file with no external corroboration. The name-sharing between subject and his child introduces a specific, concrete risk of record conflation that cannot be dismissed without external verification. The hypothesis is plausible but cannot be accepted with confidence absent independent documentary evidence.\n\n**Tier 1 deterministic checks:**\n- [ok] death_before_birth: death is not before birth\n- [ok] implausible_lifespan: lifespan within 120 years\n- [ok] [father] parent_younger_than_child: parent is not younger than child\n- [ok] [father] parent_too_young_at_birth: parent age plausible (>= 12)\n- [ok] [father] parent_died_before_conception: father alive ~9mo before birth holds\n\n**Geographic check:** [ok] 244km apart (within intra-regional range)\n\n**Issues found by the Critic:**\n- All evidence derives exclusively from a single GEDCOM file. No independent external records (birth certificates, census entries, vital records, obituaries, probate records) are cited to corroborate the parent-child relationship.\n- The 244km geographic distance between PERSON_003's birthplace (PERSON_005) and James's vague birthplace ('Pennsylvania, USA') is flagged as a potential data quality issue rather than a true separation. The subject's birth place is imprecisely recorded, making geographic corroboration unreliable.\n- The subject (PERSON_001, born 1883) shares his full name with one of his own children (gedcom:@I36494113899@), creating a concrete risk of record conflation or generational duplication errors propagating into the GEDCOM lineage structure.\n- No birth record for PERSON_001 (born 08 Dec 1883) is cited, meaning the stated 24-year paternal age gap is unverified and depends entirely on GEDCOM-asserted dates.\n- The GEDCOM structural links (father_id, children_ids, famc/fams in shared family @F1111@) are internally consistent but are mutually self-referential — they provide no independent corroboration, only redundant encoding of the same single-source assertion.\n- PERSON_003 died in 1920 when James was approximately 36 years old; while this does not disprove the relationship, the absence of any external record (census, city directory, school record) placing them together as father and son during James's upbringing is a notable evidentiary gap.\n- No DNA evidence or documentary source external to the GEDCOM (e.g., death certificate naming father, marriage record of parents, newspaper obituary) is available to independently validate the relationship.\n\n### mother of — `hyp:@I36494113439@:@I36494113423@:mother`\n**Subject:** `@I36494113439@`  **Related:** `@I36494113423@`  **Hypothesizer confidence:** 0.72\n\n**Evidence chain:**\n- (gedcom:@I36494113439@) PERSON_001 (born 08 Dec 1883) has mother_id explicitly set to '@I36494113423@', directly linking PERSON_006. FAMILY_063 as his mother in the GEDCOM record.\n- (gedcom:@I36494113423@) PERSON_006. FAMILY_063's children_ids list includes '@I36494113439@' (PERSON_001), corroborating the mother-child link from the candidate's side.\n- (gedcom:@I36494113439@) PERSON_046 and PERSON_006. FAMILY_063 are recorded as members of family '@F1111@' — James as a child (famc) and Margaret as a spouse/parent (fams) — confirming their placement in the same family unit.\n- (gedcom:@I36494113423@) PERSON_006. FAMILY_063 is recorded as born 24 Apr 1860, making her 23 years older than PERSON_001 (born 1883), an age gap determined to be biologically plausible for a mother-child relationship.\n- (gedcom:@I36494113423@) PERSON_006. FAMILY_063 died 14 Jul 1934 in Philadelphia, Pennsylvania, and PERSON_001 died 14 Aug 1959 in Philadelphia, Pennsylvania, indicating shared geographic presence consistent with a family relationship.\n\n**Stated weaknesses (Hypothesizer's own):**\n- All evidence derives from a single GEDCOM file; no independent external records (birth certificates, census entries, death certificates, church records) corroborate the mother-child relationship.\n- PERSON_001's birth place is vague ('Pennsylvania, USA') with no city specified, preventing precise geographic corroboration with Margaret's known Philadelphia residence.\n- PERSON_006. FAMILY_063 was born in Ireland and James in Pennsylvania — the 5,239 km birthplace gap means no shared birth-location evidence is available to reinforce the link.\n- The subject shares his name 'PERSON_001' with one of his own children (gedcom:@I36494113899@), raising the risk of record conflation within the GEDCOM itself.\n- No DNA evidence is available to corroborate the biological mother-child relationship.\n- The GEDCOM data may reflect a compiler's inference rather than documented primary-source linkage; no source citations within the GEDCOM records are described.\n\n### Critique: ? FLAG UNCERTAIN\n**Critic self-confidence:** 0.72  **Isolation mode:** `filtered`\n\n**Justification:** The hypothesis is internally consistent and passes all Tier 1 deterministic checks, with a biologically plausible age gap (23 years) and shared Philadelphia death locations. However, the relationship rests entirely on a single GEDCOM file with no cited primary sources, and the name-sharing between subject and his child introduces a genuine conflation risk. The case warrants flag_uncertain rather than accept because the single-source dependency and lack of any external corroboration (census, vital records) means the hypothesis cannot be verified with confidence, even though it is plausible.\n\n**Tier 1 deterministic checks:**\n- [ok] death_before_birth: death is not before birth\n- [ok] implausible_lifespan: lifespan within 120 years\n- [ok] [mother] parent_younger_than_child: parent is not younger than child\n- [ok] [mother] parent_too_young_at_birth: parent age plausible (>= 12)\n- [ok] [mother] parent_died_before_conception: mother alive at birth holds\n\n**Geographic check:** [flag_strong] 5239km apart — trans-continental gap, requires migration-era or colonial context to be plausible\n\n**Issues found by the Critic:**\n- All evidence derives exclusively from a single GEDCOM file with no independent corroboration (no birth certificates, census records, church records, or death certificates cited). The GEDCOM may reflect a compiler's inference rather than documented primary-source linkage.\n- The geographic flag (5,239 km between Ireland birthplace and Pennsylvania birthplace) is expected and entirely plausible given late 19th-century Irish immigration patterns to Pennsylvania/Philadelphia. Margaret dying in Philadelphia and James also dying in Philadelphia strongly supports shared geographic presence. This flag should not weigh against the hypothesis.\n- The subject shares the name 'PERSON_001' with one of his own children (gedcom:@I36494113899@), creating a real risk of record conflation within the GEDCOM itself. It is possible that some data attributed to the father was compiled from the son's records or vice versa.\n- No independent census entry has been cited that would show PERSON_001 (born 1883) residing in the same household as PERSON_006. FAMILY_063, which would be the most straightforward corroboration available for this era.\n- The internal GEDCOM linkage is self-consistent (mother_id on subject matches children_ids on candidate, same family unit @F1111@), but self-consistency within a single compiled file does not constitute independent evidence — it only shows the compiler treated them as related.\n- PERSON_006. FAMILY_063 is listed with six other children besides PERSON_001; no external source confirms any of these sibling relationships, which would otherwise reinforce the family unit's validity.\n- No DNA evidence available, and no source citations within the GEDCOM records are described, leaving open the possibility this relationship was assumed or inferred by the GEDCOM compiler.\n\n## DNA Evidence\n\n**Platform:** myheritage  **Total matches:** 50  **Consistency:** consistent — no contradictions found\n\n**Match distribution by relationship tier:**\n- 2nd Cousin: 1\n- Distant (<40 cM): 49\n\n**GEDCOM cross-references (29 name matches):**\n- DNA: **PERSON_048** (16.3 cM) matched GEDCOM: **PERSON_049** (`@I372126435152@`)\n  - DNA-predicted: 4th Cousin 1x Removed | Platform said: 4th cousin's son | Consistent: True\n- DNA: **PERSON_050** (16.7 cM) matched GEDCOM: **PERSON_051** (`@I370151114971@`)\n  - DNA-predicted: 4th Cousin 1x Removed | Platform said: 4th cousin's daughter | Consistent: True\n- DNA: **PERSON_052** (9.7 cM) matched GEDCOM: **PERSON_053** (`@I372469263808@`)\n  - DNA-predicted: 5th Cousin 1x Removed | Platform said: 5th cousin | Consistent: True\n- DNA: **PERSON_054** (12.7 cM) matched GEDCOM: **PERSON_055** (`@I372015397163@`)\n  - DNA-predicted: 5th Cousin | Platform said: 5th cousin | Consistent: True\n- DNA: **PERSON_056** (14.9 cM) matched GEDCOM: **PERSON_057** (`@I372073025185@`)\n  - DNA-predicted: 5th Cousin | Platform said: 5th cousin | Consistent: True\n- DNA: **John Larwa** (15.1 cM) matched GEDCOM: **John Lawrence** (`@I370028242656@`)\n  - DNA-predicted: 4th Cousin 1x Removed | Platform said: 4th cousin's son, 5th cousin | Consistent: False\n- DNA: **PERSON_058** (13.0 cM) matched GEDCOM: **PERSON_059** (`@I372199470749@`)\n  - DNA-predicted: 5th Cousin | Platform said: 4th cousin's son | Consistent: True\n- DNA: **PERSON_060** (14.8 cM) matched GEDCOM: **PERSON_061** (`@I36494114614@`)\n  - DNA-predicted: 5th Cousin | Platform said: 5th cousin | Consistent: True\n- DNA: **PERSON_062** (13.9 cM) matched GEDCOM: **PERSON_063** (`@I372337679289@`)\n  - DNA-predicted: 5th Cousin | Platform said: 4th cousin's son | Consistent: True\n- DNA: **PERSON_064** (14.7 cM) matched GEDCOM: **PERSON_065** (`@I372078960619@`)\n  - DNA-predicted: 5th Cousin | Platform said: 5th cousin | Consistent: True\n- DNA: **PERSON_066** (8.0 cM) matched GEDCOM: **Gerald McKenna** (`@I372023254567@`)\n  - DNA-predicted: 5th Cousin 1x Removed | Platform said: 4th cousin's daughter, 5th cousin | Consistent: False\n- DNA: **PERSON_067** (8.0 cM) matched GEDCOM: **PERSON_068** (`@I370016449657@`)\n  - DNA-predicted: 5th Cousin 1x Removed | Platform said: 4th cousin's daughter | Consistent: True\n- DNA: **PERSON_069** (12.7 cM) matched GEDCOM: **PERSON_070** (`@I36494113675@`)\n  - DNA-predicted: 5th Cousin | Platform said: 5th cousin | Consistent: True\n- DNA: **PERSON_071'Sullivan** (10.9 cM) matched GEDCOM: **PERSON_072** (`@I36526451051@`)\n  - DNA-predicted: 5th Cousin | Platform said: 5th cousin | Consistent: True\n- DNA: **PERSON_073** (10.6 cM) matched GEDCOM: **PERSON_074** (`@I36494113681@`)\n  - DNA-predicted: 5th Cousin | Platform said: 5th cousin | Consistent: True\n- DNA: **PERSON_075** (8.9 cM) matched GEDCOM: **PERSON_076** (`@I370100212718@`)\n  - DNA-predicted: 5th Cousin 1x Removed | Platform said: 4th cousin's son, 5th cousin | Consistent: False\n- DNA: **PERSON_077** (16.0 cM) matched GEDCOM: **PERSON_078** (`@I36498117440@`)\n  - DNA-predicted: 4th Cousin 1x Removed | Platform said: 4th cousin's daughter | Consistent: True\n- DNA: **PERSON_079** (20.7 cM) matched GEDCOM: **PERSON_080** (`@I372150362112@`)\n  - DNA-predicted: 4th Cousin 1x Removed | Platform said: 4th cousin's son | Consistent: True\n- DNA: **PERSON_081** (47.4 cM) matched GEDCOM: **PERSON_082** (`@I372008686828@`)\n  - DNA-predicted: 3rd Cousin | Platform said: Parent's 3rd cousin | Consistent: False\n- DNA: **PERSON_083** (24.0 cM) matched GEDCOM: **PERSON_084** (`@I372009122154@`)\n  - DNA-predicted: 4th Cousin | Platform said: 5th cousin, 4th cousin's daughter | Consistent: False\n- DNA: **PERSON_085** (22.0 cM) matched GEDCOM: **PERSON_086** (`@I370163002025@`)\n  - DNA-predicted: 4th Cousin | Platform said: 4th cousin's daughter | Consistent: True\n- DNA: **PERSON_087** (12.9 cM) matched GEDCOM: **PERSON_088** (`@I372286444313@`)\n  - DNA-predicted: 5th Cousin | Platform said: 4th cousin's son | Consistent: True\n- DNA: **PERSON_089** (9.3 cM) matched GEDCOM: **PERSON_090** (`@I372091146263@`)\n  - DNA-predicted: 5th Cousin 1x Removed | Platform said: 5th cousin, Parent's 4th cousin | Consistent: False\n- DNA: **PERSON_091** (14.1 cM) matched GEDCOM: **PERSON_092** (`@I36494114264@`)\n  - DNA-predicted: 5th Cousin | Platform said: 4th cousin's son | Consistent: True\n- DNA: **PERSON_093** (26.4 cM) matched GEDCOM: **PERSON_094** (`@I36494114434@`)\n  - DNA-predicted: 4th Cousin | Platform said: 5th cousin, Parent's 4th cousin, 4th cousin | Consistent: False\n- DNA: **PERSON_095** (38.4 cM) matched GEDCOM: **Frances LNU** (`@I372152961036@`)\n  - DNA-predicted: 3rd Cousin 1x Removed | Platform said: 4th cousin | Consistent: True\n- DNA: **PERSON_096** (10.3 cM) matched GEDCOM: **PERSON_097** (`@I77004244442@`)\n  - DNA-predicted: 5th Cousin | Platform said: 4th cousin's daughter | Consistent: True\n- DNA: **PERSON_098** (8.1 cM) matched GEDCOM: **PERSON_099** (`@I372152736039@`)\n  - DNA-predicted: 5th Cousin 1x Removed | Platform said: 5th cousin | Consistent: True\n- DNA: **PERSON_100** (9.0 cM) matched GEDCOM: **Christopher McHugh** (`@I370040290731@`)\n  - DNA-predicted: 5th Cousin 1x Removed | Platform said: 5th cousin | Consistent: True\n\n**Platform prediction consistency:** 40/50 consistent with Shared cM Project ranges\n\n**Findings:**\n- DNA data from myheritage: 50 total matches analyzed.\n- 49 distant matches (<40 cM) — expected for large match lists.\n- 29 DNA match name(s) matched to GEDCOM tree persons (fuzzy score >= 0.75).\n-   - 'PERSON_048' matched 'PERSON_049' (@I372126435152@) at 16.3 cM (predicted: 4th Cousin 1x Removed)\n-   - 'PERSON_050' matched 'PERSON_051' (@I370151114971@) at 16.7 cM (predicted: 4th Cousin 1x Removed)\n-   - 'PERSON_052' matched 'PERSON_053' (@I372469263808@) at 9.7 cM (predicted: 5th Cousin 1x Removed)\n- Platform relationship predictions: 40/50 (80%) consistent with Shared cM Project ranges.\n"
+}

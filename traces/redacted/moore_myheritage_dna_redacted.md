@@ -13,7 +13,7 @@
 ```
 record_scout: enter
 record_scout: parsed 8759 persons from GEDCOM
-record_scout: LLM criteria = {'primary_name': 'PERSON_001', 'surname': 'Moore', 'given_names': 'PERSON_002', 'alt_names': ['PERSON_003', 'J.J. Moore'], 'approx_birth_year': 1883, 'approx_location': 'Pennsylvania, USA'}
+record_scout: LLM criteria = {'primary_name': 'PERSON_001', 'surname': 'FAMILY_001', 'given_names': 'PERSON_002', 'alt_names': ['PERSON_003', 'J.J. FAMILY_001'], 'approx_birth_year': 1883, 'approx_location': 'Pennsylvania, USA'}
 record_scout: query_mode — 165 candidates above threshold 0.7, keeping top 5
 record_scout: top match = PERSON_001 (score 1.0)
 record_scout: built 18 GEDCOM record objects (including family context)
@@ -91,14 +91,14 @@ final_report_writer: exit
 **Facts:**
 - name: PERSON_001  _(gedcom:@I36494113439@)_
 - first_name: PERSON_002  _(gedcom:@I36494113439@)_
-- surname: Moore  _(gedcom:@I36494113439@)_
+- surname: FAMILY_001  _(gedcom:@I36494113439@)_
 - sex: M  _(gedcom:@I36494113439@)_
 - birth_date: 08 Dec 1883  _(gedcom:@I36494113439@)_
 - birth_place: Pennsylvania, USA  _(gedcom:@I36494113439@)_
 - death_date: 14 Aug 1959  _(gedcom:@I36494113439@)_
 - death_place: Philadelphia, Philadelphia, Pennsylvania, USA  _(gedcom:@I36494113439@)_
 
-**Family references:** father=PERSON_005; mother=PERSON_006. McCusker; spouse(s)=PERSON_007; children=PERSON_008, PERSON_001, PERSON_009
+**Family references:** father=PERSON_005; mother=PERSON_006. FAMILY_052; spouse(s)=PERSON_007; children=PERSON_008, PERSON_001, PERSON_009
 
 **Gaps and concerns (from Synthesizer):**
 - Birth place is vague ('Pennsylvania, USA') with no city or county specified; no corroborating source provides a more precise birth location.
@@ -119,7 +119,7 @@ final_report_writer: exit
 **Evidence chain:**
 - (gedcom:@I36494113439@) PERSON_010 (born 08 Dec 1883) lists @I36494113424@ as his father_id, directly linking PERSON_005 as father in the GEDCOM structure.
 - (gedcom:@I36494113424@) PERSON_011 lists @I36494113439@ among his children_ids, confirming the reciprocal parent-child link in the GEDCOM record.
-- (gedcom:@I36494113439@) Both subject and candidate share the surname 'Moore', consistent with a patrilineal father-child relationship.
+- (gedcom:@I36494113439@) Both subject and candidate share the surname 'FAMILY_001', consistent with a patrilineal father-child relationship.
 - (gedcom:@I36494113424@) PERSON_005 was born 21 Dec 1859 in PERSON_012, Pennsylvania, USA, placing him 24 years older than PERSON_001 (born 1883), a biologically plausible paternal age gap.
 - (gedcom:@I36494113424@) Both individuals are associated with Pennsylvania, USA — PERSON_005 specifically with PERSON_012 — geographically consistent with a familial connection.
 - (gedcom:@I36494113439@) Subject and candidate share family unit @F1111@: subject lists it under famc (child of the family) and candidate lists it under fams (spouse/parent of the family), structurally confirming the parent-child relationship.
@@ -159,16 +159,16 @@ final_report_writer: exit
 **Subject:** `@I36494113439@`  **Related:** `@I36494113423@`  **Hypothesizer confidence:** 0.72
 
 **Evidence chain:**
-- (gedcom:@I36494113439@) PERSON_001 (born 08 Dec 1883) has mother_id explicitly set to '@I36494113423@', directly linking PERSON_006. McCusker as his mother in the GEDCOM record.
-- (gedcom:@I36494113423@) PERSON_006. McCusker's children_ids list includes '@I36494113439@' (PERSON_001), corroborating the mother-child link from the candidate's side.
-- (gedcom:@I36494113439@) PERSON_013 and PERSON_006. McCusker are recorded as members of family '@F1111@' — James as a child (famc) and Margaret as a spouse/parent (fams) — confirming their placement in the same family unit.
-- (gedcom:@I36494113423@) PERSON_006. McCusker is recorded as born 24 Apr 1860, making her 23 years older than PERSON_001 (born 1883), an age gap determined to be biologically plausible for a mother-child relationship.
-- (gedcom:@I36494113423@) PERSON_006. McCusker died 14 Jul 1934 in Philadelphia, Pennsylvania, and PERSON_001 died 14 Aug 1959 in Philadelphia, Pennsylvania, indicating shared geographic presence consistent with a family relationship.
+- (gedcom:@I36494113439@) PERSON_001 (born 08 Dec 1883) has mother_id explicitly set to '@I36494113423@', directly linking PERSON_006. FAMILY_052 as his mother in the GEDCOM record.
+- (gedcom:@I36494113423@) PERSON_006. FAMILY_052's children_ids list includes '@I36494113439@' (PERSON_001), corroborating the mother-child link from the candidate's side.
+- (gedcom:@I36494113439@) PERSON_013 and PERSON_006. FAMILY_052 are recorded as members of family '@F1111@' — James as a child (famc) and Margaret as a spouse/parent (fams) — confirming their placement in the same family unit.
+- (gedcom:@I36494113423@) PERSON_006. FAMILY_052 is recorded as born 24 Apr 1860, making her 23 years older than PERSON_001 (born 1883), an age gap determined to be biologically plausible for a mother-child relationship.
+- (gedcom:@I36494113423@) PERSON_006. FAMILY_052 died 14 Jul 1934 in Philadelphia, Pennsylvania, and PERSON_001 died 14 Aug 1959 in Philadelphia, Pennsylvania, indicating shared geographic presence consistent with a family relationship.
 
 **Stated weaknesses (Hypothesizer's own):**
 - All evidence derives from a single GEDCOM file; no independent external records (birth certificates, census entries, death certificates, church records) corroborate the mother-child relationship.
 - PERSON_001's birth place is vague ('Pennsylvania, USA') with no city specified, preventing precise geographic corroboration with Margaret's known Philadelphia residence.
-- PERSON_006. McCusker was born in Ireland and James in Pennsylvania — the 5,239 km birthplace gap means no shared birth-location evidence is available to reinforce the link.
+- PERSON_006. FAMILY_052 was born in Ireland and James in Pennsylvania — the 5,239 km birthplace gap means no shared birth-location evidence is available to reinforce the link.
 - The subject shares his name 'PERSON_001' with one of his own children (gedcom:@I36494113899@), raising the risk of record conflation within the GEDCOM itself.
 - No DNA evidence is available to corroborate the biological mother-child relationship.
 - The GEDCOM data may reflect a compiler's inference rather than documented primary-source linkage; no source citations within the GEDCOM records are described.
@@ -191,9 +191,9 @@ final_report_writer: exit
 - All evidence derives exclusively from a single GEDCOM file with no independent corroboration (no birth certificates, census records, church records, or death certificates cited). The GEDCOM may reflect a compiler's inference rather than documented primary-source linkage.
 - The geographic flag (5,239 km between Ireland birthplace and Pennsylvania birthplace) is expected and entirely plausible given late 19th-century Irish immigration patterns to Pennsylvania/Philadelphia. Margaret dying in Philadelphia and James also dying in Philadelphia strongly supports shared geographic presence. This flag should not weigh against the hypothesis.
 - The subject shares the name 'PERSON_001' with one of his own children (gedcom:@I36494113899@), creating a real risk of record conflation within the GEDCOM itself. It is possible that some data attributed to the father was compiled from the son's records or vice versa.
-- No independent census entry has been cited that would show PERSON_001 (born 1883) residing in the same household as PERSON_006. McCusker, which would be the most straightforward corroboration available for this era.
+- No independent census entry has been cited that would show PERSON_001 (born 1883) residing in the same household as PERSON_006. FAMILY_052, which would be the most straightforward corroboration available for this era.
 - The internal GEDCOM linkage is self-consistent (mother_id on subject matches children_ids on candidate, same family unit @F1111@), but self-consistency within a single compiled file does not constitute independent evidence — it only shows the compiler treated them as related.
-- PERSON_006. McCusker is listed with six other children besides PERSON_001; no external source confirms any of these sibling relationships, which would otherwise reinforce the family unit's validity.
+- PERSON_006. FAMILY_052 is listed with six other children besides PERSON_001; no external source confirms any of these sibling relationships, which would otherwise reinforce the family unit's validity.
 - No DNA evidence available, and no source citations within the GEDCOM records are described, leaving open the possibility this relationship was assumed or inferred by the GEDCOM compiler.
 
 ## DNA Evidence

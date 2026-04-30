@@ -130,15 +130,22 @@ def load_dna_from_disk(absolute_path: str) -> str:
 # =====================================================================
 
 @st.cache_data(show_spinner=False)
-def discover_traces() -> list[tuple[str, str]]:
+def discover_traces() -> list[tuple[str, str, str]]:
     """Scan traces/demos/ and traces/redacted/ for replayable JSON traces.
 
-    Returns a list of (display_label, absolute_path) pairs. Demo traces
-    (synthetic DNA on public-data trees) come first; redacted traces
-    (pseudonymized real-tree runs) appear after. .map.json files are
-    excluded — those are re-identification mappings, not pipeline traces.
+    Returns a list of (display_label, absolute_path, category) triples.
+    Demo traces come first; redacted traces (pseudonymized real-tree
+    runs) appear after.
+
+    Category is one of:
+        "query" — query-mode pipeline trace (parent investigation).
+        "gap"   — gap-detection trace (fill missing parental link).
+
+    Audit JSONs (audit_*.json) are EXCLUDED here — they have a different
+    schema and are loaded separately by the Audit tab's saved-audit
+    loader. The .map.json re-identification files are also excluded.
     """
-    pairs: list[tuple[str, str]] = []
+    pairs: list[tuple[str, str, str]] = []
     for label_prefix, src in (
         ("Demo", TRACES_DEMOS_DIR),
         ("Redacted", TRACES_REDACTED_DIR),
@@ -146,8 +153,22 @@ def discover_traces() -> list[tuple[str, str]]:
         if not src.is_dir():
             continue
         for p in sorted(src.glob("*.json")):
-            if p.is_file() and not p.name.endswith(".map.json"):
-                pairs.append((f"{label_prefix}: {p.stem}", str(p)))
+            if not p.is_file():
+                continue
+            if p.name.endswith(".map.json"):
+                continue
+            if p.name.startswith("audit_"):
+                continue  # belongs to the Audit-tab loader
+            # Peek at the trace's target_person to determine its category.
+            # Cheap on small files; cached at the function level so it
+            # runs once per session per file.
+            try:
+                tjson = json.loads(p.read_text(encoding="utf-8"))
+                tp = tjson.get("target_person") or {}
+                category = "gap" if tp.get("gap_mode") else "query"
+            except Exception:
+                category = "query"  # benign fallback — unknown traces show under Query
+            pairs.append((f"{label_prefix}: {p.stem}", str(p), category))
     return pairs
 
 
@@ -844,57 +865,92 @@ with tab_pipeline:
         if not available_traces:
             st.error(
                 "No replay traces found under `traces/demos/` or "
-                "`traces/redacted/`. The repo ships three demo traces "
-                "(JFK, Maria Theresia, Queen Victoria) and one redacted "
-                "Moore-family trace; if they're missing, your clone may "
-                "be incomplete."
+                "`traces/redacted/`. The repo ships pipeline trace demos "
+                "(JFK, Maria Theresia, Queen Victoria, plus three "
+                "gap-mode traces and one redacted Moore-family trace); "
+                "if they're missing, your clone may be incomplete."
             )
         else:
-            trace_options = [TRACE_NONE_SENTINEL] + [label for label, _ in available_traces]
-            trace_label_to_path = {label: path for label, path in available_traces}
-            selected_trace = st.selectbox(
-                "Trace",
-                options=trace_options,
+            # Category toggle — choose query-mode (parent investigation)
+            # or gap-detection traces. The dropdown below lists only the
+            # traces matching the chosen category, so a grader who clicks
+            # "Gap detection" sees only the gap-mode demos.
+            replay_category = st.radio(
+                "Trace category",
+                options=["Query mode", "Gap detection mode"],
+                horizontal=True,
                 index=0,
+                key="replay_category",
                 help=(
-                    "**Demo:** synthetic DNA on public-data trees — fully "
-                    "reproducible, no PII.\n\n"
-                    "**Redacted:** real-tree run with names pseudonymized "
-                    "(PERSON_NNN) — demonstrates real-data behavior "
-                    "without exposing identity."
+                    "**Query mode** — investigate a known relationship "
+                    "(e.g. 'Who are JFK's parents?'). Demos: JFK, Maria "
+                    "Theresia, Queen Victoria, plus the redacted Moore "
+                    "trace.\n\n"
+                    "**Gap detection mode** — fill a missing parental "
+                    "link in the GEDCOM. Demos: Kennedy / Habsburg / "
+                    "Queen gap-fill runs."
                 ),
             )
-            if selected_trace and selected_trace != TRACE_NONE_SENTINEL:
-                trace_path = trace_label_to_path.get(selected_trace)
-                try:
-                    loaded = load_trace_from_disk(trace_path)
-                except Exception as exc:
-                    st.error(f"Could not load trace: {exc}")
-                else:
-                    metadata = loaded.get("trace_metadata") or {}
-                    timestamp = metadata.get("timestamp", "?")
-                    label = metadata.get("label", "?")
-                    st.success(
-                        f"Loaded trace **{label}** from {timestamp}. "
-                        "Family Tree and DNA Analysis tabs also render "
-                        "from this trace."
-                    )
-                    # Stash so Family Tree + DNA tabs auto-render.
-                    st.session_state["pipeline_result"] = loaded
-                    render_results(loaded)
-            else:
-                # User moved back to the sentinel — clear any previously-loaded
-                # trace from session_state so the Family Tree and DNA Analysis
-                # tabs don't render stale data while this tab shows the
-                # "pick a trace" message.
-                if "pipeline_result" in st.session_state:
-                    del st.session_state["pipeline_result"]
-                if "trace_paths" in st.session_state:
-                    del st.session_state["trace_paths"]
-                st.info(
-                    "Pick a trace from the dropdown above to render its "
-                    "saved pipeline output."
+            wanted_category = "gap" if replay_category.startswith("Gap") else "query"
+            filtered_traces = [
+                (label, path)
+                for (label, path, cat) in available_traces
+                if cat == wanted_category
+            ]
+
+            if not filtered_traces:
+                st.warning(
+                    f"No {replay_category.lower()} traces found in "
+                    "`traces/demos/` or `traces/redacted/`."
                 )
+            else:
+                trace_options = [TRACE_NONE_SENTINEL] + [label for label, _ in filtered_traces]
+                trace_label_to_path = {label: path for label, path in filtered_traces}
+                selected_trace = st.selectbox(
+                    "Trace",
+                    options=trace_options,
+                    index=0,
+                    key="replay_trace_pick",
+                    help=(
+                        "**Demo:** synthetic DNA / public-data trees — fully "
+                        "reproducible, no PII.\n\n"
+                        "**Redacted:** real-tree run with names pseudonymized "
+                        "(PERSON_NNN) — demonstrates real-data behavior "
+                        "without exposing identity."
+                    ),
+                )
+                if selected_trace and selected_trace != TRACE_NONE_SENTINEL:
+                    trace_path = trace_label_to_path.get(selected_trace)
+                    try:
+                        loaded = load_trace_from_disk(trace_path)
+                    except Exception as exc:
+                        st.error(f"Could not load trace: {exc}")
+                    else:
+                        metadata = loaded.get("trace_metadata") or {}
+                        timestamp = metadata.get("timestamp", "?")
+                        label = metadata.get("label", "?")
+                        st.success(
+                            f"Loaded trace **{label}** from {timestamp}. "
+                            "Family Tree and DNA Analysis tabs also render "
+                            "from this trace."
+                        )
+                        # Stash so Family Tree + DNA tabs auto-render.
+                        st.session_state["pipeline_result"] = loaded
+                        render_results(loaded)
+                else:
+                    # User moved back to the sentinel — clear any previously-loaded
+                    # trace from session_state so the Family Tree and DNA Analysis
+                    # tabs don't render stale data while this tab shows the
+                    # "pick a trace" message.
+                    if "pipeline_result" in st.session_state:
+                        del st.session_state["pipeline_result"]
+                    if "trace_paths" in st.session_state:
+                        del st.session_state["trace_paths"]
+                    st.info(
+                        f"Pick a {replay_category.lower()} trace from "
+                        "the dropdown above to render its saved pipeline "
+                        "output."
+                    )
 
 # Live branch — original form-driven flow. Gated so it does not appear in
 # Replay mode. (Using `if not is_replay:` instead of an `else:` block keeps
