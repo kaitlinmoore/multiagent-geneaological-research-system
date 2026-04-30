@@ -1,0 +1,136 @@
+{
+  "run_label": "20260430_111851",
+  "timestamp": "2026-04-30T11:23:44.324960",
+  "tiers_run": [
+    "tier1"
+  ],
+  "results": [
+    {
+      "file": "tier1_parent_born_after_child.ged",
+      "query": "Who are the parents of Alice Testcase?",
+      "tier": "tier1",
+      "passed": true,
+      "reason": "2/2 hypotheses rejected via Tier 1 fail-fast: [\"hyp:@I1@:@I2@:father (conf 0.98, checks ['parent_younger_than_child', 'parent_too_young_at_birth'])\", \"hyp:@I1@:@I3@:mother (conf 0.98, checks ['parent_younger_than_child', 'parent_too_young_at_birth'])\"]",
+      "actual": [
+        {
+          "hypothesis_id": "hyp:@I1@:@I2@:father",
+          "verdict": "reject",
+          "confidence_in_critique": 0.98,
+          "tier1_hit": true,
+          "tier1_impossibles": [
+            "parent_younger_than_child",
+            "parent_too_young_at_birth"
+          ],
+          "geo_verdict": "ok",
+          "isolation_mode": "filtered"
+        },
+        {
+          "hypothesis_id": "hyp:@I1@:@I3@:mother",
+          "verdict": "reject",
+          "confidence_in_critique": 0.98,
+          "tier1_hit": true,
+          "tier1_impossibles": [
+            "parent_younger_than_child",
+            "parent_too_young_at_birth"
+          ],
+          "geo_verdict": "ok",
+          "isolation_mode": "filtered"
+        }
+      ],
+      "expected": {
+        "expected_verdict": "reject",
+        "expected_confidence_min": 0.9,
+        "expected_tier1_hit": true
+      },
+      "elapsed_sec": 88.88,
+      "status": "needs_revision",
+      "revision_count": 2
+    },
+    {
+      "file": "tier1_death_before_birth.ged",
+      "query": "Who are the parents of Clara Impossible?",
+      "tier": "tier1",
+      "passed": true,
+      "reason": "2/2 hypotheses rejected via Tier 1 fail-fast: [\"hyp:@I1@:@I2@:father (conf 0.98, checks ['death_before_birth'])\", \"hyp:@I1@:@I3@:mother (conf 0.98, checks ['death_before_birth'])\"]",
+      "actual": [
+        {
+          "hypothesis_id": "hyp:@I1@:@I2@:father",
+          "verdict": "reject",
+          "confidence_in_critique": 0.98,
+          "tier1_hit": true,
+          "tier1_impossibles": [
+            "death_before_birth"
+          ],
+          "geo_verdict": "ok",
+          "isolation_mode": "filtered"
+        },
+        {
+          "hypothesis_id": "hyp:@I1@:@I3@:mother",
+          "verdict": "reject",
+          "confidence_in_critique": 0.98,
+          "tier1_hit": true,
+          "tier1_impossibles": [
+            "death_before_birth"
+          ],
+          "geo_verdict": "ok",
+          "isolation_mode": "filtered"
+        }
+      ],
+      "expected": {
+        "expected_verdict": "reject",
+        "expected_confidence_min": 0.9,
+        "expected_tier1_hit": true
+      },
+      "elapsed_sec": 98.55,
+      "status": "needs_revision",
+      "revision_count": 2
+    },
+    {
+      "file": "tier1_parent_too_young.ged",
+      "query": "Who are the parents of Grace Tooyoung?",
+      "tier": "tier1",
+      "passed": true,
+      "reason": "1/2 hypotheses rejected via Tier 1 fail-fast: [\"hyp:@I1@:@I2@:father (conf 0.98, checks ['parent_too_young_at_birth'])\"]",
+      "actual": [
+        {
+          "hypothesis_id": "hyp:@I1@:@I2@:father",
+          "verdict": "reject",
+          "confidence_in_critique": 0.98,
+          "tier1_hit": true,
+          "tier1_impossibles": [
+            "parent_too_young_at_birth"
+          ],
+          "geo_verdict": "ok",
+          "isolation_mode": "filtered"
+        },
+        {
+          "hypothesis_id": "hyp:@I1@:@I3@:mother",
+          "verdict": "accept",
+          "confidence_in_critique": 0.8,
+          "tier1_hit": false,
+          "tier1_impossibles": [],
+          "geo_verdict": "ok",
+          "isolation_mode": "filtered"
+        }
+      ],
+      "expected": {
+        "expected_verdict": "reject",
+        "expected_confidence_min": 0.9,
+        "expected_tier1_hit": true
+      },
+      "elapsed_sec": 105.8,
+      "status": "needs_revision",
+      "revision_count": 2
+    }
+  ],
+  "summary": {
+    "total": 3,
+    "passed": 3,
+    "per_tier": {
+      "tier1": {
+        "total": 3,
+        "passed": 3
+      }
+    }
+  }
+}
