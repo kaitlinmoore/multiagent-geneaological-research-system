@@ -1045,6 +1045,50 @@ if not is_replay:
             "disabled in this mode.",
             icon="🔍",
         )
+    else:
+        # Query-mode scope expander. Visible in Auto-detect / Query /
+        # Audit modes (where the query field actually matters). Tells
+        # the user up front what kinds of questions the system handles
+        # so a free-form question that the pipeline can't really answer
+        # doesn't quietly fall back to investigating parents.
+        with st.expander(
+            "🔍 What kinds of queries does Query mode handle?",
+            expanded=False,
+        ):
+            st.markdown(
+                """
+**Query mode is built around relationship questions about a single named person.**
+
+Supported patterns:
+
+| Question shape | Example |
+|---|---|
+| Parental (validated primary path) | *"Who are the parents of John F. Kennedy?"* |
+| Single-parent specifically | *"Who was the father of X?"* / *"Who was X's mother?"* |
+| Spouse | *"Who was X married to?"* / *"Find X's spouse"* |
+| Sibling | *"Who were X's siblings?"* / *"Find X's brothers and sisters"* |
+| Child | *"Who were X's children?"* / *"Find X's daughters"* |
+
+**Parental queries** have full evaluation coverage (8/8 trap suite, all
+demo traces). **Spouse / sibling / child queries** are accepted by the
+keyword router but have thinner deterministic-check coverage; use with
+appropriate skepticism.
+
+**Not supported — these silently fall back to investigating parents:**
+
+- Aggregate / counting questions (*"how many descendants…"*)
+- Biographical questions (*"what did X do for a living?"*)
+- Multi-person comparisons (*"are X and Y related?"*)
+- Time-range or geographic ancestry questions
+- Cross-tree comparisons (single GEDCOM at a time)
+
+In **Auto-detect** mode, phrases like `audit`, `verify`, `questionable`,
+or `going back N generations` route to **Audit** mode regardless of
+intent. To bypass this routing, pick the explicit mode from the radio
+above.
+                """.strip(),
+                unsafe_allow_html=False,
+            )
 
     with st.form("pipeline_form"):
         st.markdown("### Inputs")
@@ -1083,9 +1127,15 @@ if not is_replay:
             "Research query",
             value="Who were the parents of John F. Kennedy?",
             help=(
-                "In Auto-detect, phrases like 'audit my tree' or "
-                "'going back 3 generations' will trigger Audit mode. "
-                "Ignored in Gap detection mode."
+                "Relationship questions about one named person: parental, "
+                "spouse, sibling, child. Parental is the validated path; "
+                "the others work but have thinner evaluation. "
+                "Aggregate, biographical, or multi-person questions fall "
+                "back silently to investigating parents. See the expander "
+                "above for the full list of supported and unsupported "
+                "patterns. In Auto-detect, audit-keywords ('verify', "
+                "'questionable', 'N generations', etc.) route to Audit "
+                "mode. Ignored in Gap detection mode."
             ),
             disabled=is_gap_mode,
         )
