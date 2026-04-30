@@ -24,9 +24,20 @@ Two modes:
 import argparse
 import json
 import os
+import re
 import sys
 from pathlib import Path
 from typing import Optional
+
+
+def _format_trace_timestamp(ts: str) -> str:
+    """Reformat a YYYYMMDD_HHMMSS trace timestamp as YYYY-MM-DD HH:MM:SS
+    for human-readable display. Returns the original string unchanged
+    if it doesn't match the expected pattern (e.g. 'unknown')."""
+    m = re.fullmatch(r"(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})", ts or "")
+    if not m:
+        return ts
+    return f"{m[1]}-{m[2]}-{m[3]} {m[4]}:{m[5]}:{m[6]}"
 
 from dotenv import load_dotenv
 
@@ -124,7 +135,7 @@ def run_replay(trace_path: str, full_report: bool = False) -> int:
     label = metadata.get("label", "unknown")
 
     print(f"=== REPLAY: {path.name} ===")
-    print(f"  timestamp: {timestamp}")
+    print(f"  timestamp: {_format_trace_timestamp(timestamp)}")
     print(f"  label:     {label}")
     print()
     print(f"  query:     {trace.get('query', '(none)')}")
