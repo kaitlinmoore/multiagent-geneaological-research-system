@@ -112,17 +112,35 @@ data/PII Trees/
 data/DNA/
 data/dna/
 # eval/results/ contains a mix of public-data and PII-bearing JSON.
-# Default to ignored; allow-list public-data result patterns; explicitly
-# block any *moore* file regardless of pattern.
+# Default to ignored; allow-list ONLY result-file patterns whose name
+# explicitly identifies a public-data subject (jfk / tier1 / tier2 /
+# tier3 / kennedy / habsburg / queen / victoria), plus the deterministic
+# *.md summary files. Date-only patterns are NOT allow-listed because
+# real-tree work has shared dates with public-data work.
+#
+# Explicit deny rules at the bottom block any *moore* / *Moore* / *Smith*
+# / *McCusker* file regardless of pattern (last-match-wins).
 eval/results/*
 !eval/results/*.md
 !eval/results/eval_*.json
 !eval/results/isolation_*.json
-!eval/results/cross_vendor_2026042[6-8]*.json
-!eval/results/cross_vendor_hypo_*_jfk.json
-!eval/results/cross_vendor_hypo_*_tier3*.json
-!eval/results/multi_critic_*_jfk.json
-!eval/results/multi_critic_*_tier3*.json
 !eval/results/ablation_*.json
+!eval/results/*_jfk.json
+!eval/results/*_jfk_*.json
+!eval/results/*_kennedy.json
+!eval/results/*_kennedy_*.json
+!eval/results/*_tier[123].json
+!eval/results/*_tier[123]_*.json
+!eval/results/*_habsburg.json
+!eval/results/*_habsburg_*.json
+!eval/results/*_queen.json
+!eval/results/*_queen_*.json
+!eval/results/*_victoria.json
+!eval/results/*_victoria_*.json
+# Last-match-wins denies for personal-tree subjects.
 eval/results/*moore*
 eval/results/*Moore*
+eval/results/*smith*
+eval/results/*Smith*
+eval/results/*mccusker*
+eval/results/*McCusker*
