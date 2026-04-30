@@ -1,8 +1,8 @@
 """Relationship Hypothesizer — proposes family connections with evidence + reasoning.
 
-Role (CLAUDE.md): "Proposes family connections with evidence chains and
-confidence levels. Tools: date arithmetic, haversine distance. Must state
-weaknesses of own hypotheses."
+Role: propose family connections with evidence chains and confidence
+levels. Tools: date arithmetic, haversine distance. Must state weaknesses
+of own hypotheses.
 
 Pipeline:
     1. Read profiles from state. Each profile already has disambiguated
@@ -271,8 +271,8 @@ def _select_relationship_targets(query: str, family: dict) -> list[dict]:
             selected_types.update(types)
 
     # If the query doesn't hit a keyword, default to parents — the most common
-    # genealogy research question. CLAUDE.md's trap taxonomy assumes parental
-    # hypotheses as the primary unit of work.
+    # genealogy research question, and the primary unit the trap taxonomy
+    # assumes.
     if not selected_types:
         selected_types = {"father", "mother"}
 

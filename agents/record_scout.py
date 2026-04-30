@@ -1,9 +1,9 @@
 """Record Scout — retrieves historical records for a target person.
 
-Role (CLAUDE.md): "Searches for historical records. Retrieves but does NOT
-interpret." The Scout's job is to find candidate records in the GEDCOM that
-could be about the target person, and surface them as raw, cited records for
-the Profile Synthesizer to consolidate.
+Role: search for historical records. Retrieve but do NOT interpret. The
+Scout's job is to find candidate records in the GEDCOM that could be
+about the target person, and surface them as raw, cited records for the
+Profile Synthesizer to consolidate.
 
 Pipeline:
     1. Parse GEDCOM text into a list of person dicts (deterministic).

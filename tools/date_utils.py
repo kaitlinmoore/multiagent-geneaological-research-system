@@ -1,12 +1,12 @@
 """GEDCOM date normalization + Tier 1 deterministic impossibility checks.
 
-Design contract (from CLAUDE.md and the handoff prompt):
+Design contract:
   - The impossibility check functions accept RAW GEDCOM date strings directly
     (exactly what tools.gedcom_parser returns). No preprocessing required.
   - Normalization (`normalize_gedcom_date`) and rule checks share internals so
     the Adversarial Critic can call either layer without glue code.
   - Rule checks are deterministic Tier 1 detectors — they MUST run BEFORE any
-    LLM reasoning in the Critic, per CLAUDE.md.
+    LLM reasoning in the Critic.
 
 Supported GEDCOM date forms:
   Exact:        "29 MAY 1917", "MAY 1917", "1917"

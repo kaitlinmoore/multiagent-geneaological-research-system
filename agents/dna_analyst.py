@@ -1,7 +1,7 @@
 """DNA Analyst — parses DNA matches, predicts relationships, cross-references GEDCOM.
 
-Role (CLAUDE.md): "CSV DNA matches -> clustering -> relationship prediction ->
-cross-reference with documentary tree."
+Role: parse DNA matches -> predict relationships from cM -> cross-reference
+match names against the documentary tree.
 
 This is the fifth agent. It runs in PARALLEL with the documentary pipeline
 (Synthesizer -> Hypothesizer -> Critic) since it only needs gedcom_persons

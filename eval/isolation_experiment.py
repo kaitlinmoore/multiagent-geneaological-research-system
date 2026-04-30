@@ -4,7 +4,7 @@ Runs the full pipeline twice on the same input:
     Condition A (filtered):   state["isolation_mode"] = "filtered"
                               Critic reads hypotheses through
                               filter_hypothesis_for_critic() — the design
-                              invariant from CLAUDE.md.
+                              invariant.
     Condition B (unfiltered): state["isolation_mode"] = "unfiltered"
                               Critic reads raw hypothesis dicts including
                               reasoning_narrative, alternatives_considered,

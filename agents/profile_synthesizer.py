@@ -1,7 +1,7 @@
 """Profile Synthesizer — consolidates retrieved records into cited person profiles.
 
-Role (CLAUDE.md): "Consolidates records into sourced person profiles. Every
-fact must cite a source. Flags gaps explicitly."
+Role: consolidate records into sourced person profiles. Every fact must
+cite a source. Gaps are flagged explicitly.
 
 Pipeline:
     1. Find all "subject" candidates in retrieved_records (Record Scout may

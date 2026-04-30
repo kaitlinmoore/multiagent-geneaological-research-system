@@ -1,8 +1,8 @@
 """Adversarial Critic — independently attacks hypotheses.
 
-Role (CLAUDE.md): "Independently attacks hypotheses. Uses deterministic
-rule checks (date impossibilities, geographic implausibility) + LLM
-reasoning for evidence sufficiency. Max 2 revision cycles."
+Role: independently attack hypotheses using deterministic rule checks
+(date impossibilities, geographic implausibility) plus LLM reasoning for
+evidence sufficiency. Max 2 revision cycles.
 
 CRITICAL CRITIC-ISOLATION INVARIANT:
     This node reads hypotheses EXCLUSIVELY through filter_hypothesis_for_critic
@@ -25,8 +25,8 @@ Pipeline:
           - run_all_tier1_checks (date impossibilities, parent-age floors, etc.)
           - check_geographic_plausibility (soft flag)
        Any Tier 1 verdict == "impossible" → automatic reject with confidence
-       0.98, NO LLM call. This is the fail-fast pattern from CLAUDE.md:
-       "Deterministic checks in the Critic should run BEFORE LLM reasoning."
+       0.98, NO LLM call. Deterministic checks in the Critic run BEFORE
+       LLM reasoning (the fail-fast pattern).
     3. If Tier 1 clean, call the LLM with (a) the isolated hypothesis,
        (b) the subject profile, (c) raw records for subject + related,
        (d) the Tier 1 check results, (e) the geographic result. The LLM
@@ -39,7 +39,7 @@ Pipeline:
     5. Aggregate: any "reject" verdict → status=needs_revision and increment
        revision_count. Otherwise status=complete.
 
-Critique dict shape (extends CLAUDE.md spec):
+Critique dict shape:
     {
         "hypothesis_id":          back-reference to the hypothesis
         "verdict":                "accept" | "reject" | "flag_uncertain"
@@ -294,7 +294,7 @@ def _critique_one(
 ) -> dict:
     hypothesis_id = isolated_hyp.get("hypothesis_id", "<unknown>")
 
-    # Step 1: deterministic Tier 1 checks FIRST (per CLAUDE.md fail-fast rule).
+    # Step 1: deterministic Tier 1 checks FIRST (fail-fast rule).
     tier1_results = _run_tier1(isolated_hyp, person_by_id)
     impossibles = [r for r in tier1_results if r.get("verdict") == "impossible"]
     trace.append(

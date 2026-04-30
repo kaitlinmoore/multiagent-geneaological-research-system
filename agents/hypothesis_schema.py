@@ -1,12 +1,10 @@
 """Hypothesis dict schema and Critic-isolation filter.
 
 This module is the single point of enforcement for the Critic isolation
-constraint from CLAUDE.md:
-
-    "The Critic receives the hypothesis and raw evidence ONLY — never the
-    Hypothesizer's reasoning chain. This prevents confirmation bias. This is
-    the core agentic justification for the project and must be preserved in
-    implementation."
+constraint: the Critic receives the hypothesis and raw evidence ONLY —
+never the Hypothesizer's reasoning chain. This prevents confirmation
+bias and is the core agentic justification for the project; it must be
+preserved in implementation.
 
 A hypothesis dict has TWO explicitly-declared field sets:
 
