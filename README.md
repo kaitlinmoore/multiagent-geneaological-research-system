@@ -1,12 +1,12 @@
 # Multi-Agent Genealogical Research System with Adversarial Critique
 
-A multi-agent pipeline that investigates genealogical questions using GEDCOM family tree data, multi-source web retrieval, and DNA match data. The pipeline pairs a Hypothesizer with an isolated Adversarial Critic, runs deterministic checks before LLM reasoning, and produces cited research reports with calibrated confidence and explicit escalation triggers for human review. Built for **94815 Agentic Technologies** (CMU Heinz College, Prof. Anand S. Rao). Track A technical build, solo project.
+A multi-agent pipeline that investigates genealogical questions using GEDCOM family tree data, multi-source web retrieval, and DNA match data. The pipeline pairs a Hypothesizer with an isolated Adversarial Critic, runs deterministic checks before LLM reasoning, and produces cited research reports with calibrated confidence and explicit escalation triggers for human review. Built for **94815 Agentic Technologies** (CMU Heinz College.
 
-## For Graders — Evaluate Without an API Key
+## For Graders | Evaluate without an API Key
 
 The system supports a **replay mode** that loads previously-saved pipeline traces and renders them through the same UI a live run would produce. **No LLM calls are made; no API key is required.** Reproducibility without dependence on API access was a stated requirement from the project's outset.
 
-### Streamlit replay (recommended)
+### Streamlit Replay (recommended)
 
 ```bash
 git clone https://github.com/kaitlinmoore/multiagent-geneaological-research-system.git
@@ -26,7 +26,7 @@ Available replay traces:
 - **`Demo: trace_*_queen_victoria_synthetic_dna`** — clean accept on English-language royal data
 - **`Redacted: moore_myheritage_dna_redacted`** — pseudonymized real-tree run; demonstrates real-data pipeline behavior without exposing identity
 
-### CLI replay
+### CLI Replay
 
 ```bash
 python main.py --replay traces/demos/trace_20260429_201521_jfk_parents_with_synthetic_dna.json
@@ -35,7 +35,7 @@ python main.py --replay <any trace> --full-report     # dump entire saved report
 
 Prints the agent trace log, the summary panel (status, hypothesis count, critique verdicts, DNA consistency), and the final report. Same output shape as a live run.
 
-### Read-only artifacts (no install required)
+### Read-Only Artifacts (no install required)
 
 For graders who want to review without setting up Python at all, every relevant artifact is committed and human-readable on GitHub:
 
@@ -54,9 +54,9 @@ For graders who want to review without setting up Python at all, every relevant 
 
 ## Key Architectural Feature: Critic Isolation as a Code Guarantee
 
-The Adversarial Critic never sees the Hypothesizer's reasoning narrative, alternatives considered, or intermediate steps. This is the core agentic justification of the project — a Critic that can read the proposer's reasoning is no longer adversarial, it is a confirmation-bias amplifier.
+The Adversarial Critic never sees the Hypothesizer's reasoning narrative, alternatives considered, or intermediate steps. This is the core agentic justification of the project. A Critic that can read the proposer's reasoning is no longer adversarial; it is a confirmation-bias amplifier.
 
-The isolation is enforced as a code guarantee, not a naming convention. `agents/hypothesis_schema.py` declares two field sets — PUBLIC (visible to the Critic) and INTERNAL (stripped before the Critic sees a hypothesis). `filter_hypothesis_for_critic(hypothesis)` is the single read path the Critic uses; the Critic node never accesses raw `state["hypotheses"]` dicts directly. A `state["isolation_mode"]` toggle flips the filter on or off for the A/B experiment, but the production path is always filtered.
+The isolation is enforced as a code guarantee, not a naming convention. `agents/hypothesis_schema.py` declares two field sets: PUBLIC (visible to the Critic) and INTERNAL (stripped before the Critic sees a hypothesis). `filter_hypothesis_for_critic(hypothesis)` is the single read path the Critic uses. The Critic node never accesses raw `state["hypotheses"]` dicts directly. A `state["isolation_mode"]` toggle flips the filter on or off for the A/B experiment, but the production path is always filtered.
 
 ## Capabilities
 
@@ -170,7 +170,6 @@ Results are written to `eval/results/`. Public-data result files (trap suite, is
 
 ```
 multiagent-geneaological-research-system/
-├── CLAUDE.md                       # Project context for Claude Code sessions
 ├── README.md                       # This file
 ├── AI_USAGE.md                     # AI-tool disclosure log
 ├── requirements.txt
@@ -192,8 +191,6 @@ multiagent-geneaological-research-system/
 ├── traces/                         # Pipeline output traces (gitignored)
 └── docs/                           # Architecture diagram, phase deliverables
 ```
-
-A more detailed tree, including per-file responsibilities, lives in `CLAUDE.md`.
 
 ## Evaluation Summary
 
@@ -222,4 +219,4 @@ A more detailed tree, including per-file responsibilities, lives in `CLAUDE.md`.
 
 ## AI Usage
 
-This project used generative AI tools (Claude via claude.ai and Claude Code) extensively across all three phases for design, code generation, document drafting, and debugging. Every use is logged in `AI_USAGE.md` with the tool used, what was asked, what was changed manually, and what was independently verified. Domain selection, evaluation criteria, and final design decisions are the developer's; AI-generated outputs were reviewed and corrected before inclusion.
+This project used generative AI tools (Claude via claude.ai and Claude Code) extensively across all three phases for brainstorming, research, code generation anddebugging, document drafting andfeedback, and uaditing. Every use is logged in `AI_USAGE.md` with the tool used, what was asked, what was changed manually, and what was independently verified. Domain selection, evaluation criteria, and final design decisions are the developer's; AI-generated outputs were reviewed and corrected before inclusion.
