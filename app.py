@@ -357,22 +357,108 @@ def build_family_tree(result: dict) -> Optional[graphviz.Digraph]:
     subject_birth, subject_death = lookup_dates(subject_record_id)
     dot.node("subject", _node_label(subject_name, subject_birth, subject_death, "SUBJECT"), **_COLOR_SUBJECT)
 
-    parent_specs = []
+    # Build the parent_specs list. Three sources, in priority order:
+    # 1. In-GEDCOM parents from profile.family (existing relationships)
+    # 2. Gap-mode proposed parents from hypotheses (relationship absent in
+    #    the GEDCOM but the Hypothesizer proposed a candidate). Marked
+    #    proposed=True so rendering can visually distinguish.
+    # 3. Still-missing roles from target_person.gap_mode metadata that
+    #    didn't get a hypothesis (placeholder to show the gap exists).
+    parent_specs: list[dict] = []
     if family.get("father"):
-        parent_specs.append(("father", family["father"]))
+        parent_specs.append({"role": "father", "ref": family["father"], "proposed": False, "missing": False})
     if family.get("mother"):
-        parent_specs.append(("mother", family["mother"]))
+        parent_specs.append({"role": "mother", "ref": family["mother"], "proposed": False, "missing": False})
+
+    existing_roles = {p["role"] for p in parent_specs}
+
+    # Supplement with gap-mode hypotheses for parental roles not already
+    # populated from the GEDCOM. A gap-mode trace's hypotheses propose
+    # a candidate parent; we surface that here.
+    for hyp in hypotheses:
+        if hyp.get("subject_id") != subject_id:
+            continue
+        rel = (hyp.get("proposed_relationship") or "").lower()
+        role: Optional[str] = None
+        if "father" in rel and "father" not in existing_roles:
+            role = "father"
+        elif "mother" in rel and "mother" not in existing_roles:
+            role = "mother"
+        else:
+            continue
+        related_id = hyp.get("related_id") or ""
+        related_record_id = f"gedcom:{related_id}" if related_id else ""
+        related_record = records_by_record_id.get(related_record_id) or {}
+        related_data = related_record.get("data") or {}
+        parent_specs.append({
+            "role": role,
+            "ref": {
+                "name": related_data.get("name") or "(proposed candidate)",
+                "record_id": related_record_id,
+            },
+            "proposed": True,
+            "missing": False,
+        })
+        existing_roles.add(role)
+
+    # Add MISSING placeholders for any parental role still without an
+    # entry. In gap mode we show BOTH parents regardless of which role
+    # the run investigated, so the user sees the full picture: what's
+    # in the GEDCOM, what was proposed, and what's still a gap.
+    target = result.get("target_person") or {}
+    if target.get("gap_mode"):
+        for role in ("father", "mother"):
+            if role not in existing_roles:
+                parent_specs.append({
+                    "role": role,
+                    "ref": {"name": "(no proposal)", "record_id": ""},
+                    "proposed": False,
+                    "missing": True,
+                })
+                existing_roles.add(role)
 
     with dot.subgraph() as s:
         s.attr(rank="same")
-        for idx, (role, ref) in enumerate(parent_specs):
-            ref = ref or {}
+        for idx, spec in enumerate(parent_specs):
+            role = spec["role"]
+            ref = spec["ref"] or {}
+            proposed = spec.get("proposed", False)
+            missing = spec.get("missing", False)
             nid = f"parent_{idx}"
             rid = ref.get("record_id") or ""
             hyp, crit, esc = lookup_critique(rid)
             b, d = lookup_dates(rid)
-            s.node(nid, _node_label(ref.get("name") or "?", b, d, f"{role.upper()} {_verdict_footer(crit, esc)}"), **_color_for(hyp, crit, esc))
-            dot.edge(nid, "subject", label=role)
+
+            # Footer text and color depend on which kind of parent this is.
+            if missing:
+                footer = f"{role.upper()} GAP — no proposal"
+                node_kwargs = dict(_COLOR_GRAY)
+                # Hollow / dashed to read as "still missing"
+                node_kwargs["style"] = "rounded,dashed"
+            elif proposed:
+                footer = f"PROPOSED {role.upper()} {_verdict_footer(crit, esc)}"
+                node_kwargs = dict(_color_for(hyp, crit, esc))
+                # Dashed border distinguishes "not yet in the GEDCOM" from
+                # in-GEDCOM relationships even when verdict colors agree.
+                node_kwargs["style"] = "rounded,filled,dashed"
+            else:
+                footer = f"{role.upper()} {_verdict_footer(crit, esc)}"
+                node_kwargs = _color_for(hyp, crit, esc)
+
+            s.node(
+                nid,
+                _node_label(ref.get("name") or "?", b, d, footer),
+                **node_kwargs,
+            )
+
+            edge_label = (
+                f"proposed {role}" if proposed
+                else (f"missing {role}" if missing else role)
+            )
+            edge_kwargs: dict[str, str] = {}
+            if proposed or missing:
+                edge_kwargs["style"] = "dashed"
+            dot.edge(nid, "subject", label=edge_label, **edge_kwargs)
 
     spouses = family.get("spouses") or []
     with dot.subgraph() as s:
@@ -1328,8 +1414,15 @@ with tab_tree:
     if "pipeline_result" in st.session_state:
         st.subheader("Immediate family tree")
         st.caption(
-            "Blue = subject | Green = accepted (conf >= 0.75) | "
-            "Amber = flag_uncertain / low-conf | Red = rejected / escalated | Gray = no verdict"
+            "**Color** — Blue = subject · Green = accepted (conf ≥ 0.75) · "
+            "Amber = flag_uncertain / low-conf · Red = rejected / escalated · "
+            "Gray = no verdict.  \n"
+            "**Border** — Solid = in GEDCOM · Dashed-filled = "
+            "proposed gap-fill (not yet in GEDCOM) · Dashed-hollow = "
+            "still-missing gap (no proposal).  \n"
+            "**Edge label** — `father` / `mother` = in GEDCOM · "
+            "`proposed father` / `proposed mother` = pipeline proposal · "
+            "`missing father` / `missing mother` = gap that didn't get a proposal."
         )
         dot = build_family_tree(st.session_state["pipeline_result"])
         if dot:
