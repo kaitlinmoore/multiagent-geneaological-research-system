@@ -206,6 +206,17 @@ _AUDIT_PATTERNS = [
 ]
 
 
+def _format_trace_timestamp(ts: str) -> str:
+    """Reformat a YYYYMMDD_HHMMSS trace timestamp as YYYY-MM-DD HH:MM:SS
+    for human-readable UI display. Returns the original string unchanged
+    if it doesn't match the expected pattern (handles '?', 'unknown',
+    missing, or any future format change gracefully)."""
+    m = re.fullmatch(r"(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})", ts or "")
+    if not m:
+        return ts
+    return f"{m[1]}-{m[2]}-{m[3]} {m[4]}:{m[5]}:{m[6]}"
+
+
 def is_audit_query(query: str) -> bool:
     q = query.lower().strip()
     return any(re.search(pat, q) for pat in _AUDIT_PATTERNS)
@@ -971,7 +982,8 @@ with tab_pipeline:
                             timestamp = metadata.get("timestamp", "?")
                             label = metadata.get("label", "?")
                             st.success(
-                                f"Loaded trace **{label}** from {timestamp}. "
+                                f"Loaded trace **{label}** from "
+                                f"{_format_trace_timestamp(timestamp)}. "
                                 "Family Tree and DNA Analysis tabs also render "
                                 "from this trace."
                             )
@@ -1153,6 +1165,19 @@ if not is_replay:
                 else "auto-detected: standard query"
             )
 
+        # Each submit gets a fresh slate for audit-followup state. The
+        # audit branch repopulates audit_problems when Pass 1 finds
+        # problems; gap and standard branches leave it cleared. Without
+        # this consolidated reset, an audit run that finds zero problems
+        # would leave a previous run's problems in session_state and the
+        # Deep Audit button would render against stale data.
+        for _stale_audit_key in (
+            "audit_problems",
+            "audit_gedcom_text",
+            "audit_persons",
+        ):
+            st.session_state.pop(_stale_audit_key, None)
+
         if gap_mode:
             # Gap detection — submit handler does the scan once, then caches
             # the result in session_state so the picker UI below can survive
@@ -1172,10 +1197,12 @@ if not is_replay:
             # below to invalidate the cache if the user changes GEDCOM
             # without re-clicking Run.
             st.session_state["gap_source_label"] = source_label
-            # No st.stop() and no further branches: gap mode is a scan-only
-            # path on submit. The persistent picker UI below renders the
-            # table and the single-gap-pipeline button. The elif on the
-            # next line ensures the standard pipeline does NOT also fire.
+            # audit-followup state was already cleared at the top of the
+            # submit block. No st.stop() and no further branches: gap
+            # mode is a scan-only path on submit. The persistent picker
+            # UI below renders the table and the single-gap-pipeline
+            # button. The elif on the next line ensures the standard
+            # pipeline does NOT also fire.
 
         elif audit_mode:
             gens = extract_generations_from_query(query)
@@ -1220,7 +1247,8 @@ if not is_replay:
                 st.success("All relationships passed deterministic checks.")
 
         else:
-            # Standard pipeline.
+            # Standard pipeline. audit-followup state was already cleared
+            # at the top of the submit block.
             st.caption(f"Routing: standard pipeline ({mode_reason})")
 
             initial_state = {
@@ -1283,9 +1311,12 @@ if not is_replay:
         render_results(st.session_state["pipeline_result"])
 
     # Deep audit button (appears after audit routing flags problems).
-    # Gated on Audit mode so leftover audit_problems from a previous run
-    # don't show a Deep Audit affordance below an unrelated query result.
-    if mode_choice == "Audit" and st.session_state.get("audit_problems"):
+    # audit_problems itself is the freshness marker: the audit submit
+    # branch sets it; the gap and standard-query branches pop it. So
+    # this block correctly fires for any submit that resolved to audit
+    # mode — including auto-detected audit (mode_choice="Auto-detect"
+    # with an audit-keyword query), which the previous gating missed.
+    if st.session_state.get("audit_problems"):
         problems = st.session_state["audit_problems"]
         deep_n = st.number_input(
             f"Deep audit top N (of {len(problems)} flagged)",
@@ -1592,7 +1623,7 @@ with tab_audit:
                     meta = saved.get("audit_metadata") or {}
                     st.success(
                         f"Loaded **{meta.get('label', '?')}** "
-                        f"(timestamp {meta.get('timestamp', '?')}). "
+                        f"({_format_trace_timestamp(meta.get('timestamp', '?'))}). "
                         f"Pass 1 ran in {meta.get('pass1_elapsed_sec', '?')}s; "
                         f"Pass 2 in "
                         f"{meta.get('pass2_elapsed_sec', '— skipped')}s."
