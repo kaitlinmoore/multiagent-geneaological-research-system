@@ -1,0 +1,469 @@
+{
+  "run_label": "20260429_171439",
+  "scenario": "tier3_duplicate",
+  "query": "Who are the parents of John Kennedy born 1917 in Boston?",
+  "target_person": {
+    "name": "John Kennedy",
+    "approx_birth": "1917",
+    "location": "Boston, Massachusetts"
+  },
+  "seed": {
+    "profiles": 1,
+    "retrieved_records": 23,
+    "elapsed_sec": 14.8
+  },
+  "conditions": [
+    {
+      "name": "production_sonnet_hypo_opus_critic",
+      "label": "Production (Sonnet 4.6 + Opus 4.7)",
+      "hypo_vendor": "anthropic",
+      "hypo_model": "claude-sonnet-4-6",
+      "critic_vendor": "anthropic",
+      "critic_model": "claude-opus-4-7",
+      "elapsed_hypo_sec": 35.2,
+      "elapsed_critic_sec": 14.07,
+      "hypotheses": [
+        {
+          "hypothesis_id": "hyp:@I100@:@I101@:father",
+          "subject_id": "@I100@",
+          "related_id": "@I101@",
+          "proposed_relationship": "father of",
+          "evidence_chain": [
+            {
+              "claim": "John Kennedy (born 15 JUL 1917, Boston, Massachusetts) is recorded with father_id '@I101@', directly linking him to Daniel Kennedy as his father.",
+              "source": "gedcom:@I100@"
+            },
+            {
+              "claim": "Daniel Kennedy (born 20 OCT 1880, Boston, Massachusetts) lists '@I100@' (John Kennedy) among his children_ids, confirming a mutual parent-child linkage.",
+              "source": "gedcom:@I101@"
+            },
+            {
+              "claim": "Daniel Kennedy is recorded as the husband in family '@F100@', and John Kennedy is recorded as a child in the same family '@F100@', establishing a formal GEDCOM family unit.",
+              "source": "gedcom:@I101@"
+            },
+            {
+              "claim": "John Kennedy's famc reference '@F100@' matches Daniel Kennedy's fams reference '@F100@', confirming both records point to the same family structure.",
+              "source": "gedcom:@I100@"
+            },
+            {
+              "claim": "Daniel Kennedy was born in Boston, Massachusetts, and John Kennedy was also born in Boston, Massachusetts, indicating geographic co-location consistent with a father-child relationship.",
+              "source": "gedcom:@I101@"
+            },
+            {
+              "claim": "The age gap between Daniel Kennedy (born 1880) and John Kennedy (born 1917) is 37 years, which is biologically plausible for a father-son relationship.",
+              "source": "gedcom:@I100@"
+            }
+          ],
+          "confidence_score": 0.72,
+          "stated_weaknesses": [
+            "All evidence derives from a single GEDCOM file; no independent corroborating records (e.g., birth certificate, census, church records) are present to verify the father-child relationship.",
+            "No DNA evidence is available to confirm biological paternity.",
+            "John Kennedy's birth facts (date and place) are uncorroborated by any secondary source, meaning the GEDCOM linkage itself rests on unverified base data.",
+            "Daniel Kennedy's own parentage is entirely unknown, so the broader lineage chain cannot be cross-checked for consistency.",
+            "The surname 'Kennedy' is common, particularly in Boston, raising the possibility of mistaken identity or data-entry conflation with another Kennedy family.",
+            "No middle names or name variants are recorded for either individual, making disambiguation from same-name individuals impossible with current data."
+          ],
+          "reasoning_narrative": "The GEDCOM records for John Kennedy (@I100@) and Daniel Kennedy (@I101@) contain explicit, reciprocal parent-child linkages: John's record names Daniel as his father via father_id, and Daniel's record names John as a child via children_ids. Both records also reference the same family unit '@F100@', with Daniel appearing as a spouse (fams) and John appearing as a child (famc), which is the standard GEDCOM structural confirmation of a parent-child relationship. The age delta of 37 years between Daniel (b. 1880) and John (b. 1917) falls well within the biologically and historically plausible range for a father-son pair in that era. Additionally, both individuals share Boston, Massachusetts as their recorded birthplace, which is geographically consistent with a father raising a son in the same city. However, because the entirety of this evidence originates from a single GEDCOM file with no secondary sources cited, the confidence cannot exceed the 0.7\u20130.9 band. The hypothesis is well-supported within the data as structured, but the absence of documentary corroboration (birth certificates, census entries, vital records) means the relationship remains a structured assertion rather than a fully verified genealogical conclusion.",
+          "intermediate_steps": [],
+          "alternatives_considered": [
+            "Daniel Kennedy could be a step-father or adoptive father rather than a biological father, as no birth certificate or DNA evidence rules this out.",
+            "The GEDCOM linkage could reflect a data-entry error conflating two different Kennedy families in Boston, given the commonality of the surname in that region.",
+            "Daniel Kennedy could theoretically be an uncle or other paternal-line relative whose role was recorded incorrectly as 'father' in the source tree."
+          ],
+          "llm_raw_response": "```json\n{\n  \"proposed_relationship\": \"father of\",\n  \"evidence_chain\": [\n    {\n      \"claim\": \"John Kennedy (born 15 JUL 1917, Boston, Massachusetts) is recorded with father_id '@I101@', directly linking him to Daniel Kennedy as his father.\",\n      \"source\": \"gedcom:@I100@\"\n    },\n    {\n      \"claim\": \"Daniel Kennedy (born 20 OCT 1880, Boston, Massachusetts) lists '@I100@' (John Kennedy) among his children_ids, confirming a mutual parent-child linkage.\",\n      \"source\": \"gedcom:@I101@\"\n    },\n    {\n      \"claim\": \"Daniel Kennedy is recorded as the husband in family '@F100@', and John Kennedy is recorded as a child in the same family '@F100@', establishing a formal GEDCOM family unit.\",\n      \"source\": \"gedcom:@I101@\"\n    },\n    {\n      \"claim\": \"John Kennedy's famc reference '@F100@' matches Daniel Kennedy's fams reference '@F100@', confirming both records point to the same family structure.\",\n      \"source\": \"gedcom:@I100@\"\n    },\n    {\n      \"claim\": \"Daniel Kennedy was born in Boston, Massachusetts, and John Kennedy was also born in Boston, Massachusetts, indicating geographic co-location consistent with a father-child relationship.\",\n      \"source\": \"gedcom:@I101@\"\n    },\n    {\n      \"claim\": \"The age gap between Daniel Kennedy (born 1880) and John Kennedy (born 1917) is 37 years, which is biologically plausible for a father-son relationship.\",\n      \"source\": \"gedcom:@I100@\"\n    }\n  ],\n  \"confidence_score\": 0.72,\n  \"stated_weaknesses\": [\n    \"All evidence derives from a single GEDCOM file; no independent corroborating records (e.g., birth certificate, census, church records) are present to verify the father-child relationship.\",\n    \"No DNA evidence is available to confirm biological paternity.\",\n    \"John Kennedy's birth facts (date and place) are uncorroborated by any secondary source, meaning the GEDCOM linkage itself rests on unverified base data.\",\n    \"Daniel Kennedy's own parentage is entirely unknown, so the broader lineage chain cannot be cross-checked for consistency.\",\n    \"The surname 'Kennedy' is common, particularly in Boston, raising the possibility of mistaken identity or data-entry conflation with another Kennedy family.\",\n    \"No middle names or name variants are recorded for either individual, making disambiguation from same-name individuals impossible with current data.\"\n  ],\n  \"reasoning_narrative\": \"The GEDCOM records for John Kennedy (@I100@) and Daniel Kennedy (@I101@) contain explicit, reciprocal parent-child linkages: John's record names Daniel as his father via father_id, and Daniel's record names John as a child via children_ids. Both records also reference the same family unit '@F100@', with Daniel appearing as a spouse (fams) and John appearing as a child (famc), which is the standard GEDCOM structural confirmation of a parent-child relationship. The age delta of 37 years between Daniel (b. 1880) and John (b. 1917) falls well within the biologically and historically plausible range for a father-son pair in that era. Additionally, both individuals share Boston, Massachusetts as their recorded birthplace, which is geographically consistent with a father raising a son in the same city. However, because the entirety of this evidence originates from a single GEDCOM file with no secondary sources cited, the confidence cannot exceed the 0.7\u20130.9 band. The hypothesis is well-supported within the data as structured, but the absence of documentary corroboration (birth certificates, census entries, vital records) means the relationship remains a structured assertion rather than a fully verified genealogical conclusion.\",\n  \"alternatives_considered\": [\n    \"Daniel Kennedy could be a step-father or adoptive father rather than a biological father, as no birth certificate or DNA evidence rules this out.\",\n    \"The GEDCOM linkage could reflect a data-entry error conflating two different Kennedy families in Boston, given the commonality of the surname in that region.\",\n    \"Daniel Kennedy could theoretically be an uncle or other paternal-line relative whose role was recorded incorrectly as 'father' in the source tree.\"\n  ]\n}\n```"
+        },
+        {
+          "hypothesis_id": "hyp:@I100@:@I102@:mother",
+          "subject_id": "@I100@",
+          "related_id": "@I102@",
+          "proposed_relationship": "mother of",
+          "evidence_chain": [
+            {
+              "claim": "John Kennedy (subject) is recorded with mother_id '@I102@', directly linking him to Margaret O'Shea as his mother in the GEDCOM data.",
+              "source": "gedcom:@I100@"
+            },
+            {
+              "claim": "Margaret O'Shea's children_ids list includes '@I100@' (John Kennedy), confirming the mother-child link from her record.",
+              "source": "gedcom:@I102@"
+            },
+            {
+              "claim": "Margaret O'Shea and John Kennedy are both recorded as members of family '@F100@', with Margaret in the spousal role (fams) and John in the child role (famc).",
+              "source": "gedcom:@I100@"
+            },
+            {
+              "claim": "Margaret O'Shea is listed in family '@F100@' as a spouse (fams: ['@F100@']), consistent with her role as a parent in that family unit.",
+              "source": "gedcom:@I102@"
+            },
+            {
+              "claim": "Margaret O'Shea was born in 1884 and John Kennedy in 1917, yielding an age gap of 33 years, which is biologically plausible for a mother-child relationship.",
+              "source": "gedcom:@I102@"
+            },
+            {
+              "claim": "Both Margaret O'Shea and John Kennedy share Boston, Massachusetts as a birth place, consistent with geographic co-location expected of a mother and child.",
+              "source": "gedcom:@I100@"
+            }
+          ],
+          "confidence_score": 0.82,
+          "stated_weaknesses": [
+            "All evidence derives from a single GEDCOM file; there are no independent corroborating sources such as birth certificates, census records, or church baptismal records.",
+            "No corroborating sources exist for John Kennedy's birth date or birth place beyond the GEDCOM record itself, so the age-gap and geo-location calculations rest on unverified data.",
+            "Margaret O'Shea's own parentage and lineage are entirely unknown, making it impossible to cross-check family naming patterns or other indirect indicators.",
+            "John Kennedy is a very common name; without additional identifying details (middle name, exact address, occupation), there is a non-trivial risk of mistaken identity conflating this individual with another John Kennedy born in Boston.",
+            "No DNA or documentary evidence (e.g., death certificate listing mother's name) is present to independently corroborate the GEDCOM assertion."
+          ],
+          "reasoning_narrative": "The GEDCOM record for John Kennedy (@I100@) explicitly assigns '@I102@' as his mother_id, and the record for Margaret O'Shea (@I102@) reciprocally lists '@I100@' in her children_ids field. Both individuals are tied to the same family unit '@F100@', with Margaret appearing in the spousal/parent role and John in the child role, forming a structurally consistent parent-child triad within the file. The 33-year age gap between Margaret (b. 1884) and John (b. 1917) falls well within the biologically and historically plausible range for a mother-child relationship. Geographic consistency further supports the hypothesis: both are recorded as born in Boston, Massachusetts, making it plausible that the mother was present at the child's birth. However, confidence is capped below 0.9 because all of this evidence is internally self-referential within one GEDCOM file with no external documentary corroboration, and the subject's very common name raises a non-trivial risk of record conflation.",
+          "intermediate_steps": [],
+          "alternatives_considered": [
+            "Margaret O'Shea could be a stepmother or adoptive mother recorded as a biological mother in the GEDCOM without a distinguishing note.",
+            "A data-entry error in the GEDCOM could have assigned the wrong individual as mother, particularly given the commonality of the name John Kennedy in Boston.",
+            "Margaret could be a grandmother or other female relative mistakenly entered in the mother position if an intervening generation was collapsed or omitted."
+          ],
+          "llm_raw_response": "```json\n{\n  \"proposed_relationship\": \"mother of\",\n  \"evidence_chain\": [\n    {\n      \"claim\": \"John Kennedy (subject) is recorded with mother_id '@I102@', directly linking him to Margaret O'Shea as his mother in the GEDCOM data.\",\n      \"source\": \"gedcom:@I100@\"\n    },\n    {\n      \"claim\": \"Margaret O'Shea's children_ids list includes '@I100@' (John Kennedy), confirming the mother-child link from her record.\",\n      \"source\": \"gedcom:@I102@\"\n    },\n    {\n      \"claim\": \"Margaret O'Shea and John Kennedy are both recorded as members of family '@F100@', with Margaret in the spousal role (fams) and John in the child role (famc).\",\n      \"source\": \"gedcom:@I100@\"\n    },\n    {\n      \"claim\": \"Margaret O'Shea is listed in family '@F100@' as a spouse (fams: ['@F100@']), consistent with her role as a parent in that family unit.\",\n      \"source\": \"gedcom:@I102@\"\n    },\n    {\n      \"claim\": \"Margaret O'Shea was born in 1884 and John Kennedy in 1917, yielding an age gap of 33 years, which is biologically plausible for a mother-child relationship.\",\n      \"source\": \"gedcom:@I102@\"\n    },\n    {\n      \"claim\": \"Both Margaret O'Shea and John Kennedy share Boston, Massachusetts as a birth place, consistent with geographic co-location expected of a mother and child.\",\n      \"source\": \"gedcom:@I100@\"\n    }\n  ],\n  \"confidence_score\": 0.82,\n  \"stated_weaknesses\": [\n    \"All evidence derives from a single GEDCOM file; there are no independent corroborating sources such as birth certificates, census records, or church baptismal records.\",\n    \"No corroborating sources exist for John Kennedy's birth date or birth place beyond the GEDCOM record itself, so the age-gap and geo-location calculations rest on unverified data.\",\n    \"Margaret O'Shea's own parentage and lineage are entirely unknown, making it impossible to cross-check family naming patterns or other indirect indicators.\",\n    \"John Kennedy is a very common name; without additional identifying details (middle name, exact address, occupation), there is a non-trivial risk of mistaken identity conflating this individual with another John Kennedy born in Boston.\",\n    \"No DNA or documentary evidence (e.g., death certificate listing mother's name) is present to independently corroborate the GEDCOM assertion.\"\n  ],\n  \"reasoning_narrative\": \"The GEDCOM record for John Kennedy (@I100@) explicitly assigns '@I102@' as his mother_id, and the record for Margaret O'Shea (@I102@) reciprocally lists '@I100@' in her children_ids field. Both individuals are tied to the same family unit '@F100@', with Margaret appearing in the spousal/parent role and John in the child role, forming a structurally consistent parent-child triad within the file. The 33-year age gap between Margaret (b. 1884) and John (b. 1917) falls well within the biologically and historically plausible range for a mother-child relationship. Geographic consistency further supports the hypothesis: both are recorded as born in Boston, Massachusetts, making it plausible that the mother was present at the child's birth. However, confidence is capped below 0.9 because all of this evidence is internally self-referential within one GEDCOM file with no external documentary corroboration, and the subject's very common name raises a non-trivial risk of record conflation.\",\n  \"alternatives_considered\": [\n    \"Margaret O'Shea could be a stepmother or adoptive mother recorded as a biological mother in the GEDCOM without a distinguishing note.\",\n    \"A data-entry error in the GEDCOM could have assigned the wrong individual as mother, particularly given the commonality of the name John Kennedy in Boston.\",\n    \"Margaret could be a grandmother or other female relative mistakenly entered in the mother position if an intervening generation was collapsed or omitted.\"\n  ]\n}\n```"
+        }
+      ],
+      "critiques": [
+        {
+          "hypothesis_id": "hyp:@I100@:@I101@:father",
+          "verdict": "accept",
+          "issues_found": [
+            "All evidence is single-source (one GEDCOM file) with no independent corroboration",
+            "No middle names recorded, making disambiguation from other Boston Kennedys impossible if cross-checked against external records",
+            "Daniel Kennedy's own parentage is empty, preventing lineage cross-validation"
+          ],
+          "evidence_cited": [
+            "gedcom:@I100@",
+            "gedcom:@I101@",
+            "@F100@",
+            "death_before_birth",
+            "parent_too_young_at_birth",
+            "parent_died_before_conception",
+            "geographic_plausibility"
+          ],
+          "confidence_in_critique": 0.8,
+          "justification": "Within the closed world of this GEDCOM, the linkage is mutually consistent (bidirectional parent/child pointers, shared @F100@ family, biologically plausible 37-year gap, same birthplace, all Tier 1 checks pass). The stated weaknesses are real but inherent to single-source GEDCOM evidence and do not contradict the hypothesis; accept is appropriate at moderate confidence.",
+          "tier1_results": [
+            {
+              "check": "death_before_birth",
+              "verdict": "ok",
+              "reason": "death is not before birth"
+            },
+            {
+              "check": "implausible_lifespan",
+              "verdict": "ok",
+              "reason": "lifespan within 120 years"
+            },
+            {
+              "check": "parent_younger_than_child",
+              "verdict": "ok",
+              "reason": "parent is not younger than child",
+              "role": "father"
+            },
+            {
+              "check": "parent_too_young_at_birth",
+              "verdict": "ok",
+              "reason": "parent age plausible (>= 12)",
+              "role": "father"
+            },
+            {
+              "check": "parent_died_before_conception",
+              "verdict": "ok",
+              "reason": "father alive ~9mo before birth holds",
+              "role": "father"
+            }
+          ],
+          "geo_result": {
+            "check": "geographic_plausibility",
+            "verdict": "ok",
+            "reason": "0km apart (within intra-regional range)",
+            "distance_km": 0
+          },
+          "isolation_mode": "filtered"
+        },
+        {
+          "hypothesis_id": "hyp:@I100@:@I102@:mother",
+          "verdict": "accept",
+          "issues_found": [
+            "All evidence is from a single GEDCOM file with no independent corroboration (vital records, census, etc.)",
+            "Margaret O'Shea's parentage is unknown, preventing further lineage cross-checks",
+            "Common name 'John Kennedy' in Boston in 1917 carries some risk of identity conflation, though disambiguation candidates were considered"
+          ],
+          "evidence_cited": [
+            "gedcom:@I100@",
+            "gedcom:@I102@",
+            "@F100@",
+            "Tier1:parent_too_young_at_birth",
+            "Tier1:parent_died_before_conception",
+            "geographic_plausibility"
+          ],
+          "confidence_in_critique": 0.8,
+          "justification": "The GEDCOM record is internally consistent: bidirectional parent-child links, shared family @F100@, plausible 33-year age gap, same birthplace, and all Tier 1 checks pass. While single-source, the hypothesis is well-supported within the available evidence and disambiguation correctly excluded other Boston-area John Kennedys.",
+          "tier1_results": [
+            {
+              "check": "death_before_birth",
+              "verdict": "ok",
+              "reason": "death is not before birth"
+            },
+            {
+              "check": "implausible_lifespan",
+              "verdict": "ok",
+              "reason": "lifespan within 120 years"
+            },
+            {
+              "check": "parent_younger_than_child",
+              "verdict": "ok",
+              "reason": "parent is not younger than child",
+              "role": "mother"
+            },
+            {
+              "check": "parent_too_young_at_birth",
+              "verdict": "ok",
+              "reason": "parent age plausible (>= 12)",
+              "role": "mother"
+            },
+            {
+              "check": "parent_died_before_conception",
+              "verdict": "ok",
+              "reason": "mother alive at birth holds",
+              "role": "mother"
+            }
+          ],
+          "geo_result": {
+            "check": "geographic_plausibility",
+            "verdict": "ok",
+            "reason": "0km apart (within intra-regional range)",
+            "distance_km": 0
+          },
+          "isolation_mode": "filtered"
+        }
+      ]
+    },
+    {
+      "name": "weak_cross_gpt4omini_hypo_opus_critic",
+      "label": "Weak-cross (GPT-4o-mini Hypo + Opus 4.7 Critic)",
+      "hypo_vendor": "openai",
+      "hypo_model": "gpt-4o-mini",
+      "critic_vendor": "anthropic",
+      "critic_model": "claude-opus-4-7",
+      "elapsed_hypo_sec": 12.07,
+      "elapsed_critic_sec": 11.06,
+      "hypotheses": [
+        {
+          "hypothesis_id": "hyp:@I100@:@I101@:father",
+          "subject_id": "@I100@",
+          "related_id": "@I101@",
+          "proposed_relationship": "father of",
+          "evidence_chain": [
+            {
+              "claim": "John Kennedy is a child of Daniel Kennedy",
+              "source": "gedcom:@I101@"
+            },
+            {
+              "claim": "Daniel Kennedy is listed as the father of John Kennedy",
+              "source": "gedcom:@I101@"
+            }
+          ],
+          "confidence_score": 0.9,
+          "stated_weaknesses": [
+            "only one source for parental relationship",
+            "no corroborating sources for subject's birth or death information"
+          ],
+          "reasoning_narrative": "The evidence strongly supports that Daniel Kennedy is the father of John Kennedy as Daniel is directly cited as John's father in the relevant records. The biological age difference of 37 years is plausible for a parent-child relationship. Furthermore, both John and Daniel were born in Boston, Massachusetts, suggesting a geographical consistency in their familial connection. However, there is only one source confirming this relationship, which introduces a level of uncertainty.",
+          "intermediate_steps": [],
+          "alternatives_considered": [],
+          "llm_raw_response": "{\n  \"proposed_relationship\": \"father of\",\n  \"evidence_chain\": [\n    {\n      \"claim\": \"John Kennedy is a child of Daniel Kennedy\",\n      \"source\": \"gedcom:@I101@\"\n    },\n    {\n      \"claim\": \"Daniel Kennedy is listed as the father of John Kennedy\",\n      \"source\": \"gedcom:@I101@\"\n    }\n  ],\n  \"confidence_score\": 0.9,\n  \"stated_weaknesses\": [\n    \"only one source for parental relationship\",\n    \"no corroborating sources for subject's birth or death information\"\n  ],\n  \"reasoning_narrative\": \"The evidence strongly supports that Daniel Kennedy is the father of John Kennedy as Daniel is directly cited as John's father in the relevant records. The biological age difference of 37 years is plausible for a parent-child relationship. Furthermore, both John and Daniel were born in Boston, Massachusetts, suggesting a geographical consistency in their familial connection. However, there is only one source confirming this relationship, which introduces a level of uncertainty.\",\n  \"alternatives_considered\": []\n}"
+        },
+        {
+          "hypothesis_id": "hyp:@I100@:@I102@:mother",
+          "subject_id": "@I100@",
+          "related_id": "@I102@",
+          "proposed_relationship": "mother of",
+          "evidence_chain": [
+            {
+              "claim": "John Kennedy has Margaret O'Shea as a parent.",
+              "source": "gedcom:@I102@"
+            },
+            {
+              "claim": "Margaret O'Shea is listed with John Kennedy as her child.",
+              "source": "gedcom:@I102@"
+            }
+          ],
+          "confidence_score": 0.9,
+          "stated_weaknesses": [
+            "only one source for the relationship",
+            "no DNA corroboration"
+          ],
+          "reasoning_narrative": "Margaret O'Shea is recorded as a parent of John Kennedy in the family structure documented in her record. Her record explicitly lists John Kennedy among her children, providing direct evidence of the relationship. The age difference of 33 years between John (born 1917) and Margaret (born 1884) is biologically feasible for a mother-son relationship. While the evidence strongly suggests this connection, it is primarily drawn from a single record, raising the risk of errors or omissions.",
+          "intermediate_steps": [],
+          "alternatives_considered": [],
+          "llm_raw_response": "{\n  \"proposed_relationship\": \"mother of\",\n  \"evidence_chain\": [\n    {\n      \"claim\": \"John Kennedy has Margaret O'Shea as a parent.\",\n      \"source\": \"gedcom:@I102@\"\n    },\n    {\n      \"claim\": \"Margaret O'Shea is listed with John Kennedy as her child.\",\n      \"source\": \"gedcom:@I102@\"\n    }\n  ],\n  \"confidence_score\": 0.9,\n  \"stated_weaknesses\": [\n    \"only one source for the relationship\",\n    \"no DNA corroboration\"\n  ],\n  \"reasoning_narrative\": \"Margaret O'Shea is recorded as a parent of John Kennedy in the family structure documented in her record. Her record explicitly lists John Kennedy among her children, providing direct evidence of the relationship. The age difference of 33 years between John (born 1917) and Margaret (born 1884) is biologically feasible for a mother-son relationship. While the evidence strongly suggests this connection, it is primarily drawn from a single record, raising the risk of errors or omissions.\",\n  \"alternatives_considered\": []\n}"
+        }
+      ],
+      "critiques": [
+        {
+          "hypothesis_id": "hyp:@I100@:@I101@:father",
+          "verdict": "accept",
+          "issues_found": [
+            "Single-source GEDCOM evidence; no external corroboration",
+            "Subject's birth/death facts have no corroborating sources (acknowledged gap)"
+          ],
+          "evidence_cited": [
+            "gedcom:@I100@",
+            "gedcom:@I101@",
+            "death_before_birth",
+            "parent_too_young_at_birth",
+            "parent_died_before_conception",
+            "geographic_plausibility"
+          ],
+          "confidence_in_critique": 0.8,
+          "justification": "The GEDCOM record explicitly links @I100@ to father @I101@ via FAMC/FAMS and child_ids, all Tier 1 checks pass, geography is consistent (both Boston), and father age at birth (~37) is plausible. While only one source supports the link, the internal record consistency is strong and there is no contradicting evidence.",
+          "tier1_results": [
+            {
+              "check": "death_before_birth",
+              "verdict": "ok",
+              "reason": "death is not before birth"
+            },
+            {
+              "check": "implausible_lifespan",
+              "verdict": "ok",
+              "reason": "lifespan within 120 years"
+            },
+            {
+              "check": "parent_younger_than_child",
+              "verdict": "ok",
+              "reason": "parent is not younger than child",
+              "role": "father"
+            },
+            {
+              "check": "parent_too_young_at_birth",
+              "verdict": "ok",
+              "reason": "parent age plausible (>= 12)",
+              "role": "father"
+            },
+            {
+              "check": "parent_died_before_conception",
+              "verdict": "ok",
+              "reason": "father alive ~9mo before birth holds",
+              "role": "father"
+            }
+          ],
+          "geo_result": {
+            "check": "geographic_plausibility",
+            "verdict": "ok",
+            "reason": "0km apart (within intra-regional range)",
+            "distance_km": 0
+          },
+          "isolation_mode": "filtered"
+        },
+        {
+          "hypothesis_id": "hyp:@I100@:@I102@:mother",
+          "verdict": "accept",
+          "issues_found": [
+            "Single GEDCOM source for parentage with no external corroboration",
+            "Mother's parents unknown, limiting lineage verification"
+          ],
+          "evidence_cited": [
+            "gedcom:@I100@",
+            "gedcom:@I102@",
+            "parent_too_young_at_birth",
+            "parent_died_before_conception",
+            "geographic_plausibility"
+          ],
+          "confidence_in_critique": 0.85,
+          "justification": "The GEDCOM record explicitly links @I100@ and @I102@ as child and mother through the same family @F100@, and all Tier 1 checks pass (mother born 1884, child 1917 = age 33 at birth; both in Boston). The relationship is internally consistent and plausible, though it rests on a single source as the Hypothesizer acknowledged.",
+          "tier1_results": [
+            {
+              "check": "death_before_birth",
+              "verdict": "ok",
+              "reason": "death is not before birth"
+            },
+            {
+              "check": "implausible_lifespan",
+              "verdict": "ok",
+              "reason": "lifespan within 120 years"
+            },
+            {
+              "check": "parent_younger_than_child",
+              "verdict": "ok",
+              "reason": "parent is not younger than child",
+              "role": "mother"
+            },
+            {
+              "check": "parent_too_young_at_birth",
+              "verdict": "ok",
+              "reason": "parent age plausible (>= 12)",
+              "role": "mother"
+            },
+            {
+              "check": "parent_died_before_conception",
+              "verdict": "ok",
+              "reason": "mother alive at birth holds",
+              "role": "mother"
+            }
+          ],
+          "geo_result": {
+            "check": "geographic_plausibility",
+            "verdict": "ok",
+            "reason": "0km apart (within intra-regional range)",
+            "distance_km": 0
+          },
+          "isolation_mode": "filtered"
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "per_relationship": [
+      {
+        "relationship": "father of @I100@ -> @I101@",
+        "per_condition": {
+          "Production (Sonnet 4.6 + Opus 4.7)": {
+            "hyp_present": true,
+            "hyp_confidence": 0.72,
+            "hyp_evidence_count": 6,
+            "hyp_weaknesses_count": 6,
+            "critic_verdict": "accept",
+            "critic_confidence": 0.8,
+            "critic_issues_count": 3
+          },
+          "Weak-cross (GPT-4o-mini Hypo + Opus 4.7 Critic)": {
+            "hyp_present": true,
+            "hyp_confidence": 0.9,
+            "hyp_evidence_count": 2,
+            "hyp_weaknesses_count": 2,
+            "critic_verdict": "accept",
+            "critic_confidence": 0.8,
+            "critic_issues_count": 2
+          }
+        }
+      },
+      {
+        "relationship": "mother of @I100@ -> @I102@",
+        "per_condition": {
+          "Production (Sonnet 4.6 + Opus 4.7)": {
+            "hyp_present": true,
+            "hyp_confidence": 0.82,
+            "hyp_evidence_count": 6,
+            "hyp_weaknesses_count": 5,
+            "critic_verdict": "accept",
+            "critic_confidence": 0.8,
+            "critic_issues_count": 3
+          },
+          "Weak-cross (GPT-4o-mini Hypo + Opus 4.7 Critic)": {
+            "hyp_present": true,
+            "hyp_confidence": 0.9,
+            "hyp_evidence_count": 2,
+            "hyp_weaknesses_count": 2,
+            "critic_verdict": "accept",
+            "critic_confidence": 0.85,
+            "critic_issues_count": 2
+          }
+        }
+      }
+    ],
+    "aggregate": {
+      "total_relationships": 2,
+      "verdict_flips": 0,
+      "hypothesis_present_in_all_conditions": 2
+    }
+  }
+}

@@ -1,0 +1,359 @@
+{
+  "run_label": "20260429_221027",
+  "timestamp": "2026-04-29T22:11:52.675142",
+  "model": "claude-sonnet-4-6",
+  "tiers_run": [
+    "tier1",
+    "tier2",
+    "tier3"
+  ],
+  "results": [
+    {
+      "file": "tier1_parent_born_after_child.ged",
+      "tier": "tier1",
+      "passed": true,
+      "partial": false,
+      "reason": "reject + identified parent_younger_than_child via keyword match",
+      "elapsed_sec": 12.78,
+      "verdict": "reject",
+      "confidence": 0.05,
+      "detected_issues": [
+        "DETERMINISTIC IMPOSSIBILITY: Father Robert Testcase (born 1890) is 40 years younger than child Alice Testcase (born 1850) \u2014 parent is younger than the child.",
+        "DETERMINISTIC IMPOSSIBILITY: Mother Martha Smith (born 1892) is 42 years younger than child Alice Testcase (born 1850) \u2014 parent is younger than the child.",
+        "Both impossible parents also appear as candidates @I2@ and @I3@, confirming the data corruption is consistent throughout the file.",
+        "Robert Testcase's death date (1 JAN 1950) is 30 years after Alice's death (20 DEC 1920), consistent with him being a later-generation relative, not a parent.",
+        "The file appears to be a synthetic test dataset with deliberately or accidentally inverted birth years."
+      ],
+      "best_candidate_id": "@I1@",
+      "candidate_count": 3,
+      "parse_error": false,
+      "response": {
+        "best_candidate_id": "@I1@",
+        "verdict": "reject",
+        "confidence": 0.05,
+        "proposed_answer": "The GEDCOM file records Robert Testcase and Martha Smith as the parents of Alice Testcase, but this is genealogically impossible: both purported parents were born decades after Alice's birth in 1850, making them her children or grandchildren in generational terms, not her parents. No reliable answer can be given from this data.",
+        "evidence": [
+          "Candidate @I1@ (Alice Testcase, born 15 MAR 1850, Boston, Massachusetts) is an exact match to the target person by name, birth date, and birth place.",
+          "The GEDCOM links father @I2@ (Robert Testcase, born 5 MAY 1890) and mother @I3@ (Martha Smith, born 10 JUN 1892) as Alice's parents.",
+          "Robert Testcase was born 40 years AFTER Alice Testcase \u2014 he cannot be her father.",
+          "Martha Smith was born 42 years AFTER Alice Testcase \u2014 she cannot be her mother.",
+          "Both purported parents also have death dates (1950 and unknown) that are 30\u2013100 years after Alice's death in 1920, further confirming a generational reversal."
+        ],
+        "stated_weaknesses": [
+          "The GEDCOM data itself is self-contradictory and likely the result of a data-entry error or a test/dummy file; no correct parental answer can be extracted from it.",
+          "No alternative parent candidates are present in the file to substitute.",
+          "Without additional records or a corrected GEDCOM, the true parents of Alice Testcase remain unknown."
+        ],
+        "detected_issues": [
+          "DETERMINISTIC IMPOSSIBILITY: Father Robert Testcase (born 1890) is 40 years younger than child Alice Testcase (born 1850) \u2014 parent is younger than the child.",
+          "DETERMINISTIC IMPOSSIBILITY: Mother Martha Smith (born 1892) is 42 years younger than child Alice Testcase (born 1850) \u2014 parent is younger than the child.",
+          "Both impossible parents also appear as candidates @I2@ and @I3@, confirming the data corruption is consistent throughout the file.",
+          "Robert Testcase's death date (1 JAN 1950) is 30 years after Alice's death (20 DEC 1920), consistent with him being a later-generation relative, not a parent.",
+          "The file appears to be a synthetic test dataset with deliberately or accidentally inverted birth years."
+        ]
+      }
+    },
+    {
+      "file": "tier1_death_before_birth.ged",
+      "tier": "tier1",
+      "passed": false,
+      "partial": false,
+      "reason": "reject but did not identify the specific impossibility (death_before_birth); detected_issues=[\"CHRONOLOGICAL IMPOSSIBILITY: Clara Impossible's death date (20 DEC 1850) is approximately 20 years BEFORE her birth date (15 MAR 1870). A person cannot die before they are born. This is a deterministic contradiction that invalidates the integrity of the record.\", 'The same death-before-birth contradiction appears consistently across all three candidate records wherever Clara (@I1@) is referenced, indicating a data entry error or synthetic/corrupted data rather than a transcription issue in one record only.']",
+      "elapsed_sec": 9.52,
+      "verdict": "reject",
+      "confidence": 0.05,
+      "detected_issues": [
+        "CHRONOLOGICAL IMPOSSIBILITY: Clara Impossible's death date (20 DEC 1850) is approximately 20 years BEFORE her birth date (15 MAR 1870). A person cannot die before they are born. This is a deterministic contradiction that invalidates the integrity of the record.",
+        "The same death-before-birth contradiction appears consistently across all three candidate records wherever Clara (@I1@) is referenced, indicating a data entry error or synthetic/corrupted data rather than a transcription issue in one record only."
+      ],
+      "best_candidate_id": "@I1@",
+      "candidate_count": 3,
+      "parse_error": false,
+      "response": {
+        "best_candidate_id": "@I1@",
+        "verdict": "reject",
+        "confidence": 0.05,
+        "proposed_answer": "According to the GEDCOM data, the parents of Clara Impossible (born 15 Mar 1870, Philadelphia, PA) are listed as Samuel Impossible (b. 5 May 1830) and Eliza Brown (b. 10 Jun 1835). However, this answer cannot be accepted with confidence because the record contains a fatal chronological impossibility: Clara's recorded death date (20 Dec 1850) precedes her recorded birth date (15 Mar 1870) by approximately 20 years, rendering the record internally contradictory and unreliable.",
+        "evidence": [
+          "Candidate @I1@ is an exact name, birth year (1870), and location (Philadelphia, Pennsylvania) match for the target person.",
+          "Father listed as Samuel Impossible (b. 1830, Philadelphia), age ~40 at Clara's supposed birth \u2014 biologically plausible.",
+          "Mother listed as Eliza Brown (b. 1835, Philadelphia), age ~35 at Clara's supposed birth \u2014 biologically plausible.",
+          "Both parents are consistently cross-referenced in @I2@ and @I3@ candidate records as having Clara as a child."
+        ],
+        "stated_weaknesses": [
+          "The death date (20 Dec 1850) precedes the birth date (15 Mar 1870) by ~20 years, making the record internally impossible and casting doubt on all data in this record.",
+          "No corroborating sources or additional records are available to verify the parent-child relationships.",
+          "The surname 'Impossible' is unusual and may be a test/synthetic dataset rather than a real genealogical record."
+        ],
+        "detected_issues": [
+          "CHRONOLOGICAL IMPOSSIBILITY: Clara Impossible's death date (20 DEC 1850) is approximately 20 years BEFORE her birth date (15 MAR 1870). A person cannot die before they are born. This is a deterministic contradiction that invalidates the integrity of the record.",
+          "The same death-before-birth contradiction appears consistently across all three candidate records wherever Clara (@I1@) is referenced, indicating a data entry error or synthetic/corrupted data rather than a transcription issue in one record only."
+        ]
+      }
+    },
+    {
+      "file": "tier1_parent_too_young.ged",
+      "tier": "tier1",
+      "passed": true,
+      "partial": false,
+      "reason": "reject + identified parent_too_young_at_birth via keyword match",
+      "elapsed_sec": 12.41,
+      "verdict": "reject",
+      "confidence": 0.05,
+      "detected_issues": [
+        "IMPOSSIBLE PARENT AGE: Henry Tooyoung (born 5 MAY 1855) was only ~4 years 10 months old when Grace Tooyoung (born 15 MAR 1860) was born. A parent must be at least 12 years old at the child's birth; this violates that rule by over 7 years.",
+        "The GEDCOM data is internally inconsistent: the father-child link exists in both records, yet the dates make the relationship biologically impossible.",
+        "Possible data entry error: Henry's birth year '1855' may be a transcription error for an earlier decade (e.g., 1835), but this cannot be confirmed without external evidence."
+      ],
+      "best_candidate_id": "@I1@",
+      "candidate_count": 3,
+      "parse_error": false,
+      "response": {
+        "best_candidate_id": "@I1@",
+        "verdict": "reject",
+        "confidence": 0.05,
+        "proposed_answer": "According to the GEDCOM data, Grace Tooyoung's listed father is Henry Tooyoung and her listed mother is Susan Miller. However, this record contains a critical data integrity problem: Henry Tooyoung was born on 5 May 1855, making him only about 4 years and 10 months old when Grace was born on 15 March 1860. He is therefore impossibly young to be her father.",
+        "evidence": [
+          "Candidate @I1@ is an exact match for Grace Tooyoung: name, birth date (15 MAR 1860), and birth place (Chicago, Illinois) all align perfectly with the target specification.",
+          "The GEDCOM record lists Henry Tooyoung (@I2@, born 5 MAY 1855) as father and Susan Miller (@I3@, born 10 JUN 1840) as mother.",
+          "Susan Miller's age at Grace's birth is approximately 19 years \u2014 biologically plausible for a mother.",
+          "Henry Tooyoung's age at Grace's birth is approximately 4 years and 10 months \u2014 biologically impossible for a father.",
+          "The father-child relationship is confirmed from both sides: @I2@ lists @I1@ as a child, and @I1@ lists @I2@ as father."
+        ],
+        "stated_weaknesses": [
+          "The father record is almost certainly erroneous (wrong person linked, or a data entry error in the birth year for Henry Tooyoung).",
+          "Without external sources it is impossible to determine who Grace's real father was.",
+          "Henry's birth year may be a transcription error (e.g., 1835 instead of 1855 would make him 24 at Grace's birth, which is plausible)."
+        ],
+        "detected_issues": [
+          "IMPOSSIBLE PARENT AGE: Henry Tooyoung (born 5 MAY 1855) was only ~4 years 10 months old when Grace Tooyoung (born 15 MAR 1860) was born. A parent must be at least 12 years old at the child's birth; this violates that rule by over 7 years.",
+          "The GEDCOM data is internally inconsistent: the father-child link exists in both records, yet the dates make the relationship biologically impossible.",
+          "Possible data entry error: Henry's birth year '1855' may be a transcription error for an earlier decade (e.g., 1835), but this cannot be confirmed without external evidence."
+        ]
+      }
+    },
+    {
+      "file": "tier2_geographically_impossible.ged",
+      "tier": "tier2",
+      "passed": false,
+      "partial": false,
+      "reason": "verdict=accept on a plausible-but-wrong case (expected signal: geographic_flag_moderate_or_stronger)",
+      "elapsed_sec": 11.08,
+      "verdict": "accept",
+      "confidence": 0.95,
+      "detected_issues": [
+        "Minor geographic note: Sicilian parents with a child born in Dublin is uncommon but not impossible for 1850 (Italian immigration to Ireland occurred). This is worth flagging for further research but does not constitute a contradiction.",
+        "No other red flags detected: no age impossibilities, no death-before-birth issues, no contradictory data between the three records."
+      ],
+      "best_candidate_id": "@I1@",
+      "candidate_count": 3,
+      "parse_error": false,
+      "response": {
+        "best_candidate_id": "@I1@",
+        "verdict": "accept",
+        "confidence": 0.95,
+        "proposed_answer": "Margaret Bianchi (born 15 March 1850 in Dublin, Ireland) is the daughter of Salvatore Bianchi (born 5 May 1820 in Palermo, Sicily) and Giuseppina Rossi (born 10 June 1825 in Palermo, Sicily).",
+        "evidence": [
+          "Candidate @I1@ is an exact match on name (Margaret Bianchi), birth date (15 MAR 1850), and birth place (Dublin, Ireland).",
+          "The GEDCOM record for @I1@ explicitly lists Salvatore Bianchi (@I2@) as father and Giuseppina Rossi (@I3@) as mother.",
+          "This parent-child relationship is confirmed bidirectionally: both @I2@ and @I3@ list Margaret Bianchi as their child.",
+          "Father Salvatore Bianchi was born in 1820, making him approximately 30 years old at Margaret's birth \u2014 a plausible age.",
+          "Mother Giuseppina Rossi was born in 1825, making her approximately 25 years old at Margaret's birth \u2014 a plausible age.",
+          "Both parents predeceased Margaret (died 1885 and 1895 respectively; Margaret died 1920), consistent with normal generational order."
+        ],
+        "stated_weaknesses": [
+          "The parents were both born in Palermo, Sicily, and the child was born in Dublin, Ireland \u2014 an unusual geographic circumstance that could indicate immigrant status or a data entry error, though it is not impossible for the mid-19th century.",
+          "No corroborating documents (e.g., baptismal records, census records) are available beyond the GEDCOM entries to independently verify the parentage.",
+          "The GEDCOM file contains only three individuals with no extended family context, limiting cross-validation."
+        ],
+        "detected_issues": [
+          "Minor geographic note: Sicilian parents with a child born in Dublin is uncommon but not impossible for 1850 (Italian immigration to Ireland occurred). This is worth flagging for further research but does not constitute a contradiction.",
+          "No other red flags detected: no age impossibilities, no death-before-birth issues, no contradictory data between the three records."
+        ]
+      }
+    },
+    {
+      "file": "tier2_surname_mismatch.ged",
+      "tier": "tier2",
+      "passed": false,
+      "partial": false,
+      "reason": "verdict=accept on a plausible-but-wrong case (expected signal: father_and_child_surname_mismatch)",
+      "elapsed_sec": 10.04,
+      "verdict": "accept",
+      "confidence": 0.97,
+      "detected_issues": [
+        "Surname mismatch: Lucia's surname is 'Rossi', but neither parent carries the surname 'Rossi' (father is 'Bianchi', mother is 'Verdi'). This is unusual and warrants further investigation, though it does not constitute a definitive contradiction."
+      ],
+      "best_candidate_id": "@I1@",
+      "candidate_count": 3,
+      "parse_error": false,
+      "response": {
+        "best_candidate_id": "@I1@",
+        "verdict": "accept",
+        "confidence": 0.97,
+        "proposed_answer": "Lucia Rossi (born 15 March 1890, Florence, Italy) is the daughter of Marco Bianchi (born 5 May 1860, Florence, Italy) and Anna Verdi (born 10 June 1865, Florence, Italy).",
+        "evidence": [
+          "Candidate @I1@ exactly matches the target: name 'Lucia Rossi', birth date 15 MAR 1890, birth place Florence, Italy.",
+          "The GEDCOM record for @I1@ explicitly lists father as Marco Bianchi (@I2@) and mother as Anna Verdi (@I3@).",
+          "Cross-confirmation: @I2@ (Marco Bianchi) lists Lucia Rossi as a child, and @I3@ (Anna Verdi) also lists Lucia Rossi as a child, with Marco Bianchi as spouse \u2014 all three records are internally consistent.",
+          "Father Marco Bianchi was born 1860, making him ~30 at Lucia's birth (1890) \u2014 biologically plausible.",
+          "Mother Anna Verdi was born 1865, making her ~25 at Lucia's birth (1890) \u2014 biologically plausible.",
+          "All records are geographically consistent: Florence, Italy throughout."
+        ],
+        "stated_weaknesses": [
+          "Lucia's surname is 'Rossi' while her father's surname is 'Bianchi' and mother's is 'Verdi'; this could indicate a different patrilineal line, a maiden/married name discrepancy, or a data entry issue in the GEDCOM \u2014 though in Italian genealogy, women retain birth surnames, so 'Rossi' may be a married name or the GEDCOM may have an error.",
+          "No spouse or marriage record is present for Lucia Rossi (@I1@) that would explain the 'Rossi' surname if it is a married name.",
+          "No independent corroborating documents (civil records, church records) are available to verify the parent-child links beyond the GEDCOM itself."
+        ],
+        "detected_issues": [
+          "Surname mismatch: Lucia's surname is 'Rossi', but neither parent carries the surname 'Rossi' (father is 'Bianchi', mother is 'Verdi'). This is unusual and warrants further investigation, though it does not constitute a definitive contradiction."
+        ]
+      }
+    },
+    {
+      "file": "tier2_implausible_age_gap.ged",
+      "tier": "tier2",
+      "passed": true,
+      "partial": false,
+      "reason": "verdict=flag_uncertain, identified age_gap_85_years via keyword match",
+      "elapsed_sec": 11.4,
+      "verdict": "flag_uncertain",
+      "confidence": 0.45,
+      "detected_issues": [
+        "IMPLAUSIBLE AGE GAP: Father Jonathan Longgap (born 1830) would have been approximately 85 years old at the birth of Edward Longgap in 1915 \u2014 this exceeds the 70-year maximum threshold and is a strong red flag.",
+        "Jonathan Longgap died on 20 JUN 1918, only about 3 years after Edward's birth, which is consistent with advanced age but does not resolve the implausibility of fatherhood at 85.",
+        "The birth year 1830 for Jonathan may be a transcription error (e.g., 1880 intended, which would make him 35 at Edward's birth and match Catherine Reed's birth year of 1880 \u2014 though a same-year birth for both parents would itself be unusual)."
+      ],
+      "best_candidate_id": "@I1@",
+      "candidate_count": 3,
+      "parse_error": false,
+      "response": {
+        "best_candidate_id": "@I1@",
+        "verdict": "flag_uncertain",
+        "confidence": 0.45,
+        "proposed_answer": "According to the GEDCOM data, the parents of Edward Longgap (born 15 March 1915, New York) are listed as Jonathan Longgap (father) and Catherine Reed (mother). However, this record contains a serious anomaly: Jonathan Longgap was born in 1830 and died in 1918, making him approximately 85 years old at Edward's birth in 1915 \u2014 an implausibly extreme age gap of 85 years between father and child.",
+        "evidence": [
+          "Candidate @I1@ matches the target exactly: name 'Edward Longgap', birth date '15 MAR 1915', birth place 'New York, New York'.",
+          "Father is listed as Jonathan Longgap (@I2@), born 5 MAY 1830, died 20 JUN 1918.",
+          "Mother is listed as Catherine Reed (@I3@), born 10 JUN 1880, died 4 APR 1950.",
+          "The GEDCOM is internally consistent: Jonathan and Catherine are recorded as spouses, and both list Edward as their child.",
+          "Catherine Reed's age at Edward's birth (35 years) is biologically plausible."
+        ],
+        "stated_weaknesses": [
+          "Jonathan Longgap's birth year of 1830 makes him ~85 years old at Edward's birth in 1915 \u2014 far outside normal reproductive age (well beyond the 70-year threshold guideline).",
+          "The extreme age gap strongly suggests a data entry error in Jonathan's birth year, a misidentified individual, or a genealogical recording mistake.",
+          "There are no alternative father candidates in the dataset to cross-check against.",
+          "No corroborating sources (census, vital records) are available to verify the relationship."
+        ],
+        "detected_issues": [
+          "IMPLAUSIBLE AGE GAP: Father Jonathan Longgap (born 1830) would have been approximately 85 years old at the birth of Edward Longgap in 1915 \u2014 this exceeds the 70-year maximum threshold and is a strong red flag.",
+          "Jonathan Longgap died on 20 JUN 1918, only about 3 years after Edward's birth, which is consistent with advanced age but does not resolve the implausibility of fatherhood at 85.",
+          "The birth year 1830 for Jonathan may be a transcription error (e.g., 1880 intended, which would make him 35 at Edward's birth and match Catherine Reed's birth year of 1880 \u2014 though a same-year birth for both parents would itself be unusual)."
+        ]
+      }
+    },
+    {
+      "file": "tier3_kennedy_duplicate_john.ged",
+      "tier": "tier3",
+      "passed": false,
+      "partial": false,
+      "reason": "overconfident: verdict=accept at confidence 0.91 > 0.85",
+      "elapsed_sec": 9.25,
+      "verdict": "accept",
+      "confidence": 0.91,
+      "detected_issues": [
+        "No rule violations detected for @I100@. All age relationships are plausible.",
+        "Candidate @I0@ (John Fitzgerald Kennedy, b. 29 May 1917, Brookline MA) is a near-year match but birth place is Brookline, not Boston, and full name differs \u2014 not a match for the target.",
+        "Candidate @I61@ birth year 1854 is clearly not 1917 \u2014 no match.",
+        "Candidates @I3@ and @I4@ are siblings in the Kennedy political family and are not named 'John Kennedy' born 1917 in Boston."
+      ],
+      "best_candidate_id": "@I100@",
+      "candidate_count": 5,
+      "parse_error": false,
+      "response": {
+        "best_candidate_id": "@I100@",
+        "verdict": "accept",
+        "confidence": 0.91,
+        "proposed_answer": "The parents of John Kennedy born 15 July 1917 in Boston, Massachusetts are Daniel Kennedy (born 20 October 1880 in Boston, Massachusetts) and Margaret O'Shea (born 2 March 1884 in Boston, Massachusetts).",
+        "evidence": [
+          "Candidate @I100@ has an exact name match: 'John Kennedy'.",
+          "Birth date '15 JUL 1917' matches the target birth year of 1917.",
+          "Birth place 'Boston, Massachusetts' matches the target location exactly.",
+          "Father Daniel Kennedy (b. 1880) would have been ~37 at the child's birth \u2014 a fully plausible age.",
+          "Mother Margaret O'Shea (b. 1884) would have been ~33 at the child's birth \u2014 a fully plausible age.",
+          "Candidate @I100@ has the highest fuzzy match score (1.1) among all candidates.",
+          "No chronological contradictions detected (parents born well before child, parents died after child's birth)."
+        ],
+        "stated_weaknesses": [
+          "No additional corroborating details (e.g., census records, baptismal records) are available within the GEDCOM data to independently confirm the parent\u2013child link.",
+          "The GEDCOM entry lists no spouse or children for @I100@, limiting cross-validation.",
+          "Other 'John Kennedy' born in 1917 in Boston could theoretically exist; the GEDCOM data alone cannot rule out duplicates."
+        ],
+        "detected_issues": [
+          "No rule violations detected for @I100@. All age relationships are plausible.",
+          "Candidate @I0@ (John Fitzgerald Kennedy, b. 29 May 1917, Brookline MA) is a near-year match but birth place is Brookline, not Boston, and full name differs \u2014 not a match for the target.",
+          "Candidate @I61@ birth year 1854 is clearly not 1917 \u2014 no match.",
+          "Candidates @I3@ and @I4@ are siblings in the Kennedy political family and are not named 'John Kennedy' born 1917 in Boston."
+        ]
+      }
+    },
+    {
+      "file": "tier3_kennedy_ambiguous_joseph.ged",
+      "tier": "tier3",
+      "passed": false,
+      "partial": false,
+      "reason": "overconfident: verdict=accept at confidence 0.97 > 0.85",
+      "elapsed_sec": 8.91,
+      "verdict": "accept",
+      "confidence": 0.97,
+      "detected_issues": [
+        "No significant issues detected for @I1@. The alternative candidate @I110@ has a slightly different birth year (1886 vs 1888) and different location (Lowell vs Boston), making him a less precise match."
+      ],
+      "best_candidate_id": "@I1@",
+      "candidate_count": 5,
+      "parse_error": false,
+      "response": {
+        "best_candidate_id": "@I1@",
+        "verdict": "accept",
+        "confidence": 0.97,
+        "proposed_answer": "Joseph Patrick Kennedy (born 6 September 1888 in Boston, MA) was the son of Patrick Joseph Kennedy (born 14 January 1858 in Boston, MA) and Mary Augusta Hickey (born 6 December 1857).",
+        "evidence": [
+          "Candidate @I1@ matches exactly on name (Joseph Patrick Kennedy), birth year (1888), and birth location (Boston, Massachusetts).",
+          "Father Patrick Joseph Kennedy was born in 1858, making him 30 at the child's birth \u2014 a perfectly plausible parental age.",
+          "Mother Mary Augusta Hickey was born in 1857, making her 30-31 at the child's birth \u2014 also entirely plausible.",
+          "The candidate's children include John Fitzgerald Kennedy (JFK), Robert F. Kennedy, Edward M. Kennedy, and other well-documented Kennedy family members, confirming this is the historically known Joseph P. Kennedy Sr.",
+          "No chronological contradictions detected: father born 1858, mother born 1857, child born 1888, all consistent."
+        ],
+        "stated_weaknesses": [
+          "Candidate @I110@ (Joseph Patrick Kennedy, born 22 NOV 1886 in Lowell, MA) is also a close temporal and geographic match, though his birth year differs by 2 years and location is Lowell rather than Boston.",
+          "The GEDCOM data does not provide a birth place for the mother (Mary Augusta Hickey), so that detail cannot be independently verified from this source."
+        ],
+        "detected_issues": [
+          "No significant issues detected for @I1@. The alternative candidate @I110@ has a slightly different birth year (1886 vs 1888) and different location (Lowell vs Boston), making him a less precise match."
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "total": 8,
+    "passed_full": 3,
+    "passed_partial": 0,
+    "per_tier": {
+      "tier1": {
+        "total": 3,
+        "passed_full": 2,
+        "passed_partial": 0
+      },
+      "tier2": {
+        "total": 3,
+        "passed_full": 1,
+        "passed_partial": 0
+      },
+      "tier3": {
+        "total": 2,
+        "passed_full": 0,
+        "passed_partial": 0
+      }
+    }
+  }
+}

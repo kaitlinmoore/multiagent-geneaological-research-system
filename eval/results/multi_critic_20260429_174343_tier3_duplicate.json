@@ -1,0 +1,447 @@
+{
+  "run_label": "20260429_174343",
+  "scenario": "tier3_duplicate",
+  "query": "Who are the parents of John Kennedy born 1917 in Boston?",
+  "target_person": {
+    "name": "John Kennedy",
+    "approx_birth": "1917",
+    "location": "Boston, Massachusetts"
+  },
+  "seed": {
+    "hypothesis_count": 2,
+    "elapsed_sec": 54.44
+  },
+  "critics": [
+    {
+      "name": "anthropic_opus_4_7",
+      "label": "Anthropic Opus 4.7",
+      "vendor": "anthropic",
+      "model": "claude-opus-4-7",
+      "elapsed_sec": 13.31,
+      "critiques": [
+        {
+          "hypothesis_id": "hyp:@I100@:@I101@:father",
+          "verdict": "accept",
+          "issues_found": [
+            "All evidence is from a single GEDCOM file with no independent corroboration",
+            "No paternal grandparents recorded, preventing further lineage cross-check"
+          ],
+          "evidence_cited": [
+            "gedcom:@I100@",
+            "gedcom:@I101@",
+            "Tier 1 checks",
+            "geographic_plausibility"
+          ],
+          "confidence_in_critique": 0.85,
+          "justification": "The GEDCOM is internally consistent and bidirectional: @I100@ lists @I101@ as father and @I101@ lists @I100@ as child via shared family @F100@. All Tier 1 checks pass (father age ~37 at birth, both in Boston), and disambiguation cleanly selected this John Kennedy over JFK and others. Single-source nature is a known limitation but does not undermine the internal consistency of the structured parent-child link.",
+          "tier1_results": [
+            {
+              "check": "death_before_birth",
+              "verdict": "ok",
+              "reason": "death is not before birth"
+            },
+            {
+              "check": "implausible_lifespan",
+              "verdict": "ok",
+              "reason": "lifespan within 120 years"
+            },
+            {
+              "check": "parent_younger_than_child",
+              "verdict": "ok",
+              "reason": "parent is not younger than child",
+              "role": "father"
+            },
+            {
+              "check": "parent_too_young_at_birth",
+              "verdict": "ok",
+              "reason": "parent age plausible (>= 12)",
+              "role": "father"
+            },
+            {
+              "check": "parent_died_before_conception",
+              "verdict": "ok",
+              "reason": "father alive ~9mo before birth holds",
+              "role": "father"
+            }
+          ],
+          "geo_result": {
+            "check": "geographic_plausibility",
+            "verdict": "ok",
+            "reason": "0km apart (within intra-regional range)",
+            "distance_km": 0
+          },
+          "isolation_mode": "filtered"
+        },
+        {
+          "hypothesis_id": "hyp:@I100@:@I102@:mother",
+          "verdict": "accept",
+          "issues_found": [
+            "All evidence is single-source (one GEDCOM file); no independent corroboration from civil records, census, or church registers",
+            "Margaret O'Shea's parents are unknown, preventing upward verification",
+            "Stepmother vs. biological mother cannot be distinguished from GEDCOM data alone"
+          ],
+          "evidence_cited": [
+            "gedcom:@I100@",
+            "gedcom:@I102@",
+            "@F100@",
+            "tier1:parent_too_young_at_birth",
+            "tier1:parent_died_before_conception",
+            "geographic_plausibility"
+          ],
+          "confidence_in_critique": 0.8,
+          "justification": "The GEDCOM record is internally consistent and bidirectional: both individuals reference family @F100@, the mother's children_ids includes the subject, and all Tier 1 checks (age gap of 33 years, mother alive at birth, same birthplace) pass. While single-source evidence is a legitimate weakness, the proposed mother-of relationship is directly and explicitly asserted in the structured record without contradiction, which is sufficient to accept within the GEDCOM's own claims.",
+          "tier1_results": [
+            {
+              "check": "death_before_birth",
+              "verdict": "ok",
+              "reason": "death is not before birth"
+            },
+            {
+              "check": "implausible_lifespan",
+              "verdict": "ok",
+              "reason": "lifespan within 120 years"
+            },
+            {
+              "check": "parent_younger_than_child",
+              "verdict": "ok",
+              "reason": "parent is not younger than child",
+              "role": "mother"
+            },
+            {
+              "check": "parent_too_young_at_birth",
+              "verdict": "ok",
+              "reason": "parent age plausible (>= 12)",
+              "role": "mother"
+            },
+            {
+              "check": "parent_died_before_conception",
+              "verdict": "ok",
+              "reason": "mother alive at birth holds",
+              "role": "mother"
+            }
+          ],
+          "geo_result": {
+            "check": "geographic_plausibility",
+            "verdict": "ok",
+            "reason": "0km apart (within intra-regional range)",
+            "distance_km": 0
+          },
+          "isolation_mode": "filtered"
+        }
+      ]
+    },
+    {
+      "name": "openai_gpt_5_5",
+      "label": "OpenAI GPT-5.5",
+      "vendor": "openai",
+      "model": "gpt-5.5",
+      "elapsed_sec": 33.68,
+      "critiques": [
+        {
+          "hypothesis_id": "hyp:@I100@:@I101@:father",
+          "verdict": "flag_uncertain",
+          "issues_found": [
+            "The father-child relationship is asserted only inside a single GEDCOM file; there are no independent vital, census, church, probate, obituary, or other documentary records corroborating Daniel Kennedy as John Kennedy's father.",
+            "The reciprocal links in gedcom:@I100@ and gedcom:@I101@ are internally consistent but not independent evidence; they likely derive from the same data entry or compiled tree assertion.",
+            "Both names are common in Massachusetts/Boston context, and neither individual has a middle name, occupation, address, or other distinguishing details to reduce risk of conflation.",
+            "John Kennedy's birth date and birthplace, which anchor the identification, are also only sourced to the same GEDCOM record.",
+            "The relationship is chronologically and geographically plausible, but plausibility does not verify the asserted parentage."
+          ],
+          "evidence_cited": [
+            "gedcom:@I100@",
+            "gedcom:@I101@",
+            "death_before_birth",
+            "implausible_lifespan",
+            "parent_younger_than_child",
+            "parent_too_young_at_birth",
+            "parent_died_before_conception",
+            "geographic_plausibility"
+          ],
+          "confidence_in_critique": 0.78,
+          "justification": "The GEDCOM provides an explicit and reciprocal father-child link, and the Tier 1 and geographic checks show no chronological or location-based impossibility. However, because all relationship evidence comes from one unsourced compiled record set and the names are common, the hypothesis is plausible but not independently verifiable from the available evidence.",
+          "tier1_results": [
+            {
+              "check": "death_before_birth",
+              "verdict": "ok",
+              "reason": "death is not before birth"
+            },
+            {
+              "check": "implausible_lifespan",
+              "verdict": "ok",
+              "reason": "lifespan within 120 years"
+            },
+            {
+              "check": "parent_younger_than_child",
+              "verdict": "ok",
+              "reason": "parent is not younger than child",
+              "role": "father"
+            },
+            {
+              "check": "parent_too_young_at_birth",
+              "verdict": "ok",
+              "reason": "parent age plausible (>= 12)",
+              "role": "father"
+            },
+            {
+              "check": "parent_died_before_conception",
+              "verdict": "ok",
+              "reason": "father alive ~9mo before birth holds",
+              "role": "father"
+            }
+          ],
+          "geo_result": {
+            "check": "geographic_plausibility",
+            "verdict": "ok",
+            "reason": "0km apart (within intra-regional range)",
+            "distance_km": 0
+          },
+          "isolation_mode": "filtered"
+        },
+        {
+          "hypothesis_id": "hyp:@I100@:@I102@:mother",
+          "verdict": "flag_uncertain",
+          "issues_found": [
+            "The mother-child link is explicit and internally consistent, but it rests entirely on a single GEDCOM source with no independent documentary corroboration.",
+            "The GEDCOM provides no birth certificate, baptismal record, census household, obituary, or other primary/near-primary source confirming Margaret O'Shea as John Kennedy's biological mother.",
+            "John Kennedy and Margaret O'Shea are common-name individuals in a plausible high-ambiguity Boston Irish-Catholic context, increasing the risk of a compiler linkage error.",
+            "Margaret O'Shea's parents, marriage details, and maiden/prior-marriage context are absent, so her identity is not independently anchored beyond the GEDCOM family unit.",
+            "The age gap and same-location facts are plausible but derive from the same uncorroborated GEDCOM data and therefore do not independently validate the relationship."
+          ],
+          "evidence_cited": [
+            "gedcom:@I100@",
+            "gedcom:@I102@",
+            "death_before_birth",
+            "implausible_lifespan",
+            "parent_younger_than_child",
+            "parent_too_young_at_birth",
+            "parent_died_before_conception",
+            "geographic_plausibility"
+          ],
+          "confidence_in_critique": 0.78,
+          "justification": "The relationship is plausible and internally consistent: John Kennedy's record names @I102@ as mother, Margaret O'Shea's record lists @I100@ as a child, Tier 1 checks pass, and the geography is coherent. However, because every substantive fact comes from one uncorroborated GEDCOM and the identities are not independently anchored, the hypothesis should remain uncertain rather than accepted as verified.",
+          "tier1_results": [
+            {
+              "check": "death_before_birth",
+              "verdict": "ok",
+              "reason": "death is not before birth"
+            },
+            {
+              "check": "implausible_lifespan",
+              "verdict": "ok",
+              "reason": "lifespan within 120 years"
+            },
+            {
+              "check": "parent_younger_than_child",
+              "verdict": "ok",
+              "reason": "parent is not younger than child",
+              "role": "mother"
+            },
+            {
+              "check": "parent_too_young_at_birth",
+              "verdict": "ok",
+              "reason": "parent age plausible (>= 12)",
+              "role": "mother"
+            },
+            {
+              "check": "parent_died_before_conception",
+              "verdict": "ok",
+              "reason": "mother alive at birth holds",
+              "role": "mother"
+            }
+          ],
+          "geo_result": {
+            "check": "geographic_plausibility",
+            "verdict": "ok",
+            "reason": "0km apart (within intra-regional range)",
+            "distance_km": 0
+          },
+          "isolation_mode": "filtered"
+        }
+      ]
+    },
+    {
+      "name": "google_gemini_2_5_pro",
+      "label": "Google Gemini 2.5 Pro",
+      "vendor": "google",
+      "model": "gemini-2.5-pro",
+      "elapsed_sec": 26.58,
+      "critiques": [
+        {
+          "hypothesis_id": "hyp:@I100@:@I101@:father",
+          "verdict": "flag_uncertain",
+          "issues_found": [
+            "The entire hypothesis is based on a single, uncorroborated GEDCOM file. The internal consistency between records gedcom:@I100@ and gedcom:@I101@ is circular and does not constitute independent proof.",
+            "No primary or secondary sources (e.g., birth certificate, census record, marriage license) are provided to verify the identities, life events, or the claimed relationship.",
+            "The names 'John Kennedy' and 'Daniel Kennedy' are common, particularly in Boston. The absence of middle names, occupations, or specific addresses makes it impossible to rule out a coincidental match with other individuals of the same name."
+          ],
+          "evidence_cited": [
+            "gedcom:@I100@",
+            "gedcom:@I101@"
+          ],
+          "confidence_in_critique": 0.95,
+          "justification": "The verdict is 'flag_uncertain' because the hypothesis rests entirely on assertions within a single GEDCOM file with no external corroboration. This represents the lowest level of genealogical evidence. While not demonstrably false, the claim is completely unproven, and accepting it would violate basic standards of evidence. My confidence is high because this critique relies on the fundamental principle that single-source, unverified claims are insufficient for proof.",
+          "tier1_results": [
+            {
+              "check": "death_before_birth",
+              "verdict": "ok",
+              "reason": "death is not before birth"
+            },
+            {
+              "check": "implausible_lifespan",
+              "verdict": "ok",
+              "reason": "lifespan within 120 years"
+            },
+            {
+              "check": "parent_younger_than_child",
+              "verdict": "ok",
+              "reason": "parent is not younger than child",
+              "role": "father"
+            },
+            {
+              "check": "parent_too_young_at_birth",
+              "verdict": "ok",
+              "reason": "parent age plausible (>= 12)",
+              "role": "father"
+            },
+            {
+              "check": "parent_died_before_conception",
+              "verdict": "ok",
+              "reason": "father alive ~9mo before birth holds",
+              "role": "father"
+            }
+          ],
+          "geo_result": {
+            "check": "geographic_plausibility",
+            "verdict": "ok",
+            "reason": "0km apart (within intra-regional range)",
+            "distance_km": 0
+          },
+          "isolation_mode": "filtered"
+        },
+        {
+          "hypothesis_id": "hyp:@I100@:@I102@:mother",
+          "verdict": "flag_uncertain",
+          "issues_found": [
+            "The sole source for this hypothesis is a single GEDCOM file. All evidence points are circular, merely describing the internal links within that one unverified source.",
+            "No primary or secondary documents (e.g., birth certificate for the child, census records showing the family unit, marriage record for the parents) are provided to corroborate the relationship.",
+            "The names 'John Kennedy' and 'Margaret O'Shea' are common, particularly in Boston during this era, which increases the risk of misidentification without further documentary evidence.",
+            "The internal consistency of the GEDCOM (plausible age gap, shared location) is not sufficient proof of the relationship without external validation."
+          ],
+          "evidence_cited": [
+            "gedcom:@I100@",
+            "gedcom:@I102@"
+          ],
+          "confidence_in_critique": 0.95,
+          "justification": "The hypothesis is entirely dependent on a single, unverified data compilation (a GEDCOM file) with no corroborating evidence from primary or secondary sources. While the data is internally consistent, it is unproven and cannot be accepted without independent verification, making the relationship uncertain.",
+          "tier1_results": [
+            {
+              "check": "death_before_birth",
+              "verdict": "ok",
+              "reason": "death is not before birth"
+            },
+            {
+              "check": "implausible_lifespan",
+              "verdict": "ok",
+              "reason": "lifespan within 120 years"
+            },
+            {
+              "check": "parent_younger_than_child",
+              "verdict": "ok",
+              "reason": "parent is not younger than child",
+              "role": "mother"
+            },
+            {
+              "check": "parent_too_young_at_birth",
+              "verdict": "ok",
+              "reason": "parent age plausible (>= 12)",
+              "role": "mother"
+            },
+            {
+              "check": "parent_died_before_conception",
+              "verdict": "ok",
+              "reason": "mother alive at birth holds",
+              "role": "mother"
+            }
+          ],
+          "geo_result": {
+            "check": "geographic_plausibility",
+            "verdict": "ok",
+            "reason": "0km apart (within intra-regional range)",
+            "distance_km": 0
+          },
+          "isolation_mode": "filtered"
+        }
+      ]
+    }
+  ],
+  "ensemble_per_hypothesis": [
+    {
+      "hypothesis_id": "hyp:@I100@:@I101@:father",
+      "proposed_relationship": "father of",
+      "subject_id": "@I100@",
+      "related_id": "@I101@",
+      "ensemble": {
+        "ensemble_verdict": "flag_uncertain",
+        "ensemble_confidence": 0.78,
+        "issues_union": [
+          "All evidence is from a single GEDCOM file with no independent corroboration",
+          "No paternal grandparents recorded, preventing further lineage cross-check",
+          "The father-child relationship is asserted only inside a single GEDCOM file; there are no independent vital, census, church, probate, obituary, or other documentary records corroborating Daniel Kennedy as John Kennedy's father.",
+          "The reciprocal links in gedcom:@I100@ and gedcom:@I101@ are internally consistent but not independent evidence; they likely derive from the same data entry or compiled tree assertion.",
+          "Both names are common in Massachusetts/Boston context, and neither individual has a middle name, occupation, address, or other distinguishing details to reduce risk of conflation.",
+          "John Kennedy's birth date and birthplace, which anchor the identification, are also only sourced to the same GEDCOM record.",
+          "The relationship is chronologically and geographically plausible, but plausibility does not verify the asserted parentage.",
+          "The entire hypothesis is based on a single, uncorroborated GEDCOM file. The internal consistency between records gedcom:@I100@ and gedcom:@I101@ is circular and does not constitute independent proof.",
+          "No primary or secondary sources (e.g., birth certificate, census record, marriage license) are provided to verify the identities, life events, or the claimed relationship.",
+          "The names 'John Kennedy' and 'Daniel Kennedy' are common, particularly in Boston. The absence of middle names, occupations, or specific addresses makes it impossible to rule out a coincidental match with other individuals of the same name."
+        ],
+        "agreement": "majority",
+        "verdicts_per_critic": {
+          "Anthropic Opus 4.7": "accept",
+          "OpenAI GPT-5.5": "flag_uncertain",
+          "Google Gemini 2.5 Pro": "flag_uncertain"
+        },
+        "confidences_per_critic": {
+          "Anthropic Opus 4.7": 0.85,
+          "OpenAI GPT-5.5": 0.78,
+          "Google Gemini 2.5 Pro": 0.95
+        }
+      }
+    },
+    {
+      "hypothesis_id": "hyp:@I100@:@I102@:mother",
+      "proposed_relationship": "mother of",
+      "subject_id": "@I100@",
+      "related_id": "@I102@",
+      "ensemble": {
+        "ensemble_verdict": "flag_uncertain",
+        "ensemble_confidence": 0.78,
+        "issues_union": [
+          "All evidence is single-source (one GEDCOM file); no independent corroboration from civil records, census, or church registers",
+          "Margaret O'Shea's parents are unknown, preventing upward verification",
+          "Stepmother vs. biological mother cannot be distinguished from GEDCOM data alone",
+          "The mother-child link is explicit and internally consistent, but it rests entirely on a single GEDCOM source with no independent documentary corroboration.",
+          "The GEDCOM provides no birth certificate, baptismal record, census household, obituary, or other primary/near-primary source confirming Margaret O'Shea as John Kennedy's biological mother.",
+          "John Kennedy and Margaret O'Shea are common-name individuals in a plausible high-ambiguity Boston Irish-Catholic context, increasing the risk of a compiler linkage error.",
+          "Margaret O'Shea's parents, marriage details, and maiden/prior-marriage context are absent, so her identity is not independently anchored beyond the GEDCOM family unit.",
+          "The age gap and same-location facts are plausible but derive from the same uncorroborated GEDCOM data and therefore do not independently validate the relationship.",
+          "The sole source for this hypothesis is a single GEDCOM file. All evidence points are circular, merely describing the internal links within that one unverified source.",
+          "No primary or secondary documents (e.g., birth certificate for the child, census records showing the family unit, marriage record for the parents) are provided to corroborate the relationship.",
+          "The names 'John Kennedy' and 'Margaret O'Shea' are common, particularly in Boston during this era, which increases the risk of misidentification without further documentary evidence.",
+          "The internal consistency of the GEDCOM (plausible age gap, shared location) is not sufficient proof of the relationship without external validation."
+        ],
+        "agreement": "majority",
+        "verdicts_per_critic": {
+          "Anthropic Opus 4.7": "accept",
+          "OpenAI GPT-5.5": "flag_uncertain",
+          "Google Gemini 2.5 Pro": "flag_uncertain"
+        },
+        "confidences_per_critic": {
+          "Anthropic Opus 4.7": 0.8,
+          "OpenAI GPT-5.5": 0.78,
+          "Google Gemini 2.5 Pro": 0.95
+        }
+      }
+    }
+  ]
+}

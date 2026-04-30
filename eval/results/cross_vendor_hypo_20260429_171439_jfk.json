@@ -1,0 +1,490 @@
+{
+  "run_label": "20260429_171439",
+  "scenario": "jfk",
+  "query": "Who were the parents of John F. Kennedy?",
+  "target_person": {
+    "name": "John F. Kennedy",
+    "approx_birth": "1917",
+    "location": "Brookline, MA"
+  },
+  "seed": {
+    "profiles": 1,
+    "retrieved_records": 28,
+    "elapsed_sec": 19.05
+  },
+  "conditions": [
+    {
+      "name": "production_sonnet_hypo_opus_critic",
+      "label": "Production (Sonnet 4.6 + Opus 4.7)",
+      "hypo_vendor": "anthropic",
+      "hypo_model": "claude-sonnet-4-6",
+      "critic_vendor": "anthropic",
+      "critic_model": "claude-opus-4-7",
+      "elapsed_hypo_sec": 43.37,
+      "elapsed_critic_sec": 15.2,
+      "hypotheses": [
+        {
+          "hypothesis_id": "hyp:@I0@:@I1@:father",
+          "subject_id": "@I0@",
+          "related_id": "@I1@",
+          "proposed_relationship": "father of",
+          "evidence_chain": [
+            {
+              "claim": "Subject John Fitzgerald Kennedy (born 29 MAY 1917, Brookline, MA) explicitly lists @I1@ as his father_id, directly linking him to Joseph Patrick Kennedy.",
+              "source": "gedcom:@I0@"
+            },
+            {
+              "claim": "Candidate Joseph Patrick Kennedy (born 6 SEP 1888, Boston, MA) explicitly lists @I0@ among his children_ids, directly naming John Fitzgerald Kennedy as one of his children.",
+              "source": "gedcom:@I1@"
+            },
+            {
+              "claim": "Both subject and candidate are linked to the same family unit @F0@: the subject appears in famc [@F0@] and the candidate appears in fams [@F0@], confirming a parent-child family record.",
+              "source": "gedcom:@I0@"
+            },
+            {
+              "claim": "Candidate Joseph Patrick Kennedy shares the surname 'Kennedy' with the subject, consistent with a patrilineal father-child relationship.",
+              "source": "gedcom:@I1@"
+            },
+            {
+              "claim": "Joseph Patrick Kennedy was born in Boston, MA, approximately 6 km from the subject's birth place of Brookline, MA, establishing geographic co-location consistent with a family unit at time of subject's birth.",
+              "source": "gedcom:@I1@"
+            },
+            {
+              "claim": "The age delta of 29 years (Joseph born 1888, John born 1917) falls within the range of biological plausibility for a father-child relationship.",
+              "source": "gedcom:@I1@"
+            },
+            {
+              "claim": "Independent source (Wikidata, John F. Kennedy) confirms father of: 'Joseph P. Kennedy Sr.' matches GEDCOM name 'Joseph Patrick Kennedy' (similarity 0.80)",
+              "source": "wikidata:Q9696"
+            },
+            {
+              "claim": "Independent source (Wikitree, John Fitzgerald Kennedy) confirms father of: 'Joseph Patrick Kennedy' matches GEDCOM name 'Joseph Patrick Kennedy' (similarity 1.00)",
+              "source": "wikitree:Kennedy-96"
+            }
+          ],
+          "confidence_score": 0.97,
+          "stated_weaknesses": [
+            "All structural evidence (father_id, children_ids, famc/fams) derives from a single GEDCOM file; no independent documentary source (e.g., birth certificate, census record) is present in the supplied records to corroborate the direct parentage claim.",
+            "Birth date and birth place for the subject are sourced from a single record only, meaning the age-gap plausibility calculation rests on unverified dates.",
+            "No DNA evidence is available in the supplied records to biologically confirm the father-child relationship.",
+            "The GEDCOM data contains no marriage date or place for Joseph Patrick Kennedy and his spouse @I2@, so the legitimacy timeline cannot be verified from these records alone."
+          ],
+          "reasoning_narrative": "The subject record (gedcom:@I0@) explicitly encodes @I1@ as the father_id of John Fitzgerald Kennedy, and the candidate record (gedcom:@I1@) reciprocally lists @I0@ among nine children_ids of Joseph Patrick Kennedy. Both individuals are further bound to the identical family record @F0@, with the subject appearing as a child (famc) and the candidate appearing as a spouse/parent (fams), creating a triply-consistent structural link within the GEDCOM data model. The shared surname 'Kennedy' is consistent with standard patrilineal naming conventions and adds soft corroboration. Geographic proximity is also consistent: Joseph's birth in Boston, MA and John's birth approximately 6 km away in Brookline, MA suggest the family resided in the same metropolitan area at the time of John's birth in 1917. The 29-year age gap between father (born 1888) and son (born 1917) is well within biological norms for a paternal relationship. While all evidence originates from a single GEDCOM source file without independent documentary corroboration, the mutual and structural nature of the linkage \u2014 father_id, children_ids, and shared family unit \u2014 strongly supports the hypothesis that Joseph Patrick Kennedy is the biological father of John Fitzgerald Kennedy.",
+          "intermediate_steps": [],
+          "alternatives_considered": [
+            "Adoptive or step-father relationship: the GEDCOM records no adoption notation, and the shared surname and biological plausibility make a non-biological paternal role less likely, but cannot be excluded without a birth certificate.",
+            "Data entry error or mistaken identity: given the historical prominence of both individuals and the consistency of all structural fields, a clerical GEDCOM error is possible in principle but highly implausible in practice.",
+            "Grandfather relationship: excluded by the explicit father_id / children_ids encoding and the 29-year age gap, which is too small for a grandfather-grandchild pairing."
+          ],
+          "llm_raw_response": "{\n  \"proposed_relationship\": \"father of\",\n  \"evidence_chain\": [\n    {\n      \"claim\": \"Subject John Fitzgerald Kennedy (born 29 MAY 1917, Brookline, MA) explicitly lists @I1@ as his father_id, directly linking him to Joseph Patrick Kennedy.\",\n      \"source\": \"gedcom:@I0@\"\n    },\n    {\n      \"claim\": \"Candidate Joseph Patrick Kennedy (born 6 SEP 1888, Boston, MA) explicitly lists @I0@ among his children_ids, directly naming John Fitzgerald Kennedy as one of his children.\",\n      \"source\": \"gedcom:@I1@\"\n    },\n    {\n      \"claim\": \"Both subject and candidate are linked to the same family unit @F0@: the subject appears in famc [@F0@] and the candidate appears in fams [@F0@], confirming a parent-child family record.\",\n      \"source\": \"gedcom:@I0@\"\n    },\n    {\n      \"claim\": \"Candidate Joseph Patrick Kennedy shares the surname 'Kennedy' with the subject, consistent with a patrilineal father-child relationship.\",\n      \"source\": \"gedcom:@I1@\"\n    },\n    {\n      \"claim\": \"Joseph Patrick Kennedy was born in Boston, MA, approximately 6 km from the subject's birth place of Brookline, MA, establishing geographic co-location consistent with a family unit at time of subject's birth.\",\n      \"source\": \"gedcom:@I1@\"\n    },\n    {\n      \"claim\": \"The age delta of 29 years (Joseph born 1888, John born 1917) falls within the range of biological plausibility for a father-child relationship.\",\n      \"source\": \"gedcom:@I1@\"\n    }\n  ],\n  \"confidence_score\": 0.97,\n  \"stated_weaknesses\": [\n    \"All structural evidence (father_id, children_ids, famc/fams) derives from a single GEDCOM file; no independent documentary source (e.g., birth certificate, census record) is present in the supplied records to corroborate the direct parentage claim.\",\n    \"Birth date and birth place for the subject are sourced from a single record only, meaning the age-gap plausibility calculation rests on unverified dates.\",\n    \"No DNA evidence is available in the supplied records to biologically confirm the father-child relationship.\",\n    \"The GEDCOM data contains no marriage date or place for Joseph Patrick Kennedy and his spouse @I2@, so the legitimacy timeline cannot be verified from these records alone.\"\n  ],\n  \"reasoning_narrative\": \"The subject record (gedcom:@I0@) explicitly encodes @I1@ as the father_id of John Fitzgerald Kennedy, and the candidate record (gedcom:@I1@) reciprocally lists @I0@ among nine children_ids of Joseph Patrick Kennedy. Both individuals are further bound to the identical family record @F0@, with the subject appearing as a child (famc) and the candidate appearing as a spouse/parent (fams), creating a triply-consistent structural link within the GEDCOM data model. The shared surname 'Kennedy' is consistent with standard patrilineal naming conventions and adds soft corroboration. Geographic proximity is also consistent: Joseph's birth in Boston, MA and John's birth approximately 6 km away in Brookline, MA suggest the family resided in the same metropolitan area at the time of John's birth in 1917. The 29-year age gap between father (born 1888) and son (born 1917) is well within biological norms for a paternal relationship. While all evidence originates from a single GEDCOM source file without independent documentary corroboration, the mutual and structural nature of the linkage \u2014 father_id, children_ids, and shared family unit \u2014 strongly supports the hypothesis that Joseph Patrick Kennedy is the biological father of John Fitzgerald Kennedy.\",\n  \"alternatives_considered\": [\n    \"Adoptive or step-father relationship: the GEDCOM records no adoption notation, and the shared surname and biological plausibility make a non-biological paternal role less likely, but cannot be excluded without a birth certificate.\",\n    \"Data entry error or mistaken identity: given the historical prominence of both individuals and the consistency of all structural fields, a clerical GEDCOM error is possible in principle but highly implausible in practice.\",\n    \"Grandfather relationship: excluded by the explicit father_id / children_ids encoding and the 29-year age gap, which is too small for a grandfather-grandchild pairing.\"\n  ]\n}"
+        },
+        {
+          "hypothesis_id": "hyp:@I0@:@I2@:mother",
+          "subject_id": "@I0@",
+          "related_id": "@I2@",
+          "proposed_relationship": "mother of",
+          "evidence_chain": [
+            {
+              "claim": "John Fitzgerald Kennedy's GEDCOM record explicitly lists @I2@ as his mother_id, directly linking Rose Elizabeth Fitzgerald as his mother.",
+              "source": "gedcom:@I0@"
+            },
+            {
+              "claim": "Rose Elizabeth Fitzgerald's GEDCOM record lists @I0@ among her children_ids, confirming John Fitzgerald Kennedy as one of her children.",
+              "source": "gedcom:@I2@"
+            },
+            {
+              "claim": "Both subject and candidate share family unit @F0@: John Fitzgerald Kennedy lists @F0@ in his famc field, and Rose Elizabeth Fitzgerald lists @F0@ in her fams field, placing them in the same nuclear family record.",
+              "source": "gedcom:@I0@"
+            },
+            {
+              "claim": "Rose Elizabeth Fitzgerald lists @F0@ in her fams field, corroborating the shared family unit linking her as a parent in John's family of origin.",
+              "source": "gedcom:@I2@"
+            },
+            {
+              "claim": "Rose Elizabeth Fitzgerald was born 22 JUL 1890, making her 26 years old at the time of John's birth on 29 MAY 1917 \u2014 a biologically and socially plausible maternal age.",
+              "source": "gedcom:@I2@"
+            },
+            {
+              "claim": "John Fitzgerald Kennedy was born in Brookline, MA; Rose Elizabeth Fitzgerald was born in North End, Boston, MA \u2014 approximately 6 km apart \u2014 indicating geographic co-location consistent with a mother raising a child in the same metropolitan area.",
+              "source": "gedcom:@I0@"
+            },
+            {
+              "claim": "Rose Elizabeth Fitzgerald's spouse is listed as @I1@, who is also recorded as John Fitzgerald Kennedy's father_id, establishing that Rose was married to John's recorded father within the same family unit.",
+              "source": "gedcom:@I2@"
+            },
+            {
+              "claim": "Independent source (Wikitree, John Fitzgerald Kennedy) confirms mother of: 'Rose Elizabeth Fitzgerald' matches GEDCOM name 'Rose Elizabeth Fitzgerald' (similarity 1.00)",
+              "source": "wikitree:Kennedy-96"
+            }
+          ],
+          "confidence_score": 0.93,
+          "stated_weaknesses": [
+            "All evidence derives from a single GEDCOM file; no independent corroborating documentary sources (e.g., birth certificate, census records, baptismal records) are present in the supplied data to cross-validate the mother-child link.",
+            "Birth date and birth place for the subject are sourced from a single record only, meaning the 1917 birth year used to calculate the age delta cannot be independently verified from the supplied records.",
+            "No DNA evidence is available in the supplied records to biologically corroborate the maternal relationship.",
+            "The GEDCOM data structure itself could reflect a data-entry error or a previously assumed relationship rather than a documented one; the file contains no source citations pointing to external primary records."
+          ],
+          "reasoning_narrative": "The GEDCOM record for John Fitzgerald Kennedy (@I0@) explicitly encodes @I2@ as his mother_id, and the GEDCOM record for Rose Elizabeth Fitzgerald (@I2@) reciprocally lists @I0@ among her children_ids. Both individuals are linked to the same family unit @F0@ \u2014 John through his famc field and Rose through her fams field \u2014 providing a structurally consistent and bidirectional pointer within the genealogical data model. The spousal link between Rose (@I2@) and @I1@, who is simultaneously recorded as John's father_id, further reinforces the nuclear family configuration. The age delta of 27 years (Rose born 1890, John born 1917) places Rose at approximately 26 years old at John's birth, which is biologically and historically plausible for a mother in early 20th-century America. Geographic proximity between Rose's birthplace in North End, Boston, MA and John's birthplace in Brookline, MA (approximately 6 km) is consistent with the same family residing in the greater Boston area. Taken together, the bidirectional explicit linkage in the GEDCOM, the shared family unit, the compatible spousal record, the plausible maternal age, and the geographic coherence form a mutually reinforcing evidence chain strongly supporting Rose Elizabeth Fitzgerald as the mother of John Fitzgerald Kennedy. Confidence is capped below 0.95 because all evidence originates from a single GEDCOM file with no externally cited primary source documents visible in the supplied records.",
+          "intermediate_steps": [],
+          "alternatives_considered": [
+            "Adoptive mother: Rose could theoretically be a recorded adoptive rather than biological mother; the GEDCOM provides no field to distinguish biological from adoptive parentage, though historical record makes this highly unlikely for this well-documented family.",
+            "Data entry error conflating two individuals: Given that 'Fitzgerald' appears both as John's middle name and as Rose's surname, a careless data entry could theoretically have created a circular or erroneous link, though the full bidirectional structure of the record makes this unlikely.",
+            "Stepmother recorded as mother: Rose could conceivably be a stepmother entered as mother in the GEDCOM, but the spousal link to @I1@ and the consistency of the family unit @F0@ do not flag any anomaly suggesting a blended-family scenario."
+          ],
+          "llm_raw_response": "```json\n{\n  \"proposed_relationship\": \"mother of\",\n  \"evidence_chain\": [\n    {\n      \"claim\": \"John Fitzgerald Kennedy's GEDCOM record explicitly lists @I2@ as his mother_id, directly linking Rose Elizabeth Fitzgerald as his mother.\",\n      \"source\": \"gedcom:@I0@\"\n    },\n    {\n      \"claim\": \"Rose Elizabeth Fitzgerald's GEDCOM record lists @I0@ among her children_ids, confirming John Fitzgerald Kennedy as one of her children.\",\n      \"source\": \"gedcom:@I2@\"\n    },\n    {\n      \"claim\": \"Both subject and candidate share family unit @F0@: John Fitzgerald Kennedy lists @F0@ in his famc field, and Rose Elizabeth Fitzgerald lists @F0@ in her fams field, placing them in the same nuclear family record.\",\n      \"source\": \"gedcom:@I0@\"\n    },\n    {\n      \"claim\": \"Rose Elizabeth Fitzgerald lists @F0@ in her fams field, corroborating the shared family unit linking her as a parent in John's family of origin.\",\n      \"source\": \"gedcom:@I2@\"\n    },\n    {\n      \"claim\": \"Rose Elizabeth Fitzgerald was born 22 JUL 1890, making her 26 years old at the time of John's birth on 29 MAY 1917 \u2014 a biologically and socially plausible maternal age.\",\n      \"source\": \"gedcom:@I2@\"\n    },\n    {\n      \"claim\": \"John Fitzgerald Kennedy was born in Brookline, MA; Rose Elizabeth Fitzgerald was born in North End, Boston, MA \u2014 approximately 6 km apart \u2014 indicating geographic co-location consistent with a mother raising a child in the same metropolitan area.\",\n      \"source\": \"gedcom:@I0@\"\n    },\n    {\n      \"claim\": \"Rose Elizabeth Fitzgerald's spouse is listed as @I1@, who is also recorded as John Fitzgerald Kennedy's father_id, establishing that Rose was married to John's recorded father within the same family unit.\",\n      \"source\": \"gedcom:@I2@\"\n    }\n  ],\n  \"confidence_score\": 0.93,\n  \"stated_weaknesses\": [\n    \"All evidence derives from a single GEDCOM file; no independent corroborating documentary sources (e.g., birth certificate, census records, baptismal records) are present in the supplied data to cross-validate the mother-child link.\",\n    \"Birth date and birth place for the subject are sourced from a single record only, meaning the 1917 birth year used to calculate the age delta cannot be independently verified from the supplied records.\",\n    \"No DNA evidence is available in the supplied records to biologically corroborate the maternal relationship.\",\n    \"The GEDCOM data structure itself could reflect a data-entry error or a previously assumed relationship rather than a documented one; the file contains no source citations pointing to external primary records.\"\n  ],\n  \"reasoning_narrative\": \"The GEDCOM record for John Fitzgerald Kennedy (@I0@) explicitly encodes @I2@ as his mother_id, and the GEDCOM record for Rose Elizabeth Fitzgerald (@I2@) reciprocally lists @I0@ among her children_ids. Both individuals are linked to the same family unit @F0@ \u2014 John through his famc field and Rose through her fams field \u2014 providing a structurally consistent and bidirectional pointer within the genealogical data model. The spousal link between Rose (@I2@) and @I1@, who is simultaneously recorded as John's father_id, further reinforces the nuclear family configuration. The age delta of 27 years (Rose born 1890, John born 1917) places Rose at approximately 26 years old at John's birth, which is biologically and historically plausible for a mother in early 20th-century America. Geographic proximity between Rose's birthplace in North End, Boston, MA and John's birthplace in Brookline, MA (approximately 6 km) is consistent with the same family residing in the greater Boston area. Taken together, the bidirectional explicit linkage in the GEDCOM, the shared family unit, the compatible spousal record, the plausible maternal age, and the geographic coherence form a mutually reinforcing evidence chain strongly supporting Rose Elizabeth Fitzgerald as the mother of John Fitzgerald Kennedy. Confidence is capped below 0.95 because all evidence originates from a single GEDCOM file with no externally cited primary source documents visible in the supplied records.\",\n  \"alternatives_considered\": [\n    \"Adoptive mother: Rose could theoretically be a recorded adoptive rather than biological mother; the GEDCOM provides no field to distinguish biological from adoptive parentage, though historical record makes this highly unlikely for this well-documented family.\",\n    \"Data entry error conflating two individuals: Given that 'Fitzgerald' appears both as John's middle name and as Rose's surname, a careless data entry could theoretically have created a circular or erroneous link, though the full bidirectional structure of the record makes this unlikely.\",\n    \"Stepmother recorded as mother: Rose could conceivably be a stepmother entered as mother in the GEDCOM, but the spousal link to @I1@ and the consistency of the family unit @F0@ do not flag any anomaly suggesting a blended-family scenario.\"\n  ]\n}\n```"
+        }
+      ],
+      "critiques": [
+        {
+          "hypothesis_id": "hyp:@I0@:@I1@:father",
+          "verdict": "accept",
+          "issues_found": [
+            "All structural GEDCOM evidence (father_id, children_ids, famc/fams) is internally consistent and mutually reciprocal",
+            "Two independent external sources (Wikidata Q9696 and Wikitree Kennedy-96) corroborate the father relationship",
+            "Single GEDCOM file is the source of structural data, but external corroboration mitigates this"
+          ],
+          "evidence_cited": [
+            "gedcom:@I0@",
+            "gedcom:@I1@",
+            "wikidata:Q9696",
+            "wikitree:Kennedy-96",
+            "death_before_birth",
+            "parent_too_young_at_birth",
+            "parent_died_before_conception",
+            "geographic_plausibility"
+          ],
+          "confidence_in_critique": 0.95,
+          "justification": "The hypothesis is supported by reciprocal GEDCOM links, a shared family unit @F0@, all Tier 1 checks passing, geographic co-location (6km), a plausible 29-year age gap, and two independent external sources (Wikidata and Wikitree) confirming the well-documented historical father-son relationship between Joseph P. Kennedy Sr. and JFK. This is a high-confidence accept.",
+          "tier1_results": [
+            {
+              "check": "death_before_birth",
+              "verdict": "ok",
+              "reason": "death is not before birth"
+            },
+            {
+              "check": "implausible_lifespan",
+              "verdict": "ok",
+              "reason": "lifespan within 120 years"
+            },
+            {
+              "check": "parent_younger_than_child",
+              "verdict": "ok",
+              "reason": "parent is not younger than child",
+              "role": "father"
+            },
+            {
+              "check": "parent_too_young_at_birth",
+              "verdict": "ok",
+              "reason": "parent age plausible (>= 12)",
+              "role": "father"
+            },
+            {
+              "check": "parent_died_before_conception",
+              "verdict": "ok",
+              "reason": "father alive ~9mo before birth holds",
+              "role": "father"
+            }
+          ],
+          "geo_result": {
+            "check": "geographic_plausibility",
+            "verdict": "ok",
+            "reason": "6km apart (within intra-regional range)",
+            "distance_km": 6
+          },
+          "isolation_mode": "filtered"
+        },
+        {
+          "hypothesis_id": "hyp:@I0@:@I2@:mother",
+          "verdict": "accept",
+          "issues_found": [
+            "All evidence derives from a single GEDCOM file with no external primary source citations (birth certificate, census, baptismal records)",
+            "Wikitree corroboration is mentioned but only as a name match, not a full independent verification of the parent-child link"
+          ],
+          "evidence_cited": [
+            "gedcom:@I0@",
+            "gedcom:@I2@",
+            "wikitree:Kennedy-96",
+            "death_before_birth",
+            "parent_too_young_at_birth",
+            "parent_died_before_conception",
+            "geographic_plausibility"
+          ],
+          "confidence_in_critique": 0.95,
+          "justification": "The GEDCOM records are internally consistent (reciprocal parent/child links, shared family @F0@, spouse linkage), all Tier 1 checks pass, geographic proximity is 6km, and the maternal age of 26 is plausible. Furthermore, this is a well-documented historical relationship (JFK's mother Rose Fitzgerald Kennedy) that matches public record, and a Wikitree corroboration is cited. Single-source GEDCOM provenance is a minor weakness but does not undermine the hypothesis.",
+          "tier1_results": [
+            {
+              "check": "death_before_birth",
+              "verdict": "ok",
+              "reason": "death is not before birth"
+            },
+            {
+              "check": "implausible_lifespan",
+              "verdict": "ok",
+              "reason": "lifespan within 120 years"
+            },
+            {
+              "check": "parent_younger_than_child",
+              "verdict": "ok",
+              "reason": "parent is not younger than child",
+              "role": "mother"
+            },
+            {
+              "check": "parent_too_young_at_birth",
+              "verdict": "ok",
+              "reason": "parent age plausible (>= 12)",
+              "role": "mother"
+            },
+            {
+              "check": "parent_died_before_conception",
+              "verdict": "ok",
+              "reason": "mother alive at birth holds",
+              "role": "mother"
+            }
+          ],
+          "geo_result": {
+            "check": "geographic_plausibility",
+            "verdict": "ok",
+            "reason": "6km apart (within intra-regional range)",
+            "distance_km": 6
+          },
+          "isolation_mode": "filtered"
+        }
+      ]
+    },
+    {
+      "name": "weak_cross_gpt4omini_hypo_opus_critic",
+      "label": "Weak-cross (GPT-4o-mini Hypo + Opus 4.7 Critic)",
+      "hypo_vendor": "openai",
+      "hypo_model": "gpt-4o-mini",
+      "critic_vendor": "anthropic",
+      "critic_model": "claude-opus-4-7",
+      "elapsed_hypo_sec": 10.11,
+      "elapsed_critic_sec": 10.08,
+      "hypotheses": [
+        {
+          "hypothesis_id": "hyp:@I0@:@I1@:father",
+          "subject_id": "@I0@",
+          "related_id": "@I1@",
+          "proposed_relationship": "father of",
+          "evidence_chain": [
+            {
+              "claim": "John Fitzgerald Kennedy is the child of Joseph Patrick Kennedy.",
+              "source": "gedcom:@I0@"
+            },
+            {
+              "claim": "Joseph Patrick Kennedy is listed as the father of John Fitzgerald Kennedy.",
+              "source": "gedcom:@I1@"
+            },
+            {
+              "claim": "Independent source (Wikidata, John F. Kennedy) confirms father of: 'Joseph P. Kennedy Sr.' matches GEDCOM name 'Joseph Patrick Kennedy' (similarity 0.80)",
+              "source": "wikidata:Q9696"
+            },
+            {
+              "claim": "Independent source (Wikitree, John Fitzgerald Kennedy) confirms father of: 'Joseph Patrick Kennedy' matches GEDCOM name 'Joseph Patrick Kennedy' (similarity 1.00)",
+              "source": "wikitree:Kennedy-96"
+            }
+          ],
+          "confidence_score": 0.9,
+          "stated_weaknesses": [
+            "only one source for subject's information",
+            "only one source for candidate's information"
+          ],
+          "reasoning_narrative": "John Fitzgerald Kennedy is recorded as the child of Joseph Patrick Kennedy in both of their profiles (gedcom:@I0@ and gedcom:@I1@). The biologically plausible age difference of 29 years between them supports Joseph as a likely father. The proximity of their birthplaces in Massachusetts also suggests a family connection. The consistency in their records lends strong support to the hypothesis that Joseph Patrick Kennedy is indeed the father of John Fitzgerald Kennedy.",
+          "intermediate_steps": [],
+          "alternatives_considered": [],
+          "llm_raw_response": "{\n  \"proposed_relationship\": \"father of\",\n  \"evidence_chain\": [\n    {\n      \"claim\": \"John Fitzgerald Kennedy is the child of Joseph Patrick Kennedy.\",\n      \"source\": \"gedcom:@I0@\"\n    },\n    {\n      \"claim\": \"Joseph Patrick Kennedy is listed as the father of John Fitzgerald Kennedy.\",\n      \"source\": \"gedcom:@I1@\"\n    }\n  ],\n  \"confidence_score\": 0.9,\n  \"stated_weaknesses\": [\n    \"only one source for subject's information\",\n    \"only one source for candidate's information\"\n  ],\n  \"reasoning_narrative\": \"John Fitzgerald Kennedy is recorded as the child of Joseph Patrick Kennedy in both of their profiles (gedcom:@I0@ and gedcom:@I1@). The biologically plausible age difference of 29 years between them supports Joseph as a likely father. The proximity of their birthplaces in Massachusetts also suggests a family connection. The consistency in their records lends strong support to the hypothesis that Joseph Patrick Kennedy is indeed the father of John Fitzgerald Kennedy.\",\n  \"alternatives_considered\": []\n}"
+        },
+        {
+          "hypothesis_id": "hyp:@I0@:@I2@:mother",
+          "subject_id": "@I0@",
+          "related_id": "@I2@",
+          "proposed_relationship": "mother of",
+          "evidence_chain": [
+            {
+              "claim": "John Fitzgerald Kennedy is the child of Rose Elizabeth Fitzgerald.",
+              "source": "gedcom:@I0@"
+            },
+            {
+              "claim": "Rose Elizabeth Fitzgerald is the mother of John Fitzgerald Kennedy.",
+              "source": "gedcom:@I2@"
+            },
+            {
+              "claim": "Independent source (Wikitree, John Fitzgerald Kennedy) confirms mother of: 'Rose Elizabeth Fitzgerald' matches GEDCOM name 'Rose Elizabeth Fitzgerald' (similarity 1.00)",
+              "source": "wikitree:Kennedy-96"
+            }
+          ],
+          "confidence_score": 0.9,
+          "stated_weaknesses": [
+            "only one independent source for each parent-child claim",
+            "no DNA corroboration"
+          ],
+          "reasoning_narrative": "The evidence presented indicates that John Fitzgerald Kennedy is identified as the child of Rose Elizabeth Fitzgerald according to the respective profiles of both individuals in the genealogical record. The ages are consistent, with a plausible biological age difference of 27 years between them, supporting the maternal relationship. However, each claim relies on a single source, leading to a degree of uncertainty.",
+          "intermediate_steps": [],
+          "alternatives_considered": [],
+          "llm_raw_response": "{\n  \"proposed_relationship\": \"mother of\",\n  \"evidence_chain\": [\n    {\n      \"claim\": \"John Fitzgerald Kennedy is the child of Rose Elizabeth Fitzgerald.\",\n      \"source\": \"gedcom:@I0@\"\n    },\n    {\n      \"claim\": \"Rose Elizabeth Fitzgerald is the mother of John Fitzgerald Kennedy.\",\n      \"source\": \"gedcom:@I2@\"\n    }\n  ],\n  \"confidence_score\": 0.9,\n  \"stated_weaknesses\": [\n    \"only one independent source for each parent-child claim\",\n    \"no DNA corroboration\"\n  ],\n  \"reasoning_narrative\": \"The evidence presented indicates that John Fitzgerald Kennedy is identified as the child of Rose Elizabeth Fitzgerald according to the respective profiles of both individuals in the genealogical record. The ages are consistent, with a plausible biological age difference of 27 years between them, supporting the maternal relationship. However, each claim relies on a single source, leading to a degree of uncertainty.\",\n  \"alternatives_considered\": []\n}"
+        }
+      ],
+      "critiques": [
+        {
+          "hypothesis_id": "hyp:@I0@:@I1@:father",
+          "verdict": "accept",
+          "issues_found": [],
+          "evidence_cited": [
+            "gedcom:@I0@",
+            "gedcom:@I1@",
+            "wikidata:Q9696",
+            "wikitree:Kennedy-96",
+            "parent_too_young_at_birth",
+            "geographic_plausibility"
+          ],
+          "confidence_in_critique": 0.95,
+          "justification": "GEDCOM records bidirectionally link @I0@ and @I1@ as child/father, ages are plausible (father born 1888, son 1917), birthplaces are 6km apart, and two independent external sources (Wikidata and Wikitree) corroborate Joseph P. Kennedy Sr. as JFK's father. All Tier 1 checks pass. This is a well-documented historical relationship.",
+          "tier1_results": [
+            {
+              "check": "death_before_birth",
+              "verdict": "ok",
+              "reason": "death is not before birth"
+            },
+            {
+              "check": "implausible_lifespan",
+              "verdict": "ok",
+              "reason": "lifespan within 120 years"
+            },
+            {
+              "check": "parent_younger_than_child",
+              "verdict": "ok",
+              "reason": "parent is not younger than child",
+              "role": "father"
+            },
+            {
+              "check": "parent_too_young_at_birth",
+              "verdict": "ok",
+              "reason": "parent age plausible (>= 12)",
+              "role": "father"
+            },
+            {
+              "check": "parent_died_before_conception",
+              "verdict": "ok",
+              "reason": "father alive ~9mo before birth holds",
+              "role": "father"
+            }
+          ],
+          "geo_result": {
+            "check": "geographic_plausibility",
+            "verdict": "ok",
+            "reason": "6km apart (within intra-regional range)",
+            "distance_km": 6
+          },
+          "isolation_mode": "filtered"
+        },
+        {
+          "hypothesis_id": "hyp:@I0@:@I2@:mother",
+          "verdict": "accept",
+          "issues_found": [],
+          "evidence_cited": [
+            "gedcom:@I0@",
+            "gedcom:@I2@",
+            "wikitree:Kennedy-96",
+            "tier1:parent_too_young_at_birth",
+            "tier1:parent_died_before_conception",
+            "geo:6km"
+          ],
+          "confidence_in_critique": 0.95,
+          "justification": "Bidirectional GEDCOM linkage (@I0@ lists @I2@ as mother; @I2@ lists @I0@ as child) is corroborated by an independent Wikitree source with exact name match. All Tier 1 checks pass (mother age 26 at birth, alive until 1995), geography is 6km, and this is a well-documented historical relationship. No red flags.",
+          "tier1_results": [
+            {
+              "check": "death_before_birth",
+              "verdict": "ok",
+              "reason": "death is not before birth"
+            },
+            {
+              "check": "implausible_lifespan",
+              "verdict": "ok",
+              "reason": "lifespan within 120 years"
+            },
+            {
+              "check": "parent_younger_than_child",
+              "verdict": "ok",
+              "reason": "parent is not younger than child",
+              "role": "mother"
+            },
+            {
+              "check": "parent_too_young_at_birth",
+              "verdict": "ok",
+              "reason": "parent age plausible (>= 12)",
+              "role": "mother"
+            },
+            {
+              "check": "parent_died_before_conception",
+              "verdict": "ok",
+              "reason": "mother alive at birth holds",
+              "role": "mother"
+            }
+          ],
+          "geo_result": {
+            "check": "geographic_plausibility",
+            "verdict": "ok",
+            "reason": "6km apart (within intra-regional range)",
+            "distance_km": 6
+          },
+          "isolation_mode": "filtered"
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "per_relationship": [
+      {
+        "relationship": "father of @I0@ -> @I1@",
+        "per_condition": {
+          "Production (Sonnet 4.6 + Opus 4.7)": {
+            "hyp_present": true,
+            "hyp_confidence": 0.97,
+            "hyp_evidence_count": 8,
+            "hyp_weaknesses_count": 4,
+            "critic_verdict": "accept",
+            "critic_confidence": 0.95,
+            "critic_issues_count": 3
+          },
+          "Weak-cross (GPT-4o-mini Hypo + Opus 4.7 Critic)": {
+            "hyp_present": true,
+            "hyp_confidence": 0.9,
+            "hyp_evidence_count": 4,
+            "hyp_weaknesses_count": 2,
+            "critic_verdict": "accept",
+            "critic_confidence": 0.95,
+            "critic_issues_count": 0
+          }
+        }
+      },
+      {
+        "relationship": "mother of @I0@ -> @I2@",
+        "per_condition": {
+          "Production (Sonnet 4.6 + Opus 4.7)": {
+            "hyp_present": true,
+            "hyp_confidence": 0.93,
+            "hyp_evidence_count": 8,
+            "hyp_weaknesses_count": 4,
+            "critic_verdict": "accept",
+            "critic_confidence": 0.95,
+            "critic_issues_count": 2
+          },
+          "Weak-cross (GPT-4o-mini Hypo + Opus 4.7 Critic)": {
+            "hyp_present": true,
+            "hyp_confidence": 0.9,
+            "hyp_evidence_count": 3,
+            "hyp_weaknesses_count": 2,
+            "critic_verdict": "accept",
+            "critic_confidence": 0.95,
+            "critic_issues_count": 0
+          }
+        }
+      }
+    ],
+    "aggregate": {
+      "total_relationships": 2,
+      "verdict_flips": 0,
+      "hypothesis_present_in_all_conditions": 2
+    }
+  }
+}

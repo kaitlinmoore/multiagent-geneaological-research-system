@@ -1,0 +1,440 @@
+{
+  "run_label": "20260429_174343",
+  "scenario": "jfk",
+  "query": "Who were the parents of John F. Kennedy?",
+  "target_person": {
+    "name": "John F. Kennedy",
+    "approx_birth": "1917",
+    "location": "Brookline, MA"
+  },
+  "seed": {
+    "hypothesis_count": 2,
+    "elapsed_sec": 54.05
+  },
+  "critics": [
+    {
+      "name": "anthropic_opus_4_7",
+      "label": "Anthropic Opus 4.7",
+      "vendor": "anthropic",
+      "model": "claude-opus-4-7",
+      "elapsed_sec": 14.82,
+      "critiques": [
+        {
+          "hypothesis_id": "hyp:@I0@:@I1@:father",
+          "verdict": "accept",
+          "issues_found": [
+            "All structural GEDCOM evidence comes from a single file (@F0@ family record); independent corroboration relies on Wikidata/Wikitree name matches, not primary documents",
+            "No primary source documents (birth certificate, census) cited, though the subject is a well-documented public figure"
+          ],
+          "evidence_cited": [
+            "gedcom:@I0@",
+            "gedcom:@I1@",
+            "wikidata:Q9696",
+            "wikitree:Kennedy-96",
+            "death_before_birth",
+            "parent_too_young_at_birth",
+            "geographic_plausibility"
+          ],
+          "confidence_in_critique": 0.95,
+          "justification": "The hypothesis concerns a famously well-documented relationship (JFK and Joseph P. Kennedy Sr.); GEDCOM bidirectional links are consistent, all Tier 1 checks pass, geography is intra-metro (6km), age delta of 29 years is normal, and two independent external sources (Wikidata, Wikitree) confirm the paternity. The single-source GEDCOM weakness is mitigated by external corroboration, and no contradictory evidence exists.",
+          "tier1_results": [
+            {
+              "check": "death_before_birth",
+              "verdict": "ok",
+              "reason": "death is not before birth"
+            },
+            {
+              "check": "implausible_lifespan",
+              "verdict": "ok",
+              "reason": "lifespan within 120 years"
+            },
+            {
+              "check": "parent_younger_than_child",
+              "verdict": "ok",
+              "reason": "parent is not younger than child",
+              "role": "father"
+            },
+            {
+              "check": "parent_too_young_at_birth",
+              "verdict": "ok",
+              "reason": "parent age plausible (>= 12)",
+              "role": "father"
+            },
+            {
+              "check": "parent_died_before_conception",
+              "verdict": "ok",
+              "reason": "father alive ~9mo before birth holds",
+              "role": "father"
+            }
+          ],
+          "geo_result": {
+            "check": "geographic_plausibility",
+            "verdict": "ok",
+            "reason": "6km apart (within intra-regional range)",
+            "distance_km": 6
+          },
+          "isolation_mode": "filtered"
+        },
+        {
+          "hypothesis_id": "hyp:@I0@:@I2@:mother",
+          "verdict": "accept",
+          "issues_found": [
+            "All structural evidence comes from a single GEDCOM file; Wikitree corroboration is name-only and not a primary source",
+            "No primary documentary evidence (birth certificate, census) supplied"
+          ],
+          "evidence_cited": [
+            "gedcom:@I0@",
+            "gedcom:@I2@",
+            "wikitree:Kennedy-96",
+            "death_before_birth",
+            "parent_too_young_at_birth",
+            "geographic_plausibility"
+          ],
+          "confidence_in_critique": 0.95,
+          "justification": "All Tier 1 checks pass, GEDCOM records are mutually consistent (bidirectional parent-child links, shared family @F0@, matching spouse), maternal age of 26 is plausible, and geography is intra-regional. The facts also match well-known public-record history of JFK's parentage, and Wikitree provides external name confirmation. Single-source GEDCOM dependency is a minor weakness but does not undermine the hypothesis.",
+          "tier1_results": [
+            {
+              "check": "death_before_birth",
+              "verdict": "ok",
+              "reason": "death is not before birth"
+            },
+            {
+              "check": "implausible_lifespan",
+              "verdict": "ok",
+              "reason": "lifespan within 120 years"
+            },
+            {
+              "check": "parent_younger_than_child",
+              "verdict": "ok",
+              "reason": "parent is not younger than child",
+              "role": "mother"
+            },
+            {
+              "check": "parent_too_young_at_birth",
+              "verdict": "ok",
+              "reason": "parent age plausible (>= 12)",
+              "role": "mother"
+            },
+            {
+              "check": "parent_died_before_conception",
+              "verdict": "ok",
+              "reason": "mother alive at birth holds",
+              "role": "mother"
+            }
+          ],
+          "geo_result": {
+            "check": "geographic_plausibility",
+            "verdict": "ok",
+            "reason": "6km apart (within intra-regional range)",
+            "distance_km": 6
+          },
+          "isolation_mode": "filtered"
+        }
+      ]
+    },
+    {
+      "name": "openai_gpt_5_5",
+      "label": "OpenAI GPT-5.5",
+      "vendor": "openai",
+      "model": "gpt-5.5",
+      "elapsed_sec": 28.6,
+      "critiques": [
+        {
+          "hypothesis_id": "hyp:@I0@:@I1@:father",
+          "verdict": "accept",
+          "issues_found": [
+            "Core GEDCOM evidence is internally redundant rather than independent: gedcom:@I0@ father_id, gedcom:@I1@ children_ids, and family link @F0@ appear to come from the same compiled file.",
+            "No primary documentary record is supplied in the raw data, such as a birth certificate, baptism, census household, or contemporary vital record.",
+            "Wikidata and WikiTree corroborate the relationship but are secondary/tertiary compiled sources and may ultimately derive from the same widely known biographical tradition rather than independent primary evidence."
+          ],
+          "evidence_cited": [
+            "gedcom:@I0@",
+            "gedcom:@I1@",
+            "wikidata:Q9696",
+            "wikitree:Kennedy-96",
+            "death_before_birth",
+            "parent_younger_than_child",
+            "parent_too_young_at_birth",
+            "parent_died_before_conception",
+            "geographic_plausibility"
+          ],
+          "confidence_in_critique": 0.86,
+          "justification": "The relationship is directly recorded in both the subject and candidate father GEDCOM records and is corroborated by two external compiled sources naming Joseph Patrick/Joseph P. Kennedy Sr. as John F. Kennedy's father. The dates, sex, and geography are fully plausible, and there are no deterministic conflicts, though the absence of primary documentation prevents a near-certain evidentiary rating.",
+          "tier1_results": [
+            {
+              "check": "death_before_birth",
+              "verdict": "ok",
+              "reason": "death is not before birth"
+            },
+            {
+              "check": "implausible_lifespan",
+              "verdict": "ok",
+              "reason": "lifespan within 120 years"
+            },
+            {
+              "check": "parent_younger_than_child",
+              "verdict": "ok",
+              "reason": "parent is not younger than child",
+              "role": "father"
+            },
+            {
+              "check": "parent_too_young_at_birth",
+              "verdict": "ok",
+              "reason": "parent age plausible (>= 12)",
+              "role": "father"
+            },
+            {
+              "check": "parent_died_before_conception",
+              "verdict": "ok",
+              "reason": "father alive ~9mo before birth holds",
+              "role": "father"
+            }
+          ],
+          "geo_result": {
+            "check": "geographic_plausibility",
+            "verdict": "ok",
+            "reason": "6km apart (within intra-regional range)",
+            "distance_km": 6
+          },
+          "isolation_mode": "filtered"
+        },
+        {
+          "hypothesis_id": "hyp:@I0@:@I2@:mother",
+          "verdict": "accept",
+          "issues_found": [
+            "Primary structural evidence is from one GEDCOM file, though it is internally reciprocal: @I0@ lists @I2@ as mother_id and @I2@ lists @I0@ among children_ids.",
+            "No contemporaneous vital record, census, baptismal record, or birth certificate is supplied to independently document the maternal relationship.",
+            "The cited independent Wikitree confirmation supports the same mother name but is not a primary source and the underlying Wikitree record details are not provided here."
+          ],
+          "evidence_cited": [
+            "gedcom:@I0@",
+            "gedcom:@I2@",
+            "wikitree:Kennedy-96",
+            "death_before_birth",
+            "implausible_lifespan",
+            "parent_younger_than_child",
+            "parent_too_young_at_birth",
+            "parent_died_before_conception",
+            "geographic_plausibility"
+          ],
+          "confidence_in_critique": 0.86,
+          "justification": "The proposed mother-child relationship is directly and reciprocally encoded in the GEDCOM records, is biologically and geographically plausible, and is corroborated at least by a secondary Wikitree identification. The main weakness is lack of supplied primary documentation, but the available evidence is sufficient to accept the relationship rather than merely flag it.",
+          "tier1_results": [
+            {
+              "check": "death_before_birth",
+              "verdict": "ok",
+              "reason": "death is not before birth"
+            },
+            {
+              "check": "implausible_lifespan",
+              "verdict": "ok",
+              "reason": "lifespan within 120 years"
+            },
+            {
+              "check": "parent_younger_than_child",
+              "verdict": "ok",
+              "reason": "parent is not younger than child",
+              "role": "mother"
+            },
+            {
+              "check": "parent_too_young_at_birth",
+              "verdict": "ok",
+              "reason": "parent age plausible (>= 12)",
+              "role": "mother"
+            },
+            {
+              "check": "parent_died_before_conception",
+              "verdict": "ok",
+              "reason": "mother alive at birth holds",
+              "role": "mother"
+            }
+          ],
+          "geo_result": {
+            "check": "geographic_plausibility",
+            "verdict": "ok",
+            "reason": "6km apart (within intra-regional range)",
+            "distance_km": 6
+          },
+          "isolation_mode": "filtered"
+        }
+      ]
+    },
+    {
+      "name": "google_gemini_2_5_pro",
+      "label": "Google Gemini 2.5 Pro",
+      "vendor": "google",
+      "model": "gemini-2.5-pro",
+      "elapsed_sec": 29.62,
+      "critiques": [
+        {
+          "hypothesis_id": "hyp:@I0@:@I1@:father",
+          "verdict": "accept",
+          "issues_found": [
+            "The primary evidence for the relationship and all vital facts (dates, places) for both individuals originates from a single GEDCOM file. This is typically a weak foundation.",
+            "The provided evidence lacks primary documentary sources like a birth certificate or census record, which would definitively establish the link."
+          ],
+          "evidence_cited": [
+            "gedcom:@I0@",
+            "gedcom:@I1@",
+            "wikidata:Q9696",
+            "wikitree:Kennedy-96"
+          ],
+          "confidence_in_critique": 0.98,
+          "justification": "Despite the reliance on a single GEDCOM, the hypothesis is accepted because the individuals are exceptionally famous historical figures. The relationship is independently and explicitly confirmed by two reputable external sources (Wikidata, Wikitree), which provides overwhelming corroboration and mitigates the weakness of the single source.",
+          "tier1_results": [
+            {
+              "check": "death_before_birth",
+              "verdict": "ok",
+              "reason": "death is not before birth"
+            },
+            {
+              "check": "implausible_lifespan",
+              "verdict": "ok",
+              "reason": "lifespan within 120 years"
+            },
+            {
+              "check": "parent_younger_than_child",
+              "verdict": "ok",
+              "reason": "parent is not younger than child",
+              "role": "father"
+            },
+            {
+              "check": "parent_too_young_at_birth",
+              "verdict": "ok",
+              "reason": "parent age plausible (>= 12)",
+              "role": "father"
+            },
+            {
+              "check": "parent_died_before_conception",
+              "verdict": "ok",
+              "reason": "father alive ~9mo before birth holds",
+              "role": "father"
+            }
+          ],
+          "geo_result": {
+            "check": "geographic_plausibility",
+            "verdict": "ok",
+            "reason": "6km apart (within intra-regional range)",
+            "distance_km": 6
+          },
+          "isolation_mode": "filtered"
+        },
+        {
+          "hypothesis_id": "hyp:@I0@:@I2@:mother",
+          "verdict": "accept",
+          "issues_found": [
+            "The core structural evidence for the relationship originates from a single GEDCOM file, which is a derivative source and lacks citations to primary documents.",
+            "The external corroboration provided (Wikitree) is also a compiled, secondary source, not a primary record like a birth certificate or census enumeration."
+          ],
+          "evidence_cited": [
+            "gedcom:@I0@",
+            "gedcom:@I2@",
+            "wikitree:Kennedy-96",
+            "parent_too_young_at_birth"
+          ],
+          "confidence_in_critique": 0.9,
+          "justification": "The evidence is overwhelmingly consistent within the provided GEDCOM file, with reciprocal mother/child links. This is corroborated by an external (though secondary) source. All temporal and geographic data are highly plausible. While the absence of primary documents is a valid genealogical weakness, the presented evidence is sufficient to accept the hypothesis for these well-documented public figures.",
+          "tier1_results": [
+            {
+              "check": "death_before_birth",
+              "verdict": "ok",
+              "reason": "death is not before birth"
+            },
+            {
+              "check": "implausible_lifespan",
+              "verdict": "ok",
+              "reason": "lifespan within 120 years"
+            },
+            {
+              "check": "parent_younger_than_child",
+              "verdict": "ok",
+              "reason": "parent is not younger than child",
+              "role": "mother"
+            },
+            {
+              "check": "parent_too_young_at_birth",
+              "verdict": "ok",
+              "reason": "parent age plausible (>= 12)",
+              "role": "mother"
+            },
+            {
+              "check": "parent_died_before_conception",
+              "verdict": "ok",
+              "reason": "mother alive at birth holds",
+              "role": "mother"
+            }
+          ],
+          "geo_result": {
+            "check": "geographic_plausibility",
+            "verdict": "ok",
+            "reason": "6km apart (within intra-regional range)",
+            "distance_km": 6
+          },
+          "isolation_mode": "filtered"
+        }
+      ]
+    }
+  ],
+  "ensemble_per_hypothesis": [
+    {
+      "hypothesis_id": "hyp:@I0@:@I1@:father",
+      "proposed_relationship": "father of",
+      "subject_id": "@I0@",
+      "related_id": "@I1@",
+      "ensemble": {
+        "ensemble_verdict": "accept",
+        "ensemble_confidence": 0.86,
+        "issues_union": [
+          "All structural GEDCOM evidence comes from a single file (@F0@ family record); independent corroboration relies on Wikidata/Wikitree name matches, not primary documents",
+          "No primary source documents (birth certificate, census) cited, though the subject is a well-documented public figure",
+          "Core GEDCOM evidence is internally redundant rather than independent: gedcom:@I0@ father_id, gedcom:@I1@ children_ids, and family link @F0@ appear to come from the same compiled file.",
+          "No primary documentary record is supplied in the raw data, such as a birth certificate, baptism, census household, or contemporary vital record.",
+          "Wikidata and WikiTree corroborate the relationship but are secondary/tertiary compiled sources and may ultimately derive from the same widely known biographical tradition rather than independent primary evidence.",
+          "The primary evidence for the relationship and all vital facts (dates, places) for both individuals originates from a single GEDCOM file. This is typically a weak foundation.",
+          "The provided evidence lacks primary documentary sources like a birth certificate or census record, which would definitively establish the link."
+        ],
+        "agreement": "unanimous",
+        "verdicts_per_critic": {
+          "Anthropic Opus 4.7": "accept",
+          "OpenAI GPT-5.5": "accept",
+          "Google Gemini 2.5 Pro": "accept"
+        },
+        "confidences_per_critic": {
+          "Anthropic Opus 4.7": 0.95,
+          "OpenAI GPT-5.5": 0.86,
+          "Google Gemini 2.5 Pro": 0.98
+        }
+      }
+    },
+    {
+      "hypothesis_id": "hyp:@I0@:@I2@:mother",
+      "proposed_relationship": "mother of",
+      "subject_id": "@I0@",
+      "related_id": "@I2@",
+      "ensemble": {
+        "ensemble_verdict": "accept",
+        "ensemble_confidence": 0.86,
+        "issues_union": [
+          "All structural evidence comes from a single GEDCOM file; Wikitree corroboration is name-only and not a primary source",
+          "No primary documentary evidence (birth certificate, census) supplied",
+          "Primary structural evidence is from one GEDCOM file, though it is internally reciprocal: @I0@ lists @I2@ as mother_id and @I2@ lists @I0@ among children_ids.",
+          "No contemporaneous vital record, census, baptismal record, or birth certificate is supplied to independently document the maternal relationship.",
+          "The cited independent Wikitree confirmation supports the same mother name but is not a primary source and the underlying Wikitree record details are not provided here.",
+          "The core structural evidence for the relationship originates from a single GEDCOM file, which is a derivative source and lacks citations to primary documents.",
+          "The external corroboration provided (Wikitree) is also a compiled, secondary source, not a primary record like a birth certificate or census enumeration."
+        ],
+        "agreement": "unanimous",
+        "verdicts_per_critic": {
+          "Anthropic Opus 4.7": "accept",
+          "OpenAI GPT-5.5": "accept",
+          "Google Gemini 2.5 Pro": "accept"
+        },
+        "confidences_per_critic": {
+          "Anthropic Opus 4.7": 0.95,
+          "OpenAI GPT-5.5": 0.86,
+          "Google Gemini 2.5 Pro": 0.9
+        }
+      }
+    }
+  ]
+}

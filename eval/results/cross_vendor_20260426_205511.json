@@ -1,0 +1,313 @@
+{
+  "run_label": "20260426_205511",
+  "timestamp": "2026-04-26T20:55:44.190366",
+  "gedcom": "The Kennedy Family.ged",
+  "query": "Who were the parents of John F. Kennedy?",
+  "target_person": {
+    "name": "John F. Kennedy",
+    "approx_birth": "1917",
+    "location": "Brookline, MA"
+  },
+  "seed": {
+    "hypothesis_count": 2,
+    "elapsed_sec": 56.2
+  },
+  "conditions": [
+    {
+      "name": "anthropic_opus_4_7",
+      "vendor": "anthropic",
+      "model": "claude-opus-4-7",
+      "label": "Anthropic Opus 4.7",
+      "elapsed_sec": 13.46,
+      "critiques": [
+        {
+          "hypothesis_id": "hyp:@I0@:@I1@:father",
+          "verdict": "accept",
+          "issues_found": [
+            "All GEDCOM cross-references derive from a single file with unknown provenance",
+            "Wikidata corroboration name similarity is reported as only 0.80, though 'Joseph P. Kennedy Sr.' vs 'Joseph Patrick Kennedy' is clearly the same person"
+          ],
+          "evidence_cited": [
+            "gedcom:@I0@",
+            "gedcom:@I1@",
+            "wikidata:Q9696",
+            "death_before_birth",
+            "parent_too_young_at_birth",
+            "parent_died_before_conception",
+            "geographic_plausibility"
+          ],
+          "confidence_in_critique": 0.95,
+          "justification": "All Tier 1 checks pass, GEDCOM linkages are bidirectional and consistent (father_id, children_ids, famc/fams via @F0@), geography is trivial (6km), and Wikidata independently confirms Joseph P. Kennedy Sr. as JFK's father. This is one of the most well-documented father-son relationships in 20th-century American history; the hypothesis is clearly correct.",
+          "tier1_results": [
+            {
+              "check": "death_before_birth",
+              "verdict": "ok",
+              "reason": "death is not before birth"
+            },
+            {
+              "check": "implausible_lifespan",
+              "verdict": "ok",
+              "reason": "lifespan within 120 years"
+            },
+            {
+              "check": "parent_younger_than_child",
+              "verdict": "ok",
+              "reason": "parent is not younger than child",
+              "role": "father"
+            },
+            {
+              "check": "parent_too_young_at_birth",
+              "verdict": "ok",
+              "reason": "parent age plausible (>= 12)",
+              "role": "father"
+            },
+            {
+              "check": "parent_died_before_conception",
+              "verdict": "ok",
+              "reason": "father alive ~9mo before birth holds",
+              "role": "father"
+            }
+          ],
+          "geo_result": {
+            "check": "geographic_plausibility",
+            "verdict": "ok",
+            "reason": "6km apart (within intra-regional range)",
+            "distance_km": 6
+          },
+          "isolation_mode": "filtered"
+        },
+        {
+          "hypothesis_id": "hyp:@I0@:@I2@:mother",
+          "verdict": "accept",
+          "issues_found": [
+            "All evidence derives from a single GEDCOM source with no independent documentary corroboration (birth certificate, census, etc.)",
+            "Reciprocal links are internally consistent but could share a common data-entry origin"
+          ],
+          "evidence_cited": [
+            "gedcom:@I0@",
+            "gedcom:@I2@",
+            "parent_too_young_at_birth",
+            "parent_died_before_conception",
+            "geographic_plausibility"
+          ],
+          "confidence_in_critique": 0.92,
+          "justification": "The GEDCOM records show fully reciprocal mother-child links (mother_id, children_ids, shared family @F0@), consistent sex, plausible maternal age (26), and 6km geographic proximity, with all Tier 1 checks passing. While single-source, the relationship is also a well-known historical fact and the internal evidence is unambiguous and mutually consistent.",
+          "tier1_results": [
+            {
+              "check": "death_before_birth",
+              "verdict": "ok",
+              "reason": "death is not before birth"
+            },
+            {
+              "check": "implausible_lifespan",
+              "verdict": "ok",
+              "reason": "lifespan within 120 years"
+            },
+            {
+              "check": "parent_younger_than_child",
+              "verdict": "ok",
+              "reason": "parent is not younger than child",
+              "role": "mother"
+            },
+            {
+              "check": "parent_too_young_at_birth",
+              "verdict": "ok",
+              "reason": "parent age plausible (>= 12)",
+              "role": "mother"
+            },
+            {
+              "check": "parent_died_before_conception",
+              "verdict": "ok",
+              "reason": "mother alive at birth holds",
+              "role": "mother"
+            }
+          ],
+          "geo_result": {
+            "check": "geographic_plausibility",
+            "verdict": "ok",
+            "reason": "6km apart (within intra-regional range)",
+            "distance_km": 6
+          },
+          "isolation_mode": "filtered"
+        }
+      ]
+    },
+    {
+      "name": "openai_gpt_5_5",
+      "vendor": "openai",
+      "model": "gpt-5.5",
+      "label": "OpenAI GPT-5.5",
+      "elapsed_sec": 18.71,
+      "critiques": [
+        {
+          "hypothesis_id": "hyp:@I0@:@I1@:father",
+          "verdict": "accept",
+          "issues_found": [
+            "Most of the direct parent-child linkage comes from internal GEDCOM cross-references rather than primary vital or census records.",
+            "The independent corroboration cited is Wikidata, which is secondary/compiled rather than documentary evidence.",
+            "The Wikidata name match is abbreviated as 'Joseph P. Kennedy Sr.' versus GEDCOM 'Joseph Patrick Kennedy', though the identity is highly plausible in context."
+          ],
+          "evidence_cited": [
+            "gedcom:@I0@",
+            "gedcom:@I1@",
+            "wikidata:Q9696",
+            "death_before_birth",
+            "parent_younger_than_child",
+            "parent_too_young_at_birth",
+            "parent_died_before_conception",
+            "geographic_plausibility"
+          ],
+          "confidence_in_critique": 0.86,
+          "justification": "The GEDCOM gives reciprocal father/child and shared family-unit links, the chronological and geographic checks are plausible, and Wikidata independently confirms Joseph P. Kennedy Sr. as John F. Kennedy's father. The absence of primary records prevents maximal certainty, but the evidence is sufficient to accept the relationship.",
+          "tier1_results": [
+            {
+              "check": "death_before_birth",
+              "verdict": "ok",
+              "reason": "death is not before birth"
+            },
+            {
+              "check": "implausible_lifespan",
+              "verdict": "ok",
+              "reason": "lifespan within 120 years"
+            },
+            {
+              "check": "parent_younger_than_child",
+              "verdict": "ok",
+              "reason": "parent is not younger than child",
+              "role": "father"
+            },
+            {
+              "check": "parent_too_young_at_birth",
+              "verdict": "ok",
+              "reason": "parent age plausible (>= 12)",
+              "role": "father"
+            },
+            {
+              "check": "parent_died_before_conception",
+              "verdict": "ok",
+              "reason": "father alive ~9mo before birth holds",
+              "role": "father"
+            }
+          ],
+          "geo_result": {
+            "check": "geographic_plausibility",
+            "verdict": "ok",
+            "reason": "6km apart (within intra-regional range)",
+            "distance_km": 6
+          },
+          "isolation_mode": "filtered"
+        },
+        {
+          "hypothesis_id": "hyp:@I0@:@I2@:mother",
+          "verdict": "accept",
+          "issues_found": [
+            "The mother-child relationship is documented only in a single GEDCOM-derived source; the reciprocal mother_id/children_ids and shared family group are internal consistency checks, not independent corroboration.",
+            "No primary or independent secondary records such as a birth certificate, baptismal record, census entry, or biography excerpt are provided to verify the biological or legal maternity outside the GEDCOM.",
+            "The age and geographic plausibility checks rely on birth dates and places also sourced only from the GEDCOM."
+          ],
+          "evidence_cited": [
+            "gedcom:@I0@",
+            "gedcom:@I2@",
+            "death_before_birth",
+            "implausible_lifespan",
+            "parent_younger_than_child",
+            "parent_too_young_at_birth",
+            "parent_died_before_conception",
+            "geographic_plausibility"
+          ],
+          "confidence_in_critique": 0.84,
+          "justification": "The hypothesis is directly and reciprocally encoded in the subject and candidate GEDCOM records, with no chronological, sex-role, or geographic conflicts. The main weakness is that all evidence is derivative from one GEDCOM file, so the conclusion is plausible and internally well supported but not independently corroborated.",
+          "tier1_results": [
+            {
+              "check": "death_before_birth",
+              "verdict": "ok",
+              "reason": "death is not before birth"
+            },
+            {
+              "check": "implausible_lifespan",
+              "verdict": "ok",
+              "reason": "lifespan within 120 years"
+            },
+            {
+              "check": "parent_younger_than_child",
+              "verdict": "ok",
+              "reason": "parent is not younger than child",
+              "role": "mother"
+            },
+            {
+              "check": "parent_too_young_at_birth",
+              "verdict": "ok",
+              "reason": "parent age plausible (>= 12)",
+              "role": "mother"
+            },
+            {
+              "check": "parent_died_before_conception",
+              "verdict": "ok",
+              "reason": "mother alive at birth holds",
+              "role": "mother"
+            }
+          ],
+          "geo_result": {
+            "check": "geographic_plausibility",
+            "verdict": "ok",
+            "reason": "6km apart (within intra-regional range)",
+            "distance_km": 6
+          },
+          "isolation_mode": "filtered"
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "per_hypothesis": [
+      {
+        "hypothesis_id": "hyp:@I0@:@I1@:father",
+        "per_condition": {
+          "Anthropic Opus 4.7": {
+            "verdict": "accept",
+            "confidence_in_critique": 0.95,
+            "issues_count": 2,
+            "justification": "All Tier 1 checks pass, GEDCOM linkages are bidirectional and consistent (father_id, children_ids, famc/fams via @F0@), geography is trivial (6km), and Wikidata independently confirms Joseph P. Kennedy Sr. as JFK's father. This is one of the most well-documented father-son relationships in 20th-cent",
+            "tier1_impossibles": [],
+            "geo_verdict": "ok"
+          },
+          "OpenAI GPT-5.5": {
+            "verdict": "accept",
+            "confidence_in_critique": 0.86,
+            "issues_count": 3,
+            "justification": "The GEDCOM gives reciprocal father/child and shared family-unit links, the chronological and geographic checks are plausible, and Wikidata independently confirms Joseph P. Kennedy Sr. as John F. Kennedy's father. The absence of primary records prevents maximal certainty, but the evidence is sufficie",
+            "tier1_impossibles": [],
+            "geo_verdict": "ok"
+          }
+        }
+      },
+      {
+        "hypothesis_id": "hyp:@I0@:@I2@:mother",
+        "per_condition": {
+          "Anthropic Opus 4.7": {
+            "verdict": "accept",
+            "confidence_in_critique": 0.92,
+            "issues_count": 2,
+            "justification": "The GEDCOM records show fully reciprocal mother-child links (mother_id, children_ids, shared family @F0@), consistent sex, plausible maternal age (26), and 6km geographic proximity, with all Tier 1 checks passing. While single-source, the relationship is also a well-known historical fact and the int",
+            "tier1_impossibles": [],
+            "geo_verdict": "ok"
+          },
+          "OpenAI GPT-5.5": {
+            "verdict": "accept",
+            "confidence_in_critique": 0.84,
+            "issues_count": 3,
+            "justification": "The hypothesis is directly and reciprocally encoded in the subject and candidate GEDCOM records, with no chronological, sex-role, or geographic conflicts. The main weakness is that all evidence is derivative from one GEDCOM file, so the conclusion is plausible and internally well supported but not i",
+            "tier1_impossibles": [],
+            "geo_verdict": "ok"
+          }
+        }
+      }
+    ],
+    "aggregate": {
+      "any_verdict_differs": false,
+      "max_confidence_delta": 0.09,
+      "tier1_identical": true,
+      "geo_identical": true
+    }
+  }
+}
