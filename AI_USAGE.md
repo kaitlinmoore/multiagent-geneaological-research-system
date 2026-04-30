@@ -78,7 +78,7 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ## Phase 2: Architecture, Prototype, and Evaluation Plan
 
-### Entry 4 — Phase 2 Design Decisions and Evaluation Planning
+### Entry 6 — Phase 2 Design Decisions and Evaluation Planning
 
 | Field | Details |
 |-------|---------|
@@ -90,7 +90,7 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ---
 
-### Entry 5 — Implementation via Claude Code
+### Entry 7 — Implementation via Claude Code
 
 | Field | Details |
 |-------|---------|
@@ -102,7 +102,7 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ---
 
-### Entry 6 — Pipeline Testing on Developer's Family Tree
+### Entry 8 — Pipeline Testing on Developer's Family Tree
 
 | Field | Details |
 |-------|---------|
@@ -114,7 +114,7 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ---
 
-### Entry 7 — Stress Testing on European Royal Trees
+### Entry 9 — Stress Testing on European Royal Trees
 
 | Field | Details |
 |-------|---------|
@@ -126,7 +126,7 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ---
 
-### Entry 8 — Phase 2 Written Deliverables
+### Entry 10 — Phase 2 Written Deliverables
 
 | Field | Details |
 |-------|---------|
@@ -140,7 +140,183 @@ This document logs all uses of generative AI tools throughout the project. For e
 
 ## Phase 3: Final Product, Evidence, and Reflection
 
-*[Entries will be added as Phase 3 work proceeds]*
+### Entry 11 — Streamlit four-tab application
+
+| Field | Details |
+|-------|---------|
+| **Tool** | Claude Code (Anthropic), command-line agentic coding tool |
+| **Purpose** | Building a Streamlit GUI wrapping the existing pipeline so the system is exercisable without CLI familiarity. Four tabs: Pipeline (file inputs, query routing, per-agent progress display, results rendering with escalation styling), Family Tree (graphviz visualization of immediate family with verdict-coloured nodes), Audit (subtree audit two-pass workflow), DNA Analysis (DNA match summary). |
+| **Prompt summary** | [USER: please paste exact prompts here — the Streamlit build spanned multiple sessions, including the original four-tab scaffolding, file-picker dropdowns scanning `data/`, the Audit tab with two-pass deterministic plus LLM workflow, and a later UX session adding the DNA file dropdown, data-availability banner, and explicit mode selector]. The build proceeded incrementally with stop-for-review checkpoints between each tab. |
+| **What was changed manually** | [USER: please describe what you changed]. Likely items: layout adjustments, copy edits, the colour palette for the verdict nodes, placement of progress indicators, the wording of the data-availability banner, and CSS tuning. |
+| **What was verified independently** | Ran `streamlit run app.py` after each change to confirm no crashes and that the page rendered. Walked through the Pipeline tab end-to-end against the Kennedy GEDCOM and the synthetic DNA demo. Confirmed the Family Tree tab's colour coding matched the Critic verdicts in the report. Confirmed the Audit tab's Pass-1 results matched what `python audit.py` produced from the CLI on the same root and depth. |
+
+---
+
+### Entry 12 — DNA Analyst agent (initial reporter mode)
+
+| Field | Details |
+|-------|---------|
+| **Tool** | Claude Code (Anthropic) |
+| **Purpose** | Building the DNA Analyst as a separate agent that parses GEDmatch and MyHeritage match-list CSVs, normalizes match names, cross-references against GEDCOM persons via fuzzy matching, predicts relationships using the Shared cM Project lookup table, and reports match distribution, prediction consistency, and any GEDCOM cross-references found. The initial design was reporter-only — output appended to the report but not consulted by the Hypothesizer or Critic. |
+| **Prompt summary** | [USER: please paste exact prompt]. Likely framed as a request to build a DNA Analyst node that parses the two CSV formats, looks up each match's name in the GEDCOM, and produces a summary section. |
+| **What was changed manually** | [USER: please describe what you changed]. Likely items: column-mapping logic between GEDmatch and MyHeritage formats, fuzzy-match thresholds for cross-referencing match names against GEDCOM persons, decisions about which match-list fields to surface in the report. |
+| **What was verified independently** | Cross-reference output verified against the synthetic DNA demo files where the ground-truth matches were hand-built. Spot-checked GEDmatch and MyHeritage column parsing against the personal `data/DNA/` files. Shared cM lookup verified against the published Shared cM Project distribution. |
+
+---
+
+### Entry 13 — DNA Analyst integration into the reasoning loop
+
+| Field | Details |
+|-------|---------|
+| **Tool** | Claude Code (Anthropic) |
+| **Purpose** | Promoting the DNA Analyst's output from a passive report section into evidence the Hypothesizer can cite and the Critic can challenge. Hypothesizer now adds DNA evidence items to the `evidence_chain` of relationship hypotheses; the Critic receives a `dna_relevant` field carrying the cM consistency verdict for each hypothesis. |
+| **Prompt summary** | After reviewing the reporter-only output, the DNA path was felt to be under-used: DNA evidence appeared in the report but never influenced any verdict. Requested "option B" full integration. [USER: please paste exact prompt — the option A vs option B framing matters for the disclosure]. |
+| **What was changed manually** | [USER: please describe what you changed]. Likely items: how DNA findings are phrased in the evidence chain, the cM-consistency verdict thresholds (consistent / inconsistent / inconclusive), the decision about whether DNA evidence should weaken or support a hypothesis by default. |
+| **What was verified independently** | Walked through a JFK pipeline run with the synthetic DNA demo attached and confirmed DNA evidence appeared in the hypothesis evidence chain and that the Critic's justification referenced it. Compared evidence chains on the same hypothesis with vs. without `dna_csv` to confirm the DNA path actually changed downstream behavior. |
+
+---
+
+### Entry 14 — Multi-source retrieval (FindAGrave, Wikidata, WikiTree)
+
+| Field | Details |
+|-------|---------|
+| **Tool** | Claude Code (Anthropic) |
+| **Purpose** | Extending the Record Scout beyond GEDCOM-only retrieval. Added FindAGrave (HTML scrape via BeautifulSoup), Wikidata (SPARQL endpoint), and WikiTree (public REST API). Each retrieved record is tagged with `source_type` so downstream agents — and the Critic in particular — can weight independent corroboration appropriately rather than treating one user-uploaded GEDCOM as the only source of truth. |
+| **Prompt summary** | [USER: please paste exact prompt — the source selection and the priority order matter]. FamilySearch was scoped originally but deprioritized after API-key registration friction; equivalent independent coverage came from Wikidata and WikiTree. |
+| **What was changed manually** | [USER: please describe what you changed]. Likely items: search-result filtering thresholds, decisions about including or excluding unverified Wikidata claims, rate-limit handling, defensive handling of HTML structure changes on FindAGrave. |
+| **What was verified independently** | Each source verified to return non-empty results for at least one query (JFK on FindAGrave, Queen Victoria on Wikidata, Philip II on WikiTree). Confirmed `relation_to_target` and `source_type` tagging propagates correctly into the Hypothesizer's evidence chain. |
+
+---
+
+### Entry 15 — Gap detection mode
+
+| Field | Details |
+|-------|---------|
+| **Tool** | Claude Code (Anthropic) |
+| **Purpose** | Adding a third entry mode (`gap_search.py` plus `tools/gap_scanner.py`) that scans a GEDCOM for persons missing one or both parent links, scores plausible parents from within the same tree using fuzzy name match, era plausibility, and place overlap, and optionally runs the full pipeline on the top-N candidates with a `gap_mode: True` flag so the Record Scout swaps to `find_parent_candidates` instead of fuzzy-matching a target person. |
+| **Prompt summary** | [USER: please paste exact prompt — gap mode was a non-trivial design choice and may have started from a question like "what would the system do for an unconnected person in the tree"]. |
+| **What was changed manually** | [USER: please describe what you changed]. Likely items: the data-richness threshold (`min_data_fields`) for which gaps are worth investigating, the scoring weights for parent candidates, the auto-generated query template for each gap. |
+| **What was verified independently** | Ran `gap_search.py` against the Kennedy GEDCOM and confirmed the candidate list matched manual inspection of persons whose `father_id` or `mother_id` is missing in the GEDCOM. Confirmed that selecting a top-N gap and running the pipeline produces a coherent hypothesis with parent candidates from inside the tree, not invented externally. |
+
+---
+
+### Entry 16 — Subtree audit mode
+
+| Field | Details |
+|-------|---------|
+| **Tool** | Claude Code (Anthropic) |
+| **Purpose** | Adding a subtree audit entry mode (`audit.py` plus `tools/subtree_extractor.py`) that walks every parent-child relationship in an N-generation subtree rooted at a target person and audits each. Two passes: Pass 1 runs the deterministic Tier 1 date checks plus the multi-tier geographic plausibility flag in milliseconds; Pass 2 optionally invokes the full LLM pipeline on the top-N most questionable relationships from Pass 1. |
+| **Prompt summary** | [USER: please paste exact prompt — the two-pass design is a key architectural choice and the prompt motivation matters]. |
+| **What was changed manually** | [USER: please describe what you changed]. Likely items: the Pass-1 severity thresholds (impossible / flagged / ok), the heuristic for "questionable" that determines which relationships go to Pass 2, the report format for downloaded audit reports. |
+| **What was verified independently** | Ran `audit.py` on the Kennedy tree with depth 3 and confirmed every parent-child relationship in the subtree was audited (count matched the parent-child links visible in the GEDCOM). Pass-1 verdicts on the Tier 1 trap-case GEDCOMs matched the expected verdicts in `eval/trap_cases/manifest.json`. |
+
+---
+
+### Entry 17 — Three-trigger human escalation
+
+| Field | Details |
+|-------|---------|
+| **Tool** | Claude Code (Anthropic) |
+| **Purpose** | Defining and implementing explicit escalation logic in `agents/final_report_writer.py` (`check_escalation`) so the system surfaces unresolved findings rather than silently publishing low-confidence conclusions. Three triggers; any one flags a hypothesis: (1) force-finalized after max revisions (Critic rejected on both cycles), (2) low-confidence accept (Critic accept with `confidence_in_critique < 0.60`), (3) conflicting verdicts for the same subject (one accept and one reject in the same family unit). |
+| **Prompt summary** | Phase 2 feedback noted that the Critic's accept/reject was binary and obscured low-confidence acceptances. Asked Claude Code to formalize the escalation conditions and integrate them into the Final Report Writer. [USER: please paste exact prompt for the trigger thresholds]. |
+| **What was changed manually** | Trigger 3 was narrowed during review to fire only when the same subject has both `accept` and `reject` — a mix of `accept` and `flag_uncertain` is normal (the Critic is more confident about some relationships than others) and was producing false escalations in early traces. [USER: confirm or correct]. |
+| **What was verified independently** | Walked through trace files where the Critic rejected once then accepted to confirm the escalation flag did not fire (single rejection during revision is not "force-finalized"). Walked through a trace where the Critic accepted with `confidence_in_critique = 0.55` to confirm the low-confidence-accept trigger fired. Manually constructed a multi-hypothesis state with a mixed verdict set and confirmed only `accept` plus `reject` triggers Trigger 3, not `accept` plus `flag_uncertain`. |
+
+---
+
+### Entry 18 — Critic isolation enforcement as a code guarantee
+
+| Field | Details |
+|-------|---------|
+| **Tool** | Claude Code (Anthropic) |
+| **Purpose** | Replacing the Phase 2 naming-convention isolation (the Critic was simply asked not to read certain fields) with a load-bearing code boundary. `agents/hypothesis_schema.py` declares PUBLIC and INTERNAL field sets; `filter_hypothesis_for_critic(hypothesis)` is the single read path the Critic node uses. The Critic node never accesses `state["hypotheses"]` dicts directly. A `state["isolation_mode"]` toggle flips the filter on or off for the A/B experiment, with the production path always filtered. |
+| **Prompt summary** | [USER: please paste exact prompt — this is the project's core agentic justification, and the prompt and review trail matter]. |
+| **What was changed manually** | [USER: please describe what you changed]. Likely items: the exact partition of fields between PUBLIC and INTERNAL (in particular whether the Hypothesizer's stated weaknesses count as PUBLIC — they should, since they are part of the Hypothesizer's openly declared limitations and a useful signal to the Critic). |
+| **What was verified independently** | Inspected the Critic node code to confirm there is no path that reads `state["hypotheses"]` outside `filter_hypothesis_for_critic`. Re-ran the A/B isolation experiment after the rewrite to confirm filtered runs produced the same verdicts as before the rewrite (no regression) and that toggling `isolation_mode = "unfiltered"` actually exposed the INTERNAL fields downstream. |
+
+---
+
+### Entry 19 — Critic model upgrade: Sonnet 4.6 → Opus 4.0 → Opus 4.7
+
+| Field | Details |
+|-------|---------|
+| **Tool** | Claude Code (Anthropic) — model swap in `agents/adversarial_critic.py` |
+| **Purpose** | Tuning Critic model selection independently from the rest of the pipeline. Initial production used Claude Sonnet 4.6 across all five agents; comparison runs against Claude Opus 4.0 produced more conservative confidence ratings; the final production setting is Claude Opus 4.7 for the Critic only, keeping Sonnet 4.6 for Record Scout, Profile Synthesizer, Hypothesizer, and DNA Analyst. |
+| **Prompt summary** | [USER: please paste exact prompt — the comparison reasoning and the JFK accept/0.82 → 0.75 → 0.90+ progression should be captured]. |
+| **What was changed manually** | The final decision to keep the Critic on Opus 4.7 and the others on Sonnet 4.6 was a cost/quality tradeoff judgment. [USER: confirm]. |
+| **What was verified independently** | Ran the JFK pipeline against each of the three Critic models and recorded `critique.confidence_in_critique` and the `justification` text. Opus 4.7 produced the sharpest justifications and consolidated multiple issues into single coherent paragraphs where Sonnet 4.6 had bulleted them. No model regressed below baseline accept verdict on the JFK case. |
+
+---
+
+### Entry 20 — Cross-vendor Critic experiment
+
+| Field | Details |
+|-------|---------|
+| **Tool** | Claude Code (Anthropic) |
+| **Purpose** | Addressing Phase 3 presentation feedback that same-vendor models (all Anthropic) may share training data and failure modes. Built `eval/cross_vendor_critic_experiment.py` to run the same Hypothesizer output through an Anthropic Opus 4.7 Critic and an OpenAI GPT-5.5 Critic in parallel, then compare verdicts, confidence, and justification structure. |
+| **Prompt summary** | [USER: please paste exact prompt]. |
+| **What was changed manually** | [USER: please describe what you changed]. Likely items: the prompt template adjustment for the OpenAI variant (Anthropic system-prompt conventions don't translate one-to-one), parsing differences in JSON-mode outputs, scoring of disagreements. |
+| **What was verified independently** | Confirmed the two vendors agreed on at least one trap case and disagreed on at least one (cross-vendor diversity actually exists in the resulting verdicts, not just in superficial wording). Verified the OpenAI Critic call did not leak Anthropic-specific tokens into its prompt and vice versa. |
+
+---
+
+### Entry 21 — Asymmetric pairing experiment (weak Hypothesizer + strong Critic)
+
+| Field | Details |
+|-------|---------|
+| **Tool** | Claude Code (Anthropic) |
+| **Purpose** | Testing the central agentic claim of the project — that adversarial critique adds value beyond what the proposer can self-check — by running a deliberately weak OpenAI Hypothesizer paired with a strong Anthropic Opus 4.7 Critic. If the strong Critic catches mistakes that a strong-Hypothesizer-plus-strong-Critic baseline does not produce, the architecture is doing the work the project claims it does. |
+| **Prompt summary** | [USER: please paste exact prompt]. |
+| **What was changed manually** | [USER: please describe what you changed]. Likely items: the choice of "weak" model (a GPT-3.5-class or 4o-mini-class model rather than GPT-5.5), the framing of the comparison relative to the strong-strong baseline. |
+| **What was verified independently** | Recorded baseline strong-Hypothesizer plus strong-Critic results, then ran the asymmetric variant on the same hypothesis IDs. Hypotheses where the asymmetric run produced a reject or escalation that the symmetric run accepted are the evidence the Critic actually catches the weak Hypothesizer's mistakes; recorded a list of such cases from the run output. |
+
+---
+
+### Entry 22 — Multi-Critic ensemble
+
+| Field | Details |
+|-------|---------|
+| **Tool** | Claude Code (Anthropic) |
+| **Purpose** | Extending the cross-vendor Critic experiment from pairwise comparison to a three-vendor ensemble (Anthropic Opus 4.7 + OpenAI + Google Gemini 2.5 Pro) with a conservative aggregation rule: any `reject` from any vendor produces an ensemble `reject`; any `flag_uncertain` from any vendor produces an ensemble `flag_uncertain`. Tests whether ensemble-level escalation catches genuinely ambiguous cases that a single Critic running in isolation would have accepted. |
+| **Prompt summary** | [USER: please paste exact prompt — the conservative aggregation rule was a design choice and may have started from a different default like majority vote]. |
+| **What was changed manually** | [USER: please describe what you changed]. Likely items: the aggregation rule (started simpler? majority vote considered then rejected?), the choice of Google Gemini 2.5 Pro specifically, prompt parity tuning across the three vendors. |
+| **What was verified independently** | Ran the ensemble against the two Tier 3 ambiguous trap cases. Both were correctly escalated (at least one vendor produced `flag_uncertain` or `reject`) where a single Opus 4.7 Critic accepted both with high confidence. The 2/2 escalation result is reproducible from the persisted ensemble run output. |
+
+---
+
+### Entry 23 — Bug fixes (surname gate, Habsburg encoding, shared_cm aliases)
+
+| Field | Details |
+|-------|---------|
+| **Tool** | Claude Code (Anthropic) |
+| **Purpose** | Three independent bugs surfaced during pipeline runs and were fixed in close succession. (a) The Profile Synthesizer's disambiguation was matching "Joan Knorr" to "James Moore" because Soundex and Metaphone collapsed both surnames the same way — added a 0.60 fuzzy-match floor on the surname field as a gate before composite scoring. (b) `Habsburg.ged` is Latin-1, not UTF-8; python-gedcom-2 does not surface an encoding parameter, so the workaround reads the file as bytes, decodes as Latin-1, and passes the resulting string to the parser (acknowledged in Phase 2 Entry 7; implementation detail recorded here). (c) `shared_cm_lookup` keys on relationship strings like "father" and "mother" but the Hypothesizer was emitting "father of" and "mother of"; silent consistency-verdict inversion was caught only during trace inspection. |
+| **Prompt summary** | Each fix was a follow-up after observing the failure. [USER: please paste the prompts you used for each fix where you have them; the trace-inspection moment for the third bug is worth quoting verbatim if you have it]. |
+| **What was changed manually** | I identified all three bugs in trace inspection or output review, flagged them, and reviewed each fix before merging. [USER: confirm; describe any tuning of the surname-gate threshold or any other parameter]. |
+| **What was verified independently** | Re-ran the Moore-tree pipeline against the Joan Knorr case after the surname gate landed and confirmed the false positive no longer occurred. Re-ran the Habsburg pipeline after the encoding fix and confirmed German diacritics rendered correctly in the parsed person dicts. Re-ran a JFK-with-DNA trace after the alias fix and confirmed the DNA consistency verdict matched expectation rather than inverted. |
+
+---
+
+### Entry 24 — Synthetic DNA demos and PII redactor
+
+| Field | Details |
+|-------|---------|
+| **Tool** | Claude Code (Anthropic) |
+| **Purpose** | Making the DNA path reproducible for graders without committing personal match data. Created `data/DNA_demo/*_synthetic_DNA.csv` for Kennedy, Maria Theresia, and Victoria Hanover, hand-built so each file's matches map to verifiable persons in the corresponding public GEDCOM. Built `tools/redact_trace.py` to pseudonymize traces produced from personal trees, replacing real names with consistent stand-ins so trace files can be inspected and shared without PII exposure. |
+| **Prompt summary** | [USER: please paste exact prompt — the synthetic-data design constraints (realistic shared-cM distribution, mapping to real GEDCOM persons, no leakage of personal names) are probably worth quoting]. |
+| **What was changed manually** | Hand-built the synthetic match lists to map onto the public GEDCOM persons, using realistic shared-cM values consistent with the Shared cM Project distribution. [USER: confirm; describe the construction process and whether any of the file content was generated programmatically vs by hand]. |
+| **What was verified independently** | Walked the synthetic Kennedy file through the DNA Analyst manually, confirming each row resolves to a real person in the Kennedy GEDCOM at the predicted relationship tier. Confirmed `redact_trace.py` is deterministic (same input produces same pseudonyms) and that no original names from the personal tree survive in the redacted output. |
+
+---
+
+### Entry 25 — Architecture diagram regeneration
+
+| Field | Details |
+|-------|---------|
+| **Tool** | Claude Code (Anthropic) for the Mermaid edits, plus claude.ai for design discussion |
+| **Purpose** | Updating `docs/architecture_diagram.mermaid` and the rendered PNG to reflect the actual Phase 3 orchestration: DNA Analyst placed sequentially after Record Scout (originally drafted as a parallel branch but serialized because LangGraph cannot enforce join semantics when one incoming edge is conditional — the Critic's "finalize" path), and the isolation filter shown as a load-bearing boundary between Hypothesizer and Critic rather than an implicit attribute. |
+| **Prompt summary** | [USER: please paste exact prompt — the parallelism rationale is worth recording]. |
+| **What was changed manually** | Manually edited the Mermaid for visual layout (node positions, edge routing), as for the Phase 2 diagram. [USER: confirm]. |
+| **What was verified independently** | Rendered the diagram and walked it side-by-side with the actual graph wiring in `graph.py` to confirm every edge in the diagram exists in code and vice versa. Confirmed the isolation filter is depicted at the boundary it actually enforces in `agents/hypothesis_schema.py`. |
 
 ---
 
