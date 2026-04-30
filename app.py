@@ -891,6 +891,19 @@ with tab_pipeline:
                     "Queen gap-fill runs."
                 ),
             )
+
+            # Detect a category change so we can reset the trace selectbox
+            # and the loaded trace. Without this, the selectbox would keep
+            # a stale value that's no longer in the filtered options list,
+            # and the Family Tree / DNA Analysis tabs would render the
+            # previous category's trace until the user picked a new one.
+            prev_category = st.session_state.get("_replay_category_prev")
+            if prev_category is not None and prev_category != replay_category:
+                st.session_state.pop("replay_trace_pick", None)
+                st.session_state.pop("pipeline_result", None)
+                st.session_state.pop("trace_paths", None)
+            st.session_state["_replay_category_prev"] = replay_category
+
             wanted_category = "gap" if replay_category.startswith("Gap") else "query"
             filtered_traces = [
                 (label, path)
@@ -926,17 +939,39 @@ with tab_pipeline:
                     except Exception as exc:
                         st.error(f"Could not load trace: {exc}")
                     else:
-                        metadata = loaded.get("trace_metadata") or {}
-                        timestamp = metadata.get("timestamp", "?")
-                        label = metadata.get("label", "?")
-                        st.success(
-                            f"Loaded trace **{label}** from {timestamp}. "
-                            "Family Tree and DNA Analysis tabs also render "
-                            "from this trace."
+                        # Structural validation. A pipeline trace must have
+                        # `final_report` and at least one of
+                        # `hypotheses` / `profiles` / `trace_log`. Anything
+                        # else (a malformed JSON, a different schema, etc.)
+                        # would render as empty placeholders downstream;
+                        # error out clearly here instead.
+                        is_pipeline_trace = (
+                            isinstance(loaded, dict)
+                            and "final_report" in loaded
+                            and any(
+                                isinstance(loaded.get(k), list) and loaded.get(k)
+                                for k in ("hypotheses", "profiles", "trace_log")
+                            )
                         )
-                        # Stash so Family Tree + DNA tabs auto-render.
-                        st.session_state["pipeline_result"] = loaded
-                        render_results(loaded)
+                        if not is_pipeline_trace:
+                            st.error(
+                                f"`{Path(trace_path).name}` doesn't look "
+                                "like a pipeline trace. Audit JSONs use "
+                                "the Audit-tab loader instead; arbitrary "
+                                "JSON files cannot be replayed here."
+                            )
+                        else:
+                            metadata = loaded.get("trace_metadata") or {}
+                            timestamp = metadata.get("timestamp", "?")
+                            label = metadata.get("label", "?")
+                            st.success(
+                                f"Loaded trace **{label}** from {timestamp}. "
+                                "Family Tree and DNA Analysis tabs also render "
+                                "from this trace."
+                            )
+                            # Stash so Family Tree + DNA tabs auto-render.
+                            st.session_state["pipeline_result"] = loaded
+                            render_results(loaded)
                 else:
                     # User moved back to the sentinel — clear any previously-loaded
                     # trace from session_state so the Family Tree and DNA Analysis
@@ -1282,6 +1317,10 @@ if not is_replay:
             and _current_source != _cached_source
         ):
             _gap_source_mismatch = True
+            # Reset the page-number widget so the next re-scan against
+            # a smaller GEDCOM doesn't try to render a non-existent page.
+            st.session_state.pop("gap_page", None)
+            st.session_state.pop("gap_pick_idx", None)
             st.markdown("---")
             st.warning(
                 f"GEDCOM source changed from `{_cached_source}` to "
@@ -1553,9 +1592,14 @@ with tab_audit:
                         f"{meta.get('pass2_elapsed_sec', '— skipped')}s."
                     )
 
-                    # Push into the same session_state slots the live path uses,
-                    # so the existing render_audit_results path renders without
-                    # changes.
+                    # Render the saved audit through the same
+                    # render_audit_results helper the live path uses.
+                    # These values stay LOCAL — we deliberately don't
+                    # populate aud_results / aud_text / aud_persons in
+                    # session_state, so the loaded audit and the live
+                    # audit form below stay independent. A click on the
+                    # live form's Deep-Audit button operates only on
+                    # the live form's data, not on what was loaded here.
                     pass1 = saved.get("pass1_results") or []
                     pass2 = saved.get("pass2_results")
                     root_loaded = saved.get("root") or {}
