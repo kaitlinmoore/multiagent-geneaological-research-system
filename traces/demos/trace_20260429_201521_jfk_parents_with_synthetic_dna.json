@@ -1,0 +1,1541 @@
+{
+  "trace_metadata": {
+    "timestamp": "20260429_201521",
+    "label": "jfk_parents_with_synthetic_dna",
+    "saved_by": "tools.trace_writer.save_trace"
+  },
+  "query": "Who were the parents of John F. Kennedy?",
+  "target_person": {
+    "name": "John Fitzgerald Kennedy",
+    "approx_birth": "1917",
+    "location": "Brookline, MA"
+  },
+  "status": "complete",
+  "revision_count": 0,
+  "gedcom_source": {
+    "sha256": "8374c078ee19eeb591fe26f9cd70a058bb66220d3273e0253a3ea2b80ef76edd",
+    "length_chars": 33979
+  },
+  "gedcom_persons_count": 70,
+  "retrieved_records": [
+    {
+      "record_id": "gedcom:@I0@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "subject",
+      "match_score": 1.0,
+      "data": {
+        "id": "@I0@",
+        "name": "John Fitzgerald Kennedy",
+        "first_name": "John Fitzgerald",
+        "surname": "Kennedy",
+        "sex": "M",
+        "birth_date": "29 MAY 1917",
+        "birth_place": "Brookline, MA",
+        "death_date": "22 NOV 1963",
+        "death_place": "Dallas, TX",
+        "father_id": "@I1@",
+        "mother_id": "@I2@",
+        "spouse_ids": [
+          "@I52@"
+        ],
+        "children_ids": [
+          "@I53@",
+          "@I54@",
+          "@I55@"
+        ],
+        "famc": [
+          "@F0@"
+        ],
+        "fams": [
+          "@F10@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I1@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "father",
+      "match_score": null,
+      "data": {
+        "id": "@I1@",
+        "name": "Joseph Patrick Kennedy",
+        "first_name": "Joseph Patrick",
+        "surname": "Kennedy",
+        "sex": "M",
+        "birth_date": "6 SEP 1888",
+        "birth_place": "Boston, MA",
+        "death_date": "18 NOV 1969",
+        "death_place": "Hyannis Port, MA",
+        "father_id": "@I44@",
+        "mother_id": "@I45@",
+        "spouse_ids": [
+          "@I2@"
+        ],
+        "children_ids": [
+          "@I0@",
+          "@I3@",
+          "@I4@",
+          "@I6@",
+          "@I8@",
+          "@I16@",
+          "@I21@",
+          "@I35@",
+          "@I39@"
+        ],
+        "famc": [
+          "@F1@"
+        ],
+        "fams": [
+          "@F0@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I2@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "mother",
+      "match_score": null,
+      "data": {
+        "id": "@I2@",
+        "name": "Rose Elizabeth Fitzgerald",
+        "first_name": "Rose Elizabeth",
+        "surname": "Fitzgerald",
+        "sex": "F",
+        "birth_date": "22 JUL 1890",
+        "birth_place": "North End, Boston, MA",
+        "death_date": "22 JAN 1995",
+        "death_place": "Hyannis Port, MA",
+        "father_id": "@I50@",
+        "mother_id": "@I51@",
+        "spouse_ids": [
+          "@I1@"
+        ],
+        "children_ids": [
+          "@I0@",
+          "@I3@",
+          "@I4@",
+          "@I6@",
+          "@I8@",
+          "@I16@",
+          "@I21@",
+          "@I35@",
+          "@I39@"
+        ],
+        "famc": [
+          "@F2@"
+        ],
+        "fams": [
+          "@F0@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I52@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I52@",
+        "name": "Jacqueline Lee Kennedy Bouvier",
+        "first_name": "Jacqueline Lee Kennedy",
+        "surname": "Bouvier",
+        "sex": "F",
+        "birth_date": "28 JUL 1929",
+        "birth_place": "Southampton, Long Island, NY",
+        "death_date": "19 MAY 1994",
+        "death_place": "New York",
+        "father_id": "@I48@",
+        "mother_id": "@I49@",
+        "spouse_ids": [
+          "@I0@",
+          "@I58@"
+        ],
+        "children_ids": [
+          "@I53@",
+          "@I54@",
+          "@I55@"
+        ],
+        "famc": [
+          "@F9@"
+        ],
+        "fams": [
+          "@F10@",
+          "@F14@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I53@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I53@",
+        "name": "Caroline Bouvier Kennedy",
+        "first_name": "Caroline Bouvier",
+        "surname": "Kennedy",
+        "sex": "F",
+        "birth_date": "27 NOV 1957",
+        "birth_place": "New York",
+        "death_date": null,
+        "death_place": null,
+        "father_id": "@I0@",
+        "mother_id": "@I52@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F10@"
+        ],
+        "fams": []
+      }
+    },
+    {
+      "record_id": "gedcom:@I54@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I54@",
+        "name": "John Fitzgerald Kennedy",
+        "first_name": "John Fitzgerald",
+        "surname": "Kennedy",
+        "sex": "M",
+        "birth_date": "25 NOV 1960",
+        "birth_place": "Washington, DC",
+        "death_date": "16 JUL 1999",
+        "death_place": null,
+        "father_id": "@I0@",
+        "mother_id": "@I52@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F10@"
+        ],
+        "fams": []
+      }
+    },
+    {
+      "record_id": "gedcom:@I55@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I55@",
+        "name": "Patrick Bouvier Kennedy",
+        "first_name": "Patrick Bouvier",
+        "surname": "Kennedy",
+        "sex": "M",
+        "birth_date": "7 AUG 1963",
+        "birth_place": "Otis Air Force B, Mass",
+        "death_date": "9 AUG 1963",
+        "death_place": "Boston, MA",
+        "father_id": "@I0@",
+        "mother_id": "@I52@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F10@"
+        ],
+        "fams": []
+      }
+    },
+    {
+      "record_id": "gedcom:@I61@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "subject",
+      "match_score": 0.803,
+      "data": {
+        "id": "@I61@",
+        "name": "John Kennedy",
+        "first_name": "John",
+        "surname": "Kennedy",
+        "sex": "M",
+        "birth_date": "4 JAN 1854",
+        "birth_place": "Boston, MA",
+        "death_date": "24 SEP 1855",
+        "death_place": null,
+        "father_id": "@I46@",
+        "mother_id": "@I47@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F8@"
+        ],
+        "fams": []
+      }
+    },
+    {
+      "record_id": "gedcom:@I46@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "father",
+      "match_score": null,
+      "data": {
+        "id": "@I46@",
+        "name": "Patrick Kennedy",
+        "first_name": "Patrick",
+        "surname": "Kennedy",
+        "sex": "M",
+        "birth_date": "16 FEB 1823",
+        "birth_place": "Dunganstown, Ireland",
+        "death_date": "22 NOV 1858",
+        "death_place": "Boston, MA",
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I47@"
+        ],
+        "children_ids": [
+          "@I44@",
+          "@I59@",
+          "@I60@",
+          "@I61@",
+          "@I62@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F8@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I47@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "mother",
+      "match_score": null,
+      "data": {
+        "id": "@I47@",
+        "name": "Bridget Murphy",
+        "first_name": "Bridget",
+        "surname": "Murphy",
+        "sex": "F",
+        "birth_date": "1821",
+        "birth_place": null,
+        "death_date": "20 DEC 1888",
+        "death_place": "Boston, MA",
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I46@"
+        ],
+        "children_ids": [
+          "@I44@",
+          "@I59@",
+          "@I60@",
+          "@I61@",
+          "@I62@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F8@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I60@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "subject",
+      "match_score": 0.763,
+      "data": {
+        "id": "@I60@",
+        "name": "Joanna L Kennedy",
+        "first_name": "Joanna L",
+        "surname": "Kennedy",
+        "sex": "F",
+        "birth_date": "4 DEC 1852",
+        "birth_place": null,
+        "death_date": "1926",
+        "death_place": null,
+        "father_id": "@I46@",
+        "mother_id": "@I47@",
+        "spouse_ids": [
+          "@I63@"
+        ],
+        "children_ids": [],
+        "famc": [
+          "@F8@"
+        ],
+        "fams": [
+          "@F17@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I63@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I63@",
+        "name": "Humphrey Charles Mahoney",
+        "first_name": "Humphrey Charles",
+        "surname": "Mahoney",
+        "sex": "M",
+        "birth_date": "1854",
+        "birth_place": null,
+        "death_date": "1923",
+        "death_place": null,
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I60@"
+        ],
+        "children_ids": [],
+        "famc": [],
+        "fams": [
+          "@F17@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I44@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "father",
+      "match_score": null,
+      "data": {
+        "id": "@I44@",
+        "name": "Patrick Joseph Kennedy",
+        "first_name": "Patrick Joseph",
+        "surname": "Kennedy",
+        "sex": "M",
+        "birth_date": "14 JAN 1858",
+        "birth_place": "Boston, MA",
+        "death_date": "18 MAY 1929",
+        "death_place": null,
+        "father_id": "@I46@",
+        "mother_id": "@I47@",
+        "spouse_ids": [
+          "@I45@"
+        ],
+        "children_ids": [
+          "@I1@",
+          "@I56@",
+          "@I66@",
+          "@I68@"
+        ],
+        "famc": [
+          "@F8@"
+        ],
+        "fams": [
+          "@F1@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I45@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "mother",
+      "match_score": null,
+      "data": {
+        "id": "@I45@",
+        "name": "Mary Augusta Hickey",
+        "first_name": "Mary Augusta",
+        "surname": "Hickey",
+        "sex": "F",
+        "birth_date": "6 DEC 1857",
+        "birth_place": null,
+        "death_date": "6 MAY 1923",
+        "death_place": null,
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I44@"
+        ],
+        "children_ids": [
+          "@I1@",
+          "@I56@",
+          "@I66@",
+          "@I68@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F1@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I3@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I3@",
+        "name": "Joseph Patrick Kennedy",
+        "first_name": "Joseph Patrick",
+        "surname": "Kennedy",
+        "sex": "M",
+        "birth_date": "1 JUL 1915",
+        "birth_place": "Boston, MA",
+        "death_date": "2 AUG 1944",
+        "death_place": "Suffolk, England",
+        "father_id": "@I1@",
+        "mother_id": "@I2@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F0@"
+        ],
+        "fams": []
+      }
+    },
+    {
+      "record_id": "gedcom:@I4@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I4@",
+        "name": "Rose Marie Kennedy",
+        "first_name": "Rose Marie",
+        "surname": "Kennedy",
+        "sex": "F",
+        "birth_date": "13 SEP 1918",
+        "birth_place": "Boston, MA",
+        "death_date": "7 JAN 2005",
+        "death_place": null,
+        "father_id": "@I1@",
+        "mother_id": "@I2@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F0@"
+        ],
+        "fams": []
+      }
+    },
+    {
+      "record_id": "gedcom:@I6@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I6@",
+        "name": "Kathleen Angus Kennedy",
+        "first_name": "Kathleen Angus",
+        "surname": "Kennedy",
+        "sex": "F",
+        "birth_date": "20 FEB 1920",
+        "birth_place": "Boston, MA",
+        "death_date": "13 MAY 1948",
+        "death_place": "France",
+        "father_id": "@I1@",
+        "mother_id": "@I2@",
+        "spouse_ids": [
+          "@I5@"
+        ],
+        "children_ids": [],
+        "famc": [
+          "@F0@"
+        ],
+        "fams": [
+          "@F11@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I8@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I8@",
+        "name": "Eunice Mary Kennedy",
+        "first_name": "Eunice Mary",
+        "surname": "Kennedy",
+        "sex": "F",
+        "birth_date": "10 JUL 1921",
+        "birth_place": "Boston, MA",
+        "death_date": "11 AUG 2009",
+        "death_place": null,
+        "father_id": "@I1@",
+        "mother_id": "@I2@",
+        "spouse_ids": [
+          "@I7@"
+        ],
+        "children_ids": [
+          "@I9@",
+          "@I11@",
+          "@I12@",
+          "@I13@",
+          "@I14@"
+        ],
+        "famc": [
+          "@F0@"
+        ],
+        "fams": [
+          "@F3@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I16@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I16@",
+        "name": "Patricia Helen Kennedy",
+        "first_name": "Patricia Helen",
+        "surname": "Kennedy",
+        "sex": "F",
+        "birth_date": "6 MAY 1924",
+        "birth_place": "Boston, MA",
+        "death_date": "17 SEP 2006",
+        "death_place": "Manhattan, New York, U.S.",
+        "father_id": "@I1@",
+        "mother_id": "@I2@",
+        "spouse_ids": [
+          "@I15@"
+        ],
+        "children_ids": [
+          "@I17@",
+          "@I18@",
+          "@I19@",
+          "@I20@"
+        ],
+        "famc": [
+          "@F0@"
+        ],
+        "fams": [
+          "@F4@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I21@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I21@",
+        "name": "Robert Francis Kennedy",
+        "first_name": "Robert Francis",
+        "surname": "Kennedy",
+        "sex": "M",
+        "birth_date": "20 NOV 1925",
+        "birth_place": "Boston, MA",
+        "death_date": "6 JUN 1968",
+        "death_place": "Los Angeles, CA",
+        "father_id": "@I1@",
+        "mother_id": "@I2@",
+        "spouse_ids": [
+          "@I22@"
+        ],
+        "children_ids": [
+          "@I23@",
+          "@I24@",
+          "@I25@",
+          "@I26@",
+          "@I27@",
+          "@I28@",
+          "@I29@",
+          "@I30@",
+          "@I31@",
+          "@I32@",
+          "@I33@"
+        ],
+        "famc": [
+          "@F0@"
+        ],
+        "fams": [
+          "@F5@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I35@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I35@",
+        "name": "Jean Ann Kennedy",
+        "first_name": "Jean Ann",
+        "surname": "Kennedy",
+        "sex": "F",
+        "birth_date": "20 FEB 1928",
+        "birth_place": "Boston, MA",
+        "death_date": null,
+        "death_place": null,
+        "father_id": "@I1@",
+        "mother_id": "@I2@",
+        "spouse_ids": [
+          "@I34@"
+        ],
+        "children_ids": [
+          "@I36@",
+          "@I37@",
+          "@I38@",
+          "@I69@"
+        ],
+        "famc": [
+          "@F0@"
+        ],
+        "fams": [
+          "@F6@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I39@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I39@",
+        "name": "Edward Moore Kennedy",
+        "first_name": "Edward Moore",
+        "surname": "Kennedy",
+        "sex": "M",
+        "birth_date": "22 FEB 1932",
+        "birth_place": "Brookline, MA",
+        "death_date": "25 AUG 2009",
+        "death_place": "Hyannis Port, MA",
+        "father_id": "@I1@",
+        "mother_id": "@I2@",
+        "spouse_ids": [
+          "@I40@"
+        ],
+        "children_ids": [
+          "@I41@",
+          "@I42@",
+          "@I43@"
+        ],
+        "famc": [
+          "@F0@"
+        ],
+        "fams": [
+          "@F7@"
+        ]
+      }
+    },
+    {
+      "record_id": "wikidata:Q9696",
+      "source": "wikidata",
+      "source_type": "wikidata",
+      "record_type": "person",
+      "data": {
+        "name": "John F. Kennedy",
+        "birth_date": "29 MAY 1917",
+        "death_date": "22 NOV 1963",
+        "birth_place": "Brookline",
+        "father": "Joseph P. Kennedy Sr.",
+        "mother": "Rose Kennedy",
+        "spouse": "Jacqueline Kennedy Onassis",
+        "wikidata_id": "Q9696",
+        "wikidata_url": "https://www.wikidata.org/wiki/Q9696"
+      },
+      "relation_to_target": "external_corroboration"
+    }
+  ],
+  "profiles": [
+    {
+      "profile_id": "profile:@I0@",
+      "subject_record_id": "gedcom:@I0@",
+      "subject_name": "John Fitzgerald Kennedy",
+      "disambiguation": {
+        "query": "Who were the parents of John F. Kennedy?",
+        "query_criteria": {
+          "name": "John Fitzgerald Kennedy",
+          "approx_birth": "1917",
+          "location": "Brookline, MA"
+        },
+        "candidates_considered": [
+          {
+            "record_id": "gedcom:@I0@",
+            "name": "John Fitzgerald Kennedy",
+            "score": 2.5,
+            "reasons": [
+              "name similarity 1.0",
+              "exact birth year match (1917)",
+              "birth place tokens match: ['brookline', 'ma']"
+            ],
+            "status": "SELECTED"
+          },
+          {
+            "record_id": "gedcom:@I61@",
+            "name": "John Kennedy",
+            "score": 0.495,
+            "reasons": [
+              "name similarity 0.495",
+              "birth year mismatch (target 1917, candidate 1854, diff 63y)",
+              "birth place tokens match: ['ma']"
+            ],
+            "status": "excluded"
+          },
+          {
+            "record_id": "gedcom:@I60@",
+            "name": "Joanna L Kennedy",
+            "score": 0.04,
+            "reasons": [
+              "name similarity 0.54",
+              "birth year mismatch (target 1917, candidate 1852, diff 65y)",
+              "no birth place on candidate record; target is 'brookline, ma'"
+            ],
+            "status": "excluded"
+          }
+        ]
+      },
+      "facts": [
+        {
+          "field": "name",
+          "value": "John Fitzgerald Kennedy",
+          "sources": [
+            "gedcom:@I0@"
+          ]
+        },
+        {
+          "field": "first_name",
+          "value": "John Fitzgerald",
+          "sources": [
+            "gedcom:@I0@"
+          ]
+        },
+        {
+          "field": "surname",
+          "value": "Kennedy",
+          "sources": [
+            "gedcom:@I0@"
+          ]
+        },
+        {
+          "field": "sex",
+          "value": "M",
+          "sources": [
+            "gedcom:@I0@"
+          ]
+        },
+        {
+          "field": "birth_date",
+          "value": "29 MAY 1917",
+          "sources": [
+            "gedcom:@I0@"
+          ]
+        },
+        {
+          "field": "birth_place",
+          "value": "Brookline, MA",
+          "sources": [
+            "gedcom:@I0@"
+          ]
+        },
+        {
+          "field": "death_date",
+          "value": "22 NOV 1963",
+          "sources": [
+            "gedcom:@I0@"
+          ]
+        },
+        {
+          "field": "death_place",
+          "value": "Dallas, TX",
+          "sources": [
+            "gedcom:@I0@"
+          ]
+        }
+      ],
+      "family": {
+        "father": {
+          "name": "Joseph Patrick Kennedy",
+          "record_id": "gedcom:@I1@"
+        },
+        "mother": {
+          "name": "Rose Elizabeth Fitzgerald",
+          "record_id": "gedcom:@I2@"
+        },
+        "spouses": [
+          {
+            "name": "Jacqueline Lee Kennedy Bouvier",
+            "record_id": "gedcom:@I52@"
+          }
+        ],
+        "children": [
+          {
+            "name": "Caroline Bouvier Kennedy",
+            "record_id": "gedcom:@I53@"
+          },
+          {
+            "name": "John Fitzgerald Kennedy",
+            "record_id": "gedcom:@I54@"
+          },
+          {
+            "name": "Patrick Bouvier Kennedy",
+            "record_id": "gedcom:@I55@"
+          }
+        ]
+      },
+      "gaps": [
+        "No corroborating source records for birth date or birth place beyond a single GEDCOM entry",
+        "No corroborating source records for death date or death place beyond a single GEDCOM entry",
+        "No occupation recorded for the subject",
+        "No religion recorded for the subject",
+        "No burial place or burial date recorded for the subject",
+        "No middle name disambiguation: subject and child share identical name 'John Fitzgerald Kennedy', creating potential confusion in records",
+        "Only one source record exists for the subject; no independent documentary evidence (e.g., vital records, census, military records) is present to corroborate any biographical fact"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "hypothesis_id": "hyp:@I0@:@I1@:father",
+      "subject_id": "@I0@",
+      "related_id": "@I1@",
+      "proposed_relationship": "father of",
+      "evidence_chain": [
+        {
+          "claim": "Subject John Fitzgerald Kennedy (born 29 MAY 1917, Brookline, MA) lists @I1@ as his father_id, directly linking Joseph Patrick Kennedy as his father.",
+          "source": "gedcom:@I0@"
+        },
+        {
+          "claim": "Candidate Joseph Patrick Kennedy (born 6 SEP 1888, Boston, MA) lists @I0@ among his children_ids, confirming the reciprocal paternal claim.",
+          "source": "gedcom:@I1@"
+        },
+        {
+          "claim": "Joseph Patrick Kennedy and subject share family unit @F0@, with Joseph listed in fams and John listed in famc, structurally encoding the father-child relationship.",
+          "source": "gedcom:@I0@"
+        },
+        {
+          "claim": "Joseph Patrick Kennedy's fams entry @F0@ corresponds to John Fitzgerald Kennedy's famc entry @F0@, confirming they belong to the same nuclear family record.",
+          "source": "gedcom:@I1@"
+        },
+        {
+          "claim": "Subject's birth place (Brookline, MA) and candidate's birth place (Boston, MA) are approximately 6 km apart, consistent with geographic co-location of a family unit in the Greater Boston area.",
+          "source": "gedcom:@I0@"
+        },
+        {
+          "claim": "The age delta of 29 years (Joseph born 1888, John born 1917) falls within the range of biologically and socially plausible father-child age gaps.",
+          "source": "gedcom:@I1@"
+        },
+        {
+          "claim": "Independent source (Wikidata, John F. Kennedy) confirms father of: 'Joseph P. Kennedy Sr.' matches GEDCOM name 'Joseph Patrick Kennedy' (similarity 0.80)",
+          "source": "wikidata:Q9696"
+        },
+        {
+          "claim": "DNA evidence inconsistent with father of: 1289.0 cM with Joseph Patrick Kennedy III is 2041.0 cM below minimum 3330 (typical 3400)",
+          "source": "myheritage:unknown"
+        }
+      ],
+      "confidence_score": 0.82,
+      "stated_weaknesses": [
+        "Only a single GEDCOM file serves as the source; no independent documentary evidence (e.g., birth certificate, census record, baptismal record) is present to corroborate the paternity claim.",
+        "The GEDCOM data is self-referential: the father_id in @I0@ and children_ids in @I1@ could both derive from the same original data entry, providing no truly independent corroboration.",
+        "Subject John Fitzgerald Kennedy Jr. (a child of @I0@) shares an identical name with the subject, raising the risk of record conflation within the GEDCOM file itself.",
+        "No DNA or biological corroboration is available.",
+        "No occupation, census, or vital records are attached to either individual to triangulate the family relationship through independent historical documents."
+      ],
+      "reasoning_narrative": "The GEDCOM structure provides a bidirectional link between the subject (@I0@) and the candidate (@I1@): the subject's father_id points to Joseph Patrick Kennedy, and Joseph Patrick Kennedy's children_ids explicitly includes the subject. Both individuals are further bound together within family unit @F0@, with Joseph encoded in fams (spouse/parent role) and John encoded in famc (child role), which is the standard GEDCOM mechanism for expressing a parent-child relationship. The age delta of 29 years is biologically plausible for a father-son relationship, and the geographic proximity of their birth places (Brookline and Boston, MA, ~6 km apart) is consistent with a family residing in the same metropolitan area. However, the entire evidentiary chain ultimately rests on a single GEDCOM file with no cited primary sources attached to either individual record, meaning the hypothesis is structurally well-formed but lacks independent documentary corroboration. The identical naming of a grandchild (John Fitzgerald Kennedy Jr.) introduces a latent risk of record confusion that could have propagated errors into the GEDCOM. Confidence is therefore placed in the high-single-source range (0.82) rather than the multi-source threshold.",
+      "intermediate_steps": [],
+      "alternatives_considered": [
+        "Could be a step-father relationship encoded as biological father in the GEDCOM due to data entry convention.",
+        "Could be an adoptive father relationship not distinguished from biological paternity in the GEDCOM structure.",
+        "Record conflation between John Fitzgerald Kennedy (@I0@) and his son John Fitzgerald Kennedy Jr. (@I55@) could have introduced erroneous linkages, though the birth dates make this unlikely for this specific pairing."
+      ],
+      "llm_raw_response": "```json\n{\n  \"proposed_relationship\": \"father of\",\n  \"evidence_chain\": [\n    {\n      \"claim\": \"Subject John Fitzgerald Kennedy (born 29 MAY 1917, Brookline, MA) lists @I1@ as his father_id, directly linking Joseph Patrick Kennedy as his father.\",\n      \"source\": \"gedcom:@I0@\"\n    },\n    {\n      \"claim\": \"Candidate Joseph Patrick Kennedy (born 6 SEP 1888, Boston, MA) lists @I0@ among his children_ids, confirming the reciprocal paternal claim.\",\n      \"source\": \"gedcom:@I1@\"\n    },\n    {\n      \"claim\": \"Joseph Patrick Kennedy and subject share family unit @F0@, with Joseph listed in fams and John listed in famc, structurally encoding the father-child relationship.\",\n      \"source\": \"gedcom:@I0@\"\n    },\n    {\n      \"claim\": \"Joseph Patrick Kennedy's fams entry @F0@ corresponds to John Fitzgerald Kennedy's famc entry @F0@, confirming they belong to the same nuclear family record.\",\n      \"source\": \"gedcom:@I1@\"\n    },\n    {\n      \"claim\": \"Subject's birth place (Brookline, MA) and candidate's birth place (Boston, MA) are approximately 6 km apart, consistent with geographic co-location of a family unit in the Greater Boston area.\",\n      \"source\": \"gedcom:@I0@\"\n    },\n    {\n      \"claim\": \"The age delta of 29 years (Joseph born 1888, John born 1917) falls within the range of biologically and socially plausible father-child age gaps.\",\n      \"source\": \"gedcom:@I1@\"\n    }\n  ],\n  \"confidence_score\": 0.82,\n  \"stated_weaknesses\": [\n    \"Only a single GEDCOM file serves as the source; no independent documentary evidence (e.g., birth certificate, census record, baptismal record) is present to corroborate the paternity claim.\",\n    \"The GEDCOM data is self-referential: the father_id in @I0@ and children_ids in @I1@ could both derive from the same original data entry, providing no truly independent corroboration.\",\n    \"Subject John Fitzgerald Kennedy Jr. (a child of @I0@) shares an identical name with the subject, raising the risk of record conflation within the GEDCOM file itself.\",\n    \"No DNA or biological corroboration is available.\",\n    \"No occupation, census, or vital records are attached to either individual to triangulate the family relationship through independent historical documents.\"\n  ],\n  \"reasoning_narrative\": \"The GEDCOM structure provides a bidirectional link between the subject (@I0@) and the candidate (@I1@): the subject's father_id points to Joseph Patrick Kennedy, and Joseph Patrick Kennedy's children_ids explicitly includes the subject. Both individuals are further bound together within family unit @F0@, with Joseph encoded in fams (spouse/parent role) and John encoded in famc (child role), which is the standard GEDCOM mechanism for expressing a parent-child relationship. The age delta of 29 years is biologically plausible for a father-son relationship, and the geographic proximity of their birth places (Brookline and Boston, MA, ~6 km apart) is consistent with a family residing in the same metropolitan area. However, the entire evidentiary chain ultimately rests on a single GEDCOM file with no cited primary sources attached to either individual record, meaning the hypothesis is structurally well-formed but lacks independent documentary corroboration. The identical naming of a grandchild (John Fitzgerald Kennedy Jr.) introduces a latent risk of record confusion that could have propagated errors into the GEDCOM. Confidence is therefore placed in the high-single-source range (0.82) rather than the multi-source threshold.\",\n  \"alternatives_considered\": [\n    \"Could be a step-father relationship encoded as biological father in the GEDCOM due to data entry convention.\",\n    \"Could be an adoptive father relationship not distinguished from biological paternity in the GEDCOM structure.\",\n    \"Record conflation between John Fitzgerald Kennedy (@I0@) and his son John Fitzgerald Kennedy Jr. (@I55@) could have introduced erroneous linkages, though the birth dates make this unlikely for this specific pairing.\"\n  ]\n}\n```"
+    },
+    {
+      "hypothesis_id": "hyp:@I0@:@I2@:mother",
+      "subject_id": "@I0@",
+      "related_id": "@I2@",
+      "proposed_relationship": "mother of",
+      "evidence_chain": [
+        {
+          "claim": "Subject John Fitzgerald Kennedy (born 29 MAY 1917, Brookline, MA) explicitly lists @I2@ as his mother_id, directly linking him to Rose Elizabeth Fitzgerald.",
+          "source": "gedcom:@I0@"
+        },
+        {
+          "claim": "Candidate Rose Elizabeth Fitzgerald (born 22 JUL 1890, North End, Boston, MA) lists @I0@ among her children_ids, corroborating the mother-child link from her side.",
+          "source": "gedcom:@I2@"
+        },
+        {
+          "claim": "Both subject and candidate are linked to the same family unit @F0@: subject via famc and candidate via fams, confirming a shared family record.",
+          "source": "gedcom:@I0@"
+        },
+        {
+          "claim": "Candidate's fams record @F0@ and spouse_id @I1@ place her as the wife/mother within the family unit that also contains the subject.",
+          "source": "gedcom:@I2@"
+        },
+        {
+          "claim": "Rose Elizabeth Fitzgerald was born in 1890 and John Fitzgerald Kennedy in 1917, yielding an age gap of 27 years — within the range of biological plausibility for a mother-child relationship.",
+          "source": "gedcom:@I2@"
+        },
+        {
+          "claim": "The subject's birth place (Brookline, MA) and the candidate's birth place (North End, Boston, MA) are approximately 6 km apart, consistent with geographic proximity and co-location of a family unit in the greater Boston area.",
+          "source": "gedcom:@I0@"
+        },
+        {
+          "claim": "DNA evidence supports mother of: shared 3502.0 cM with Rose Elizabeth Fitzgerald (matched to Rose Elizabeth Fitzgerald) is within expected range [3330, 3720] for Parent/Child",
+          "source": "myheritage:unknown"
+        }
+      ],
+      "confidence_score": 0.82,
+      "stated_weaknesses": [
+        "All evidence derives from a single GEDCOM file; no independent documentary evidence (birth certificate, census record, baptismal record, vital registration) is present to corroborate the mother-child assertion.",
+        "The subject's middle name 'Fitzgerald' is also the candidate's maiden surname, which is consistent but also creates a circular naming pattern that could, in a different scenario, indicate record conflation rather than direct lineage.",
+        "No DNA evidence or third-party genealogical source is cited to independently confirm biological maternity.",
+        "The subject (John Fitzgerald Kennedy) shares an identical full name with at least one child listed in his own children_ids, raising a risk of record confusion within the GEDCOM that could theoretically affect relationship pointers.",
+        "The GEDCOM's mother_id pointer is a structural assertion, not a sourced biographical claim — the underlying source of that assertion is unknown and unverifiable from the data provided."
+      ],
+      "reasoning_narrative": "The GEDCOM record for the subject (@I0@) explicitly assigns @I2@ as his mother_id, and reciprocally the GEDCOM record for the candidate (@I2@) lists @I0@ among her children_ids. This bidirectional pointer agreement within a single structured genealogical file is strong internal evidence of the asserted relationship. Both individuals are also tied to the same family unit @F0@ — the subject as a child (famc) and the candidate as a spouse/parent (fams) — providing a third, structurally independent corroboration within the same source. The age delta of 27 years (Rose born 1890, John born 1917) falls comfortably within the biological range for a mother bearing a child, removing any demographic implausibility. The geographic proximity of their respective birth places (~6 km apart within the greater Boston metropolitan area) is consistent with a family unit residing in that region during the early twentieth century. However, all of these corroborating signals originate from the same single GEDCOM file, meaning the hypothesis rests entirely on one source's internal consistency rather than on independent documentary verification. The confidence score is therefore held at 0.82 rather than above 0.90, reflecting the absence of any external corroborating record.",
+      "intermediate_steps": [],
+      "alternatives_considered": [
+        "The mother_id pointer could reflect an adoptive or step-mother relationship rather than a biological one, which cannot be ruled out without documentary evidence.",
+        "GEDCOM data-entry error: if the compiler of the file conflated individuals due to the shared name 'John Fitzgerald Kennedy' appearing across generations, a wrong mother_id could have been assigned — though the bidirectional pointer match makes this unlikely.",
+        "Rose Elizabeth Fitzgerald could theoretically be a grandmother or other female relative if a generational skip was incorrectly encoded, but the 27-year age gap makes the grandmother scenario implausible."
+      ],
+      "llm_raw_response": "```json\n{\n  \"proposed_relationship\": \"mother of\",\n  \"evidence_chain\": [\n    {\n      \"claim\": \"Subject John Fitzgerald Kennedy (born 29 MAY 1917, Brookline, MA) explicitly lists @I2@ as his mother_id, directly linking him to Rose Elizabeth Fitzgerald.\",\n      \"source\": \"gedcom:@I0@\"\n    },\n    {\n      \"claim\": \"Candidate Rose Elizabeth Fitzgerald (born 22 JUL 1890, North End, Boston, MA) lists @I0@ among her children_ids, corroborating the mother-child link from her side.\",\n      \"source\": \"gedcom:@I2@\"\n    },\n    {\n      \"claim\": \"Both subject and candidate are linked to the same family unit @F0@: subject via famc and candidate via fams, confirming a shared family record.\",\n      \"source\": \"gedcom:@I0@\"\n    },\n    {\n      \"claim\": \"Candidate's fams record @F0@ and spouse_id @I1@ place her as the wife/mother within the family unit that also contains the subject.\",\n      \"source\": \"gedcom:@I2@\"\n    },\n    {\n      \"claim\": \"Rose Elizabeth Fitzgerald was born in 1890 and John Fitzgerald Kennedy in 1917, yielding an age gap of 27 years — within the range of biological plausibility for a mother-child relationship.\",\n      \"source\": \"gedcom:@I2@\"\n    },\n    {\n      \"claim\": \"The subject's birth place (Brookline, MA) and the candidate's birth place (North End, Boston, MA) are approximately 6 km apart, consistent with geographic proximity and co-location of a family unit in the greater Boston area.\",\n      \"source\": \"gedcom:@I0@\"\n    }\n  ],\n  \"confidence_score\": 0.82,\n  \"stated_weaknesses\": [\n    \"All evidence derives from a single GEDCOM file; no independent documentary evidence (birth certificate, census record, baptismal record, vital registration) is present to corroborate the mother-child assertion.\",\n    \"The subject's middle name 'Fitzgerald' is also the candidate's maiden surname, which is consistent but also creates a circular naming pattern that could, in a different scenario, indicate record conflation rather than direct lineage.\",\n    \"No DNA evidence or third-party genealogical source is cited to independently confirm biological maternity.\",\n    \"The subject (John Fitzgerald Kennedy) shares an identical full name with at least one child listed in his own children_ids, raising a risk of record confusion within the GEDCOM that could theoretically affect relationship pointers.\",\n    \"The GEDCOM's mother_id pointer is a structural assertion, not a sourced biographical claim — the underlying source of that assertion is unknown and unverifiable from the data provided.\"\n  ],\n  \"reasoning_narrative\": \"The GEDCOM record for the subject (@I0@) explicitly assigns @I2@ as his mother_id, and reciprocally the GEDCOM record for the candidate (@I2@) lists @I0@ among her children_ids. This bidirectional pointer agreement within a single structured genealogical file is strong internal evidence of the asserted relationship. Both individuals are also tied to the same family unit @F0@ — the subject as a child (famc) and the candidate as a spouse/parent (fams) — providing a third, structurally independent corroboration within the same source. The age delta of 27 years (Rose born 1890, John born 1917) falls comfortably within the biological range for a mother bearing a child, removing any demographic implausibility. The geographic proximity of their respective birth places (~6 km apart within the greater Boston metropolitan area) is consistent with a family unit residing in that region during the early twentieth century. However, all of these corroborating signals originate from the same single GEDCOM file, meaning the hypothesis rests entirely on one source's internal consistency rather than on independent documentary verification. The confidence score is therefore held at 0.82 rather than above 0.90, reflecting the absence of any external corroborating record.\",\n  \"alternatives_considered\": [\n    \"The mother_id pointer could reflect an adoptive or step-mother relationship rather than a biological one, which cannot be ruled out without documentary evidence.\",\n    \"GEDCOM data-entry error: if the compiler of the file conflated individuals due to the shared name 'John Fitzgerald Kennedy' appearing across generations, a wrong mother_id could have been assigned — though the bidirectional pointer match makes this unlikely.\",\n    \"Rose Elizabeth Fitzgerald could theoretically be a grandmother or other female relative if a generational skip was incorrectly encoded, but the 27-year age gap makes the grandmother scenario implausible.\"\n  ]\n}\n```"
+    }
+  ],
+  "critiques": [
+    {
+      "hypothesis_id": "hyp:@I0@:@I1@:father",
+      "verdict": "accept",
+      "issues_found": [
+        "Evidence chain item citing 1289 cM with Joseph Patrick Kennedy III as 'inconsistent' is a fuzzy-name-match artifact — JPK III is a different person (likely grandson/great-grandson), not the candidate father; this should not be treated as contradictory evidence",
+        "The direct DNA match with Joseph Patrick Kennedy at 3487 cM falls squarely within the parent/child range and the platform predicts 'Parent' — this is strong positive evidence not fully reflected in the stated confidence",
+        "Same-name child (@I54@, JFK Jr.) is a real conflation risk but the birth dates and family structure (@F0@ vs @F10@) clearly distinguish subject from son"
+      ],
+      "evidence_cited": [
+        "gedcom:@I0@",
+        "gedcom:@I1@",
+        "myheritage DNA 3487 cM match",
+        "Tier 1 checks (all ok)",
+        "geographic_plausibility (6km)"
+      ],
+      "confidence_in_critique": 0.95,
+      "justification": "All Tier 1 checks pass, geography is trivially consistent (6km), and DNA evidence shows a 3487 cM parent/child match with Joseph Patrick Kennedy within the expected range and platform-predicted as Parent. The 1289 cM 'contradiction' refers to JPK III (a different individual matched by fuzzy name) and is not actually negative evidence against this hypothesis. The relationship is well-established historical fact and the evidence cleanly supports it.",
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "father alive ~9mo before birth holds",
+          "role": "father"
+        }
+      ],
+      "geo_result": {
+        "check": "geographic_plausibility",
+        "verdict": "ok",
+        "reason": "6km apart (within intra-regional range)",
+        "distance_km": 6
+      },
+      "dna_relevant": {
+        "dna_subject_gedcom_id": "@I0@",
+        "test_subject_matches_hypothesis_subject": true,
+        "cross_references_for_related": [
+          {
+            "dna_name": "Joseph Patrick Kennedy",
+            "gedcom_name": "Joseph Patrick Kennedy",
+            "gedcom_id": "@I1@",
+            "name_match_score": 1.0,
+            "shared_cM": 3487.0,
+            "dna_predicted_relationship": "Parent/Child",
+            "platform_prediction": "Parent",
+            "platform_consistent": true,
+            "all_possible_relationships": [
+              "Parent/Child"
+            ]
+          },
+          {
+            "dna_name": "Joseph Patrick Kennedy III",
+            "gedcom_name": "Joseph Patrick Kennedy",
+            "gedcom_id": "@I1@",
+            "name_match_score": 0.939,
+            "shared_cM": 1289.0,
+            "dna_predicted_relationship": "Grandparent/Grandchild",
+            "platform_prediction": "Niece/Nephew",
+            "platform_consistent": false,
+            "all_possible_relationships": [
+              "Grandparent/Grandchild",
+              "Half Sibling",
+              "Aunt/Uncle"
+            ]
+          }
+        ],
+        "cm_consistency_verdict": "supports",
+        "cm_consistency_detail": {
+          "consistent": true,
+          "in_range": true,
+          "expected_range": [
+            3330,
+            3720
+          ],
+          "typical_cM": 3400,
+          "deviation": "within expected range [3330-3720] (typical 3400)",
+          "claimed": "Parent/Child"
+        },
+        "platform": "myheritage",
+        "total_matches": 30
+      },
+      "isolation_mode": "filtered"
+    },
+    {
+      "hypothesis_id": "hyp:@I0@:@I2@:mother",
+      "verdict": "accept",
+      "issues_found": [
+        "All documentary evidence derives from a single GEDCOM file with no independent vital records cited",
+        "DNA name match relies on fuzzy name matching, though the name match score is 1.0 and cM falls squarely in parent/child range"
+      ],
+      "evidence_cited": [
+        "gedcom:@I0@",
+        "gedcom:@I2@",
+        "myheritage DNA 3502 cM",
+        "Tier 1 checks",
+        "geographic_plausibility"
+      ],
+      "confidence_in_critique": 0.92,
+      "justification": "All Tier 1 checks pass, geographic proximity is excellent (6km), reciprocal GEDCOM pointers agree, and DNA evidence of 3502 cM falls within the parent/child expected range with a perfect name match — this is essentially conclusive for a mother-child relationship. The single-source GEDCOM weakness is mitigated by the independent DNA confirmation. The shared name with the subject's son is a documented gap but does not affect this particular pointer since the son was born in 1960 and cannot be confused with the 1917 subject linked to a 1890-born mother.",
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "mother"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "mother"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "mother alive at birth holds",
+          "role": "mother"
+        }
+      ],
+      "geo_result": {
+        "check": "geographic_plausibility",
+        "verdict": "ok",
+        "reason": "6km apart (within intra-regional range)",
+        "distance_km": 6
+      },
+      "dna_relevant": {
+        "dna_subject_gedcom_id": "@I0@",
+        "test_subject_matches_hypothesis_subject": true,
+        "cross_references_for_related": [
+          {
+            "dna_name": "Rose Elizabeth Fitzgerald",
+            "gedcom_name": "Rose Elizabeth Fitzgerald",
+            "gedcom_id": "@I2@",
+            "name_match_score": 1.0,
+            "shared_cM": 3502.0,
+            "dna_predicted_relationship": "Parent/Child",
+            "platform_prediction": "Parent",
+            "platform_consistent": true,
+            "all_possible_relationships": [
+              "Parent/Child"
+            ]
+          }
+        ],
+        "cm_consistency_verdict": "supports",
+        "cm_consistency_detail": {
+          "consistent": true,
+          "in_range": true,
+          "expected_range": [
+            3330,
+            3720
+          ],
+          "typical_cM": 3400,
+          "deviation": "within expected range [3330-3720] (typical 3400)",
+          "claimed": "Parent/Child"
+        },
+        "platform": "myheritage",
+        "total_matches": 30
+      },
+      "isolation_mode": "filtered"
+    }
+  ],
+  "dna_analysis": {
+    "platform": "myheritage",
+    "subject_name": "uploaded dna",
+    "subject_gedcom_id": "@I0@",
+    "subject_match_score": 1.0,
+    "total_matches": 30,
+    "relationship_distribution": {
+      "Parent/Child": 2,
+      "Sibling": 5,
+      "Grandparent/Uncle": 5,
+      "1st Cousin": 4,
+      "1C1R/Half-1C": 2,
+      "2nd Cousin": 7,
+      "Distant (<40 cM)": 5
+    },
+    "cross_references": [
+      {
+        "dna_name": "Joseph Patrick Kennedy",
+        "gedcom_name": "Joseph Patrick Kennedy",
+        "gedcom_id": "@I1@",
+        "name_match_score": 1.0,
+        "shared_cM": 3487.0,
+        "dna_predicted_relationship": "Parent/Child",
+        "platform_prediction": "Parent",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Parent/Child"
+        ]
+      },
+      {
+        "dna_name": "Rose Elizabeth Fitzgerald",
+        "gedcom_name": "Rose Elizabeth Fitzgerald",
+        "gedcom_id": "@I2@",
+        "name_match_score": 1.0,
+        "shared_cM": 3502.0,
+        "dna_predicted_relationship": "Parent/Child",
+        "platform_prediction": "Parent",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Parent/Child"
+        ]
+      },
+      {
+        "dna_name": "Robert Francis Kennedy",
+        "gedcom_name": "Robert Francis Kennedy",
+        "gedcom_id": "@I21@",
+        "name_match_score": 1.0,
+        "shared_cM": 2598.0,
+        "dna_predicted_relationship": "Full Sibling",
+        "platform_prediction": "Sibling",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Full Sibling"
+        ]
+      },
+      {
+        "dna_name": "Edward Moore Kennedy",
+        "gedcom_name": "Edward Moore Kennedy",
+        "gedcom_id": "@I39@",
+        "name_match_score": 1.0,
+        "shared_cM": 2641.0,
+        "dna_predicted_relationship": "Full Sibling",
+        "platform_prediction": "Sibling",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Full Sibling"
+        ]
+      },
+      {
+        "dna_name": "Eunice Mary Kennedy",
+        "gedcom_name": "Eunice Mary Kennedy",
+        "gedcom_id": "@I8@",
+        "name_match_score": 1.0,
+        "shared_cM": 2580.0,
+        "dna_predicted_relationship": "Full Sibling",
+        "platform_prediction": "Sibling",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Full Sibling"
+        ]
+      },
+      {
+        "dna_name": "Patricia Helen Kennedy",
+        "gedcom_name": "Patricia Helen Kennedy",
+        "gedcom_id": "@I16@",
+        "name_match_score": 1.0,
+        "shared_cM": 2612.0,
+        "dna_predicted_relationship": "Full Sibling",
+        "platform_prediction": "Sibling",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Full Sibling"
+        ]
+      },
+      {
+        "dna_name": "Jean Ann Kennedy",
+        "gedcom_name": "Jean Ann Kennedy",
+        "gedcom_id": "@I35@",
+        "name_match_score": 1.0,
+        "shared_cM": 2585.0,
+        "dna_predicted_relationship": "Full Sibling",
+        "platform_prediction": "Sibling",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Full Sibling"
+        ]
+      },
+      {
+        "dna_name": "Kathleen Hartington Kennedy",
+        "gedcom_name": "Kathleen Hartington Kennedy",
+        "gedcom_id": "@I23@",
+        "name_match_score": 1.0,
+        "shared_cM": 1247.0,
+        "dna_predicted_relationship": "Grandparent/Grandchild",
+        "platform_prediction": "Niece/Nephew",
+        "platform_consistent": false,
+        "all_possible_relationships": [
+          "Grandparent/Grandchild",
+          "Half Sibling",
+          "Aunt/Uncle"
+        ]
+      },
+      {
+        "dna_name": "Joseph Patrick Kennedy III",
+        "gedcom_name": "Joseph Patrick Kennedy",
+        "gedcom_id": "@I1@",
+        "name_match_score": 0.939,
+        "shared_cM": 1289.0,
+        "dna_predicted_relationship": "Grandparent/Grandchild",
+        "platform_prediction": "Niece/Nephew",
+        "platform_consistent": false,
+        "all_possible_relationships": [
+          "Grandparent/Grandchild",
+          "Half Sibling",
+          "Aunt/Uncle"
+        ]
+      },
+      {
+        "dna_name": "David Anthony Kennedy",
+        "gedcom_name": "David Anthony Kennedy",
+        "gedcom_id": "@I26@",
+        "name_match_score": 1.0,
+        "shared_cM": 1198.0,
+        "dna_predicted_relationship": "Grandparent/Grandchild",
+        "platform_prediction": "Niece/Nephew",
+        "platform_consistent": false,
+        "all_possible_relationships": [
+          "Grandparent/Grandchild",
+          "Half Sibling",
+          "Aunt/Uncle",
+          "Great-Grandparent",
+          "1st Cousin"
+        ]
+      },
+      {
+        "dna_name": "Maria Owings Shriver",
+        "gedcom_name": "Maria Owings Shriver",
+        "gedcom_id": "@I11@",
+        "name_match_score": 1.0,
+        "shared_cM": 851.0,
+        "dna_predicted_relationship": "Great-Grandparent",
+        "platform_prediction": "1st Cousin",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Great-Grandparent",
+          "1st Cousin",
+          "Half Aunt/Uncle"
+        ]
+      },
+      {
+        "dna_name": "Christopher Lawford",
+        "gedcom_name": "Christopher Lawford",
+        "gedcom_id": "@I17@",
+        "name_match_score": 1.0,
+        "shared_cM": 872.0,
+        "dna_predicted_relationship": "Great-Grandparent",
+        "platform_prediction": "1st Cousin",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Great-Grandparent",
+          "1st Cousin",
+          "Half Aunt/Uncle"
+        ]
+      },
+      {
+        "dna_name": "William Kennedy Smith",
+        "gedcom_name": "William Kennedy Smith",
+        "gedcom_id": "@I37@",
+        "name_match_score": 1.0,
+        "shared_cM": 838.0,
+        "dna_predicted_relationship": "Great-Grandparent",
+        "platform_prediction": "1st Cousin",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Great-Grandparent",
+          "1st Cousin",
+          "Half Aunt/Uncle"
+        ]
+      },
+      {
+        "dna_name": "Mark Kennedy Shriver",
+        "gedcom_name": "Mark Kennedy Shriver",
+        "gedcom_id": "@I13@",
+        "name_match_score": 1.0,
+        "shared_cM": 861.0,
+        "dna_predicted_relationship": "Great-Grandparent",
+        "platform_prediction": "1st Cousin",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Great-Grandparent",
+          "1st Cousin",
+          "Half Aunt/Uncle"
+        ]
+      },
+      {
+        "dna_name": "Patrick Joseph Kennedy",
+        "gedcom_name": "Patrick Joseph Kennedy",
+        "gedcom_id": "@I43@",
+        "name_match_score": 1.0,
+        "shared_cM": 1742.0,
+        "dna_predicted_relationship": "Grandparent/Grandchild",
+        "platform_prediction": "Aunt/Uncle",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Grandparent/Grandchild",
+          "Half Sibling",
+          "Aunt/Uncle"
+        ]
+      },
+      {
+        "dna_name": "Mary Augusta Hickey",
+        "gedcom_name": "Mary Augusta Hickey",
+        "gedcom_id": "@I45@",
+        "name_match_score": 1.0,
+        "shared_cM": 1689.0,
+        "dna_predicted_relationship": "Grandparent/Grandchild",
+        "platform_prediction": "Grandparent",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Grandparent/Grandchild",
+          "Half Sibling",
+          "Aunt/Uncle"
+        ]
+      }
+    ],
+    "prediction_checks": {
+      "total_with_prediction": 30,
+      "consistent": 23,
+      "inconsistent_count": 0,
+      "inconsistent_examples": []
+    },
+    "aggregate_consistency": "consistent — no contradictions found",
+    "findings": [
+      "DNA data from myheritage: 30 total matches analyzed.",
+      "12 close relative(s) detected in Parent/Child, Sibling, or Grandparent/Uncle range.",
+      "6 match(es) in 1st cousin or closer cousin range.",
+      "5 distant matches (<40 cM) — expected for large match lists.",
+      "16 DNA match name(s) matched to GEDCOM tree persons (fuzzy score >= 0.75).",
+      "  - 'Joseph Patrick Kennedy' matched 'Joseph Patrick Kennedy' (@I1@) at 3487.0 cM (predicted: Parent/Child)",
+      "  - 'Rose Elizabeth Fitzgerald' matched 'Rose Elizabeth Fitzgerald' (@I2@) at 3502.0 cM (predicted: Parent/Child)",
+      "  - 'Robert Francis Kennedy' matched 'Robert Francis Kennedy' (@I21@) at 2598.0 cM (predicted: Full Sibling)",
+      "Platform relationship predictions: 23/30 (77%) consistent with Shared cM Project ranges."
+    ]
+  },
+  "trace_log": [
+    "record_scout: enter",
+    "record_scout: parsed 70 persons from GEDCOM",
+    "record_scout: LLM criteria = {'primary_name': 'John Fitzgerald Kennedy', 'surname': 'Kennedy', 'given_names': 'John Fitzgerald', 'alt_names': ['JFK', 'Jack Kennedy', 'John F. Kennedy'], 'approx_birth_year': 1917, 'approx_location': 'Brookline, MA'}",
+    "record_scout: query_mode — 26 candidates above threshold 0.7, keeping top 5",
+    "record_scout: top match = John Fitzgerald Kennedy (score 1.0)",
+    "record_scout: built 22 GEDCOM record objects (including family context)",
+    "record_scout: FindAGrave returned 0 results",
+    "record_scout: Wikidata returned 1 results",
+    "record_scout: WikiTree returned 0 results",
+    "record_scout: total records after external corroboration: 23 (1 external)",
+    "record_scout: exit",
+    "dna_analyst: enter",
+    "dna_analyst: parsed 30 matches from myheritage",
+    "dna_analyst: DNA test subject identified as @I0@ (name match 1.00)",
+    "dna_analyst: distribution — Parent/Child: 2, Sibling: 5, Grandparent/Uncle: 5, 1st Cousin: 4, 1C1R/Half-1C: 2, 2nd Cousin: 7, Distant (<40 cM): 5",
+    "dna_analyst: 16 cross-references found",
+    "dna_analyst: aggregate consistency = consistent — no contradictions found",
+    "dna_analyst: exit",
+    "profile_synthesizer: enter",
+    "profile_synthesizer: disambiguated 3 candidates -> selected John Fitzgerald Kennedy (score 2.5)",
+    "profile_synthesizer: excluded John Kennedy (gedcom:@I61@, score 0.495)",
+    "profile_synthesizer: excluded Joanna L Kennedy (gedcom:@I60@, score 0.04)",
+    "profile_synthesizer: LLM synthesis produced 8 facts, 7 gaps",
+    "profile_synthesizer: built profile with 8 cited facts, 7 gaps",
+    "profile_synthesizer: exit",
+    "relationship_hypothesizer: enter",
+    "relationship_hypothesizer: 2 targets for John Fitzgerald Kennedy: ['father', 'mother']",
+    "relationship_hypothesizer: built hypothesis hyp:@I0@:@I1@:father (confidence 0.82, 6 evidence items)",
+    "relationship_hypothesizer: built hypothesis hyp:@I0@:@I2@:mother (confidence 0.82, 6 evidence items)",
+    "relationship_hypothesizer: appended 1 external corroboration item(s) to evidence chains",
+    "relationship_hypothesizer: DNA CONTRADICTS hyp:@I0@:@I1@:father (1289.0 cM inconsistent with father of)",
+    "relationship_hypothesizer: DNA SUPPORTS hyp:@I0@:@I2@:mother (3502.0 cM consistent with mother of)",
+    "relationship_hypothesizer: appended 2 DNA corroboration item(s) to evidence chains",
+    "relationship_hypothesizer: generated 2 hypotheses",
+    "relationship_hypothesizer: exit",
+    "adversarial_critic: enter",
+    "adversarial_critic: isolation_mode=filtered, filtered 2 hypotheses, stripped 4 internal field types",
+    "adversarial_critic: hyp:@I0@:@I1@:father tier1 (5 checks, 0 impossible)",
+    "adversarial_critic: hyp:@I0@:@I1@:father geo -> ok: 6km apart (within intra-regional range)",
+    "adversarial_critic: hyp:@I0@:@I1@:father DNA relevant — 2 cross-ref(s) for related person, deterministic check: supports",
+    "adversarial_critic: hyp:@I0@:@I1@:father LLM verdict=accept conf=0.95",
+    "adversarial_critic: hyp:@I0@:@I2@:mother tier1 (5 checks, 0 impossible)",
+    "adversarial_critic: hyp:@I0@:@I2@:mother geo -> ok: 6km apart (within intra-regional range)",
+    "adversarial_critic: hyp:@I0@:@I2@:mother DNA relevant — 1 cross-ref(s) for related person, deterministic check: supports",
+    "adversarial_critic: hyp:@I0@:@I2@:mother LLM verdict=accept conf=0.92",
+    "adversarial_critic: no rejects; status=complete",
+    "adversarial_critic: produced 2 critiques",
+    "adversarial_critic: exit",
+    "final_report_writer: enter",
+    "final_report_writer: composed report (14101 chars, 185 lines)",
+    "final_report_writer: exit"
+  ],
+  "final_report": "# Genealogical Research Report\n\n**Query:** Who were the parents of John F. Kennedy?\n**Target:** John Fitzgerald Kennedy (approx. born 1917), Brookline, MA\n**Pipeline status:** complete  (revision count 0)\n**Report status: All findings accepted**\n\n## Subject Profiles\n\n### John Fitzgerald Kennedy\n`profile:@I0@` — source record `gedcom:@I0@`\n\n**Disambiguation:** selected from 3 candidates\n- ✓ `gedcom:@I0@` John Fitzgerald Kennedy — score 2.5\n    - name similarity 1.0\n    - exact birth year match (1917)\n    - birth place tokens match: ['brookline', 'ma']\n- ✗ `gedcom:@I61@` John Kennedy — score 0.495\n    - name similarity 0.495\n    - birth year mismatch (target 1917, candidate 1854, diff 63y)\n    - birth place tokens match: ['ma']\n- ✗ `gedcom:@I60@` Joanna L Kennedy — score 0.04\n    - name similarity 0.54\n    - birth year mismatch (target 1917, candidate 1852, diff 65y)\n    - no birth place on candidate record; target is 'brookline, ma'\n\n**Facts:**\n- name: John Fitzgerald Kennedy  _(gedcom:@I0@)_\n- first_name: John Fitzgerald  _(gedcom:@I0@)_\n- surname: Kennedy  _(gedcom:@I0@)_\n- sex: M  _(gedcom:@I0@)_\n- birth_date: 29 MAY 1917  _(gedcom:@I0@)_\n- birth_place: Brookline, MA  _(gedcom:@I0@)_\n- death_date: 22 NOV 1963  _(gedcom:@I0@)_\n- death_place: Dallas, TX  _(gedcom:@I0@)_\n\n**Family references:** father=Joseph Patrick Kennedy; mother=Rose Elizabeth Fitzgerald; spouse(s)=Jacqueline Lee Kennedy Bouvier; children=Caroline Bouvier Kennedy, John Fitzgerald Kennedy, Patrick Bouvier Kennedy\n\n**Gaps and concerns (from Synthesizer):**\n- No corroborating source records for birth date or birth place beyond a single GEDCOM entry\n- No corroborating source records for death date or death place beyond a single GEDCOM entry\n- No occupation recorded for the subject\n- No religion recorded for the subject\n- No burial place or burial date recorded for the subject\n- No middle name disambiguation: subject and child share identical name 'John Fitzgerald Kennedy', creating potential confusion in records\n- Only one source record exists for the subject; no independent documentary evidence (e.g., vital records, census, military records) is present to corroborate any biographical fact\n\n## Accepted Findings\n\n### father of — `hyp:@I0@:@I1@:father`\n**Subject:** `@I0@`  **Related:** `@I1@`  **Hypothesizer confidence:** 0.82\n\n**Evidence chain:**\n- (gedcom:@I0@) Subject John Fitzgerald Kennedy (born 29 MAY 1917, Brookline, MA) lists @I1@ as his father_id, directly linking Joseph Patrick Kennedy as his father.\n- (gedcom:@I1@) Candidate Joseph Patrick Kennedy (born 6 SEP 1888, Boston, MA) lists @I0@ among his children_ids, confirming the reciprocal paternal claim.\n- (gedcom:@I0@) Joseph Patrick Kennedy and subject share family unit @F0@, with Joseph listed in fams and John listed in famc, structurally encoding the father-child relationship.\n- (gedcom:@I1@) Joseph Patrick Kennedy's fams entry @F0@ corresponds to John Fitzgerald Kennedy's famc entry @F0@, confirming they belong to the same nuclear family record.\n- (gedcom:@I0@) Subject's birth place (Brookline, MA) and candidate's birth place (Boston, MA) are approximately 6 km apart, consistent with geographic co-location of a family unit in the Greater Boston area.\n- (gedcom:@I1@) The age delta of 29 years (Joseph born 1888, John born 1917) falls within the range of biologically and socially plausible father-child age gaps.\n- (wikidata:Q9696) Independent source (Wikidata, John F. Kennedy) confirms father of: 'Joseph P. Kennedy Sr.' matches GEDCOM name 'Joseph Patrick Kennedy' (similarity 0.80)\n- (myheritage:unknown) DNA evidence inconsistent with father of: 1289.0 cM with Joseph Patrick Kennedy III is 2041.0 cM below minimum 3330 (typical 3400)\n\n**Stated weaknesses (Hypothesizer's own):**\n- Only a single GEDCOM file serves as the source; no independent documentary evidence (e.g., birth certificate, census record, baptismal record) is present to corroborate the paternity claim.\n- The GEDCOM data is self-referential: the father_id in @I0@ and children_ids in @I1@ could both derive from the same original data entry, providing no truly independent corroboration.\n- Subject John Fitzgerald Kennedy Jr. (a child of @I0@) shares an identical name with the subject, raising the risk of record conflation within the GEDCOM file itself.\n- No DNA or biological corroboration is available.\n- No occupation, census, or vital records are attached to either individual to triangulate the family relationship through independent historical documents.\n\n### Critique: ✓ ACCEPT\n**Critic self-confidence:** 0.95  **Isolation mode:** `filtered`\n\n**Justification:** All Tier 1 checks pass, geography is trivially consistent (6km), and DNA evidence shows a 3487 cM parent/child match with Joseph Patrick Kennedy within the expected range and platform-predicted as Parent. The 1289 cM 'contradiction' refers to JPK III (a different individual matched by fuzzy name) and is not actually negative evidence against this hypothesis. The relationship is well-established historical fact and the evidence cleanly supports it.\n\n**Tier 1 deterministic checks:**\n- [ok] death_before_birth: death is not before birth\n- [ok] implausible_lifespan: lifespan within 120 years\n- [ok] [father] parent_younger_than_child: parent is not younger than child\n- [ok] [father] parent_too_young_at_birth: parent age plausible (>= 12)\n- [ok] [father] parent_died_before_conception: father alive ~9mo before birth holds\n\n**Geographic check:** [ok] 6km apart (within intra-regional range)\n\n**Issues found by the Critic:**\n- Evidence chain item citing 1289 cM with Joseph Patrick Kennedy III as 'inconsistent' is a fuzzy-name-match artifact — JPK III is a different person (likely grandson/great-grandson), not the candidate father; this should not be treated as contradictory evidence\n- The direct DNA match with Joseph Patrick Kennedy at 3487 cM falls squarely within the parent/child range and the platform predicts 'Parent' — this is strong positive evidence not fully reflected in the stated confidence\n- Same-name child (@I54@, JFK Jr.) is a real conflation risk but the birth dates and family structure (@F0@ vs @F10@) clearly distinguish subject from son\n\n### mother of — `hyp:@I0@:@I2@:mother`\n**Subject:** `@I0@`  **Related:** `@I2@`  **Hypothesizer confidence:** 0.82\n\n**Evidence chain:**\n- (gedcom:@I0@) Subject John Fitzgerald Kennedy (born 29 MAY 1917, Brookline, MA) explicitly lists @I2@ as his mother_id, directly linking him to Rose Elizabeth Fitzgerald.\n- (gedcom:@I2@) Candidate Rose Elizabeth Fitzgerald (born 22 JUL 1890, North End, Boston, MA) lists @I0@ among her children_ids, corroborating the mother-child link from her side.\n- (gedcom:@I0@) Both subject and candidate are linked to the same family unit @F0@: subject via famc and candidate via fams, confirming a shared family record.\n- (gedcom:@I2@) Candidate's fams record @F0@ and spouse_id @I1@ place her as the wife/mother within the family unit that also contains the subject.\n- (gedcom:@I2@) Rose Elizabeth Fitzgerald was born in 1890 and John Fitzgerald Kennedy in 1917, yielding an age gap of 27 years — within the range of biological plausibility for a mother-child relationship.\n- (gedcom:@I0@) The subject's birth place (Brookline, MA) and the candidate's birth place (North End, Boston, MA) are approximately 6 km apart, consistent with geographic proximity and co-location of a family unit in the greater Boston area.\n- (myheritage:unknown) DNA evidence supports mother of: shared 3502.0 cM with Rose Elizabeth Fitzgerald (matched to Rose Elizabeth Fitzgerald) is within expected range [3330, 3720] for Parent/Child\n\n**Stated weaknesses (Hypothesizer's own):**\n- All evidence derives from a single GEDCOM file; no independent documentary evidence (birth certificate, census record, baptismal record, vital registration) is present to corroborate the mother-child assertion.\n- The subject's middle name 'Fitzgerald' is also the candidate's maiden surname, which is consistent but also creates a circular naming pattern that could, in a different scenario, indicate record conflation rather than direct lineage.\n- No DNA evidence or third-party genealogical source is cited to independently confirm biological maternity.\n- The subject (John Fitzgerald Kennedy) shares an identical full name with at least one child listed in his own children_ids, raising a risk of record confusion within the GEDCOM that could theoretically affect relationship pointers.\n- The GEDCOM's mother_id pointer is a structural assertion, not a sourced biographical claim — the underlying source of that assertion is unknown and unverifiable from the data provided.\n\n### Critique: ✓ ACCEPT\n**Critic self-confidence:** 0.92  **Isolation mode:** `filtered`\n\n**Justification:** All Tier 1 checks pass, geographic proximity is excellent (6km), reciprocal GEDCOM pointers agree, and DNA evidence of 3502 cM falls within the parent/child expected range with a perfect name match — this is essentially conclusive for a mother-child relationship. The single-source GEDCOM weakness is mitigated by the independent DNA confirmation. The shared name with the subject's son is a documented gap but does not affect this particular pointer since the son was born in 1960 and cannot be confused with the 1917 subject linked to a 1890-born mother.\n\n**Tier 1 deterministic checks:**\n- [ok] death_before_birth: death is not before birth\n- [ok] implausible_lifespan: lifespan within 120 years\n- [ok] [mother] parent_younger_than_child: parent is not younger than child\n- [ok] [mother] parent_too_young_at_birth: parent age plausible (>= 12)\n- [ok] [mother] parent_died_before_conception: mother alive at birth holds\n\n**Geographic check:** [ok] 6km apart (within intra-regional range)\n\n**Issues found by the Critic:**\n- All documentary evidence derives from a single GEDCOM file with no independent vital records cited\n- DNA name match relies on fuzzy name matching, though the name match score is 1.0 and cM falls squarely in parent/child range\n\n## DNA Evidence\n\n**Platform:** myheritage  **Total matches:** 30  **Consistency:** consistent — no contradictions found\n\n**Match distribution by relationship tier:**\n- Parent/Child: 2\n- Sibling: 5\n- Grandparent/Uncle: 5\n- 1st Cousin: 4\n- 1C1R/Half-1C: 2\n- 2nd Cousin: 7\n- Distant (<40 cM): 5\n\n**GEDCOM cross-references (16 name matches):**\n- DNA: **Joseph Patrick Kennedy** (3487.0 cM) matched GEDCOM: **Joseph Patrick Kennedy** (`@I1@`)\n  - DNA-predicted: Parent/Child | Platform said: Parent | Consistent: True\n- DNA: **Rose Elizabeth Fitzgerald** (3502.0 cM) matched GEDCOM: **Rose Elizabeth Fitzgerald** (`@I2@`)\n  - DNA-predicted: Parent/Child | Platform said: Parent | Consistent: True\n- DNA: **Robert Francis Kennedy** (2598.0 cM) matched GEDCOM: **Robert Francis Kennedy** (`@I21@`)\n  - DNA-predicted: Full Sibling | Platform said: Sibling | Consistent: True\n- DNA: **Edward Moore Kennedy** (2641.0 cM) matched GEDCOM: **Edward Moore Kennedy** (`@I39@`)\n  - DNA-predicted: Full Sibling | Platform said: Sibling | Consistent: True\n- DNA: **Eunice Mary Kennedy** (2580.0 cM) matched GEDCOM: **Eunice Mary Kennedy** (`@I8@`)\n  - DNA-predicted: Full Sibling | Platform said: Sibling | Consistent: True\n- DNA: **Patricia Helen Kennedy** (2612.0 cM) matched GEDCOM: **Patricia Helen Kennedy** (`@I16@`)\n  - DNA-predicted: Full Sibling | Platform said: Sibling | Consistent: True\n- DNA: **Jean Ann Kennedy** (2585.0 cM) matched GEDCOM: **Jean Ann Kennedy** (`@I35@`)\n  - DNA-predicted: Full Sibling | Platform said: Sibling | Consistent: True\n- DNA: **Kathleen Hartington Kennedy** (1247.0 cM) matched GEDCOM: **Kathleen Hartington Kennedy** (`@I23@`)\n  - DNA-predicted: Grandparent/Grandchild | Platform said: Niece/Nephew | Consistent: False\n- DNA: **Joseph Patrick Kennedy III** (1289.0 cM) matched GEDCOM: **Joseph Patrick Kennedy** (`@I1@`)\n  - DNA-predicted: Grandparent/Grandchild | Platform said: Niece/Nephew | Consistent: False\n- DNA: **David Anthony Kennedy** (1198.0 cM) matched GEDCOM: **David Anthony Kennedy** (`@I26@`)\n  - DNA-predicted: Grandparent/Grandchild | Platform said: Niece/Nephew | Consistent: False\n- DNA: **Maria Owings Shriver** (851.0 cM) matched GEDCOM: **Maria Owings Shriver** (`@I11@`)\n  - DNA-predicted: Great-Grandparent | Platform said: 1st Cousin | Consistent: True\n- DNA: **Christopher Lawford** (872.0 cM) matched GEDCOM: **Christopher Lawford** (`@I17@`)\n  - DNA-predicted: Great-Grandparent | Platform said: 1st Cousin | Consistent: True\n- DNA: **William Kennedy Smith** (838.0 cM) matched GEDCOM: **William Kennedy Smith** (`@I37@`)\n  - DNA-predicted: Great-Grandparent | Platform said: 1st Cousin | Consistent: True\n- DNA: **Mark Kennedy Shriver** (861.0 cM) matched GEDCOM: **Mark Kennedy Shriver** (`@I13@`)\n  - DNA-predicted: Great-Grandparent | Platform said: 1st Cousin | Consistent: True\n- DNA: **Patrick Joseph Kennedy** (1742.0 cM) matched GEDCOM: **Patrick Joseph Kennedy** (`@I43@`)\n  - DNA-predicted: Grandparent/Grandchild | Platform said: Aunt/Uncle | Consistent: True\n- DNA: **Mary Augusta Hickey** (1689.0 cM) matched GEDCOM: **Mary Augusta Hickey** (`@I45@`)\n  - DNA-predicted: Grandparent/Grandchild | Platform said: Grandparent | Consistent: True\n\n**Platform prediction consistency:** 23/30 consistent with Shared cM Project ranges\n\n**Findings:**\n- DNA data from myheritage: 30 total matches analyzed.\n- 12 close relative(s) detected in Parent/Child, Sibling, or Grandparent/Uncle range.\n- 6 match(es) in 1st cousin or closer cousin range.\n- 5 distant matches (<40 cM) — expected for large match lists.\n- 16 DNA match name(s) matched to GEDCOM tree persons (fuzzy score >= 0.75).\n-   - 'Joseph Patrick Kennedy' matched 'Joseph Patrick Kennedy' (@I1@) at 3487.0 cM (predicted: Parent/Child)\n-   - 'Rose Elizabeth Fitzgerald' matched 'Rose Elizabeth Fitzgerald' (@I2@) at 3502.0 cM (predicted: Parent/Child)\n-   - 'Robert Francis Kennedy' matched 'Robert Francis Kennedy' (@I21@) at 2598.0 cM (predicted: Full Sibling)\n- Platform relationship predictions: 23/30 (77%) consistent with Shared cM Project ranges.\n"
+}

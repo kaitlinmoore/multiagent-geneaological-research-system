@@ -1,0 +1,1436 @@
+{
+  "trace_metadata": {
+    "timestamp": "20260429_223449",
+    "label": "queen_victoria_synthetic_dna",
+    "saved_by": "tools.trace_writer.save_trace"
+  },
+  "query": "Who are the parents of Queen Victoria?",
+  "target_person": {
+    "name": "Victoria Hanover",
+    "approx_birth": "1819",
+    "location": "London, England"
+  },
+  "status": "complete",
+  "revision_count": 0,
+  "gedcom_source": {
+    "sha256": "421d9cb36e7ca34b9b338b89aea5116bfb0c35950cebaeb97562b45c3f74c6cc",
+    "length_chars": 2449106
+  },
+  "gedcom_persons_count": 4683,
+  "retrieved_records": [
+    {
+      "record_id": "gedcom:@I3011@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "subject",
+      "match_score": 1.0,
+      "data": {
+        "id": "@I3011@",
+        "name": "Victoria Hanover",
+        "first_name": "Victoria",
+        "surname": "Hanover",
+        "sex": "F",
+        "birth_date": "24 MAY 1819",
+        "birth_place": "Kensington, Palace, London, England",
+        "death_date": "22 JAN 1901",
+        "death_place": "Osborne House, Isle of Wight, England",
+        "father_id": "@I3141@",
+        "mother_id": "@I3146@",
+        "spouse_ids": [
+          "@I3012@"
+        ],
+        "children_ids": [
+          "@I3013@",
+          "@I3014@",
+          "@I3015@",
+          "@I3016@",
+          "@I3017@",
+          "@I3018@",
+          "@I3019@",
+          "@I3020@",
+          "@I3021@"
+        ],
+        "famc": [
+          "@F1464@"
+        ],
+        "fams": [
+          "@F1423@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I3141@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "father",
+      "match_score": null,
+      "data": {
+        "id": "@I3141@",
+        "name": "Edward Augustus Hanover",
+        "first_name": "Edward Augustus",
+        "surname": "Hanover",
+        "sex": "M",
+        "birth_date": "2 NOV 1767",
+        "birth_place": "Buckingham House, London, England",
+        "death_date": "23 JAN 1820",
+        "death_place": "Sidmouth, Devon, England",
+        "father_id": "@I3138@",
+        "mother_id": "@I3139@",
+        "spouse_ids": [
+          "@I3146@"
+        ],
+        "children_ids": [
+          "@I3011@"
+        ],
+        "famc": [
+          "@F1461@"
+        ],
+        "fams": [
+          "@F1464@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I3146@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "mother",
+      "match_score": null,
+      "data": {
+        "id": "@I3146@",
+        "name": "Victoria Mary Louisa",
+        "first_name": "Victoria Mary Louisa",
+        "surname": null,
+        "sex": "F",
+        "birth_date": "17 AUG 1786",
+        "birth_place": "Coburg",
+        "death_date": "16 MAR 1861",
+        "death_place": "Frogmore House, Windsor, England",
+        "father_id": "@I2448@",
+        "mother_id": "@I2614@",
+        "spouse_ids": [
+          "@I3141@"
+        ],
+        "children_ids": [
+          "@I3011@"
+        ],
+        "famc": [
+          "@F1147@"
+        ],
+        "fams": [
+          "@F1409@",
+          "@F1464@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I3012@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I3012@",
+        "name": "Albert Augustus Charles",
+        "first_name": "Albert Augustus Charles",
+        "surname": null,
+        "sex": "M",
+        "birth_date": "26 AUG 1819",
+        "birth_place": "Schloss Rosenau, Near Coburg, Germany",
+        "death_date": "14 DEC 1861",
+        "death_place": "Windsor Castle, Berkshire, England",
+        "father_id": "@I3147@",
+        "mother_id": "@I3148@",
+        "spouse_ids": [
+          "@I3011@"
+        ],
+        "children_ids": [
+          "@I3013@",
+          "@I3014@",
+          "@I3015@",
+          "@I3016@",
+          "@I3017@",
+          "@I3018@",
+          "@I3019@",
+          "@I3020@",
+          "@I3021@"
+        ],
+        "famc": [
+          "@F1465@"
+        ],
+        "fams": [
+          "@F1423@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I3014@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I3014@",
+        "name": "Edward VII Wettin",
+        "first_name": "Edward VII",
+        "surname": "Wettin",
+        "sex": "M",
+        "birth_date": "9 NOV 1841",
+        "birth_place": "Buckingham, Palace, London, England",
+        "death_date": "6 MAY 1910",
+        "death_place": "Buckingham, Palace, London, England",
+        "father_id": "@I3012@",
+        "mother_id": "@I3011@",
+        "spouse_ids": [
+          "@I3022@"
+        ],
+        "children_ids": [
+          "@I3023@",
+          "@I3024@",
+          "@I3025@",
+          "@I3026@",
+          "@I3027@",
+          "@I3028@"
+        ],
+        "famc": [
+          "@F1423@"
+        ],
+        "fams": [
+          "@F1424@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I2448@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "father",
+      "match_score": null,
+      "data": {
+        "id": "@I2448@",
+        "name": "Francis Frederick of Saxe-Coburg",
+        "first_name": "Francis Frederick of Saxe-Coburg",
+        "surname": null,
+        "sex": "M",
+        "birth_date": "1750",
+        "birth_place": null,
+        "death_date": "1806",
+        "death_place": null,
+        "father_id": "@I2897@",
+        "mother_id": "@I2898@",
+        "spouse_ids": [
+          "@I2614@"
+        ],
+        "children_ids": [
+          "@I3147@",
+          "@I3212@",
+          "@I3146@",
+          "@I1696@",
+          "@I2973@",
+          "@I2974@",
+          "@I2975@"
+        ],
+        "famc": [
+          "@F1360@"
+        ],
+        "fams": [
+          "@F1147@",
+          "@F1367@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I2614@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "mother",
+      "match_score": null,
+      "data": {
+        "id": "@I2614@",
+        "name": "Augusta Reuss-Ebersdorf",
+        "first_name": "Augusta Reuss-Ebersdorf",
+        "surname": null,
+        "sex": "F",
+        "birth_date": "1757",
+        "birth_place": null,
+        "death_date": "1831",
+        "death_place": null,
+        "father_id": "@I2895@",
+        "mother_id": "@I2896@",
+        "spouse_ids": [
+          "@I2448@"
+        ],
+        "children_ids": [
+          "@I3147@",
+          "@I3212@",
+          "@I3146@",
+          "@I1696@",
+          "@I2973@",
+          "@I2974@",
+          "@I2975@"
+        ],
+        "famc": [
+          "@F1228@"
+        ],
+        "fams": [
+          "@F1147@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I10098@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "subject",
+      "match_score": 0.773,
+      "data": {
+        "id": "@I10098@",
+        "name": "Alexander COMYN",
+        "first_name": "Alexander",
+        "surname": "COMYN",
+        "sex": "M",
+        "birth_date": "1217",
+        "birth_place": null,
+        "death_date": "1290",
+        "death_place": null,
+        "father_id": "@I6808@",
+        "mother_id": "@I10101@",
+        "spouse_ids": [
+          "@I10099@"
+        ],
+        "children_ids": [
+          "@I10097@",
+          "@I10126@"
+        ],
+        "famc": [
+          "@F5376@"
+        ],
+        "fams": [
+          "@F5373@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I6808@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "father",
+      "match_score": null,
+      "data": {
+        "id": "@I6808@",
+        "name": "William COMYN (CUMYN; CUMMIN)xx 1st Earl of Buchan; Justiciar of Scotland",
+        "first_name": "William COMYN (CUMYN; CUMMIN)xx",
+        "surname": "1st Earl of Buchan; Justiciar of Scotland",
+        "sex": "M",
+        "birth_date": "ABT 1170",
+        "birth_place": null,
+        "death_date": "ABT 1233",
+        "death_place": null,
+        "father_id": "@I6807@",
+        "mother_id": "@I6806@",
+        "spouse_ids": [
+          "@I6809@",
+          "@I10101@"
+        ],
+        "children_ids": [
+          "@I6810@",
+          "@I10098@"
+        ],
+        "famc": [
+          "@F3596@"
+        ],
+        "fams": [
+          "@F3597@",
+          "@F5376@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I10101@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "mother",
+      "match_score": null,
+      "data": {
+        "id": "@I10101@",
+        "name": "Margaret (Marjorie or Elizabeth?) COLHAN",
+        "first_name": "Margaret (Marjorie or Elizabeth?)",
+        "surname": "COLHAN",
+        "sex": "F",
+        "birth_date": "1185",
+        "birth_place": null,
+        "death_date": "1243",
+        "death_place": null,
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I6808@"
+        ],
+        "children_ids": [
+          "@I10098@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F5376@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I10099@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I10099@",
+        "name": "Elizabeth (Isabel) de QUINCY (QUENCY)",
+        "first_name": "Elizabeth (Isabel) de",
+        "surname": "QUINCY (QUENCY)",
+        "sex": "F",
+        "birth_date": "1220",
+        "birth_place": null,
+        "death_date": "1282",
+        "death_place": null,
+        "father_id": "@I6926@",
+        "mother_id": "@I6927@",
+        "spouse_ids": [
+          "@I10098@"
+        ],
+        "children_ids": [
+          "@I10097@",
+          "@I10126@"
+        ],
+        "famc": [
+          "@F3659@"
+        ],
+        "fams": [
+          "@F5373@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I10097@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I10097@",
+        "name": "Marjorie (Bridget) COMYN",
+        "first_name": "Marjorie (Bridget)",
+        "surname": "COMYN",
+        "sex": "F",
+        "birth_date": null,
+        "birth_place": null,
+        "death_date": "1296",
+        "death_place": null,
+        "father_id": "@I10098@",
+        "mother_id": "@I10099@",
+        "spouse_ids": [
+          "@I10096@"
+        ],
+        "children_ids": [
+          "@I10095@"
+        ],
+        "famc": [
+          "@F5373@"
+        ],
+        "fams": [
+          "@F5372@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I10126@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I10126@",
+        "name": "John COMYN",
+        "first_name": "John",
+        "surname": "COMYN",
+        "sex": "M",
+        "birth_date": null,
+        "birth_place": null,
+        "death_date": "1308",
+        "death_place": null,
+        "father_id": "@I10098@",
+        "mother_id": "@I10099@",
+        "spouse_ids": [
+          "@I10127@"
+        ],
+        "children_ids": [
+          "@I10125@"
+        ],
+        "famc": [
+          "@F5373@"
+        ],
+        "fams": [
+          "@F5389@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I1460@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "subject",
+      "match_score": 0.757,
+      "data": {
+        "id": "@I1460@",
+        "name": "Alexander Stewart",
+        "first_name": "Alexander",
+        "surname": "Stewart",
+        "sex": "M",
+        "birth_date": "1343",
+        "birth_place": "Dundonald, Ayrshire, Scotland",
+        "death_date": "24 JUL 1394",
+        "death_place": "Dundonald, Ayrshire, Scotland",
+        "father_id": "@I1455@",
+        "mother_id": "@I1456@",
+        "spouse_ids": [
+          "@I6820@"
+        ],
+        "children_ids": [
+          "@I6773@"
+        ],
+        "famc": [
+          "@F543@"
+        ],
+        "fams": [
+          "@F3603@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I1455@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "father",
+      "match_score": null,
+      "data": {
+        "id": "@I1455@",
+        "name": "Robert II",
+        "first_name": "Robert II",
+        "surname": null,
+        "sex": "M",
+        "birth_date": "1316",
+        "birth_place": null,
+        "death_date": "1390",
+        "death_place": null,
+        "father_id": "@I1454@",
+        "mother_id": "@I1449@",
+        "spouse_ids": [
+          "@I1456@",
+          "@I6802@"
+        ],
+        "children_ids": [
+          "@I406@",
+          "@I1459@",
+          "@I1460@",
+          "@I8967@",
+          "@I9897@",
+          "@I1458@",
+          "@I1821@",
+          "@I7203@",
+          "@I6799@",
+          "@I7366@",
+          "@I8366@"
+        ],
+        "famc": [
+          "@F542@"
+        ],
+        "fams": [
+          "@F543@",
+          "@F3593@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I1456@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "mother",
+      "match_score": null,
+      "data": {
+        "id": "@I1456@",
+        "name": "Elizabeth of Rowallan Mure",
+        "first_name": "Elizabeth of Rowallan",
+        "surname": "Mure",
+        "sex": "F",
+        "birth_date": null,
+        "birth_place": null,
+        "death_date": null,
+        "death_place": null,
+        "father_id": "@I1819@",
+        "mother_id": null,
+        "spouse_ids": [
+          "@I1455@"
+        ],
+        "children_ids": [
+          "@I406@",
+          "@I1459@",
+          "@I1460@",
+          "@I8967@",
+          "@I9897@",
+          "@I1458@",
+          "@I1821@",
+          "@I7203@"
+        ],
+        "famc": [
+          "@F731@"
+        ],
+        "fams": [
+          "@F543@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I6820@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I6820@",
+        "name": "Mairead Inghean Stewart (Eachann)",
+        "first_name": "Mairead Inghean Stewart (Eachann)",
+        "surname": null,
+        "sex": "F",
+        "birth_date": "1356",
+        "birth_place": null,
+        "death_date": "1408",
+        "death_place": "Scotland",
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I1460@"
+        ],
+        "children_ids": [
+          "@I6773@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F3603@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I6773@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I6773@",
+        "name": "Margaret STEWART (STUART)",
+        "first_name": "Margaret",
+        "surname": "STEWART (STUART)",
+        "sex": "F",
+        "birth_date": "ABT 1373",
+        "birth_place": null,
+        "death_date": "ABT 1439",
+        "death_place": null,
+        "father_id": "@I1460@",
+        "mother_id": "@I6820@",
+        "spouse_ids": [
+          "@I6772@"
+        ],
+        "children_ids": [
+          "@I6774@",
+          "@I6776@"
+        ],
+        "famc": [
+          "@F3603@"
+        ],
+        "fams": [
+          "@F3578@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I5459@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "subject",
+      "match_score": 0.75,
+      "data": {
+        "id": "@I5459@",
+        "name": "Alexandre the TROJAN",
+        "first_name": "Alexandre the TROJAN",
+        "surname": null,
+        "sex": "M",
+        "birth_date": null,
+        "birth_place": null,
+        "death_date": "677 BC",
+        "death_place": null,
+        "father_id": "@I5460@",
+        "mother_id": null,
+        "spouse_ids": [],
+        "children_ids": [
+          "@I5458@"
+        ],
+        "famc": [
+          "@F2744@"
+        ],
+        "fams": [
+          "@F2743@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I5460@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "father",
+      "match_score": null,
+      "data": {
+        "id": "@I5460@",
+        "name": "Basabelian (Basabiliano) II the TROJAN",
+        "first_name": "Basabelian (Basabiliano) II the TROJAN",
+        "surname": null,
+        "sex": "M",
+        "birth_date": null,
+        "birth_place": null,
+        "death_date": null,
+        "death_place": null,
+        "father_id": "@I5461@",
+        "mother_id": null,
+        "spouse_ids": [],
+        "children_ids": [
+          "@I5459@"
+        ],
+        "famc": [
+          "@F2745@"
+        ],
+        "fams": [
+          "@F2744@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I5458@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I5458@",
+        "name": "Priam III (King) of the CIMMERIANS",
+        "first_name": "Priam III (King) of the CIMMERIANS",
+        "surname": null,
+        "sex": "M",
+        "birth_date": null,
+        "birth_place": null,
+        "death_date": null,
+        "death_place": null,
+        "father_id": "@I5459@",
+        "mother_id": null,
+        "spouse_ids": [],
+        "children_ids": [
+          "@I5456@"
+        ],
+        "famc": [
+          "@F2743@"
+        ],
+        "fams": [
+          "@F2742@"
+        ]
+      }
+    },
+    {
+      "record_id": "wikidata:Q9439",
+      "source": "wikidata",
+      "source_type": "wikidata",
+      "record_type": "person",
+      "data": {
+        "name": "Victoria",
+        "birth_date": "24 MAY 1819",
+        "death_date": "22 JAN 1901",
+        "birth_place": "Kensington Palace",
+        "father": "Prince Edward, Duke of Kent and Strathearn",
+        "mother": "Princess Victoria of Saxe-Coburg-Saalfeld",
+        "spouse": "Prince Albert of Saxe-Coburg and Gotha",
+        "wikidata_id": "Q9439",
+        "wikidata_url": "https://www.wikidata.org/wiki/Q9439"
+      },
+      "relation_to_target": "external_corroboration"
+    },
+    {
+      "record_id": "wikitree:Hanover-230",
+      "source": "wikitree",
+      "source_type": "wikitree",
+      "record_type": "person",
+      "data": {
+        "name": "Alexandrina Victoria Hanover",
+        "birth_date": "24 MAY 1819",
+        "death_date": "22 JAN 1901",
+        "birth_place": "Kensington Palace, Kensington, Middlesex, England",
+        "death_place": "Osborne House, near Cowes, Isle of Wight, Hampshire, England",
+        "father": "Edward Augustus Hannover",
+        "mother": "Marie Luise Viktoria Sachsen-Coburg-Saalfeld",
+        "spouse": "Franz Albrecht August Karl Emmanuel Sachsen-Coburg und Gotha",
+        "wikitree_id": "Hanover-230",
+        "wikitree_url": "https://www.wikitree.com/wiki/Hanover-230"
+      },
+      "relation_to_target": "external_corroboration"
+    }
+  ],
+  "profiles": [
+    {
+      "profile_id": "profile:@I3011@",
+      "subject_record_id": "gedcom:@I3011@",
+      "subject_name": "Victoria Hanover",
+      "disambiguation": {
+        "query": "Who are the parents of Queen Victoria?",
+        "query_criteria": {
+          "name": "Victoria Hanover",
+          "approx_birth": "1819",
+          "location": "London, England"
+        },
+        "candidates_considered": [
+          {
+            "record_id": "gedcom:@I3011@",
+            "name": "Victoria Hanover",
+            "score": 2.5,
+            "reasons": [
+              "name similarity 1.0",
+              "exact birth year match (1819)",
+              "birth place tokens match: ['england', 'london']"
+            ],
+            "status": "SELECTED"
+          },
+          {
+            "record_id": "gedcom:@I5459@",
+            "name": "Alexandre the TROJAN",
+            "score": 0.316,
+            "reasons": [
+              "name similarity 0.316",
+              "no birth year on candidate record; target is 1819",
+              "no birth place on candidate record; target is 'london, england'"
+            ],
+            "status": "excluded"
+          },
+          {
+            "record_id": "gedcom:@I1460@",
+            "name": "Alexander Stewart",
+            "score": -0.222,
+            "reasons": [
+              "name similarity 0.278",
+              "birth year mismatch (target 1819, candidate 1343, diff 476y)",
+              "birth place mismatch (target 'london, england', candidate 'dundonald, ayrshire, scotland')"
+            ],
+            "status": "excluded"
+          },
+          {
+            "record_id": "gedcom:@I10098@",
+            "name": "Alexander COMYN",
+            "score": -0.235,
+            "reasons": [
+              "name similarity 0.265",
+              "birth year mismatch (target 1819, candidate 1217, diff 602y)",
+              "no birth place on candidate record; target is 'london, england'"
+            ],
+            "status": "excluded"
+          }
+        ]
+      },
+      "facts": [
+        {
+          "field": "name",
+          "value": "Victoria Hanover",
+          "sources": [
+            "gedcom:@I3011@"
+          ]
+        },
+        {
+          "field": "first_name",
+          "value": "Victoria",
+          "sources": [
+            "gedcom:@I3011@"
+          ]
+        },
+        {
+          "field": "surname",
+          "value": "Hanover",
+          "sources": [
+            "gedcom:@I3011@"
+          ]
+        },
+        {
+          "field": "sex",
+          "value": "F",
+          "sources": [
+            "gedcom:@I3011@"
+          ]
+        },
+        {
+          "field": "birth_date",
+          "value": "24 MAY 1819",
+          "sources": [
+            "gedcom:@I3011@"
+          ]
+        },
+        {
+          "field": "birth_place",
+          "value": "Kensington, Palace, London, England",
+          "sources": [
+            "gedcom:@I3011@"
+          ]
+        },
+        {
+          "field": "death_date",
+          "value": "22 JAN 1901",
+          "sources": [
+            "gedcom:@I3011@"
+          ]
+        },
+        {
+          "field": "death_place",
+          "value": "Osborne House, Isle of Wight, England",
+          "sources": [
+            "gedcom:@I3011@"
+          ]
+        }
+      ],
+      "family": {
+        "father": {
+          "name": "Edward Augustus Hanover",
+          "record_id": "gedcom:@I3141@"
+        },
+        "mother": {
+          "name": "Victoria Mary Louisa",
+          "record_id": "gedcom:@I3146@"
+        },
+        "spouses": [
+          {
+            "name": "Albert Augustus Charles",
+            "record_id": "gedcom:@I3012@"
+          }
+        ],
+        "children": [
+          {
+            "name": "Edward VII Wettin",
+            "record_id": "gedcom:@I3014@"
+          }
+        ]
+      },
+      "gaps": [
+        "No occupation recorded for subject",
+        "No religion recorded for subject",
+        "No burial place or burial record recorded for subject",
+        "Birth place value 'Kensington, Palace, London, England' appears to contain a formatting anomaly (comma placement); may require verification against primary sources",
+        "No independent corroborating source beyond the single GEDCOM record for any biographical fact",
+        "No marriage date recorded for subject",
+        "No marriage place recorded for subject"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "hypothesis_id": "hyp:@I3011@:@I3141@:father",
+      "subject_id": "@I3011@",
+      "related_id": "@I3141@",
+      "proposed_relationship": "father of",
+      "evidence_chain": [
+        {
+          "claim": "Victoria Hanover's GEDCOM record explicitly lists her father_id as @I3141@, directly linking her to Edward Augustus Hanover as her father.",
+          "source": "gedcom:@I3011@"
+        },
+        {
+          "claim": "Edward Augustus Hanover's GEDCOM record explicitly lists @I3011@ (Victoria Hanover) among his children_ids, and his fams entry @F1464@ matches Victoria's famc entry @F1464@, confirming a shared family unit record.",
+          "source": "gedcom:@I3141@"
+        },
+        {
+          "claim": "Edward Augustus Hanover was born 2 NOV 1767, yielding an age of approximately 51-52 at Victoria's birth on 24 MAY 1819, which is biologically plausible for a father.",
+          "source": "gedcom:@I3141@"
+        },
+        {
+          "claim": "Both individuals share the surname 'Hanover', consistent with patrilineal surname transmission from Edward Augustus Hanover to Victoria Hanover.",
+          "source": "gedcom:@I3011@"
+        },
+        {
+          "claim": "Edward Augustus Hanover's birth place (Buckingham House, London, England) and Victoria Hanover's birth place (Kensington Palace, London, England) are approximately 20 km apart, indicating geographic co-location in London consistent with a father-child relationship.",
+          "source": "gedcom:@I3141@"
+        },
+        {
+          "claim": "Edward Augustus Hanover's spouse_ids include @I3146@, who is also listed as Victoria Hanover's mother_id (@I3146@), confirming both parents are identified within the same conjugal unit.",
+          "source": "gedcom:@I3141@"
+        },
+        {
+          "claim": "Edward Augustus Hanover died 23 JAN 1820 in Sidmouth, Devon, England — approximately eight months after Victoria's birth on 24 MAY 1819 — meaning he was alive at the time of her birth, which is necessary for biological paternity.",
+          "source": "gedcom:@I3141@"
+        },
+        {
+          "claim": "Independent source (Wikitree, Alexandrina Victoria Hanover) confirms father of: 'Edward Augustus Hannover' matches GEDCOM name 'Edward Augustus Hanover' (similarity 0.98)",
+          "source": "wikitree:Hanover-230"
+        },
+        {
+          "claim": "DNA evidence supports father of: shared 3492.0 cM with Edward Augustus Hanover (matched to Edward Augustus Hanover) is within expected range [3330, 3720] for Parent/Child",
+          "source": "myheritage:unknown"
+        }
+      ],
+      "confidence_score": 0.82,
+      "stated_weaknesses": [
+        "All evidence derives from a single GEDCOM file; there is no independent corroborating primary source (e.g., baptismal register, birth certificate, contemporaneous royal record) cited within the supplied records.",
+        "The birth place value 'Kensington, Palace, London, England' contains a noted formatting anomaly and has not been verified against a primary source, leaving a minor uncertainty about the subject's birth record accuracy.",
+        "No DNA or biological corroboration is available; the father-child link rests entirely on recorded genealogical assertion.",
+        "Edward Augustus Hanover died only ~8 months after Victoria's birth, so no overlapping life events beyond birth can further corroborate the relationship.",
+        "The GEDCOM record may itself derive from a secondary or tertiary compiled source, introducing the possibility of transcription errors propagated into the family linkage."
+      ],
+      "reasoning_narrative": "The GEDCOM record for Victoria Hanover (@I3011@) explicitly records her father_id as @I3141@, and the GEDCOM record for Edward Augustus Hanover (@I3141@) reciprocally lists @I3011@ among his children_ids. Both records share the family unit identifier @F1464@ (Victoria's famc and Edward's fams), creating a structurally consistent bidirectional link within the GEDCOM data model. The age delta of approximately 52 years between Edward (born 1767) and Victoria (born 1819) is flagged as biologically plausible, and Edward was confirmed alive at the time of Victoria's birth, dying only eight months later in January 1820. The shared surname 'Hanover' is consistent with patrilineal inheritance. Both individuals have documented geographic presence in London, with birth locations only ~20 km apart, further consistent with a resident father-child relationship. The primary limitation is that all evidence flows from one GEDCOM source with no cited independent primary record to independently verify the paternity assertion, warranting a confidence score in the well-supported single-source range rather than the highest tier.",
+      "intermediate_steps": [],
+      "alternatives_considered": [
+        "Edward Augustus Hanover could theoretically be a stepfather or adoptive father recorded as biological in a compiled genealogy, though the reciprocal bidirectional GEDCOM linkage and shared family unit make this unlikely.",
+        "A transcription or data-entry error in the GEDCOM could have incorrectly assigned @I3141@ as the father_id if a similarly named individual existed; however, no such naming collision is indicated in the supplied records.",
+        "The relationship could reflect a legal or titular father rather than a biological one, though no evidence in the records suggests this distinction applies here."
+      ],
+      "llm_raw_response": "```json\n{\n  \"proposed_relationship\": \"father of\",\n  \"evidence_chain\": [\n    {\n      \"claim\": \"Victoria Hanover's GEDCOM record explicitly lists her father_id as @I3141@, directly linking her to Edward Augustus Hanover as her father.\",\n      \"source\": \"gedcom:@I3011@\"\n    },\n    {\n      \"claim\": \"Edward Augustus Hanover's GEDCOM record explicitly lists @I3011@ (Victoria Hanover) among his children_ids, and his fams entry @F1464@ matches Victoria's famc entry @F1464@, confirming a shared family unit record.\",\n      \"source\": \"gedcom:@I3141@\"\n    },\n    {\n      \"claim\": \"Edward Augustus Hanover was born 2 NOV 1767, yielding an age of approximately 51-52 at Victoria's birth on 24 MAY 1819, which is biologically plausible for a father.\",\n      \"source\": \"gedcom:@I3141@\"\n    },\n    {\n      \"claim\": \"Both individuals share the surname 'Hanover', consistent with patrilineal surname transmission from Edward Augustus Hanover to Victoria Hanover.\",\n      \"source\": \"gedcom:@I3011@\"\n    },\n    {\n      \"claim\": \"Edward Augustus Hanover's birth place (Buckingham House, London, England) and Victoria Hanover's birth place (Kensington Palace, London, England) are approximately 20 km apart, indicating geographic co-location in London consistent with a father-child relationship.\",\n      \"source\": \"gedcom:@I3141@\"\n    },\n    {\n      \"claim\": \"Edward Augustus Hanover's spouse_ids include @I3146@, who is also listed as Victoria Hanover's mother_id (@I3146@), confirming both parents are identified within the same conjugal unit.\",\n      \"source\": \"gedcom:@I3141@\"\n    },\n    {\n      \"claim\": \"Edward Augustus Hanover died 23 JAN 1820 in Sidmouth, Devon, England — approximately eight months after Victoria's birth on 24 MAY 1819 — meaning he was alive at the time of her birth, which is necessary for biological paternity.\",\n      \"source\": \"gedcom:@I3141@\"\n    }\n  ],\n  \"confidence_score\": 0.82,\n  \"stated_weaknesses\": [\n    \"All evidence derives from a single GEDCOM file; there is no independent corroborating primary source (e.g., baptismal register, birth certificate, contemporaneous royal record) cited within the supplied records.\",\n    \"The birth place value 'Kensington, Palace, London, England' contains a noted formatting anomaly and has not been verified against a primary source, leaving a minor uncertainty about the subject's birth record accuracy.\",\n    \"No DNA or biological corroboration is available; the father-child link rests entirely on recorded genealogical assertion.\",\n    \"Edward Augustus Hanover died only ~8 months after Victoria's birth, so no overlapping life events beyond birth can further corroborate the relationship.\",\n    \"The GEDCOM record may itself derive from a secondary or tertiary compiled source, introducing the possibility of transcription errors propagated into the family linkage.\"\n  ],\n  \"reasoning_narrative\": \"The GEDCOM record for Victoria Hanover (@I3011@) explicitly records her father_id as @I3141@, and the GEDCOM record for Edward Augustus Hanover (@I3141@) reciprocally lists @I3011@ among his children_ids. Both records share the family unit identifier @F1464@ (Victoria's famc and Edward's fams), creating a structurally consistent bidirectional link within the GEDCOM data model. The age delta of approximately 52 years between Edward (born 1767) and Victoria (born 1819) is flagged as biologically plausible, and Edward was confirmed alive at the time of Victoria's birth, dying only eight months later in January 1820. The shared surname 'Hanover' is consistent with patrilineal inheritance. Both individuals have documented geographic presence in London, with birth locations only ~20 km apart, further consistent with a resident father-child relationship. The primary limitation is that all evidence flows from one GEDCOM source with no cited independent primary record to independently verify the paternity assertion, warranting a confidence score in the well-supported single-source range rather than the highest tier.\",\n  \"alternatives_considered\": [\n    \"Edward Augustus Hanover could theoretically be a stepfather or adoptive father recorded as biological in a compiled genealogy, though the reciprocal bidirectional GEDCOM linkage and shared family unit make this unlikely.\",\n    \"A transcription or data-entry error in the GEDCOM could have incorrectly assigned @I3141@ as the father_id if a similarly named individual existed; however, no such naming collision is indicated in the supplied records.\",\n    \"The relationship could reflect a legal or titular father rather than a biological one, though no evidence in the records suggests this distinction applies here.\"\n  ]\n}\n```"
+    },
+    {
+      "hypothesis_id": "hyp:@I3011@:@I3146@:mother",
+      "subject_id": "@I3011@",
+      "related_id": "@I3146@",
+      "proposed_relationship": "mother of",
+      "evidence_chain": [
+        {
+          "claim": "Victoria Hanover (subject) lists @I3146@ as her mother_id, directly encoding the mother-child relationship in the GEDCOM record.",
+          "source": "gedcom:@I3011@"
+        },
+        {
+          "claim": "Victoria Mary Louisa (candidate) lists @I3011@ in her children_ids array, independently corroborating the mother-child link from the parent's record.",
+          "source": "gedcom:@I3146@"
+        },
+        {
+          "claim": "Victoria Mary Louisa was born 17 AUG 1786 in Coburg, placing her at age 32-33 at the time of the subject's birth on 24 MAY 1819, which is biologically plausible.",
+          "source": "gedcom:@I3146@"
+        },
+        {
+          "claim": "Victoria Hanover was born 24 MAY 1819 in Kensington, Palace, London, England; the candidate's death place of Frogmore House, Windsor, England, is consistent with the candidate having lived in England during and after the subject's birth.",
+          "source": "gedcom:@I3011@"
+        },
+        {
+          "claim": "Both subject and candidate share the family unit @F1464@: subject lists it in famc and candidate lists it in fams, confirming structural placement of Victoria Hanover as child of Victoria Mary Louisa within the same family group.",
+          "source": "gedcom:@I3011@"
+        },
+        {
+          "claim": "Family unit @F1464@ is also recorded in the candidate's fams list, confirming her role as a parent in that family unit.",
+          "source": "gedcom:@I3146@"
+        },
+        {
+          "claim": "DNA evidence supports mother of: shared 3508.0 cM with Victoria Mary Louisa (matched to Victoria Mary Louisa) is within expected range [3330, 3720] for Parent/Child",
+          "source": "myheritage:unknown"
+        }
+      ],
+      "confidence_score": 0.85,
+      "stated_weaknesses": [
+        "All evidence derives from a single GEDCOM file; no independent primary sources (e.g., birth register, baptismal record, contemporary document) are cited to corroborate the mother-child link.",
+        "The birth place value 'Kensington, Palace, London, England' contains a formatting anomaly that may indicate data-entry error, leaving a small uncertainty about whether the birth record was transcribed accurately.",
+        "Victoria Mary Louisa has no recorded surname in this GEDCOM, which slightly reduces confidence in correct identity disambiguation — there could theoretically be a data-entry conflation with another individual of the same first names.",
+        "The birthplace distance of 794 km (Coburg vs. London) is not itself a problem historically, but it means geographic proximity cannot be used as an additional confirming signal.",
+        "No DNA or documentary corroboration beyond the GEDCOM structure is available in the supplied records."
+      ],
+      "reasoning_narrative": "The GEDCOM record for the subject (@I3011@) explicitly encodes @I3146@ as her mother_id, and the candidate's record (@I3146@) reciprocally lists @I3011@ in her children_ids array. This bidirectional pointer consistency within the GEDCOM is the primary evidence chain and eliminates simple data-entry errors that would affect only one direction. Both individuals are also placed in the same family unit (@F1464@), with the subject appearing in famc and the candidate in fams, providing a third structural confirmation. The age delta of 33 years (candidate born 1786, subject born 1819) falls well within the biologically plausible range for a mother-child relationship, removing any demographic objection. The candidate's death in England (Frogmore House, Windsor) is geographically consistent with her having been resident in England at the time of the subject's birth in London, even though she was born in Coburg — this migration pattern is historically well-attested for the subject's family. Taken together, the bidirectional GEDCOM links and shared family unit record provide strong structural support for the mother-of hypothesis, though confidence is held below 0.9 because all evidence traces to a single GEDCOM source without independent primary-document corroboration.",
+      "intermediate_steps": [],
+      "alternatives_considered": [
+        "Stepmother or adoptive mother: the GEDCOM uses mother_id without qualification, but without a primary birth register it is theoretically possible the relationship is non-biological; however, no evidence suggests this.",
+        "Data conflation with another 'Victoria Mary Louisa': the candidate lacks a recorded surname, raising a small risk that two individuals of similar name were merged; this is considered unlikely given the consistent family-unit linkage.",
+        "Grandmother recorded in error as mother: given the 33-year gap this is biologically possible but structurally inconsistent with the GEDCOM, which places a separate generation above the candidate."
+      ],
+      "llm_raw_response": "```json\n{\n  \"proposed_relationship\": \"mother of\",\n  \"evidence_chain\": [\n    {\n      \"claim\": \"Victoria Hanover (subject) lists @I3146@ as her mother_id, directly encoding the mother-child relationship in the GEDCOM record.\",\n      \"source\": \"gedcom:@I3011@\"\n    },\n    {\n      \"claim\": \"Victoria Mary Louisa (candidate) lists @I3011@ in her children_ids array, independently corroborating the mother-child link from the parent's record.\",\n      \"source\": \"gedcom:@I3146@\"\n    },\n    {\n      \"claim\": \"Victoria Mary Louisa was born 17 AUG 1786 in Coburg, placing her at age 32-33 at the time of the subject's birth on 24 MAY 1819, which is biologically plausible.\",\n      \"source\": \"gedcom:@I3146@\"\n    },\n    {\n      \"claim\": \"Victoria Hanover was born 24 MAY 1819 in Kensington, Palace, London, England; the candidate's death place of Frogmore House, Windsor, England, is consistent with the candidate having lived in England during and after the subject's birth.\",\n      \"source\": \"gedcom:@I3011@\"\n    },\n    {\n      \"claim\": \"Both subject and candidate share the family unit @F1464@: subject lists it in famc and candidate lists it in fams, confirming structural placement of Victoria Hanover as child of Victoria Mary Louisa within the same family group.\",\n      \"source\": \"gedcom:@I3011@\"\n    },\n    {\n      \"claim\": \"Family unit @F1464@ is also recorded in the candidate's fams list, confirming her role as a parent in that family unit.\",\n      \"source\": \"gedcom:@I3146@\"\n    }\n  ],\n  \"confidence_score\": 0.85,\n  \"stated_weaknesses\": [\n    \"All evidence derives from a single GEDCOM file; no independent primary sources (e.g., birth register, baptismal record, contemporary document) are cited to corroborate the mother-child link.\",\n    \"The birth place value 'Kensington, Palace, London, England' contains a formatting anomaly that may indicate data-entry error, leaving a small uncertainty about whether the birth record was transcribed accurately.\",\n    \"Victoria Mary Louisa has no recorded surname in this GEDCOM, which slightly reduces confidence in correct identity disambiguation — there could theoretically be a data-entry conflation with another individual of the same first names.\",\n    \"The birthplace distance of 794 km (Coburg vs. London) is not itself a problem historically, but it means geographic proximity cannot be used as an additional confirming signal.\",\n    \"No DNA or documentary corroboration beyond the GEDCOM structure is available in the supplied records.\"\n  ],\n  \"reasoning_narrative\": \"The GEDCOM record for the subject (@I3011@) explicitly encodes @I3146@ as her mother_id, and the candidate's record (@I3146@) reciprocally lists @I3011@ in her children_ids array. This bidirectional pointer consistency within the GEDCOM is the primary evidence chain and eliminates simple data-entry errors that would affect only one direction. Both individuals are also placed in the same family unit (@F1464@), with the subject appearing in famc and the candidate in fams, providing a third structural confirmation. The age delta of 33 years (candidate born 1786, subject born 1819) falls well within the biologically plausible range for a mother-child relationship, removing any demographic objection. The candidate's death in England (Frogmore House, Windsor) is geographically consistent with her having been resident in England at the time of the subject's birth in London, even though she was born in Coburg — this migration pattern is historically well-attested for the subject's family. Taken together, the bidirectional GEDCOM links and shared family unit record provide strong structural support for the mother-of hypothesis, though confidence is held below 0.9 because all evidence traces to a single GEDCOM source without independent primary-document corroboration.\",\n  \"alternatives_considered\": [\n    \"Stepmother or adoptive mother: the GEDCOM uses mother_id without qualification, but without a primary birth register it is theoretically possible the relationship is non-biological; however, no evidence suggests this.\",\n    \"Data conflation with another 'Victoria Mary Louisa': the candidate lacks a recorded surname, raising a small risk that two individuals of similar name were merged; this is considered unlikely given the consistent family-unit linkage.\",\n    \"Grandmother recorded in error as mother: given the 33-year gap this is biologically possible but structurally inconsistent with the GEDCOM, which places a separate generation above the candidate.\"\n  ]\n}\n```"
+    }
+  ],
+  "critiques": [
+    {
+      "hypothesis_id": "hyp:@I3011@:@I3141@:father",
+      "verdict": "accept",
+      "issues_found": [
+        "All documentary evidence ultimately derives from a single GEDCOM file, though it is corroborated by Wikitree and DNA",
+        "Wikitree citation has minor surname spelling variant (Hannover vs Hanover) but similarity 0.98 is acceptable",
+        "Birth place formatting anomaly ('Kensington, Palace') is cosmetic and does not affect the relationship claim"
+      ],
+      "evidence_cited": [
+        "gedcom:@I3011@",
+        "gedcom:@I3141@",
+        "wikitree:Hanover-230",
+        "myheritage DNA 3492 cM",
+        "Tier 1 checks all ok",
+        "geographic check 20km ok"
+      ],
+      "confidence_in_critique": 0.92,
+      "justification": "This is the well-documented historical relationship between Queen Victoria and her father Prince Edward, Duke of Kent. All Tier 1 checks pass, GEDCOM bidirectional linkage is consistent (shared FAMS/FAMC @F1464@), DNA shared cM of 3492 falls squarely within parent/child range, and an independent Wikitree source corroborates. The dates, places, and names align with established historical record.",
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "father alive ~9mo before birth holds",
+          "role": "father"
+        }
+      ],
+      "geo_result": {
+        "check": "geographic_plausibility",
+        "verdict": "ok",
+        "reason": "20km apart (within intra-regional range)",
+        "distance_km": 20
+      },
+      "dna_relevant": {
+        "dna_subject_gedcom_id": "@I3011@",
+        "test_subject_matches_hypothesis_subject": true,
+        "cross_references_for_related": [
+          {
+            "dna_name": "Edward Augustus Hanover",
+            "gedcom_name": "Edward Augustus Hanover",
+            "gedcom_id": "@I3141@",
+            "name_match_score": 1.0,
+            "shared_cM": 3492.0,
+            "dna_predicted_relationship": "Parent/Child",
+            "platform_prediction": "Parent",
+            "platform_consistent": true,
+            "all_possible_relationships": [
+              "Parent/Child"
+            ]
+          }
+        ],
+        "cm_consistency_verdict": "supports",
+        "cm_consistency_detail": {
+          "consistent": true,
+          "in_range": true,
+          "expected_range": [
+            3330,
+            3720
+          ],
+          "typical_cM": 3400,
+          "deviation": "within expected range [3330-3720] (typical 3400)",
+          "claimed": "Parent/Child"
+        },
+        "platform": "myheritage",
+        "total_matches": 30
+      },
+      "isolation_mode": "filtered"
+    },
+    {
+      "hypothesis_id": "hyp:@I3011@:@I3146@:mother",
+      "verdict": "accept",
+      "issues_found": [
+        "All documentary evidence stems from a single GEDCOM file with no independent primary sources cited",
+        "Candidate Victoria Mary Louisa lacks a surname field, though the first-name combination plus Coburg birthplace is highly distinctive",
+        "Birth place formatting anomaly ('Kensington, Palace, London, England') is cosmetic, not substantive"
+      ],
+      "evidence_cited": [
+        "gedcom:@I3011@",
+        "gedcom:@I3146@",
+        "myheritage DNA 3508 cM",
+        "Tier 1 checks",
+        "geographic_plausibility"
+      ],
+      "confidence_in_critique": 0.92,
+      "justification": "This is the well-documented historical relationship of Queen Victoria (b. 1819 Kensington Palace) and her mother Princess Victoria of Saxe-Coburg-Saalfeld (b. 1786 Coburg). All Tier 1 checks pass, GEDCOM cross-references are bidirectional via @F1464@, biological ages are plausible, and DNA shared cM (3508) falls squarely within the parent/child range. The hypothesis is strongly supported.",
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "mother"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "mother"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "mother alive at birth holds",
+          "role": "mother"
+        }
+      ],
+      "geo_result": {
+        "check": "geographic_plausibility",
+        "verdict": "ok",
+        "reason": "794km apart (within intra-regional range)",
+        "distance_km": 794
+      },
+      "dna_relevant": {
+        "dna_subject_gedcom_id": "@I3011@",
+        "test_subject_matches_hypothesis_subject": true,
+        "cross_references_for_related": [
+          {
+            "dna_name": "Victoria Mary Louisa",
+            "gedcom_name": "Victoria Mary Louisa",
+            "gedcom_id": "@I3146@",
+            "name_match_score": 1.0,
+            "shared_cM": 3508.0,
+            "dna_predicted_relationship": "Parent/Child",
+            "platform_prediction": "Parent",
+            "platform_consistent": true,
+            "all_possible_relationships": [
+              "Parent/Child"
+            ]
+          }
+        ],
+        "cm_consistency_verdict": "supports",
+        "cm_consistency_detail": {
+          "consistent": true,
+          "in_range": true,
+          "expected_range": [
+            3330,
+            3720
+          ],
+          "typical_cM": 3400,
+          "deviation": "within expected range [3330-3720] (typical 3400)",
+          "claimed": "Parent/Child"
+        },
+        "platform": "myheritage",
+        "total_matches": 30
+      },
+      "isolation_mode": "filtered"
+    }
+  ],
+  "dna_analysis": {
+    "platform": "myheritage",
+    "subject_name": "uploaded dna",
+    "subject_gedcom_id": "@I3011@",
+    "subject_match_score": 1.0,
+    "total_matches": 30,
+    "relationship_distribution": {
+      "Parent/Child": 10,
+      "Sibling": 0,
+      "Grandparent/Uncle": 3,
+      "1st Cousin": 2,
+      "1C1R/Half-1C": 2,
+      "2nd Cousin": 6,
+      "Distant (<40 cM)": 7
+    },
+    "cross_references": [
+      {
+        "dna_name": "Edward Augustus Hanover",
+        "gedcom_name": "Edward Augustus Hanover",
+        "gedcom_id": "@I3141@",
+        "name_match_score": 1.0,
+        "shared_cM": 3492.0,
+        "dna_predicted_relationship": "Parent/Child",
+        "platform_prediction": "Parent",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Parent/Child"
+        ]
+      },
+      {
+        "dna_name": "Victoria Mary Louisa",
+        "gedcom_name": "Victoria Mary Louisa",
+        "gedcom_id": "@I3146@",
+        "name_match_score": 1.0,
+        "shared_cM": 3508.0,
+        "dna_predicted_relationship": "Parent/Child",
+        "platform_prediction": "Parent",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Parent/Child"
+        ]
+      },
+      {
+        "dna_name": "Edward VII Wettin",
+        "gedcom_name": "Edward VII Wettin",
+        "gedcom_id": "@I3014@",
+        "name_match_score": 1.0,
+        "shared_cM": 3471.0,
+        "dna_predicted_relationship": "Parent/Child",
+        "platform_prediction": "Child",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Parent/Child"
+        ]
+      },
+      {
+        "dna_name": "George IV Hanover",
+        "gedcom_name": "George V Windsor",
+        "gedcom_id": "@I3024@",
+        "name_match_score": 0.844,
+        "shared_cM": 1722.0,
+        "dna_predicted_relationship": "Grandparent/Grandchild",
+        "platform_prediction": "Aunt/Uncle",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Grandparent/Grandchild",
+          "Half Sibling",
+          "Aunt/Uncle"
+        ]
+      },
+      {
+        "dna_name": "William IV Hanover",
+        "gedcom_name": "William IV of Orange",
+        "gedcom_id": "@I3615@",
+        "name_match_score": 0.836,
+        "shared_cM": 1740.0,
+        "dna_predicted_relationship": "Grandparent/Grandchild",
+        "platform_prediction": "Aunt/Uncle",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Grandparent/Grandchild",
+          "Half Sibling",
+          "Aunt/Uncle"
+        ]
+      },
+      {
+        "dna_name": "Hildegard Frauenlob",
+        "gedcom_name": "Hildegarde",
+        "gedcom_id": "@I7453@",
+        "name_match_score": 0.81,
+        "shared_cM": 861.0,
+        "dna_predicted_relationship": "Great-Grandparent",
+        "platform_prediction": "1st Cousin",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Great-Grandparent",
+          "1st Cousin",
+          "Half Aunt/Uncle"
+        ]
+      },
+      {
+        "dna_name": "Eleanor Ashbrook",
+        "gedcom_name": "Eleanor PASTON",
+        "gedcom_id": "@I7122@",
+        "name_match_score": 0.835,
+        "shared_cM": 124.0,
+        "dna_predicted_relationship": "2nd Cousin 1x Removed",
+        "platform_prediction": "2C1R",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "2nd Cousin 1x Removed",
+          "Half 2nd Cousin",
+          "2nd Cousin",
+          "3rd Cousin"
+        ]
+      }
+    ],
+    "prediction_checks": {
+      "total_with_prediction": 30,
+      "consistent": 24,
+      "inconsistent_count": 0,
+      "inconsistent_examples": []
+    },
+    "aggregate_consistency": "consistent — no contradictions found",
+    "findings": [
+      "DNA data from myheritage: 30 total matches analyzed.",
+      "13 close relative(s) detected in Parent/Child, Sibling, or Grandparent/Uncle range.",
+      "4 match(es) in 1st cousin or closer cousin range.",
+      "7 distant matches (<40 cM) — expected for large match lists.",
+      "7 DNA match name(s) matched to GEDCOM tree persons (fuzzy score >= 0.75).",
+      "  - 'Edward Augustus Hanover' matched 'Edward Augustus Hanover' (@I3141@) at 3492.0 cM (predicted: Parent/Child)",
+      "  - 'Victoria Mary Louisa' matched 'Victoria Mary Louisa' (@I3146@) at 3508.0 cM (predicted: Parent/Child)",
+      "  - 'Edward VII Wettin' matched 'Edward VII Wettin' (@I3014@) at 3471.0 cM (predicted: Parent/Child)",
+      "Platform relationship predictions: 24/30 (80%) consistent with Shared cM Project ranges."
+    ]
+  },
+  "trace_log": [
+    "record_scout: enter",
+    "record_scout: parsed 4683 persons from GEDCOM",
+    "record_scout: LLM criteria = {'primary_name': 'Victoria Hanover', 'surname': 'Hanover', 'given_names': 'Victoria', 'alt_names': ['Alexandrina Victoria', 'Queen Victoria', 'Victoria of Saxe-Coburg-Saalfeld'], 'approx_birth_year': 1819, 'approx_location': 'London, England'}",
+    "record_scout: query_mode — 16 candidates above threshold 0.7, keeping top 5",
+    "record_scout: top match = Victoria Hanover (score 1.0)",
+    "record_scout: built 21 GEDCOM record objects (including family context)",
+    "record_scout: FindAGrave returned 0 results",
+    "record_scout: Wikidata returned 1 results",
+    "record_scout: WikiTree returned 1 results",
+    "record_scout: total records after external corroboration: 23 (2 external)",
+    "record_scout: exit",
+    "dna_analyst: enter",
+    "dna_analyst: parsed 30 matches from myheritage",
+    "dna_analyst: DNA test subject identified as @I3011@ (name match 1.00)",
+    "dna_analyst: distribution — Parent/Child: 10, Grandparent/Uncle: 3, 1st Cousin: 2, 1C1R/Half-1C: 2, 2nd Cousin: 6, Distant (<40 cM): 7",
+    "dna_analyst: 7 cross-references found",
+    "dna_analyst: aggregate consistency = consistent — no contradictions found",
+    "dna_analyst: exit",
+    "profile_synthesizer: enter",
+    "profile_synthesizer: disambiguated 4 candidates -> selected Victoria Hanover (score 2.5)",
+    "profile_synthesizer: excluded Alexandre the TROJAN (gedcom:@I5459@, score 0.316)",
+    "profile_synthesizer: excluded Alexander Stewart (gedcom:@I1460@, score -0.222)",
+    "profile_synthesizer: excluded Alexander COMYN (gedcom:@I10098@, score -0.235)",
+    "profile_synthesizer: LLM synthesis produced 8 facts, 7 gaps",
+    "profile_synthesizer: built profile with 8 cited facts, 7 gaps",
+    "profile_synthesizer: exit",
+    "relationship_hypothesizer: enter",
+    "relationship_hypothesizer: 2 targets for Victoria Hanover: ['father', 'mother']",
+    "relationship_hypothesizer: built hypothesis hyp:@I3011@:@I3141@:father (confidence 0.82, 7 evidence items)",
+    "relationship_hypothesizer: built hypothesis hyp:@I3011@:@I3146@:mother (confidence 0.85, 6 evidence items)",
+    "relationship_hypothesizer: appended 1 external corroboration item(s) to evidence chains",
+    "relationship_hypothesizer: DNA SUPPORTS hyp:@I3011@:@I3141@:father (3492.0 cM consistent with father of)",
+    "relationship_hypothesizer: DNA SUPPORTS hyp:@I3011@:@I3146@:mother (3508.0 cM consistent with mother of)",
+    "relationship_hypothesizer: appended 2 DNA corroboration item(s) to evidence chains",
+    "relationship_hypothesizer: generated 2 hypotheses",
+    "relationship_hypothesizer: exit",
+    "adversarial_critic: enter",
+    "adversarial_critic: isolation_mode=filtered, filtered 2 hypotheses, stripped 4 internal field types",
+    "adversarial_critic: hyp:@I3011@:@I3141@:father tier1 (5 checks, 0 impossible)",
+    "adversarial_critic: hyp:@I3011@:@I3141@:father geo -> ok: 20km apart (within intra-regional range)",
+    "adversarial_critic: hyp:@I3011@:@I3141@:father DNA relevant — 1 cross-ref(s) for related person, deterministic check: supports",
+    "adversarial_critic: hyp:@I3011@:@I3141@:father LLM verdict=accept conf=0.92",
+    "adversarial_critic: hyp:@I3011@:@I3146@:mother tier1 (5 checks, 0 impossible)",
+    "adversarial_critic: hyp:@I3011@:@I3146@:mother geo -> ok: 794km apart (within intra-regional range)",
+    "adversarial_critic: hyp:@I3011@:@I3146@:mother DNA relevant — 1 cross-ref(s) for related person, deterministic check: supports",
+    "adversarial_critic: hyp:@I3011@:@I3146@:mother LLM verdict=accept conf=0.92",
+    "adversarial_critic: no rejects; status=complete",
+    "adversarial_critic: produced 2 critiques",
+    "adversarial_critic: exit",
+    "final_report_writer: enter",
+    "final_report_writer: composed report (12733 chars, 172 lines)",
+    "final_report_writer: exit"
+  ],
+  "final_report": "# Genealogical Research Report\n\n**Query:** Who are the parents of Queen Victoria?\n**Target:** Victoria Hanover (approx. born 1819), London, England\n**Pipeline status:** complete  (revision count 0)\n**Report status: All findings accepted**\n\n## Subject Profiles\n\n### Victoria Hanover\n`profile:@I3011@` — source record `gedcom:@I3011@`\n\n**Disambiguation:** selected from 4 candidates\n- ✓ `gedcom:@I3011@` Victoria Hanover — score 2.5\n    - name similarity 1.0\n    - exact birth year match (1819)\n    - birth place tokens match: ['england', 'london']\n- ✗ `gedcom:@I5459@` Alexandre the TROJAN — score 0.316\n    - name similarity 0.316\n    - no birth year on candidate record; target is 1819\n    - no birth place on candidate record; target is 'london, england'\n- ✗ `gedcom:@I1460@` Alexander Stewart — score -0.222\n    - name similarity 0.278\n    - birth year mismatch (target 1819, candidate 1343, diff 476y)\n    - birth place mismatch (target 'london, england', candidate 'dundonald, ayrshire, scotland')\n- ✗ `gedcom:@I10098@` Alexander COMYN — score -0.235\n    - name similarity 0.265\n    - birth year mismatch (target 1819, candidate 1217, diff 602y)\n    - no birth place on candidate record; target is 'london, england'\n\n**Facts:**\n- name: Victoria Hanover  _(gedcom:@I3011@)_\n- first_name: Victoria  _(gedcom:@I3011@)_\n- surname: Hanover  _(gedcom:@I3011@)_\n- sex: F  _(gedcom:@I3011@)_\n- birth_date: 24 MAY 1819  _(gedcom:@I3011@)_\n- birth_place: Kensington, Palace, London, England  _(gedcom:@I3011@)_\n- death_date: 22 JAN 1901  _(gedcom:@I3011@)_\n- death_place: Osborne House, Isle of Wight, England  _(gedcom:@I3011@)_\n\n**Family references:** father=Edward Augustus Hanover; mother=Victoria Mary Louisa; spouse(s)=Albert Augustus Charles; children=Edward VII Wettin\n\n**Gaps and concerns (from Synthesizer):**\n- No occupation recorded for subject\n- No religion recorded for subject\n- No burial place or burial record recorded for subject\n- Birth place value 'Kensington, Palace, London, England' appears to contain a formatting anomaly (comma placement); may require verification against primary sources\n- No independent corroborating source beyond the single GEDCOM record for any biographical fact\n- No marriage date recorded for subject\n- No marriage place recorded for subject\n\n## Accepted Findings\n\n### father of — `hyp:@I3011@:@I3141@:father`\n**Subject:** `@I3011@`  **Related:** `@I3141@`  **Hypothesizer confidence:** 0.82\n\n**Evidence chain:**\n- (gedcom:@I3011@) Victoria Hanover's GEDCOM record explicitly lists her father_id as @I3141@, directly linking her to Edward Augustus Hanover as her father.\n- (gedcom:@I3141@) Edward Augustus Hanover's GEDCOM record explicitly lists @I3011@ (Victoria Hanover) among his children_ids, and his fams entry @F1464@ matches Victoria's famc entry @F1464@, confirming a shared family unit record.\n- (gedcom:@I3141@) Edward Augustus Hanover was born 2 NOV 1767, yielding an age of approximately 51-52 at Victoria's birth on 24 MAY 1819, which is biologically plausible for a father.\n- (gedcom:@I3011@) Both individuals share the surname 'Hanover', consistent with patrilineal surname transmission from Edward Augustus Hanover to Victoria Hanover.\n- (gedcom:@I3141@) Edward Augustus Hanover's birth place (Buckingham House, London, England) and Victoria Hanover's birth place (Kensington Palace, London, England) are approximately 20 km apart, indicating geographic co-location in London consistent with a father-child relationship.\n- (gedcom:@I3141@) Edward Augustus Hanover's spouse_ids include @I3146@, who is also listed as Victoria Hanover's mother_id (@I3146@), confirming both parents are identified within the same conjugal unit.\n- (gedcom:@I3141@) Edward Augustus Hanover died 23 JAN 1820 in Sidmouth, Devon, England — approximately eight months after Victoria's birth on 24 MAY 1819 — meaning he was alive at the time of her birth, which is necessary for biological paternity.\n- (wikitree:Hanover-230) Independent source (Wikitree, Alexandrina Victoria Hanover) confirms father of: 'Edward Augustus Hannover' matches GEDCOM name 'Edward Augustus Hanover' (similarity 0.98)\n- (myheritage:unknown) DNA evidence supports father of: shared 3492.0 cM with Edward Augustus Hanover (matched to Edward Augustus Hanover) is within expected range [3330, 3720] for Parent/Child\n\n**Stated weaknesses (Hypothesizer's own):**\n- All evidence derives from a single GEDCOM file; there is no independent corroborating primary source (e.g., baptismal register, birth certificate, contemporaneous royal record) cited within the supplied records.\n- The birth place value 'Kensington, Palace, London, England' contains a noted formatting anomaly and has not been verified against a primary source, leaving a minor uncertainty about the subject's birth record accuracy.\n- No DNA or biological corroboration is available; the father-child link rests entirely on recorded genealogical assertion.\n- Edward Augustus Hanover died only ~8 months after Victoria's birth, so no overlapping life events beyond birth can further corroborate the relationship.\n- The GEDCOM record may itself derive from a secondary or tertiary compiled source, introducing the possibility of transcription errors propagated into the family linkage.\n\n### Critique: ✓ ACCEPT\n**Critic self-confidence:** 0.92  **Isolation mode:** `filtered`\n\n**Justification:** This is the well-documented historical relationship between Queen Victoria and her father Prince Edward, Duke of Kent. All Tier 1 checks pass, GEDCOM bidirectional linkage is consistent (shared FAMS/FAMC @F1464@), DNA shared cM of 3492 falls squarely within parent/child range, and an independent Wikitree source corroborates. The dates, places, and names align with established historical record.\n\n**Tier 1 deterministic checks:**\n- [ok] death_before_birth: death is not before birth\n- [ok] implausible_lifespan: lifespan within 120 years\n- [ok] [father] parent_younger_than_child: parent is not younger than child\n- [ok] [father] parent_too_young_at_birth: parent age plausible (>= 12)\n- [ok] [father] parent_died_before_conception: father alive ~9mo before birth holds\n\n**Geographic check:** [ok] 20km apart (within intra-regional range)\n\n**Issues found by the Critic:**\n- All documentary evidence ultimately derives from a single GEDCOM file, though it is corroborated by Wikitree and DNA\n- Wikitree citation has minor surname spelling variant (Hannover vs Hanover) but similarity 0.98 is acceptable\n- Birth place formatting anomaly ('Kensington, Palace') is cosmetic and does not affect the relationship claim\n\n### mother of — `hyp:@I3011@:@I3146@:mother`\n**Subject:** `@I3011@`  **Related:** `@I3146@`  **Hypothesizer confidence:** 0.85\n\n**Evidence chain:**\n- (gedcom:@I3011@) Victoria Hanover (subject) lists @I3146@ as her mother_id, directly encoding the mother-child relationship in the GEDCOM record.\n- (gedcom:@I3146@) Victoria Mary Louisa (candidate) lists @I3011@ in her children_ids array, independently corroborating the mother-child link from the parent's record.\n- (gedcom:@I3146@) Victoria Mary Louisa was born 17 AUG 1786 in Coburg, placing her at age 32-33 at the time of the subject's birth on 24 MAY 1819, which is biologically plausible.\n- (gedcom:@I3011@) Victoria Hanover was born 24 MAY 1819 in Kensington, Palace, London, England; the candidate's death place of Frogmore House, Windsor, England, is consistent with the candidate having lived in England during and after the subject's birth.\n- (gedcom:@I3011@) Both subject and candidate share the family unit @F1464@: subject lists it in famc and candidate lists it in fams, confirming structural placement of Victoria Hanover as child of Victoria Mary Louisa within the same family group.\n- (gedcom:@I3146@) Family unit @F1464@ is also recorded in the candidate's fams list, confirming her role as a parent in that family unit.\n- (myheritage:unknown) DNA evidence supports mother of: shared 3508.0 cM with Victoria Mary Louisa (matched to Victoria Mary Louisa) is within expected range [3330, 3720] for Parent/Child\n\n**Stated weaknesses (Hypothesizer's own):**\n- All evidence derives from a single GEDCOM file; no independent primary sources (e.g., birth register, baptismal record, contemporary document) are cited to corroborate the mother-child link.\n- The birth place value 'Kensington, Palace, London, England' contains a formatting anomaly that may indicate data-entry error, leaving a small uncertainty about whether the birth record was transcribed accurately.\n- Victoria Mary Louisa has no recorded surname in this GEDCOM, which slightly reduces confidence in correct identity disambiguation — there could theoretically be a data-entry conflation with another individual of the same first names.\n- The birthplace distance of 794 km (Coburg vs. London) is not itself a problem historically, but it means geographic proximity cannot be used as an additional confirming signal.\n- No DNA or documentary corroboration beyond the GEDCOM structure is available in the supplied records.\n\n### Critique: ✓ ACCEPT\n**Critic self-confidence:** 0.92  **Isolation mode:** `filtered`\n\n**Justification:** This is the well-documented historical relationship of Queen Victoria (b. 1819 Kensington Palace) and her mother Princess Victoria of Saxe-Coburg-Saalfeld (b. 1786 Coburg). All Tier 1 checks pass, GEDCOM cross-references are bidirectional via @F1464@, biological ages are plausible, and DNA shared cM (3508) falls squarely within the parent/child range. The hypothesis is strongly supported.\n\n**Tier 1 deterministic checks:**\n- [ok] death_before_birth: death is not before birth\n- [ok] implausible_lifespan: lifespan within 120 years\n- [ok] [mother] parent_younger_than_child: parent is not younger than child\n- [ok] [mother] parent_too_young_at_birth: parent age plausible (>= 12)\n- [ok] [mother] parent_died_before_conception: mother alive at birth holds\n\n**Geographic check:** [ok] 794km apart (within intra-regional range)\n\n**Issues found by the Critic:**\n- All documentary evidence stems from a single GEDCOM file with no independent primary sources cited\n- Candidate Victoria Mary Louisa lacks a surname field, though the first-name combination plus Coburg birthplace is highly distinctive\n- Birth place formatting anomaly ('Kensington, Palace, London, England') is cosmetic, not substantive\n\n## DNA Evidence\n\n**Platform:** myheritage  **Total matches:** 30  **Consistency:** consistent — no contradictions found\n\n**Match distribution by relationship tier:**\n- Parent/Child: 10\n- Grandparent/Uncle: 3\n- 1st Cousin: 2\n- 1C1R/Half-1C: 2\n- 2nd Cousin: 6\n- Distant (<40 cM): 7\n\n**GEDCOM cross-references (7 name matches):**\n- DNA: **Edward Augustus Hanover** (3492.0 cM) matched GEDCOM: **Edward Augustus Hanover** (`@I3141@`)\n  - DNA-predicted: Parent/Child | Platform said: Parent | Consistent: True\n- DNA: **Victoria Mary Louisa** (3508.0 cM) matched GEDCOM: **Victoria Mary Louisa** (`@I3146@`)\n  - DNA-predicted: Parent/Child | Platform said: Parent | Consistent: True\n- DNA: **Edward VII Wettin** (3471.0 cM) matched GEDCOM: **Edward VII Wettin** (`@I3014@`)\n  - DNA-predicted: Parent/Child | Platform said: Child | Consistent: True\n- DNA: **George IV Hanover** (1722.0 cM) matched GEDCOM: **George V Windsor** (`@I3024@`)\n  - DNA-predicted: Grandparent/Grandchild | Platform said: Aunt/Uncle | Consistent: True\n- DNA: **William IV Hanover** (1740.0 cM) matched GEDCOM: **William IV of Orange** (`@I3615@`)\n  - DNA-predicted: Grandparent/Grandchild | Platform said: Aunt/Uncle | Consistent: True\n- DNA: **Hildegard Frauenlob** (861.0 cM) matched GEDCOM: **Hildegarde** (`@I7453@`)\n  - DNA-predicted: Great-Grandparent | Platform said: 1st Cousin | Consistent: True\n- DNA: **Eleanor Ashbrook** (124.0 cM) matched GEDCOM: **Eleanor PASTON** (`@I7122@`)\n  - DNA-predicted: 2nd Cousin 1x Removed | Platform said: 2C1R | Consistent: True\n\n**Platform prediction consistency:** 24/30 consistent with Shared cM Project ranges\n\n**Findings:**\n- DNA data from myheritage: 30 total matches analyzed.\n- 13 close relative(s) detected in Parent/Child, Sibling, or Grandparent/Uncle range.\n- 4 match(es) in 1st cousin or closer cousin range.\n- 7 distant matches (<40 cM) — expected for large match lists.\n- 7 DNA match name(s) matched to GEDCOM tree persons (fuzzy score >= 0.75).\n-   - 'Edward Augustus Hanover' matched 'Edward Augustus Hanover' (@I3141@) at 3492.0 cM (predicted: Parent/Child)\n-   - 'Victoria Mary Louisa' matched 'Victoria Mary Louisa' (@I3146@) at 3508.0 cM (predicted: Parent/Child)\n-   - 'Edward VII Wettin' matched 'Edward VII Wettin' (@I3014@) at 3471.0 cM (predicted: Parent/Child)\n- Platform relationship predictions: 24/30 (80%) consistent with Shared cM Project ranges.\n"
+}

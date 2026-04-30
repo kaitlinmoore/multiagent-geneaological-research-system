@@ -5,10 +5,17 @@
 %%   graph.py                         — LangGraph wiring (nodes, edges, router)
 %%   agents/hypothesis_schema.py      — filter_hypothesis_for_critic (isolation boundary)
 %%   agents/adversarial_critic.py     — Tier 1 fail-fast path inside the Critic
+%%   agents/dna_analyst.py            — DNA analysis (sequential after Scout)
+%%   agents/relationship_hypothesizer.py — DNA corroboration in evidence chain
 %%   agents/final_report_writer.py    — deterministic final report composition
 %%
-%% Embed in docs/phase2_architecture.md and docs/evaluation_plan.md.
-%% Detailed role definitions and state contracts belong in the prose.
+%% Note on DNA placement: was originally designed as a parallel branch off
+%% Scout but serialized after the Scout because LangGraph cannot enforce
+%% join semantics when one incoming edge to the report writer is conditional
+%% (the Critic's "finalize" path). Sequential adds milliseconds (CSV parsing
+%% + lookup table; no LLM calls) and avoids the report writer firing
+%% prematurely. The Hypothesizer reads `state["dna_analysis"]` directly to
+%% append DNA evidence items to hypothesis evidence chains.
 %%
 
 ```mermaid
@@ -18,30 +25,39 @@ config:
   look: neo
 ---
 flowchart TD
-    Start(["query + target + GEDCOM"])
-
-    Scout["Record Scout"]
-    Synth["Profile Synthesizer"]
-    Hypo["Relationship Hypothesizer"]
-    Boundary{{"Isolation Filter<br/>strips internal fields"}}
-    Critic["Adversarial Critic<br/>Tier 1 · geo · LLM"]
-    Router{"reject AND<br/>revisions < 2?"}
-    Writer["Final Report Writer"]
-    End(["final_report"])
-
+    Start(["query + target<br/>+ GEDCOM + DNA csv"])
     Start --> Scout
-    Scout -->|"records"| Synth
+
+    Scout["Record Scout<br/><small>GEDCOM fuzzy match · FindAGrave<br/>Wikidata · WikiTree</small>"]
+    Scout -->|"records"| DNA
+
+    DNA["DNA Analyst<br/><small>parse · cM lookup · cross-ref<br/>identify subject in GEDCOM</small>"]
+    DNA -->|"dna_analysis"| Synth
+
+    Synth["Profile Synthesizer<br/><small>disambiguation · cited facts</small>"]
     Synth -->|"profiles"| Hypo
-    Hypo ==>|"hypotheses<br/>public + internal"| Boundary
-    Boundary ==>|"public only"| Critic
+
+    Hypo["Relationship Hypothesizer<br/><small>+ DNA corroboration in<br/>evidence chain</small>"]
+    Hypo ==>|"hypotheses<br/>(public + internal)"| Boundary
+
+    Boundary{{"Isolation Filter<br/><small>filter_hypothesis_for_critic()<br/>strips internal fields</small>"}}
+    Boundary ==>|"public-only view"| Critic
+
+    Critic["Adversarial Critic<br/><small>Tier 1 fail-fast · geo plausibility<br/>LLM reasoning · DNA-aware</small>"]
     Critic --> Router
+
+    Router{"verdict = reject<br/>AND revisions &lt; 2?"}
     Router -->|"yes"| Hypo
     Router -->|"no"| Writer
-    Writer --> End
+
+    Writer["Final Report Writer<br/><small>deterministic · escalation logic</small>"]
+    Writer --> End(["final_report.md<br/>+ trace JSON"])
 
     style Start fill:#d4edda,stroke:#155724,stroke-width:2px
     style End fill:#d4edda,stroke:#155724,stroke-width:2px
     style Boundary fill:#fff3cd,stroke:#856404,stroke-width:3px
     style Critic fill:#f8d7da,stroke:#721c24,stroke-width:1px
     style Router fill:#d1ecf1,stroke:#0c5460
+    style DNA fill:#e8daef,stroke:#6c3483,stroke-width:2px
+    style Writer fill:#e2e3e5,stroke:#383d41,stroke-width:1px
 ```

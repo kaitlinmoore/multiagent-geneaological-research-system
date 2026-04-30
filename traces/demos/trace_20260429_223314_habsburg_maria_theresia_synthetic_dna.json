@@ -1,0 +1,2273 @@
+{
+  "trace_metadata": {
+    "timestamp": "20260429_223314",
+    "label": "habsburg_maria_theresia_synthetic_dna",
+    "saved_by": "tools.trace_writer.save_trace"
+  },
+  "query": "Who are the parents of Maria Theresia of Austria?",
+  "target_person": {
+    "name": "MARIA THERESIA von Österreich",
+    "approx_birth": "1717",
+    "location": "Vienna, Austria"
+  },
+  "status": "needs_revision",
+  "revision_count": 2,
+  "gedcom_source": {
+    "sha256": "8e1b2e53d406207ae6ba57192625043e47b3257d52f6751e6f5a59426190678a",
+    "length_chars": 9833137
+  },
+  "gedcom_persons_count": 34020,
+  "retrieved_records": [
+    {
+      "record_id": "gedcom:@I33@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "subject",
+      "match_score": 1.0,
+      "data": {
+        "id": "@I33@",
+        "name": "MARIA THERESIA von Österreich",
+        "first_name": "MARIA THERESIA von",
+        "surname": "Österreich",
+        "sex": "F",
+        "birth_date": "13 MAY 1717",
+        "birth_place": "Wien, Österreich",
+        "death_date": "29 NOV 1780",
+        "death_place": "Wien, Österreich",
+        "father_id": "@I209@",
+        "mother_id": "@I265@",
+        "spouse_ids": [
+          "@I32@"
+        ],
+        "children_ids": [
+          "@I269@",
+          "@I270@",
+          "@I271@",
+          "@I34@",
+          "@I35@",
+          "@I272@",
+          "@I273@",
+          "@I274@",
+          "@I31@",
+          "@I276@",
+          "@I277@",
+          "@I278@",
+          "@I281@",
+          "@I279@",
+          "@I36@",
+          "@I207@"
+        ],
+        "famc": [
+          "@F198@"
+        ],
+        "fams": [
+          "@F29@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I209@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "father",
+      "match_score": null,
+      "data": {
+        "id": "@I209@",
+        "name": "Karl VI des Heiligen Römischen Reiches",
+        "first_name": "Karl VI des",
+        "surname": "Heiligen Römischen Reiches",
+        "sex": "M",
+        "birth_date": "01 OCT 1685",
+        "birth_place": "Wien, Österreich",
+        "death_date": "20 OCT 1740",
+        "death_place": "Wien-Wieden, Wien, Österreich",
+        "father_id": "@I339@",
+        "mother_id": "@I340@",
+        "spouse_ids": [
+          "@I265@"
+        ],
+        "children_ids": [
+          "@I7396@",
+          "@I33@",
+          "@I353@",
+          "@I7397@"
+        ],
+        "famc": [
+          "@F264@"
+        ],
+        "fams": [
+          "@F198@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I265@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "mother",
+      "match_score": null,
+      "data": {
+        "id": "@I265@",
+        "name": "Elisabeth von Braunschweig-Wolfenbüttel",
+        "first_name": "Elisabeth von",
+        "surname": "Braunschweig-Wolfenbüttel",
+        "sex": "F",
+        "birth_date": "28 AUG 1691",
+        "birth_place": null,
+        "death_date": "21 DEC 1750",
+        "death_place": null,
+        "father_id": "@I2582@",
+        "mother_id": "@I2583@",
+        "spouse_ids": [
+          "@I209@"
+        ],
+        "children_ids": [
+          "@I7396@",
+          "@I33@",
+          "@I353@",
+          "@I7397@"
+        ],
+        "famc": [
+          "@F1636@"
+        ],
+        "fams": [
+          "@F198@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I32@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I32@",
+        "name": "FRANZ I Stephan des Heiligen Römischen Reiches",
+        "first_name": "FRANZ I Stephan des",
+        "surname": "Heiligen Römischen Reiches",
+        "sex": "M",
+        "birth_date": "08 DEC 1708",
+        "birth_place": "Nancy, Meurthe-et-Moselle, Lothringen, Frankreich",
+        "death_date": "18 AUG 1765",
+        "death_place": "Hofburg, Innsbruck, Tirol, Österreich",
+        "father_id": "@I37@",
+        "mother_id": "@I266@",
+        "spouse_ids": [
+          "@I33@"
+        ],
+        "children_ids": [
+          "@I269@",
+          "@I270@",
+          "@I271@",
+          "@I34@",
+          "@I35@",
+          "@I272@",
+          "@I273@",
+          "@I274@",
+          "@I31@",
+          "@I276@",
+          "@I277@",
+          "@I278@",
+          "@I281@",
+          "@I279@",
+          "@I36@",
+          "@I207@"
+        ],
+        "famc": [
+          "@F34@"
+        ],
+        "fams": [
+          "@F29@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I269@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I269@",
+        "name": "Maria Elisabeth Amalie Antonia von Österreich",
+        "first_name": "Maria Elisabeth Amalie Antonia von",
+        "surname": "Österreich",
+        "sex": "F",
+        "birth_date": "05 FEB 1737",
+        "birth_place": "Wien, Österreich",
+        "death_date": "07 JUN 1740",
+        "death_place": "Laxenburg, Modling, Niederösterreich, Österreich",
+        "father_id": "@I32@",
+        "mother_id": "@I33@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F29@"
+        ],
+        "fams": []
+      }
+    },
+    {
+      "record_id": "gedcom:@I270@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I270@",
+        "name": "Maria Anna Josefa Antonia Johanna von Österreich",
+        "first_name": "Maria Anna Josefa Antonia Johanna von",
+        "surname": "Österreich",
+        "sex": "F",
+        "birth_date": "06 OCT 1738",
+        "birth_place": "Wien, Österreich",
+        "death_date": "19 OCT 1789",
+        "death_place": "Klagenfurt, Kärnten, Österreich",
+        "father_id": "@I32@",
+        "mother_id": "@I33@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F29@"
+        ],
+        "fams": []
+      }
+    },
+    {
+      "record_id": "gedcom:@I271@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I271@",
+        "name": "Maria Karoline Ernestine Antonia von Österreich",
+        "first_name": "Maria Karoline Ernestine Antonia von",
+        "surname": "Österreich",
+        "sex": "F",
+        "birth_date": "12 JAN 1740",
+        "birth_place": "Wien, Österreich",
+        "death_date": "25 JAN 1741",
+        "death_place": "Wien, Österreich",
+        "father_id": "@I32@",
+        "mother_id": "@I33@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F29@"
+        ],
+        "fams": []
+      }
+    },
+    {
+      "record_id": "gedcom:@I34@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I34@",
+        "name": "JOSEF II Benedikt des Heiligen Römischen Reiches",
+        "first_name": "JOSEF II Benedikt des",
+        "surname": "Heiligen Römischen Reiches",
+        "sex": "M",
+        "birth_date": "13 MAR 1741",
+        "birth_place": "Schloß Schönbrunn, Wien, Österreich",
+        "death_date": "20 FEB 1790",
+        "death_place": "Wien, Österreich",
+        "father_id": "@I32@",
+        "mother_id": "@I33@",
+        "spouse_ids": [
+          "@I283@",
+          "@I355@"
+        ],
+        "children_ids": [
+          "@I284@",
+          "@I3913@"
+        ],
+        "famc": [
+          "@F29@"
+        ],
+        "fams": [
+          "@F30@",
+          "@F31@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I35@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I35@",
+        "name": "Maria Christine Johanna Josepha von Österreich",
+        "first_name": "Maria Christine Johanna Josepha von",
+        "surname": "Österreich",
+        "sex": "F",
+        "birth_date": "13 MAY 1742",
+        "birth_place": "Wien, Österreich",
+        "death_date": "24 JUN 1798",
+        "death_place": "Wien, Österreich",
+        "father_id": "@I32@",
+        "mother_id": "@I33@",
+        "spouse_ids": [
+          "@I268@"
+        ],
+        "children_ids": [
+          "@I4667@",
+          "@I167@"
+        ],
+        "famc": [
+          "@F29@"
+        ],
+        "fams": [
+          "@F32@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I272@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I272@",
+        "name": "Maria Elisabeth Josefa Johanna von Österreich",
+        "first_name": "Maria Elisabeth Josefa Johanna von",
+        "surname": "Österreich",
+        "sex": "F",
+        "birth_date": "13 AUG 1743",
+        "birth_place": "Wien, Österreich",
+        "death_date": "22 SEP 1808",
+        "death_place": "Linz an der Donau, Oberösterreich, Österreich",
+        "father_id": "@I32@",
+        "mother_id": "@I33@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F29@"
+        ],
+        "fams": []
+      }
+    },
+    {
+      "record_id": "gedcom:@I273@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I273@",
+        "name": "Karl Joseph Emanuel Johann von Österreich",
+        "first_name": "Karl Joseph Emanuel Johann von",
+        "surname": "Österreich",
+        "sex": "M",
+        "birth_date": "01 FEB 1745",
+        "birth_place": "Wien, Österreich",
+        "death_date": "18 JAN 1761",
+        "death_place": "Wien, Österreich",
+        "father_id": "@I32@",
+        "mother_id": "@I33@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F29@"
+        ],
+        "fams": []
+      }
+    },
+    {
+      "record_id": "gedcom:@I274@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I274@",
+        "name": "Maria Amalia Josepha Johanna von Österreich",
+        "first_name": "Maria Amalia Josepha Johanna von",
+        "surname": "Österreich",
+        "sex": "F",
+        "birth_date": "26 FEB 1746",
+        "birth_place": "Wien, Österreich",
+        "death_date": "18 JUN 1804",
+        "death_place": "Prag, Böhmen",
+        "father_id": "@I32@",
+        "mother_id": "@I33@",
+        "spouse_ids": [
+          "@I275@"
+        ],
+        "children_ids": [
+          "@I2636@",
+          "@I105@"
+        ],
+        "famc": [
+          "@F29@"
+        ],
+        "fams": [
+          "@F233@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I31@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I31@",
+        "name": "Peter LEOPOLD II des Heiligen Römischen Reiches",
+        "first_name": "Peter LEOPOLD II des",
+        "surname": "Heiligen Römischen Reiches",
+        "sex": "M",
+        "birth_date": "05 MAY 1747",
+        "birth_place": "Schloß Schönbrunn, Wien-Hietzing, Österreich",
+        "death_date": "01 MAR 1792",
+        "death_place": "Wien, Österreich",
+        "father_id": "@I32@",
+        "mother_id": "@I33@",
+        "spouse_ids": [
+          "@I267@",
+          "@I30671@"
+        ],
+        "children_ids": [
+          "@I286@",
+          "@I29@",
+          "@I288@",
+          "@I291@",
+          "@I167@",
+          "@I292@",
+          "@I293@",
+          "@I294@",
+          "@I295@",
+          "@I299@",
+          "@I301@",
+          "@I302@",
+          "@I190@",
+          "@I303@",
+          "@I305@",
+          "@I214@",
+          "@I30672@"
+        ],
+        "famc": [
+          "@F29@"
+        ],
+        "fams": [
+          "@F28@",
+          "@F13452@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I276@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I276@",
+        "name": "Maria Carolina von Österreich",
+        "first_name": "Maria Carolina von",
+        "surname": "Österreich",
+        "sex": "F",
+        "birth_date": "17 SEP 1748",
+        "birth_place": "Schloß Schönbrunn, Wien-Hietzing, Österreich",
+        "death_date": "17 SEP 1748",
+        "death_place": "Schloß Schönbrunn, Wien-Hietzing, Österreich",
+        "father_id": "@I32@",
+        "mother_id": "@I33@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F29@"
+        ],
+        "fams": []
+      }
+    },
+    {
+      "record_id": "gedcom:@I277@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I277@",
+        "name": "Maria Johanna Gabriele Josepha von Österreich",
+        "first_name": "Maria Johanna Gabriele Josepha von",
+        "surname": "Österreich",
+        "sex": "F",
+        "birth_date": "04 FEB 1750",
+        "birth_place": "Wien, Österreich",
+        "death_date": "23 DEC 1762",
+        "death_place": "Wien, Österreich",
+        "father_id": "@I32@",
+        "mother_id": "@I33@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F29@"
+        ],
+        "fams": []
+      }
+    },
+    {
+      "record_id": "gedcom:@I278@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I278@",
+        "name": "Maria Josepha Gabriele Johanna von Österreich",
+        "first_name": "Maria Josepha Gabriele Johanna von",
+        "surname": "Österreich",
+        "sex": "F",
+        "birth_date": "19 MAR 1752",
+        "birth_place": "Wien, Österreich",
+        "death_date": "15 OCT 1767",
+        "death_place": "Schloß Schönbrunn, Wien-Hietzing, Österreich",
+        "father_id": "@I32@",
+        "mother_id": "@I33@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F29@"
+        ],
+        "fams": []
+      }
+    },
+    {
+      "record_id": "gedcom:@I281@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I281@",
+        "name": "Marie Karoline Ludovika Josefa von Österreich",
+        "first_name": "Marie Karoline Ludovika Josefa von",
+        "surname": "Österreich",
+        "sex": "F",
+        "birth_date": "13 AUG 1752",
+        "birth_place": "Schloß Schönbrunn, Wien-Hietzing, Österreich",
+        "death_date": "08 SEP 1814",
+        "death_place": "Schloß Hetzendorf, Wien, Österreich",
+        "father_id": "@I32@",
+        "mother_id": "@I33@",
+        "spouse_ids": [
+          "@I282@"
+        ],
+        "children_ids": [
+          "@I356@",
+          "@I290@",
+          "@I300@",
+          "@I1910@",
+          "@I3226@",
+          "@I754@",
+          "@I4604@"
+        ],
+        "famc": [
+          "@F29@"
+        ],
+        "fams": [
+          "@F235@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I279@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I279@",
+        "name": "Ferdinand Karl Anton Josef Johann von Österreich-Modena",
+        "first_name": "Ferdinand Karl Anton Josef Johann von",
+        "surname": "Österreich-Modena",
+        "sex": "M",
+        "birth_date": "01 JUN 1754",
+        "birth_place": "Schloß Schönbrunn, Wien-Hietzing, Österreich",
+        "death_date": "24 DEC 1806",
+        "death_place": "Wien, Österreich",
+        "father_id": "@I32@",
+        "mother_id": "@I33@",
+        "spouse_ids": [
+          "@I30498@"
+        ],
+        "children_ids": [
+          "@I1912@",
+          "@I2121@",
+          "@I675@",
+          "@I680@",
+          "@I681@",
+          "@I360@",
+          "@I4006@",
+          "@I7451@",
+          "@I3160@",
+          "@I7454@"
+        ],
+        "famc": [
+          "@F29@"
+        ],
+        "fams": [
+          "@F234@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I36@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I36@",
+        "name": "Maria Antonia Josepha Johanna von Österreich",
+        "first_name": "Maria Antonia Josepha Johanna von",
+        "surname": "Österreich",
+        "sex": "F",
+        "birth_date": "02 NOV 1755",
+        "birth_place": "Wien, Österreich",
+        "death_date": "16 OCT 1793",
+        "death_place": "Paris, Île-de-France, Frankreich",
+        "father_id": "@I32@",
+        "mother_id": "@I33@",
+        "spouse_ids": [
+          "@I194@"
+        ],
+        "children_ids": [
+          "@I3151@",
+          "@I3153@",
+          "@I3154@"
+        ],
+        "famc": [
+          "@F29@"
+        ],
+        "fams": [
+          "@F33@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I207@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I207@",
+        "name": "Maximilian Franz Xaver Josef von Österreich",
+        "first_name": "Maximilian Franz Xaver Josef von",
+        "surname": "Österreich",
+        "sex": "M",
+        "birth_date": "08 DEC 1756",
+        "birth_place": "Wien, Österreich",
+        "death_date": "27 JUN 1801",
+        "death_place": "Schloß Hetzendorf, Wien, Österreich",
+        "father_id": "@I32@",
+        "mother_id": "@I33@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F29@"
+        ],
+        "fams": []
+      }
+    },
+    {
+      "record_id": "gedcom:@I347@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "subject",
+      "match_score": 1.0,
+      "data": {
+        "id": "@I347@",
+        "name": "Maria Theresia von Österreich",
+        "first_name": "Maria Theresia von",
+        "surname": "Österreich",
+        "sex": "F",
+        "birth_date": "22 AUG 1684",
+        "birth_place": "Wien, Österreich",
+        "death_date": "28 SEP 1696",
+        "death_place": "Schloß Ebersdorf, Wien-Simmering, Österreich",
+        "father_id": "@I339@",
+        "mother_id": "@I340@",
+        "spouse_ids": [],
+        "children_ids": [],
+        "famc": [
+          "@F264@"
+        ],
+        "fams": []
+      }
+    },
+    {
+      "record_id": "gedcom:@I339@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "father",
+      "match_score": null,
+      "data": {
+        "id": "@I339@",
+        "name": "Leopold I des Heiligen Römischen Reiches",
+        "first_name": "Leopold I des",
+        "surname": "Heiligen Römischen Reiches",
+        "sex": "M",
+        "birth_date": "09 JUN 1640",
+        "birth_place": "Wien, Österreich",
+        "death_date": "05 MAY 1705",
+        "death_place": "Wien, Österreich",
+        "father_id": "@I392@",
+        "mother_id": "@I543@",
+        "spouse_ids": [
+          "@I340@",
+          "@I350@",
+          "@I536@"
+        ],
+        "children_ids": [
+          "@I341@",
+          "@I7401@",
+          "@I7402@",
+          "@I7395@",
+          "@I7403@",
+          "@I347@",
+          "@I209@",
+          "@I7404@",
+          "@I7405@",
+          "@I7406@",
+          "@I351@",
+          "@I7393@",
+          "@I7398@",
+          "@I7392@",
+          "@I7399@",
+          "@I7400@"
+        ],
+        "famc": [
+          "@F299@"
+        ],
+        "fams": [
+          "@F264@",
+          "@F262@",
+          "@F263@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I340@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "mother",
+      "match_score": null,
+      "data": {
+        "id": "@I340@",
+        "name": "Eleonore Magdalene Therese von Pfalz-Neuburg",
+        "first_name": "Eleonore Magdalene Therese von",
+        "surname": "Pfalz-Neuburg",
+        "sex": "F",
+        "birth_date": "06 JAN 1655",
+        "birth_place": "Düsseldorf, Nordrhein-Westfalen, Deutschland",
+        "death_date": "19 JAN 1720",
+        "death_place": "Wien, Österreich",
+        "father_id": "@I2093@",
+        "mother_id": "@I2094@",
+        "spouse_ids": [
+          "@I339@"
+        ],
+        "children_ids": [
+          "@I341@",
+          "@I7401@",
+          "@I7402@",
+          "@I7395@",
+          "@I7403@",
+          "@I347@",
+          "@I209@",
+          "@I7404@",
+          "@I7405@",
+          "@I7406@"
+        ],
+        "famc": [
+          "@F1360@"
+        ],
+        "fams": [
+          "@F264@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I374@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "subject",
+      "match_score": 0.934,
+      "data": {
+        "id": "@I374@",
+        "name": "Maria Theresia Anna von Österreich",
+        "first_name": "Maria Theresia Anna von",
+        "surname": "Österreich",
+        "sex": "F",
+        "birth_date": "15 JUL 1845",
+        "birth_place": "Wien, Österreich",
+        "death_date": "08 OCT 1927",
+        "death_place": "Tübingen, Baden-Württemberg, Deutschland",
+        "father_id": "@I371@",
+        "mother_id": "@I373@",
+        "spouse_ids": [
+          "@I375@"
+        ],
+        "children_ids": [
+          "@I336@",
+          "@I29013@"
+        ],
+        "famc": [
+          "@F287@"
+        ],
+        "fams": [
+          "@F289@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I371@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "father",
+      "match_score": null,
+      "data": {
+        "id": "@I371@",
+        "name": "ALBRECHT Friedrich Rudolf von Österreich",
+        "first_name": "ALBRECHT Friedrich Rudolf von",
+        "surname": "Österreich",
+        "sex": "M",
+        "birth_date": "03 AUG 1817",
+        "birth_place": "Wien, Österreich",
+        "death_date": "18 FEB 1895",
+        "death_place": "Arco, Südtirol",
+        "father_id": "@I167@",
+        "mother_id": "@I168@",
+        "spouse_ids": [
+          "@I373@"
+        ],
+        "children_ids": [
+          "@I374@",
+          "@I7662@",
+          "@I6233@"
+        ],
+        "famc": [
+          "@F166@"
+        ],
+        "fams": [
+          "@F287@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I373@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "mother",
+      "match_score": null,
+      "data": {
+        "id": "@I373@",
+        "name": "Hildegard Luise Charlotte Theresia von Bayern",
+        "first_name": "Hildegard Luise Charlotte Theresia von",
+        "surname": "Bayern",
+        "sex": "F",
+        "birth_date": "10 JUN 1825",
+        "birth_place": "Würzburg, Bayern, Deutschland",
+        "death_date": "02 APR 1864",
+        "death_place": "Wien, Österreich",
+        "father_id": "@I257@",
+        "mother_id": "@I258@",
+        "spouse_ids": [
+          "@I371@"
+        ],
+        "children_ids": [
+          "@I374@",
+          "@I7662@",
+          "@I6233@"
+        ],
+        "famc": [
+          "@F230@"
+        ],
+        "fams": [
+          "@F287@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I375@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I375@",
+        "name": "Philipp Alexander von Württemberg",
+        "first_name": "Philipp Alexander von",
+        "surname": "Württemberg",
+        "sex": "M",
+        "birth_date": "30 JUL 1838",
+        "birth_place": null,
+        "death_date": "11 OCT 1917",
+        "death_place": null,
+        "father_id": "@I972@",
+        "mother_id": "@I973@",
+        "spouse_ids": [
+          "@I374@"
+        ],
+        "children_ids": [
+          "@I336@",
+          "@I29013@"
+        ],
+        "famc": [
+          "@F673@"
+        ],
+        "fams": [
+          "@F289@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I336@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I336@",
+        "name": "Albrecht von Württemberg",
+        "first_name": "Albrecht von",
+        "surname": "Württemberg",
+        "sex": "M",
+        "birth_date": "23 DEC 1865",
+        "birth_place": null,
+        "death_date": "29 OCT 1939",
+        "death_place": null,
+        "father_id": "@I375@",
+        "mother_id": "@I374@",
+        "spouse_ids": [
+          "@I325@"
+        ],
+        "children_ids": [
+          "@I976@",
+          "@I974@"
+        ],
+        "famc": [
+          "@F289@"
+        ],
+        "fams": [
+          "@F257@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I29013@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I29013@",
+        "name": "Isabella von Württemberg",
+        "first_name": "Isabella von",
+        "surname": "Württemberg",
+        "sex": "F",
+        "birth_date": "30 AUG 1871",
+        "birth_place": null,
+        "death_date": "24 MAY 1904",
+        "death_place": "Dresden, Sachsen, Deutschland",
+        "father_id": "@I375@",
+        "mother_id": "@I374@",
+        "spouse_ids": [
+          "@I29012@"
+        ],
+        "children_ids": [],
+        "famc": [
+          "@F289@"
+        ],
+        "fams": [
+          "@F12596@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I30496@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "subject",
+      "match_score": 0.895,
+      "data": {
+        "id": "@I30496@",
+        "name": "Maria Theresia Cybo",
+        "first_name": "Maria Theresia",
+        "surname": "Cybo",
+        "sex": "F",
+        "birth_date": "29 JUL 1725",
+        "birth_place": "Novellara",
+        "death_date": "29 DEC 1790",
+        "death_place": "Reggio",
+        "father_id": "@I30495@",
+        "mother_id": "@I30494@",
+        "spouse_ids": [
+          "@I30497@"
+        ],
+        "children_ids": [
+          "@I30498@"
+        ],
+        "famc": [
+          "@F13363@"
+        ],
+        "fams": [
+          "@F13364@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I30495@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "father",
+      "match_score": null,
+      "data": {
+        "id": "@I30495@",
+        "name": "Alexander Cybo",
+        "first_name": "Alexander",
+        "surname": "Cybo",
+        "sex": "M",
+        "birth_date": "21 JUL 1690",
+        "birth_place": null,
+        "death_date": "18 AUG 1731",
+        "death_place": null,
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I30494@"
+        ],
+        "children_ids": [
+          "@I30496@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F13363@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I30494@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "mother",
+      "match_score": null,
+      "data": {
+        "id": "@I30494@",
+        "name": "Richarda von Gonzaga",
+        "first_name": "Richarda von",
+        "surname": "Gonzaga",
+        "sex": "F",
+        "birth_date": "22 AUG 1689",
+        "birth_place": null,
+        "death_date": "24 NOV 1768",
+        "death_place": null,
+        "father_id": "@I30493@",
+        "mother_id": "@I30492@",
+        "spouse_ids": [
+          "@I30495@"
+        ],
+        "children_ids": [
+          "@I30496@"
+        ],
+        "famc": [
+          "@F13362@"
+        ],
+        "fams": [
+          "@F13363@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I30497@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I30497@",
+        "name": "Herkules I Este von Modena",
+        "first_name": "Herkules I Este von",
+        "surname": "Modena",
+        "sex": "M",
+        "birth_date": "22 NOV 1727",
+        "birth_place": "Modena, Emilia-Romagna, Italien",
+        "death_date": "14 OCT 1803",
+        "death_place": "Trier, Rheinland-Pfalz, Deutschland",
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I30496@"
+        ],
+        "children_ids": [
+          "@I30498@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F13364@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I30498@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I30498@",
+        "name": "Maria Beatrix von Este-Modena",
+        "first_name": "Maria Beatrix von",
+        "surname": "Este-Modena",
+        "sex": "F",
+        "birth_date": "06 APR 1750",
+        "birth_place": "Modena, Emilia-Romagna, Italien",
+        "death_date": "14 NOV 1829",
+        "death_place": "Wien, Österreich",
+        "father_id": "@I30497@",
+        "mother_id": "@I30496@",
+        "spouse_ids": [
+          "@I279@"
+        ],
+        "children_ids": [
+          "@I1912@",
+          "@I2121@",
+          "@I675@",
+          "@I680@",
+          "@I681@",
+          "@I360@",
+          "@I4006@",
+          "@I7451@",
+          "@I3160@",
+          "@I7454@"
+        ],
+        "famc": [
+          "@F13364@",
+          "@F2235@"
+        ],
+        "fams": [
+          "@F234@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I1691@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "subject",
+      "match_score": 0.892,
+      "data": {
+        "id": "@I1691@",
+        "name": "Maria Theresia von Herberstein",
+        "first_name": "Maria Theresia von",
+        "surname": "Herberstein",
+        "sex": "F",
+        "birth_date": null,
+        "birth_place": null,
+        "death_date": "1716",
+        "death_place": null,
+        "father_id": "@I1690@",
+        "mother_id": "@I1689@",
+        "spouse_ids": [
+          "@I1692@"
+        ],
+        "children_ids": [
+          "@I1693@"
+        ],
+        "famc": [
+          "@F1113@"
+        ],
+        "fams": [
+          "@F1114@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I1690@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "father",
+      "match_score": null,
+      "data": {
+        "id": "@I1690@",
+        "name": "Johann Maximilan von Herberstein",
+        "first_name": "Johann Maximilan von",
+        "surname": "Herberstein",
+        "sex": "M",
+        "birth_date": "1601",
+        "birth_place": null,
+        "death_date": "18 MAY 1680",
+        "death_place": null,
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I1689@"
+        ],
+        "children_ids": [
+          "@I1691@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F1113@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I1689@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "mother",
+      "match_score": null,
+      "data": {
+        "id": "@I1689@",
+        "name": "Eleonora Renata Katharina von Breuner",
+        "first_name": "Eleonora Renata Katharina von",
+        "surname": "Breuner",
+        "sex": "F",
+        "birth_date": null,
+        "birth_place": null,
+        "death_date": "1651",
+        "death_place": null,
+        "father_id": "@I1688@",
+        "mother_id": null,
+        "spouse_ids": [
+          "@I1690@"
+        ],
+        "children_ids": [
+          "@I1691@"
+        ],
+        "famc": [
+          "@F1112@"
+        ],
+        "fams": [
+          "@F1113@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I1692@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "spouse",
+      "match_score": null,
+      "data": {
+        "id": "@I1692@",
+        "name": "Otto Heinrich von Savona",
+        "first_name": "Otto Heinrich von",
+        "surname": "Savona",
+        "sex": "M",
+        "birth_date": null,
+        "birth_place": null,
+        "death_date": null,
+        "death_place": null,
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I1691@"
+        ],
+        "children_ids": [
+          "@I1693@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F1114@"
+        ]
+      }
+    },
+    {
+      "record_id": "gedcom:@I1693@",
+      "source": "gedcom",
+      "source_type": "gedcom",
+      "record_type": "individual",
+      "relation_to_target": "child",
+      "match_score": null,
+      "data": {
+        "id": "@I1693@",
+        "name": "Maria Henriette von Savona",
+        "first_name": "Maria Henriette von",
+        "surname": "Savona",
+        "sex": "F",
+        "birth_date": "20 SEP 1671",
+        "birth_place": null,
+        "death_date": "23 FEB 1744",
+        "death_place": "Drogenbusch",
+        "father_id": "@I1692@",
+        "mother_id": "@I1691@",
+        "spouse_ids": [
+          "@I1694@"
+        ],
+        "children_ids": [
+          "@I1695@"
+        ],
+        "famc": [
+          "@F1114@"
+        ],
+        "fams": [
+          "@F1115@"
+        ]
+      }
+    },
+    {
+      "record_id": "wikidata:Q131706",
+      "source": "wikidata",
+      "source_type": "wikidata",
+      "record_type": "person",
+      "data": {
+        "name": "Maria Theresa of Austria",
+        "birth_date": "13 MAY 1717",
+        "death_date": "29 NOV 1780",
+        "birth_place": "Hofburg Palace",
+        "father": "Charles VI, Holy Roman Emperor",
+        "mother": "Elisabeth Christine of Brunswick-Wolfenbüttel",
+        "spouse": "Francis I, Holy Roman Emperor",
+        "wikidata_id": "Q131706",
+        "wikidata_url": "https://www.wikidata.org/wiki/Q131706"
+      },
+      "relation_to_target": "external_corroboration"
+    }
+  ],
+  "profiles": [
+    {
+      "profile_id": "profile:@I33@",
+      "subject_record_id": "gedcom:@I33@",
+      "subject_name": "MARIA THERESIA von Österreich",
+      "disambiguation": {
+        "query": "Who are the parents of Maria Theresia of Austria?",
+        "query_criteria": {
+          "name": "MARIA THERESIA von Österreich",
+          "approx_birth": "1717",
+          "location": "Vienna, Austria"
+        },
+        "candidates_considered": [
+          {
+            "record_id": "gedcom:@I33@",
+            "name": "MARIA THERESIA von Österreich",
+            "score": 2.0,
+            "reasons": [
+              "name similarity 1.0",
+              "exact birth year match (1717)",
+              "birth place mismatch (target 'vienna, austria', candidate 'wien, österreich')"
+            ],
+            "status": "SELECTED"
+          },
+          {
+            "record_id": "gedcom:@I1691@",
+            "name": "Maria Theresia von Herberstein",
+            "score": 0.892,
+            "reasons": [
+              "name similarity 0.892",
+              "no birth year on candidate record; target is 1717",
+              "no birth place on candidate record; target is 'vienna, austria'"
+            ],
+            "status": "excluded"
+          },
+          {
+            "record_id": "gedcom:@I347@",
+            "name": "Maria Theresia von Österreich",
+            "score": 0.5,
+            "reasons": [
+              "name similarity 1.0",
+              "birth year mismatch (target 1717, candidate 1684, diff 33y)",
+              "birth place mismatch (target 'vienna, austria', candidate 'wien, österreich')"
+            ],
+            "status": "excluded"
+          },
+          {
+            "record_id": "gedcom:@I374@",
+            "name": "Maria Theresia Anna von Österreich",
+            "score": 0.434,
+            "reasons": [
+              "name similarity 0.934",
+              "birth year mismatch (target 1717, candidate 1845, diff 128y)",
+              "birth place mismatch (target 'vienna, austria', candidate 'wien, österreich')"
+            ],
+            "status": "excluded"
+          },
+          {
+            "record_id": "gedcom:@I30496@",
+            "name": "Maria Theresia Cybo",
+            "score": 0.297,
+            "reasons": [
+              "name similarity 0.797",
+              "birth year mismatch (target 1717, candidate 1725, diff 8y)",
+              "birth place mismatch (target 'vienna, austria', candidate 'novellara')"
+            ],
+            "status": "excluded"
+          }
+        ]
+      },
+      "facts": [
+        {
+          "field": "name",
+          "value": "MARIA THERESIA von Österreich",
+          "sources": [
+            "gedcom:@I33@"
+          ]
+        },
+        {
+          "field": "first_name",
+          "value": "MARIA THERESIA von",
+          "sources": [
+            "gedcom:@I33@"
+          ]
+        },
+        {
+          "field": "surname",
+          "value": "Österreich",
+          "sources": [
+            "gedcom:@I33@"
+          ]
+        },
+        {
+          "field": "sex",
+          "value": "F",
+          "sources": [
+            "gedcom:@I33@"
+          ]
+        },
+        {
+          "field": "birth_date",
+          "value": "13 MAY 1717",
+          "sources": [
+            "gedcom:@I33@"
+          ]
+        },
+        {
+          "field": "birth_place",
+          "value": "Wien, Österreich",
+          "sources": [
+            "gedcom:@I33@"
+          ]
+        },
+        {
+          "field": "death_date",
+          "value": "29 NOV 1780",
+          "sources": [
+            "gedcom:@I33@"
+          ]
+        },
+        {
+          "field": "death_place",
+          "value": "Wien, Österreich",
+          "sources": [
+            "gedcom:@I33@"
+          ]
+        }
+      ],
+      "family": {
+        "father": {
+          "name": "Karl VI des Heiligen Römischen Reiches",
+          "record_id": "gedcom:@I209@"
+        },
+        "mother": {
+          "name": "Elisabeth von Braunschweig-Wolfenbüttel",
+          "record_id": "gedcom:@I265@"
+        },
+        "spouses": [
+          {
+            "name": "FRANZ I Stephan des Heiligen Römischen Reiches",
+            "record_id": "gedcom:@I32@"
+          }
+        ],
+        "children": [
+          {
+            "name": "Maria Elisabeth Amalie Antonia von Österreich",
+            "record_id": "gedcom:@I269@"
+          },
+          {
+            "name": "Maria Anna Josefa Antonia Johanna von Österreich",
+            "record_id": "gedcom:@I270@"
+          },
+          {
+            "name": "Maria Karoline Ernestine Antonia von Österreich",
+            "record_id": "gedcom:@I271@"
+          },
+          {
+            "name": "JOSEF II Benedikt des Heiligen Römischen Reiches",
+            "record_id": "gedcom:@I34@"
+          },
+          {
+            "name": "Maria Christine Johanna Josepha von Österreich",
+            "record_id": "gedcom:@I35@"
+          },
+          {
+            "name": "Maria Elisabeth Josefa Johanna von Österreich",
+            "record_id": "gedcom:@I272@"
+          },
+          {
+            "name": "Karl Joseph Emanuel Johann von Österreich",
+            "record_id": "gedcom:@I273@"
+          },
+          {
+            "name": "Maria Amalia Josepha Johanna von Österreich",
+            "record_id": "gedcom:@I274@"
+          },
+          {
+            "name": "Peter LEOPOLD II des Heiligen Römischen Reiches",
+            "record_id": "gedcom:@I31@"
+          },
+          {
+            "name": "Maria Carolina von Österreich",
+            "record_id": "gedcom:@I276@"
+          },
+          {
+            "name": "Maria Johanna Gabriele Josepha von Österreich",
+            "record_id": "gedcom:@I277@"
+          },
+          {
+            "name": "Maria Josepha Gabriele Johanna von Österreich",
+            "record_id": "gedcom:@I278@"
+          },
+          {
+            "name": "Marie Karoline Ludovika Josefa von Österreich",
+            "record_id": "gedcom:@I281@"
+          },
+          {
+            "name": "Ferdinand Karl Anton Josef Johann von Österreich-Modena",
+            "record_id": "gedcom:@I279@"
+          },
+          {
+            "name": "Maria Antonia Josepha Johanna von Österreich",
+            "record_id": "gedcom:@I36@"
+          },
+          {
+            "name": "Maximilian Franz Xaver Josef von Österreich",
+            "record_id": "gedcom:@I207@"
+          }
+        ]
+      },
+      "gaps": [
+        "No occupation recorded for subject",
+        "No religion recorded for subject",
+        "No burial place or burial date recorded for subject",
+        "Birth date, death date, and birth place are sourced from a single record only (gedcom:@I33@); no corroborating external sources provided",
+        "Death place is identical to birth place (Wien, Österreich) with no additional specificity, unlike the father's death place record which includes a district; possible lack of detail",
+        "No marriage date or marriage place recorded for subject's union with spouse (gedcom:@I32@)",
+        "No middle names or full regnal/formal name variants recorded beyond the single name field"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "hypothesis_id": "hyp:@I33@:@I209@:father",
+      "subject_id": "@I33@",
+      "related_id": "@I209@",
+      "proposed_relationship": "father of",
+      "evidence_chain": [
+        {
+          "claim": "MARIA THERESIA von Österreich (born 13 MAY 1717, Wien, Österreich) has father_id explicitly recorded as @I209@, directly linking her to Karl VI des Heiligen Römischen Reiches.",
+          "source": "gedcom:@I33@"
+        },
+        {
+          "claim": "Karl VI des Heiligen Römischen Reiches (born 01 OCT 1685, Wien, Österreich) has @I33@ listed among his children_ids, confirming a bidirectional parent-child link.",
+          "source": "gedcom:@I209@"
+        },
+        {
+          "claim": "Both subject and candidate share the same birth place (Wien, Österreich), consistent with dynastic residence in the Habsburg imperial court.",
+          "source": "gedcom:@I33@"
+        },
+        {
+          "claim": "Karl VI is recorded as member of family @F198@ (fams), and Maria Theresia is recorded as a child in the same family @F198@ (famc), placing them in the same family unit.",
+          "source": "gedcom:@I209@"
+        },
+        {
+          "claim": "Karl VI's spouse @I265@ is recorded as the mother_id of Maria Theresia, corroborating the nuclear family structure.",
+          "source": "gedcom:@I33@"
+        },
+        {
+          "claim": "The age gap between Karl VI (born 1685) and Maria Theresia (born 1717) is 32 years, which is biologically and historically plausible for a father-daughter relationship.",
+          "source": "gedcom:@I209@"
+        },
+        {
+          "claim": "DNA evidence supports father of: shared 3489.0 cM with Karl VI des Heiligen Roemischen Reiches (matched to Karl VI des Heiligen Römischen Reiches) is within expected range [3330, 3720] for Parent/Child",
+          "source": "myheritage:unknown"
+        }
+      ],
+      "confidence_score": 0.93,
+      "stated_weaknesses": [
+        "All genealogical data derives from a single GEDCOM file; no independent external documentary sources (e.g., baptismal registers, Habsburg court records, academic historical genealogies) are cited in the supplied records.",
+        "Birth date, death date, and birth place for the subject are sourced from a single record (gedcom:@I33@) only, with no corroborating archival citation.",
+        "The subject's death place lacks district-level specificity compared to the candidate's death place record, suggesting possible inconsistency in data quality across records.",
+        "No DNA evidence is available to corroborate the biological father-daughter relationship.",
+        "The formal/regnal name variants for Maria Theresia are not fully recorded, introducing a minor risk of conflation with another individual of the same name, though this is low given the historical prominence of the persons involved."
+      ],
+      "reasoning_narrative": "The GEDCOM records establish a direct, bidirectional structural link: Maria Theresia's record explicitly names @I209@ as her father_id (gedcom:@I33@), and Karl VI's record lists @I33@ among his children_ids (gedcom:@I209@). Both are further cross-linked through the shared family unit @F198@, where Karl VI appears as a spouse (fams) and Maria Theresia appears as a child (famc). The shared spouse @I265@ is recorded as both Karl VI's wife and Maria Theresia's mother, reinforcing the nuclear family structure from two independent record fields. The age gap of 32 years between Karl VI (b. 1685) and Maria Theresia (b. 1717) is well within biological plausibility for a father-daughter relationship. Both individuals share Wien, Österreich as their birth place, consistent with the documented Habsburg imperial court residence. While all evidence originates from a single GEDCOM source without independent archival corroboration within the supplied records, the internal consistency across multiple fields and the well-documented historical identity of these individuals — Karl VI as Holy Roman Emperor and Maria Theresia as his successor and Archduchess of Austria — strongly supports this relationship. The confidence is therefore set high, though conservatively below 0.95 due to reliance on a single data source.",
+      "intermediate_steps": [],
+      "alternatives_considered": [
+        "Adoptive or legal paternity rather than biological: theoretically possible but unsupported by any record evidence and inconsistent with the documented Habsburg succession history.",
+        "Mistaken identity due to a common name: negligible concern given the historical specificity of 'Karl VI des Heiligen Römischen Reiches' and 'MARIA THERESIA von Österreich' as uniquely identifiable historical figures.",
+        "Step-father relationship: ruled out by the consistent use of father_id and children_ids fields in both records, with no step-family indicators present."
+      ],
+      "llm_raw_response": "```json\n{\n  \"proposed_relationship\": \"father of\",\n  \"evidence_chain\": [\n    {\n      \"claim\": \"MARIA THERESIA von Österreich (born 13 MAY 1717, Wien, Österreich) has father_id explicitly recorded as @I209@, directly linking her to Karl VI des Heiligen Römischen Reiches.\",\n      \"source\": \"gedcom:@I33@\"\n    },\n    {\n      \"claim\": \"Karl VI des Heiligen Römischen Reiches (born 01 OCT 1685, Wien, Österreich) has @I33@ listed among his children_ids, confirming a bidirectional parent-child link.\",\n      \"source\": \"gedcom:@I209@\"\n    },\n    {\n      \"claim\": \"Both subject and candidate share the same birth place (Wien, Österreich), consistent with dynastic residence in the Habsburg imperial court.\",\n      \"source\": \"gedcom:@I33@\"\n    },\n    {\n      \"claim\": \"Karl VI is recorded as member of family @F198@ (fams), and Maria Theresia is recorded as a child in the same family @F198@ (famc), placing them in the same family unit.\",\n      \"source\": \"gedcom:@I209@\"\n    },\n    {\n      \"claim\": \"Karl VI's spouse @I265@ is recorded as the mother_id of Maria Theresia, corroborating the nuclear family structure.\",\n      \"source\": \"gedcom:@I33@\"\n    },\n    {\n      \"claim\": \"The age gap between Karl VI (born 1685) and Maria Theresia (born 1717) is 32 years, which is biologically and historically plausible for a father-daughter relationship.\",\n      \"source\": \"gedcom:@I209@\"\n    }\n  ],\n  \"confidence_score\": 0.93,\n  \"stated_weaknesses\": [\n    \"All genealogical data derives from a single GEDCOM file; no independent external documentary sources (e.g., baptismal registers, Habsburg court records, academic historical genealogies) are cited in the supplied records.\",\n    \"Birth date, death date, and birth place for the subject are sourced from a single record (gedcom:@I33@) only, with no corroborating archival citation.\",\n    \"The subject's death place lacks district-level specificity compared to the candidate's death place record, suggesting possible inconsistency in data quality across records.\",\n    \"No DNA evidence is available to corroborate the biological father-daughter relationship.\",\n    \"The formal/regnal name variants for Maria Theresia are not fully recorded, introducing a minor risk of conflation with another individual of the same name, though this is low given the historical prominence of the persons involved.\"\n  ],\n  \"reasoning_narrative\": \"The GEDCOM records establish a direct, bidirectional structural link: Maria Theresia's record explicitly names @I209@ as her father_id (gedcom:@I33@), and Karl VI's record lists @I33@ among his children_ids (gedcom:@I209@). Both are further cross-linked through the shared family unit @F198@, where Karl VI appears as a spouse (fams) and Maria Theresia appears as a child (famc). The shared spouse @I265@ is recorded as both Karl VI's wife and Maria Theresia's mother, reinforcing the nuclear family structure from two independent record fields. The age gap of 32 years between Karl VI (b. 1685) and Maria Theresia (b. 1717) is well within biological plausibility for a father-daughter relationship. Both individuals share Wien, Österreich as their birth place, consistent with the documented Habsburg imperial court residence. While all evidence originates from a single GEDCOM source without independent archival corroboration within the supplied records, the internal consistency across multiple fields and the well-documented historical identity of these individuals — Karl VI as Holy Roman Emperor and Maria Theresia as his successor and Archduchess of Austria — strongly supports this relationship. The confidence is therefore set high, though conservatively below 0.95 due to reliance on a single data source.\",\n  \"alternatives_considered\": [\n    \"Adoptive or legal paternity rather than biological: theoretically possible but unsupported by any record evidence and inconsistent with the documented Habsburg succession history.\",\n    \"Mistaken identity due to a common name: negligible concern given the historical specificity of 'Karl VI des Heiligen Römischen Reiches' and 'MARIA THERESIA von Österreich' as uniquely identifiable historical figures.\",\n    \"Step-father relationship: ruled out by the consistent use of father_id and children_ids fields in both records, with no step-family indicators present.\"\n  ]\n}\n```"
+    },
+    {
+      "hypothesis_id": "hyp:@I33@:@I265@:mother",
+      "subject_id": "@I33@",
+      "related_id": "@I265@",
+      "proposed_relationship": "mother of",
+      "evidence_chain": [
+        {
+          "claim": "MARIA THERESIA von Österreich (born 13 MAY 1717) explicitly records her mother_id as @I265@, directly linking her to Elisabeth von Braunschweig-Wolfenbüttel.",
+          "source": "gedcom:@I33@"
+        },
+        {
+          "claim": "Elisabeth von Braunschweig-Wolfenbüttel's children_ids list includes @I33@ (MARIA THERESIA von Österreich), confirming the parent-child link from the candidate's side.",
+          "source": "gedcom:@I265@"
+        },
+        {
+          "claim": "Both MARIA THERESIA and Elisabeth are linked to the same family unit @F198@: MARIA THERESIA via famc and Elisabeth via fams, placing them in the same nuclear family record.",
+          "source": "gedcom:@I33@"
+        },
+        {
+          "claim": "Elisabeth von Braunschweig-Wolfenbüttel is recorded as spouse of @I209@, who is also recorded as the father_id of MARIA THERESIA, corroborating the parental couple.",
+          "source": "gedcom:@I265@"
+        },
+        {
+          "claim": "Elisabeth's birth year of 1691 and MARIA THERESIA's birth year of 1717 yield an age gap of 26 years, which is biologically plausible for a mother-daughter relationship.",
+          "source": "gedcom:@I265@"
+        },
+        {
+          "claim": "Elisabeth von Braunschweig-Wolfenbüttel died 21 DEC 1750, after MARIA THERESIA's birth on 13 MAY 1717, meaning the candidate was alive at the time of the subject's birth.",
+          "source": "gedcom:@I265@"
+        },
+        {
+          "claim": "Independent source (Wikidata, Maria Theresa of Austria) confirms mother of: 'Elisabeth Christine of Brunswick-Wolfenbüttel' matches GEDCOM name 'Elisabeth von Braunschweig-Wolfenbüttel' (similarity 0.83)",
+          "source": "wikidata:Q131706"
+        },
+        {
+          "claim": "DNA evidence supports mother of: shared 3501.0 cM with Elisabeth von Braunschweig-Wolfenbuettel (matched to Elisabeth von Braunschweig-Wolfenbüttel) is within expected range [3330, 3720] for Parent/Child",
+          "source": "myheritage:unknown"
+        }
+      ],
+      "confidence_score": 0.88,
+      "stated_weaknesses": [
+        "All evidence derives from a single GEDCOM file; no independent external documentary sources (e.g., Habsburg court birth registers, contemporaneous baptismal records) are cited to corroborate the mother_id link.",
+        "Elisabeth von Braunschweig-Wolfenbüttel's birth place is null, preventing geographic plausibility analysis to support co-location at the time of MARIA THERESIA's birth in Wien.",
+        "The GEDCOM data itself may have been compiled from secondary historical sources of varying quality; transcription errors in the family linkages cannot be ruled out without cross-referencing primary records.",
+        "Only four children are listed under Elisabeth (@I7396@, @I33@, @I353@, @I7397@), which is a relatively small number for a royal consort of the period; possible incomplete recording of children or a different Elisabeth may have been conflated."
+      ],
+      "reasoning_narrative": "The relationship is asserted bidirectionally within the GEDCOM data: MARIA THERESIA's own record names @I265@ as her mother_id, and Elisabeth's record names @I33@ among her children_ids. Both individuals are further tied to the same family unit @F198@, with MARIA THERESIA appearing as a child (famc) and Elisabeth as a spouse/parent (fams). The spousal link between Elisabeth and @I209@ is independently consistent, as @I209@ is also recorded as MARIA THERESIA's father_id, making the parental couple coherent. The 26-year age gap between Elisabeth (b. 1691) and MARIA THERESIA (b. 1717) falls within the normal biological range for a first-generation mother-daughter relationship, and Elisabeth's recorded death in 1750 confirms she was living at the time of the subject's 1717 birth. Taken together, the structural genealogical pointers are mutually reinforcing and internally consistent. The principal limitation is that all evidence flows from a single GEDCOM source, so confidence is placed at 0.88 rather than above 0.9, reflecting the absence of independently verified primary documents.",
+      "intermediate_steps": [],
+      "alternatives_considered": [
+        "Stepmother or adoptive mother: possible if Elisabeth married @I209@ after MARIA THERESIA's birth, but the fams/famc linkage in @F198@ and Elisabeth's recorded children list make this unlikely.",
+        "Data entry error conflating two different women named Elisabeth from Braunschweig-Wolfenbüttel: the House of Braunschweig-Wolfenbüttel had multiple members; however, the spousal link to @I209@ and the shared family record reduce this concern significantly.",
+        "Grandmother recorded as mother due to a generational data entry mistake: the 26-year age gap is consistent with mother, not grandmother (which would typically require a ~50+ year gap for the subject's generation)."
+      ],
+      "llm_raw_response": "```json\n{\n  \"proposed_relationship\": \"mother of\",\n  \"evidence_chain\": [\n    {\n      \"claim\": \"MARIA THERESIA von Österreich (born 13 MAY 1717) explicitly records her mother_id as @I265@, directly linking her to Elisabeth von Braunschweig-Wolfenbüttel.\",\n      \"source\": \"gedcom:@I33@\"\n    },\n    {\n      \"claim\": \"Elisabeth von Braunschweig-Wolfenbüttel's children_ids list includes @I33@ (MARIA THERESIA von Österreich), confirming the parent-child link from the candidate's side.\",\n      \"source\": \"gedcom:@I265@\"\n    },\n    {\n      \"claim\": \"Both MARIA THERESIA and Elisabeth are linked to the same family unit @F198@: MARIA THERESIA via famc and Elisabeth via fams, placing them in the same nuclear family record.\",\n      \"source\": \"gedcom:@I33@\"\n    },\n    {\n      \"claim\": \"Elisabeth von Braunschweig-Wolfenbüttel is recorded as spouse of @I209@, who is also recorded as the father_id of MARIA THERESIA, corroborating the parental couple.\",\n      \"source\": \"gedcom:@I265@\"\n    },\n    {\n      \"claim\": \"Elisabeth's birth year of 1691 and MARIA THERESIA's birth year of 1717 yield an age gap of 26 years, which is biologically plausible for a mother-daughter relationship.\",\n      \"source\": \"gedcom:@I265@\"\n    },\n    {\n      \"claim\": \"Elisabeth von Braunschweig-Wolfenbüttel died 21 DEC 1750, after MARIA THERESIA's birth on 13 MAY 1717, meaning the candidate was alive at the time of the subject's birth.\",\n      \"source\": \"gedcom:@I265@\"\n    }\n  ],\n  \"confidence_score\": 0.88,\n  \"stated_weaknesses\": [\n    \"All evidence derives from a single GEDCOM file; no independent external documentary sources (e.g., Habsburg court birth registers, contemporaneous baptismal records) are cited to corroborate the mother_id link.\",\n    \"Elisabeth von Braunschweig-Wolfenbüttel's birth place is null, preventing geographic plausibility analysis to support co-location at the time of MARIA THERESIA's birth in Wien.\",\n    \"The GEDCOM data itself may have been compiled from secondary historical sources of varying quality; transcription errors in the family linkages cannot be ruled out without cross-referencing primary records.\",\n    \"Only four children are listed under Elisabeth (@I7396@, @I33@, @I353@, @I7397@), which is a relatively small number for a royal consort of the period; possible incomplete recording of children or a different Elisabeth may have been conflated.\"\n  ],\n  \"reasoning_narrative\": \"The relationship is asserted bidirectionally within the GEDCOM data: MARIA THERESIA's own record names @I265@ as her mother_id, and Elisabeth's record names @I33@ among her children_ids. Both individuals are further tied to the same family unit @F198@, with MARIA THERESIA appearing as a child (famc) and Elisabeth as a spouse/parent (fams). The spousal link between Elisabeth and @I209@ is independently consistent, as @I209@ is also recorded as MARIA THERESIA's father_id, making the parental couple coherent. The 26-year age gap between Elisabeth (b. 1691) and MARIA THERESIA (b. 1717) falls within the normal biological range for a first-generation mother-daughter relationship, and Elisabeth's recorded death in 1750 confirms she was living at the time of the subject's 1717 birth. Taken together, the structural genealogical pointers are mutually reinforcing and internally consistent. The principal limitation is that all evidence flows from a single GEDCOM source, so confidence is placed at 0.88 rather than above 0.9, reflecting the absence of independently verified primary documents.\",\n  \"alternatives_considered\": [\n    \"Stepmother or adoptive mother: possible if Elisabeth married @I209@ after MARIA THERESIA's birth, but the fams/famc linkage in @F198@ and Elisabeth's recorded children list make this unlikely.\",\n    \"Data entry error conflating two different women named Elisabeth from Braunschweig-Wolfenbüttel: the House of Braunschweig-Wolfenbüttel had multiple members; however, the spousal link to @I209@ and the shared family record reduce this concern significantly.\",\n    \"Grandmother recorded as mother due to a generational data entry mistake: the 26-year age gap is consistent with mother, not grandmother (which would typically require a ~50+ year gap for the subject's generation).\"\n  ]\n}\n```"
+    }
+  ],
+  "critiques": [
+    {
+      "hypothesis_id": "hyp:@I33@:@I209@:father",
+      "verdict": "accept",
+      "issues_found": [
+        "All genealogical data derives from a single GEDCOM file with no independent archival corroboration",
+        "DNA match identification relies on fuzzy name matching (score 0.958), though the historical context makes misidentification unlikely"
+      ],
+      "evidence_cited": [
+        "gedcom:@I33@",
+        "gedcom:@I209@",
+        "myheritage DNA match 3489 cM",
+        "Tier 1 checks all ok",
+        "geographic_plausibility ok"
+      ],
+      "confidence_in_critique": 0.92,
+      "justification": "Bidirectional GEDCOM linkage (father_id and children_ids), shared family @F198@, all Tier 1 checks pass, geographic plausibility is perfect, and DNA shared cM of 3489 falls squarely within the Parent/Child expected range. This is also a well-documented historical relationship (Maria Theresa was the daughter of Emperor Charles VI), making the hypothesis robust despite single-source GEDCOM provenance.",
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "father alive ~9mo before birth holds",
+          "role": "father"
+        }
+      ],
+      "geo_result": {
+        "check": "geographic_plausibility",
+        "verdict": "ok",
+        "reason": "0km apart (within intra-regional range)",
+        "distance_km": 0
+      },
+      "dna_relevant": {
+        "dna_subject_gedcom_id": "@I33@",
+        "test_subject_matches_hypothesis_subject": true,
+        "cross_references_for_related": [
+          {
+            "dna_name": "Karl VI des Heiligen Roemischen Reiches",
+            "gedcom_name": "Karl VI des Heiligen Römischen Reiches",
+            "gedcom_id": "@I209@",
+            "name_match_score": 0.958,
+            "shared_cM": 3489.0,
+            "dna_predicted_relationship": "Parent/Child",
+            "platform_prediction": "Parent",
+            "platform_consistent": true,
+            "all_possible_relationships": [
+              "Parent/Child"
+            ]
+          }
+        ],
+        "cm_consistency_verdict": "supports",
+        "cm_consistency_detail": {
+          "consistent": true,
+          "in_range": true,
+          "expected_range": [
+            3330,
+            3720
+          ],
+          "typical_cM": 3400,
+          "deviation": "within expected range [3330-3720] (typical 3400)",
+          "claimed": "Parent/Child"
+        },
+        "platform": "myheritage",
+        "total_matches": 30
+      },
+      "isolation_mode": "filtered"
+    },
+    {
+      "hypothesis_id": "hyp:@I33@:@I265@:mother",
+      "verdict": "reject",
+      "issues_found": [
+        "Maria Theresa of Austria's actual mother was Elisabeth Christine of Brunswick-Wolfenbüttel (born 28 Aug 1691, died 21 Dec 1750) — these dates match @I265@. However, the GEDCOM records her name as 'Elisabeth' without 'Christine'; this is a minor naming variant, not a substantive issue.",
+        "DNA evidence is anachronistic and impossible: Maria Theresa died in 1780 and Elisabeth Christine died in 1750. No autosomal DNA test (MyHeritage, etc.) could have been performed on either individual. The 3501 cM 'match' is fabricated or refers to different living persons mis-identified by fuzzy name matching, and should not be treated as corroborating evidence.",
+        "All genealogical evidence derives from a single GEDCOM file with no independent primary-source citation; the Wikidata 'confirmation' is just a name-similarity match, not an independent record lookup.",
+        "Stated weakness about 'only four children' is itself a red flag — Elisabeth Christine actually had only four children who survived infancy plus stillbirths, so this is consistent, but the GEDCOM may be conflating or under-recording."
+      ],
+      "evidence_cited": [
+        "gedcom:@I33@",
+        "gedcom:@I265@",
+        "myheritage DNA cross-reference",
+        "wikidata:Q131706",
+        "Tier 1 checks"
+      ],
+      "confidence_in_critique": 0.6,
+      "justification": "The biographical facts (1691-1750 lifespan, marriage to Karl VI/@I209@, daughter Maria Theresia born 1717) align correctly with the historical Elisabeth Christine of Brunswick-Wolfenbüttel, so the proposed relationship is almost certainly factually correct. However, I am rejecting because the evidence chain is materially flawed: the DNA evidence is impossible (both subjects died in the 18th century) and constitutes fabricated or mis-attributed data, and the remaining evidence is single-source GEDCOM self-reference plus a name-similarity Wikidata hit. The hypothesis happens to be historically true, but the evidence as presented does not properly establish it and includes a spurious DNA claim that should be disqualified.",
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "mother"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "mother"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "mother alive at birth holds",
+          "role": "mother"
+        }
+      ],
+      "geo_result": null,
+      "dna_relevant": {
+        "dna_subject_gedcom_id": "@I33@",
+        "test_subject_matches_hypothesis_subject": true,
+        "cross_references_for_related": [
+          {
+            "dna_name": "Elisabeth von Braunschweig-Wolfenbuettel",
+            "gedcom_name": "Elisabeth von Braunschweig-Wolfenbüttel",
+            "gedcom_id": "@I265@",
+            "name_match_score": 0.975,
+            "shared_cM": 3501.0,
+            "dna_predicted_relationship": "Parent/Child",
+            "platform_prediction": "Parent",
+            "platform_consistent": true,
+            "all_possible_relationships": [
+              "Parent/Child"
+            ]
+          }
+        ],
+        "cm_consistency_verdict": "supports",
+        "cm_consistency_detail": {
+          "consistent": true,
+          "in_range": true,
+          "expected_range": [
+            3330,
+            3720
+          ],
+          "typical_cM": 3400,
+          "deviation": "within expected range [3330-3720] (typical 3400)",
+          "claimed": "Parent/Child"
+        },
+        "platform": "myheritage",
+        "total_matches": 30
+      },
+      "isolation_mode": "filtered"
+    }
+  ],
+  "dna_analysis": {
+    "platform": "myheritage",
+    "subject_name": "uploaded dna",
+    "subject_gedcom_id": "@I33@",
+    "subject_match_score": 1.0,
+    "total_matches": 30,
+    "relationship_distribution": {
+      "Parent/Child": 11,
+      "Sibling": 3,
+      "Grandparent/Uncle": 1,
+      "1st Cousin": 2,
+      "1C1R/Half-1C": 1,
+      "2nd Cousin": 6,
+      "Distant (<40 cM)": 6
+    },
+    "cross_references": [
+      {
+        "dna_name": "Karl VI des Heiligen Roemischen Reiches",
+        "gedcom_name": "Karl VI des Heiligen Römischen Reiches",
+        "gedcom_id": "@I209@",
+        "name_match_score": 0.958,
+        "shared_cM": 3489.0,
+        "dna_predicted_relationship": "Parent/Child",
+        "platform_prediction": "Parent",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Parent/Child"
+        ]
+      },
+      {
+        "dna_name": "Elisabeth von Braunschweig-Wolfenbuettel",
+        "gedcom_name": "Elisabeth von Braunschweig-Wolfenbüttel",
+        "gedcom_id": "@I265@",
+        "name_match_score": 0.975,
+        "shared_cM": 3501.0,
+        "dna_predicted_relationship": "Parent/Child",
+        "platform_prediction": "Parent",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Parent/Child"
+        ]
+      },
+      {
+        "dna_name": "Leopold Johann von Oesterreich",
+        "gedcom_name": "Leopold Johann von Österreich",
+        "gedcom_id": "@I7396@",
+        "name_match_score": 0.963,
+        "shared_cM": 2604.0,
+        "dna_predicted_relationship": "Full Sibling",
+        "platform_prediction": "Sibling",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Full Sibling"
+        ]
+      },
+      {
+        "dna_name": "Maria Anna von Oesterreich",
+        "gedcom_name": "Maria Anna von Österreich",
+        "gedcom_id": "@I353@",
+        "name_match_score": 0.957,
+        "shared_cM": 2587.0,
+        "dna_predicted_relationship": "Full Sibling",
+        "platform_prediction": "Sibling",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Full Sibling"
+        ]
+      },
+      {
+        "dna_name": "Maria Amalia von Oesterreich",
+        "gedcom_name": "Maria Amalia von Österreich",
+        "gedcom_id": "@I7397@",
+        "name_match_score": 0.96,
+        "shared_cM": 2622.0,
+        "dna_predicted_relationship": "Full Sibling",
+        "platform_prediction": "Sibling",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Full Sibling"
+        ]
+      },
+      {
+        "dna_name": "FRANZ I Stephan des Heiligen Roemischen Reiches",
+        "gedcom_name": "FRANZ I Stephan des Heiligen Römischen Reiches",
+        "gedcom_id": "@I32@",
+        "name_match_score": 0.965,
+        "shared_cM": 18.0,
+        "dna_predicted_relationship": "4th Cousin 1x Removed",
+        "platform_prediction": "Distant Cousin",
+        "platform_consistent": false,
+        "all_possible_relationships": [
+          "4th Cousin 1x Removed",
+          "4th Cousin",
+          "5th Cousin",
+          "3rd Cousin 1x Removed",
+          "3rd Cousin"
+        ]
+      },
+      {
+        "dna_name": "JOSEF II Benedikt des Heiligen Roemischen Reiches",
+        "gedcom_name": "JOSEF II Benedikt des Heiligen Römischen Reiches",
+        "gedcom_id": "@I34@",
+        "name_match_score": 0.967,
+        "shared_cM": 3460.0,
+        "dna_predicted_relationship": "Parent/Child",
+        "platform_prediction": "Child",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Parent/Child"
+        ]
+      },
+      {
+        "dna_name": "Peter LEOPOLD II des Heiligen Roemischen Reiches",
+        "gedcom_name": "Peter LEOPOLD II des Heiligen Römischen Reiches",
+        "gedcom_id": "@I31@",
+        "name_match_score": 0.966,
+        "shared_cM": 3478.0,
+        "dna_predicted_relationship": "Parent/Child",
+        "platform_prediction": "Child",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Parent/Child"
+        ]
+      },
+      {
+        "dna_name": "Maria Antonia Josepha Johanna von Oesterreich",
+        "gedcom_name": "Maria Antonia Josepha Johanna von Österreich",
+        "gedcom_id": "@I36@",
+        "name_match_score": 0.975,
+        "shared_cM": 3445.0,
+        "dna_predicted_relationship": "Parent/Child",
+        "platform_prediction": "Child",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Parent/Child"
+        ]
+      },
+      {
+        "dna_name": "Maria Karoline Ernestine Antonia von Oesterreich",
+        "gedcom_name": "Maria Karoline Ernestine Antonia von Österreich",
+        "gedcom_id": "@I271@",
+        "name_match_score": 0.977,
+        "shared_cM": 3502.0,
+        "dna_predicted_relationship": "Parent/Child",
+        "platform_prediction": "Child",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Parent/Child"
+        ]
+      },
+      {
+        "dna_name": "Maria Christine Johanna Josepha von Oesterreich",
+        "gedcom_name": "Maria Christine Johanna Josepha von Österreich",
+        "gedcom_id": "@I35@",
+        "name_match_score": 0.976,
+        "shared_cM": 3471.0,
+        "dna_predicted_relationship": "Parent/Child",
+        "platform_prediction": "Child",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Parent/Child"
+        ]
+      },
+      {
+        "dna_name": "Ferdinand Karl Anton Josef Johann von Oesterreich-Modena",
+        "gedcom_name": "Ferdinand Karl Anton Josef Johann von Österreich-Modena",
+        "gedcom_id": "@I279@",
+        "name_match_score": 0.971,
+        "shared_cM": 3458.0,
+        "dna_predicted_relationship": "Parent/Child",
+        "platform_prediction": "Child",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Parent/Child"
+        ]
+      },
+      {
+        "dna_name": "Maximilian Franz Xaver Josef von Oesterreich",
+        "gedcom_name": "Maximilian Franz Xaver Josef von Österreich",
+        "gedcom_id": "@I207@",
+        "name_match_score": 0.975,
+        "shared_cM": 3489.0,
+        "dna_predicted_relationship": "Parent/Child",
+        "platform_prediction": "Child",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Parent/Child"
+        ]
+      },
+      {
+        "dna_name": "Maria Carolina von Oesterreich",
+        "gedcom_name": "Maria Carolina von Österreich",
+        "gedcom_id": "@I276@",
+        "name_match_score": 0.963,
+        "shared_cM": 3469.0,
+        "dna_predicted_relationship": "Parent/Child",
+        "platform_prediction": "Child",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Parent/Child"
+        ]
+      },
+      {
+        "dna_name": "Maria Elisabeth Amalie Antonia von Oesterreich",
+        "gedcom_name": "Maria Elisabeth Amalie Antonia von Österreich",
+        "gedcom_id": "@I269@",
+        "name_match_score": 0.976,
+        "shared_cM": 3491.0,
+        "dna_predicted_relationship": "Parent/Child",
+        "platform_prediction": "Child",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Parent/Child"
+        ]
+      },
+      {
+        "dna_name": "Hildegard Frauenlob",
+        "gedcom_name": "Hildegard Felder",
+        "gedcom_id": "@I12368@",
+        "name_match_score": 0.844,
+        "shared_cM": 857.0,
+        "dna_predicted_relationship": "Great-Grandparent",
+        "platform_prediction": "1st Cousin",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Great-Grandparent",
+          "1st Cousin",
+          "Half Aunt/Uncle"
+        ]
+      },
+      {
+        "dna_name": "Wilhelm von Trauttmansdorff",
+        "gedcom_name": "Wilhelm von Paulsdorf",
+        "gedcom_id": "@I6933@",
+        "name_match_score": 0.856,
+        "shared_cM": 872.0,
+        "dna_predicted_relationship": "Great-Grandparent",
+        "platform_prediction": "1st Cousin",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "Great-Grandparent",
+          "1st Cousin",
+          "Half Aunt/Uncle"
+        ]
+      },
+      {
+        "dna_name": "Theodore Marlowe",
+        "gedcom_name": "Theodor Ankarcrona",
+        "gedcom_id": "@I13345@",
+        "name_match_score": 0.796,
+        "shared_cM": 228.0,
+        "dna_predicted_relationship": "2nd Cousin",
+        "platform_prediction": "2nd Cousin",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "2nd Cousin",
+          "2nd Cousin 1x Removed",
+          "Half 2nd Cousin",
+          "Great-Great-Grandparent",
+          "1st Cousin 1x Removed"
+        ]
+      },
+      {
+        "dna_name": "Eleanor Ashbrook",
+        "gedcom_name": "Eleanor von Bohun",
+        "gedcom_id": "@I8058@",
+        "name_match_score": 0.796,
+        "shared_cM": 124.0,
+        "dna_predicted_relationship": "2nd Cousin 1x Removed",
+        "platform_prediction": "2C1R",
+        "platform_consistent": true,
+        "all_possible_relationships": [
+          "2nd Cousin 1x Removed",
+          "Half 2nd Cousin",
+          "2nd Cousin",
+          "3rd Cousin"
+        ]
+      },
+      {
+        "dna_name": "Rosalind T.",
+        "gedcom_name": "Rosalin Cubitts",
+        "gedcom_id": "@I11855@",
+        "name_match_score": 0.802,
+        "shared_cM": 42.0,
+        "dna_predicted_relationship": "3rd Cousin 1x Removed",
+        "platform_prediction": "3C1R",
+        "platform_consistent": false,
+        "all_possible_relationships": [
+          "3rd Cousin 1x Removed",
+          "3rd Cousin",
+          "4th Cousin",
+          "2nd Cousin 1x Removed",
+          "Half 2nd Cousin"
+        ]
+      }
+    ],
+    "prediction_checks": {
+      "total_with_prediction": 30,
+      "consistent": 25,
+      "inconsistent_count": 0,
+      "inconsistent_examples": []
+    },
+    "aggregate_consistency": "consistent — no contradictions found",
+    "findings": [
+      "DNA data from myheritage: 30 total matches analyzed.",
+      "15 close relative(s) detected in Parent/Child, Sibling, or Grandparent/Uncle range.",
+      "3 match(es) in 1st cousin or closer cousin range.",
+      "6 distant matches (<40 cM) — expected for large match lists.",
+      "20 DNA match name(s) matched to GEDCOM tree persons (fuzzy score >= 0.75).",
+      "  - 'Karl VI des Heiligen Roemischen Reiches' matched 'Karl VI des Heiligen Römischen Reiches' (@I209@) at 3489.0 cM (predicted: Parent/Child)",
+      "  - 'Elisabeth von Braunschweig-Wolfenbuettel' matched 'Elisabeth von Braunschweig-Wolfenbüttel' (@I265@) at 3501.0 cM (predicted: Parent/Child)",
+      "  - 'Leopold Johann von Oesterreich' matched 'Leopold Johann von Österreich' (@I7396@) at 2604.0 cM (predicted: Full Sibling)",
+      "Platform relationship predictions: 25/30 (83%) consistent with Shared cM Project ranges."
+    ]
+  },
+  "trace_log": [
+    "record_scout: enter",
+    "record_scout: parsed 34020 persons from GEDCOM",
+    "record_scout: LLM criteria = {'primary_name': 'Maria Theresia von Österreich', 'surname': 'von Österreich', 'given_names': 'Maria Theresia', 'alt_names': ['Maria Theresa of Austria', \"Marie Thérèse d'Autriche\", 'Maria Theresia'], 'approx_birth_year': 1717, 'approx_location': 'Vienna, Austria'}",
+    "record_scout: query_mode — 155 candidates above threshold 0.7, keeping top 5",
+    "record_scout: top match = MARIA THERESIA von Österreich (score 1.0)",
+    "record_scout: built 39 GEDCOM record objects (including family context)",
+    "record_scout: FindAGrave returned 0 results",
+    "record_scout: Wikidata returned 1 results",
+    "record_scout: WikiTree returned 0 results",
+    "record_scout: total records after external corroboration: 40 (1 external)",
+    "record_scout: exit",
+    "dna_analyst: enter",
+    "dna_analyst: parsed 30 matches from myheritage",
+    "dna_analyst: DNA test subject identified as @I33@ (name match 1.00)",
+    "dna_analyst: distribution — Parent/Child: 11, Sibling: 3, Grandparent/Uncle: 1, 1st Cousin: 2, 1C1R/Half-1C: 1, 2nd Cousin: 6, Distant (<40 cM): 6",
+    "dna_analyst: 20 cross-references found",
+    "dna_analyst: aggregate consistency = consistent — no contradictions found",
+    "dna_analyst: exit",
+    "profile_synthesizer: enter",
+    "profile_synthesizer: disambiguated 5 candidates -> selected MARIA THERESIA von Österreich (score 2.0)",
+    "profile_synthesizer: excluded Maria Theresia von Herberstein (gedcom:@I1691@, score 0.892)",
+    "profile_synthesizer: excluded Maria Theresia von Österreich (gedcom:@I347@, score 0.5)",
+    "profile_synthesizer: excluded Maria Theresia Anna von Österreich (gedcom:@I374@, score 0.434)",
+    "profile_synthesizer: excluded Maria Theresia Cybo (gedcom:@I30496@, score 0.297)",
+    "profile_synthesizer: LLM synthesis produced 8 facts, 7 gaps",
+    "profile_synthesizer: built profile with 8 cited facts, 7 gaps",
+    "profile_synthesizer: exit",
+    "relationship_hypothesizer: enter",
+    "relationship_hypothesizer: 2 targets for MARIA THERESIA von Österreich: ['father', 'mother']",
+    "relationship_hypothesizer: built hypothesis hyp:@I33@:@I209@:father (confidence 0.88, 7 evidence items)",
+    "relationship_hypothesizer: built hypothesis hyp:@I33@:@I265@:mother (confidence 0.88, 5 evidence items)",
+    "relationship_hypothesizer: appended 1 external corroboration item(s) to evidence chains",
+    "relationship_hypothesizer: DNA SUPPORTS hyp:@I33@:@I209@:father (3489.0 cM consistent with father of)",
+    "relationship_hypothesizer: DNA SUPPORTS hyp:@I33@:@I265@:mother (3501.0 cM consistent with mother of)",
+    "relationship_hypothesizer: appended 2 DNA corroboration item(s) to evidence chains",
+    "relationship_hypothesizer: generated 2 hypotheses",
+    "relationship_hypothesizer: exit",
+    "adversarial_critic: enter",
+    "adversarial_critic: isolation_mode=filtered, filtered 2 hypotheses, stripped 4 internal field types",
+    "adversarial_critic: hyp:@I33@:@I209@:father tier1 (5 checks, 0 impossible)",
+    "adversarial_critic: hyp:@I33@:@I209@:father geo -> ok: 0km apart (within intra-regional range)",
+    "adversarial_critic: hyp:@I33@:@I209@:father DNA relevant — 1 cross-ref(s) for related person, deterministic check: supports",
+    "adversarial_critic: hyp:@I33@:@I209@:father LLM verdict=accept conf=0.92",
+    "adversarial_critic: hyp:@I33@:@I265@:mother tier1 (5 checks, 0 impossible)",
+    "adversarial_critic: hyp:@I33@:@I265@:mother DNA relevant — 1 cross-ref(s) for related person, deterministic check: supports",
+    "adversarial_critic: hyp:@I33@:@I265@:mother LLM verdict=reject conf=0.6",
+    "adversarial_critic: at least one reject; revision_count 0 -> 1, status=needs_revision",
+    "adversarial_critic: produced 2 critiques",
+    "adversarial_critic: exit",
+    "relationship_hypothesizer: enter",
+    "relationship_hypothesizer: 2 targets for MARIA THERESIA von Österreich: ['father', 'mother']",
+    "relationship_hypothesizer: built hypothesis hyp:@I33@:@I209@:father (confidence 0.93, 6 evidence items)",
+    "relationship_hypothesizer: built hypothesis hyp:@I33@:@I265@:mother (confidence 0.88, 6 evidence items)",
+    "relationship_hypothesizer: appended 1 external corroboration item(s) to evidence chains",
+    "relationship_hypothesizer: DNA SUPPORTS hyp:@I33@:@I209@:father (3489.0 cM consistent with father of)",
+    "relationship_hypothesizer: DNA SUPPORTS hyp:@I33@:@I265@:mother (3501.0 cM consistent with mother of)",
+    "relationship_hypothesizer: appended 2 DNA corroboration item(s) to evidence chains",
+    "relationship_hypothesizer: generated 2 hypotheses",
+    "relationship_hypothesizer: exit",
+    "adversarial_critic: enter",
+    "adversarial_critic: isolation_mode=filtered, filtered 2 hypotheses, stripped 4 internal field types",
+    "adversarial_critic: hyp:@I33@:@I209@:father tier1 (5 checks, 0 impossible)",
+    "adversarial_critic: hyp:@I33@:@I209@:father geo -> ok: 0km apart (within intra-regional range)",
+    "adversarial_critic: hyp:@I33@:@I209@:father DNA relevant — 1 cross-ref(s) for related person, deterministic check: supports",
+    "adversarial_critic: hyp:@I33@:@I209@:father LLM verdict=accept conf=0.92",
+    "adversarial_critic: hyp:@I33@:@I265@:mother tier1 (5 checks, 0 impossible)",
+    "adversarial_critic: hyp:@I33@:@I265@:mother DNA relevant — 1 cross-ref(s) for related person, deterministic check: supports",
+    "adversarial_critic: hyp:@I33@:@I265@:mother LLM verdict=reject conf=0.6",
+    "adversarial_critic: at least one reject; revision_count 1 -> 2, status=needs_revision",
+    "adversarial_critic: produced 2 critiques",
+    "adversarial_critic: exit",
+    "final_report_writer: enter",
+    "final_report_writer: composed report (17948 chars, 212 lines)",
+    "final_report_writer: exit"
+  ],
+  "final_report": "# Genealogical Research Report\n\n**Query:** Who are the parents of Maria Theresia of Austria?\n**Target:** MARIA THERESIA von Österreich (approx. born 1717), Vienna, Austria\n**Pipeline status:** needs_revision  (revision count 2)\n**Report status: Contains unresolved findings — human review recommended** (2 of 2 hypotheses flagged)\n\n## Subject Profiles\n\n### MARIA THERESIA von Österreich\n`profile:@I33@` — source record `gedcom:@I33@`\n\n**Disambiguation:** selected from 5 candidates\n- ✓ `gedcom:@I33@` MARIA THERESIA von Österreich — score 2.0\n    - name similarity 1.0\n    - exact birth year match (1717)\n    - birth place mismatch (target 'vienna, austria', candidate 'wien, österreich')\n- ✗ `gedcom:@I1691@` Maria Theresia von Herberstein — score 0.892\n    - name similarity 0.892\n    - no birth year on candidate record; target is 1717\n    - no birth place on candidate record; target is 'vienna, austria'\n- ✗ `gedcom:@I347@` Maria Theresia von Österreich — score 0.5\n    - name similarity 1.0\n    - birth year mismatch (target 1717, candidate 1684, diff 33y)\n    - birth place mismatch (target 'vienna, austria', candidate 'wien, österreich')\n- ✗ `gedcom:@I374@` Maria Theresia Anna von Österreich — score 0.434\n    - name similarity 0.934\n    - birth year mismatch (target 1717, candidate 1845, diff 128y)\n    - birth place mismatch (target 'vienna, austria', candidate 'wien, österreich')\n- ✗ `gedcom:@I30496@` Maria Theresia Cybo — score 0.297\n    - name similarity 0.797\n    - birth year mismatch (target 1717, candidate 1725, diff 8y)\n    - birth place mismatch (target 'vienna, austria', candidate 'novellara')\n\n**Facts:**\n- name: MARIA THERESIA von Österreich  _(gedcom:@I33@)_\n- first_name: MARIA THERESIA von  _(gedcom:@I33@)_\n- surname: Österreich  _(gedcom:@I33@)_\n- sex: F  _(gedcom:@I33@)_\n- birth_date: 13 MAY 1717  _(gedcom:@I33@)_\n- birth_place: Wien, Österreich  _(gedcom:@I33@)_\n- death_date: 29 NOV 1780  _(gedcom:@I33@)_\n- death_place: Wien, Österreich  _(gedcom:@I33@)_\n\n**Family references:** father=Karl VI des Heiligen Römischen Reiches; mother=Elisabeth von Braunschweig-Wolfenbüttel; spouse(s)=FRANZ I Stephan des Heiligen Römischen Reiches; children=Maria Elisabeth Amalie Antonia von Österreich, Maria Anna Josefa Antonia Johanna von Österreich, Maria Karoline Ernestine Antonia von Österreich, JOSEF II Benedikt des Heiligen Römischen Reiches, Maria Christine Johanna Josepha von Österreich, Maria Elisabeth Josefa Johanna von Österreich, Karl Joseph Emanuel Johann von Österreich, Maria Amalia Josepha Johanna von Österreich, Peter LEOPOLD II des Heiligen Römischen Reiches, Maria Carolina von Österreich, Maria Johanna Gabriele Josepha von Österreich, Maria Josepha Gabriele Johanna von Österreich, Marie Karoline Ludovika Josefa von Österreich, Ferdinand Karl Anton Josef Johann von Österreich-Modena, Maria Antonia Josepha Johanna von Österreich, Maximilian Franz Xaver Josef von Österreich\n\n**Gaps and concerns (from Synthesizer):**\n- No occupation recorded for subject\n- No religion recorded for subject\n- No burial place or burial date recorded for subject\n- Birth date, death date, and birth place are sourced from a single record only (gedcom:@I33@); no corroborating external sources provided\n- Death place is identical to birth place (Wien, Österreich) with no additional specificity, unlike the father's death place record which includes a district; possible lack of detail\n- No marriage date or marriage place recorded for subject's union with spouse (gedcom:@I32@)\n- No middle names or full regnal/formal name variants recorded beyond the single name field\n\n## Accepted Findings\n\n_No findings passed without escalation flags._\n\n## Findings Requiring Human Review\n\n### ⚠ UNRESOLVED — father of — `hyp:@I33@:@I209@:father`\n\n**Escalation reasons:**\n- Conflicting verdicts for subject @I33@: family unit has both accepted and rejected hypotheses (['accept', 'reject'])\n\n**Subject:** `@I33@`  **Related:** `@I209@`  **Hypothesizer confidence:** 0.93\n\n**Evidence chain:**\n- (gedcom:@I33@) MARIA THERESIA von Österreich (born 13 MAY 1717, Wien, Österreich) has father_id explicitly recorded as @I209@, directly linking her to Karl VI des Heiligen Römischen Reiches.\n- (gedcom:@I209@) Karl VI des Heiligen Römischen Reiches (born 01 OCT 1685, Wien, Österreich) has @I33@ listed among his children_ids, confirming a bidirectional parent-child link.\n- (gedcom:@I33@) Both subject and candidate share the same birth place (Wien, Österreich), consistent with dynastic residence in the Habsburg imperial court.\n- (gedcom:@I209@) Karl VI is recorded as member of family @F198@ (fams), and Maria Theresia is recorded as a child in the same family @F198@ (famc), placing them in the same family unit.\n- (gedcom:@I33@) Karl VI's spouse @I265@ is recorded as the mother_id of Maria Theresia, corroborating the nuclear family structure.\n- (gedcom:@I209@) The age gap between Karl VI (born 1685) and Maria Theresia (born 1717) is 32 years, which is biologically and historically plausible for a father-daughter relationship.\n- (myheritage:unknown) DNA evidence supports father of: shared 3489.0 cM with Karl VI des Heiligen Roemischen Reiches (matched to Karl VI des Heiligen Römischen Reiches) is within expected range [3330, 3720] for Parent/Child\n\n**Stated weaknesses (Hypothesizer's own):**\n- All genealogical data derives from a single GEDCOM file; no independent external documentary sources (e.g., baptismal registers, Habsburg court records, academic historical genealogies) are cited in the supplied records.\n- Birth date, death date, and birth place for the subject are sourced from a single record (gedcom:@I33@) only, with no corroborating archival citation.\n- The subject's death place lacks district-level specificity compared to the candidate's death place record, suggesting possible inconsistency in data quality across records.\n- No DNA evidence is available to corroborate the biological father-daughter relationship.\n- The formal/regnal name variants for Maria Theresia are not fully recorded, introducing a minor risk of conflation with another individual of the same name, though this is low given the historical prominence of the persons involved.\n\n#### Critique: ✓ ACCEPT\n**Critic self-confidence:** 0.92  **Isolation mode:** `filtered`\n\n**Justification:** Bidirectional GEDCOM linkage (father_id and children_ids), shared family @F198@, all Tier 1 checks pass, geographic plausibility is perfect, and DNA shared cM of 3489 falls squarely within the Parent/Child expected range. This is also a well-documented historical relationship (Maria Theresa was the daughter of Emperor Charles VI), making the hypothesis robust despite single-source GEDCOM provenance.\n\n**Tier 1 deterministic checks:**\n- [ok] death_before_birth: death is not before birth\n- [ok] implausible_lifespan: lifespan within 120 years\n- [ok] [father] parent_younger_than_child: parent is not younger than child\n- [ok] [father] parent_too_young_at_birth: parent age plausible (>= 12)\n- [ok] [father] parent_died_before_conception: father alive ~9mo before birth holds\n\n**Geographic check:** [ok] 0km apart (within intra-regional range)\n\n**Issues found by the Critic:**\n- All genealogical data derives from a single GEDCOM file with no independent archival corroboration\n- DNA match identification relies on fuzzy name matching (score 0.958), though the historical context makes misidentification unlikely\n\n### ⚠ UNRESOLVED — mother of — `hyp:@I33@:@I265@:mother`\n\n**Escalation reasons:**\n- Rejected by Adversarial Critic after 2 revision cycle(s) — pipeline force-finalized\n- Conflicting verdicts for subject @I33@: family unit has both accepted and rejected hypotheses (['accept', 'reject'])\n\n**Subject:** `@I33@`  **Related:** `@I265@`  **Hypothesizer confidence:** 0.88\n\n**Evidence chain:**\n- (gedcom:@I33@) MARIA THERESIA von Österreich (born 13 MAY 1717) explicitly records her mother_id as @I265@, directly linking her to Elisabeth von Braunschweig-Wolfenbüttel.\n- (gedcom:@I265@) Elisabeth von Braunschweig-Wolfenbüttel's children_ids list includes @I33@ (MARIA THERESIA von Österreich), confirming the parent-child link from the candidate's side.\n- (gedcom:@I33@) Both MARIA THERESIA and Elisabeth are linked to the same family unit @F198@: MARIA THERESIA via famc and Elisabeth via fams, placing them in the same nuclear family record.\n- (gedcom:@I265@) Elisabeth von Braunschweig-Wolfenbüttel is recorded as spouse of @I209@, who is also recorded as the father_id of MARIA THERESIA, corroborating the parental couple.\n- (gedcom:@I265@) Elisabeth's birth year of 1691 and MARIA THERESIA's birth year of 1717 yield an age gap of 26 years, which is biologically plausible for a mother-daughter relationship.\n- (gedcom:@I265@) Elisabeth von Braunschweig-Wolfenbüttel died 21 DEC 1750, after MARIA THERESIA's birth on 13 MAY 1717, meaning the candidate was alive at the time of the subject's birth.\n- (wikidata:Q131706) Independent source (Wikidata, Maria Theresa of Austria) confirms mother of: 'Elisabeth Christine of Brunswick-Wolfenbüttel' matches GEDCOM name 'Elisabeth von Braunschweig-Wolfenbüttel' (similarity 0.83)\n- (myheritage:unknown) DNA evidence supports mother of: shared 3501.0 cM with Elisabeth von Braunschweig-Wolfenbuettel (matched to Elisabeth von Braunschweig-Wolfenbüttel) is within expected range [3330, 3720] for Parent/Child\n\n**Stated weaknesses (Hypothesizer's own):**\n- All evidence derives from a single GEDCOM file; no independent external documentary sources (e.g., Habsburg court birth registers, contemporaneous baptismal records) are cited to corroborate the mother_id link.\n- Elisabeth von Braunschweig-Wolfenbüttel's birth place is null, preventing geographic plausibility analysis to support co-location at the time of MARIA THERESIA's birth in Wien.\n- The GEDCOM data itself may have been compiled from secondary historical sources of varying quality; transcription errors in the family linkages cannot be ruled out without cross-referencing primary records.\n- Only four children are listed under Elisabeth (@I7396@, @I33@, @I353@, @I7397@), which is a relatively small number for a royal consort of the period; possible incomplete recording of children or a different Elisabeth may have been conflated.\n\n#### Critique: ✗ REJECT\n**Critic self-confidence:** 0.6  **Isolation mode:** `filtered`\n\n**Justification:** The biographical facts (1691-1750 lifespan, marriage to Karl VI/@I209@, daughter Maria Theresia born 1717) align correctly with the historical Elisabeth Christine of Brunswick-Wolfenbüttel, so the proposed relationship is almost certainly factually correct. However, I am rejecting because the evidence chain is materially flawed: the DNA evidence is impossible (both subjects died in the 18th century) and constitutes fabricated or mis-attributed data, and the remaining evidence is single-source GEDCOM self-reference plus a name-similarity Wikidata hit. The hypothesis happens to be historically true, but the evidence as presented does not properly establish it and includes a spurious DNA claim that should be disqualified.\n\n**Tier 1 deterministic checks:**\n- [ok] death_before_birth: death is not before birth\n- [ok] implausible_lifespan: lifespan within 120 years\n- [ok] [mother] parent_younger_than_child: parent is not younger than child\n- [ok] [mother] parent_too_young_at_birth: parent age plausible (>= 12)\n- [ok] [mother] parent_died_before_conception: mother alive at birth holds\n\n**Issues found by the Critic:**\n- Maria Theresa of Austria's actual mother was Elisabeth Christine of Brunswick-Wolfenbüttel (born 28 Aug 1691, died 21 Dec 1750) — these dates match @I265@. However, the GEDCOM records her name as 'Elisabeth' without 'Christine'; this is a minor naming variant, not a substantive issue.\n- DNA evidence is anachronistic and impossible: Maria Theresa died in 1780 and Elisabeth Christine died in 1750. No autosomal DNA test (MyHeritage, etc.) could have been performed on either individual. The 3501 cM 'match' is fabricated or refers to different living persons mis-identified by fuzzy name matching, and should not be treated as corroborating evidence.\n- All genealogical evidence derives from a single GEDCOM file with no independent primary-source citation; the Wikidata 'confirmation' is just a name-similarity match, not an independent record lookup.\n- Stated weakness about 'only four children' is itself a red flag — Elisabeth Christine actually had only four children who survived infancy plus stillbirths, so this is consistent, but the GEDCOM may be conflating or under-recording.\n\n## DNA Evidence\n\n**Platform:** myheritage  **Total matches:** 30  **Consistency:** consistent — no contradictions found\n\n**Match distribution by relationship tier:**\n- Parent/Child: 11\n- Sibling: 3\n- Grandparent/Uncle: 1\n- 1st Cousin: 2\n- 1C1R/Half-1C: 1\n- 2nd Cousin: 6\n- Distant (<40 cM): 6\n\n**GEDCOM cross-references (20 name matches):**\n- DNA: **Karl VI des Heiligen Roemischen Reiches** (3489.0 cM) matched GEDCOM: **Karl VI des Heiligen Römischen Reiches** (`@I209@`)\n  - DNA-predicted: Parent/Child | Platform said: Parent | Consistent: True\n- DNA: **Elisabeth von Braunschweig-Wolfenbuettel** (3501.0 cM) matched GEDCOM: **Elisabeth von Braunschweig-Wolfenbüttel** (`@I265@`)\n  - DNA-predicted: Parent/Child | Platform said: Parent | Consistent: True\n- DNA: **Leopold Johann von Oesterreich** (2604.0 cM) matched GEDCOM: **Leopold Johann von Österreich** (`@I7396@`)\n  - DNA-predicted: Full Sibling | Platform said: Sibling | Consistent: True\n- DNA: **Maria Anna von Oesterreich** (2587.0 cM) matched GEDCOM: **Maria Anna von Österreich** (`@I353@`)\n  - DNA-predicted: Full Sibling | Platform said: Sibling | Consistent: True\n- DNA: **Maria Amalia von Oesterreich** (2622.0 cM) matched GEDCOM: **Maria Amalia von Österreich** (`@I7397@`)\n  - DNA-predicted: Full Sibling | Platform said: Sibling | Consistent: True\n- DNA: **FRANZ I Stephan des Heiligen Roemischen Reiches** (18.0 cM) matched GEDCOM: **FRANZ I Stephan des Heiligen Römischen Reiches** (`@I32@`)\n  - DNA-predicted: 4th Cousin 1x Removed | Platform said: Distant Cousin | Consistent: False\n- DNA: **JOSEF II Benedikt des Heiligen Roemischen Reiches** (3460.0 cM) matched GEDCOM: **JOSEF II Benedikt des Heiligen Römischen Reiches** (`@I34@`)\n  - DNA-predicted: Parent/Child | Platform said: Child | Consistent: True\n- DNA: **Peter LEOPOLD II des Heiligen Roemischen Reiches** (3478.0 cM) matched GEDCOM: **Peter LEOPOLD II des Heiligen Römischen Reiches** (`@I31@`)\n  - DNA-predicted: Parent/Child | Platform said: Child | Consistent: True\n- DNA: **Maria Antonia Josepha Johanna von Oesterreich** (3445.0 cM) matched GEDCOM: **Maria Antonia Josepha Johanna von Österreich** (`@I36@`)\n  - DNA-predicted: Parent/Child | Platform said: Child | Consistent: True\n- DNA: **Maria Karoline Ernestine Antonia von Oesterreich** (3502.0 cM) matched GEDCOM: **Maria Karoline Ernestine Antonia von Österreich** (`@I271@`)\n  - DNA-predicted: Parent/Child | Platform said: Child | Consistent: True\n- DNA: **Maria Christine Johanna Josepha von Oesterreich** (3471.0 cM) matched GEDCOM: **Maria Christine Johanna Josepha von Österreich** (`@I35@`)\n  - DNA-predicted: Parent/Child | Platform said: Child | Consistent: True\n- DNA: **Ferdinand Karl Anton Josef Johann von Oesterreich-Modena** (3458.0 cM) matched GEDCOM: **Ferdinand Karl Anton Josef Johann von Österreich-Modena** (`@I279@`)\n  - DNA-predicted: Parent/Child | Platform said: Child | Consistent: True\n- DNA: **Maximilian Franz Xaver Josef von Oesterreich** (3489.0 cM) matched GEDCOM: **Maximilian Franz Xaver Josef von Österreich** (`@I207@`)\n  - DNA-predicted: Parent/Child | Platform said: Child | Consistent: True\n- DNA: **Maria Carolina von Oesterreich** (3469.0 cM) matched GEDCOM: **Maria Carolina von Österreich** (`@I276@`)\n  - DNA-predicted: Parent/Child | Platform said: Child | Consistent: True\n- DNA: **Maria Elisabeth Amalie Antonia von Oesterreich** (3491.0 cM) matched GEDCOM: **Maria Elisabeth Amalie Antonia von Österreich** (`@I269@`)\n  - DNA-predicted: Parent/Child | Platform said: Child | Consistent: True\n- DNA: **Hildegard Frauenlob** (857.0 cM) matched GEDCOM: **Hildegard Felder** (`@I12368@`)\n  - DNA-predicted: Great-Grandparent | Platform said: 1st Cousin | Consistent: True\n- DNA: **Wilhelm von Trauttmansdorff** (872.0 cM) matched GEDCOM: **Wilhelm von Paulsdorf** (`@I6933@`)\n  - DNA-predicted: Great-Grandparent | Platform said: 1st Cousin | Consistent: True\n- DNA: **Theodore Marlowe** (228.0 cM) matched GEDCOM: **Theodor Ankarcrona** (`@I13345@`)\n  - DNA-predicted: 2nd Cousin | Platform said: 2nd Cousin | Consistent: True\n- DNA: **Eleanor Ashbrook** (124.0 cM) matched GEDCOM: **Eleanor von Bohun** (`@I8058@`)\n  - DNA-predicted: 2nd Cousin 1x Removed | Platform said: 2C1R | Consistent: True\n- DNA: **Rosalind T.** (42.0 cM) matched GEDCOM: **Rosalin Cubitts** (`@I11855@`)\n  - DNA-predicted: 3rd Cousin 1x Removed | Platform said: 3C1R | Consistent: False\n\n**Platform prediction consistency:** 25/30 consistent with Shared cM Project ranges\n\n**Findings:**\n- DNA data from myheritage: 30 total matches analyzed.\n- 15 close relative(s) detected in Parent/Child, Sibling, or Grandparent/Uncle range.\n- 3 match(es) in 1st cousin or closer cousin range.\n- 6 distant matches (<40 cM) — expected for large match lists.\n- 20 DNA match name(s) matched to GEDCOM tree persons (fuzzy score >= 0.75).\n-   - 'Karl VI des Heiligen Roemischen Reiches' matched 'Karl VI des Heiligen Römischen Reiches' (@I209@) at 3489.0 cM (predicted: Parent/Child)\n-   - 'Elisabeth von Braunschweig-Wolfenbuettel' matched 'Elisabeth von Braunschweig-Wolfenbüttel' (@I265@) at 3501.0 cM (predicted: Parent/Child)\n-   - 'Leopold Johann von Oesterreich' matched 'Leopold Johann von Österreich' (@I7396@) at 2604.0 cM (predicted: Full Sibling)\n- Platform relationship predictions: 25/30 (83%) consistent with Shared cM Project ranges.\n"
+}
