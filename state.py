@@ -1,4 +1,5 @@
-from typing import TypedDict, Optional, List
+import operator
+from typing import Annotated, TypedDict, Optional, List
 
 
 class GenealogyState(TypedDict):
@@ -14,12 +15,19 @@ class GenealogyState(TypedDict):
     profiles: List[dict]                # Consolidated person profiles from Synthesizer
     hypotheses: List[dict]              # Proposed relationships w/ evidence + confidence
     critiques: List[dict]               # Critic responses to hypotheses
+    dna_analysis: Optional[dict]        # DNA Analyst output (match distribution, cross-refs)
     final_report: str
 
     # Control
     revision_count: int                 # Adversarial loop iterations (max 2)
     status: str                         # "running" | "needs_revision" | "complete"
-    trace_log: List[str]                # Running log of agent actions
+
+    # trace_log uses operator.add as a reducer so parallel nodes (e.g.
+    # profile_synthesizer + dna_analyst running concurrently after the
+    # Record Scout) can each append entries without a concurrent-write
+    # conflict. Each agent node returns ONLY its new entries; the reducer
+    # concatenates them onto the accumulated log.
+    trace_log: Annotated[List[str], operator.add]
 
     # Experiment toggle — optional. Set to "unfiltered" to skip the Critic
     # isolation filter (Condition B of the A/B experiment). Defaults to
