@@ -1,0 +1,905 @@
+{
+  "audit_metadata": {
+    "kind": "audit_replay",
+    "timestamp": "20260430_080147",
+    "label": "kennedy_jfk",
+    "gedcom_path": "data/The Kennedy Family.ged",
+    "encoding": "utf-8",
+    "generations": 4,
+    "pass1_elapsed_sec": 6.5,
+    "pass2_elapsed_sec": 40.28
+  },
+  "root": {
+    "id": "@I0@",
+    "name": "John Fitzgerald Kennedy",
+    "first_name": "John Fitzgerald",
+    "surname": "Kennedy",
+    "sex": "M",
+    "birth_date": "29 MAY 1917",
+    "birth_place": "Brookline, MA",
+    "death_date": "22 NOV 1963",
+    "death_place": "Dallas, TX",
+    "father_id": "@I1@",
+    "mother_id": "@I2@",
+    "spouse_ids": [
+      "@I52@"
+    ],
+    "children_ids": [
+      "@I53@",
+      "@I54@",
+      "@I55@"
+    ],
+    "famc": [
+      "@F0@"
+    ],
+    "fams": [
+      "@F10@"
+    ]
+  },
+  "generations": 4,
+  "subtree": {
+    "persons": [
+      {
+        "id": "@I50@",
+        "name": "John Francis Fitzgerald",
+        "first_name": "John Francis",
+        "surname": "Fitzgerald",
+        "sex": "M",
+        "birth_date": "11 FEB 1863",
+        "birth_place": "Boston, MA",
+        "death_date": "2 OCT 1950",
+        "death_place": "Boston, MA",
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I51@"
+        ],
+        "children_ids": [
+          "@I2@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F2@"
+        ]
+      },
+      {
+        "id": "@I51@",
+        "name": "Mary Josephine Hannon",
+        "first_name": "Mary Josephine",
+        "surname": "Hannon",
+        "sex": "F",
+        "birth_date": null,
+        "birth_place": null,
+        "death_date": null,
+        "death_place": null,
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I50@"
+        ],
+        "children_ids": [
+          "@I2@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F2@"
+        ]
+      },
+      {
+        "id": "@I44@",
+        "name": "Patrick Joseph Kennedy",
+        "first_name": "Patrick Joseph",
+        "surname": "Kennedy",
+        "sex": "M",
+        "birth_date": "14 JAN 1858",
+        "birth_place": "Boston, MA",
+        "death_date": "18 MAY 1929",
+        "death_place": null,
+        "father_id": "@I46@",
+        "mother_id": "@I47@",
+        "spouse_ids": [
+          "@I45@"
+        ],
+        "children_ids": [
+          "@I1@",
+          "@I56@",
+          "@I66@",
+          "@I68@"
+        ],
+        "famc": [
+          "@F8@"
+        ],
+        "fams": [
+          "@F1@"
+        ]
+      },
+      {
+        "id": "@I45@",
+        "name": "Mary Augusta Hickey",
+        "first_name": "Mary Augusta",
+        "surname": "Hickey",
+        "sex": "F",
+        "birth_date": "6 DEC 1857",
+        "birth_place": null,
+        "death_date": "6 MAY 1923",
+        "death_place": null,
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I44@"
+        ],
+        "children_ids": [
+          "@I1@",
+          "@I56@",
+          "@I66@",
+          "@I68@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F1@"
+        ]
+      },
+      {
+        "id": "@I1@",
+        "name": "Joseph Patrick Kennedy",
+        "first_name": "Joseph Patrick",
+        "surname": "Kennedy",
+        "sex": "M",
+        "birth_date": "6 SEP 1888",
+        "birth_place": "Boston, MA",
+        "death_date": "18 NOV 1969",
+        "death_place": "Hyannis Port, MA",
+        "father_id": "@I44@",
+        "mother_id": "@I45@",
+        "spouse_ids": [
+          "@I2@"
+        ],
+        "children_ids": [
+          "@I0@",
+          "@I3@",
+          "@I4@",
+          "@I6@",
+          "@I8@",
+          "@I16@",
+          "@I21@",
+          "@I35@",
+          "@I39@"
+        ],
+        "famc": [
+          "@F1@"
+        ],
+        "fams": [
+          "@F0@"
+        ]
+      },
+      {
+        "id": "@I2@",
+        "name": "Rose Elizabeth Fitzgerald",
+        "first_name": "Rose Elizabeth",
+        "surname": "Fitzgerald",
+        "sex": "F",
+        "birth_date": "22 JUL 1890",
+        "birth_place": "North End, Boston, MA",
+        "death_date": "22 JAN 1995",
+        "death_place": "Hyannis Port, MA",
+        "father_id": "@I50@",
+        "mother_id": "@I51@",
+        "spouse_ids": [
+          "@I1@"
+        ],
+        "children_ids": [
+          "@I0@",
+          "@I3@",
+          "@I4@",
+          "@I6@",
+          "@I8@",
+          "@I16@",
+          "@I21@",
+          "@I35@",
+          "@I39@"
+        ],
+        "famc": [
+          "@F2@"
+        ],
+        "fams": [
+          "@F0@"
+        ]
+      },
+      {
+        "id": "@I46@",
+        "name": "Patrick Kennedy",
+        "first_name": "Patrick",
+        "surname": "Kennedy",
+        "sex": "M",
+        "birth_date": "16 FEB 1823",
+        "birth_place": "Dunganstown, Ireland",
+        "death_date": "22 NOV 1858",
+        "death_place": "Boston, MA",
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I47@"
+        ],
+        "children_ids": [
+          "@I44@",
+          "@I59@",
+          "@I60@",
+          "@I61@",
+          "@I62@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F8@"
+        ]
+      },
+      {
+        "id": "@I47@",
+        "name": "Bridget Murphy",
+        "first_name": "Bridget",
+        "surname": "Murphy",
+        "sex": "F",
+        "birth_date": "1821",
+        "birth_place": null,
+        "death_date": "20 DEC 1888",
+        "death_place": "Boston, MA",
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I46@"
+        ],
+        "children_ids": [
+          "@I44@",
+          "@I59@",
+          "@I60@",
+          "@I61@",
+          "@I62@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F8@"
+        ]
+      },
+      {
+        "id": "@I0@",
+        "name": "John Fitzgerald Kennedy",
+        "first_name": "John Fitzgerald",
+        "surname": "Kennedy",
+        "sex": "M",
+        "birth_date": "29 MAY 1917",
+        "birth_place": "Brookline, MA",
+        "death_date": "22 NOV 1963",
+        "death_place": "Dallas, TX",
+        "father_id": "@I1@",
+        "mother_id": "@I2@",
+        "spouse_ids": [
+          "@I52@"
+        ],
+        "children_ids": [
+          "@I53@",
+          "@I54@",
+          "@I55@"
+        ],
+        "famc": [
+          "@F0@"
+        ],
+        "fams": [
+          "@F10@"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "child_id": "@I0@",
+        "parent_id": "@I1@",
+        "role": "father",
+        "generation": 1
+      },
+      {
+        "child_id": "@I1@",
+        "parent_id": "@I44@",
+        "role": "father",
+        "generation": 2
+      },
+      {
+        "child_id": "@I44@",
+        "parent_id": "@I46@",
+        "role": "father",
+        "generation": 3
+      },
+      {
+        "child_id": "@I44@",
+        "parent_id": "@I47@",
+        "role": "mother",
+        "generation": 3
+      },
+      {
+        "child_id": "@I1@",
+        "parent_id": "@I45@",
+        "role": "mother",
+        "generation": 2
+      },
+      {
+        "child_id": "@I0@",
+        "parent_id": "@I2@",
+        "role": "mother",
+        "generation": 1
+      },
+      {
+        "child_id": "@I2@",
+        "parent_id": "@I50@",
+        "role": "father",
+        "generation": 2
+      },
+      {
+        "child_id": "@I2@",
+        "parent_id": "@I51@",
+        "role": "mother",
+        "generation": 2
+      }
+    ],
+    "root": {
+      "id": "@I0@",
+      "name": "John Fitzgerald Kennedy",
+      "first_name": "John Fitzgerald",
+      "surname": "Kennedy",
+      "sex": "M",
+      "birth_date": "29 MAY 1917",
+      "birth_place": "Brookline, MA",
+      "death_date": "22 NOV 1963",
+      "death_place": "Dallas, TX",
+      "father_id": "@I1@",
+      "mother_id": "@I2@",
+      "spouse_ids": [
+        "@I52@"
+      ],
+      "children_ids": [
+        "@I53@",
+        "@I54@",
+        "@I55@"
+      ],
+      "famc": [
+        "@F0@"
+      ],
+      "fams": [
+        "@F10@"
+      ]
+    },
+    "generations_reached": 3
+  },
+  "pass1_results": [
+    {
+      "child_id": "@I44@",
+      "child_name": "Patrick Joseph Kennedy",
+      "parent_id": "@I46@",
+      "parent_name": "Patrick Kennedy",
+      "role": "father",
+      "generation": 3,
+      "severity": "flagged",
+      "age_gap": 35,
+      "geo_verdict": "flag_strong",
+      "geo_distance_km": 4810,
+      "issues": [
+        "[GEO FLAG_STRONG] 4810km apart — trans-continental gap, requires migration-era or colonial context to be plausible"
+      ],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "father alive ~9mo before birth holds",
+          "role": "father"
+        }
+      ]
+    },
+    {
+      "child_id": "@I0@",
+      "child_name": "John Fitzgerald Kennedy",
+      "parent_id": "@I1@",
+      "parent_name": "Joseph Patrick Kennedy",
+      "role": "father",
+      "generation": 1,
+      "severity": "ok",
+      "age_gap": 29,
+      "geo_verdict": "ok",
+      "geo_distance_km": 6,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "father alive ~9mo before birth holds",
+          "role": "father"
+        }
+      ]
+    },
+    {
+      "child_id": "@I0@",
+      "child_name": "John Fitzgerald Kennedy",
+      "parent_id": "@I2@",
+      "parent_name": "Rose Elizabeth Fitzgerald",
+      "role": "mother",
+      "generation": 1,
+      "severity": "ok",
+      "age_gap": 27,
+      "geo_verdict": "ok",
+      "geo_distance_km": 6,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "mother"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "mother"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "mother alive at birth holds",
+          "role": "mother"
+        }
+      ]
+    },
+    {
+      "child_id": "@I53@",
+      "child_name": "Caroline Bouvier Kennedy",
+      "parent_id": "@I0@",
+      "parent_name": "John Fitzgerald Kennedy",
+      "role": "father",
+      "generation": 1,
+      "severity": "ok",
+      "age_gap": 40,
+      "geo_verdict": "ok",
+      "geo_distance_km": 300,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "father alive ~9mo before birth holds",
+          "role": "father"
+        },
+        {
+          "check": "death_before_birth",
+          "verdict": "insufficient_data",
+          "reason": "missing or unparseable date"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "insufficient_data",
+          "reason": "missing or unparseable date"
+        }
+      ]
+    },
+    {
+      "child_id": "@I54@",
+      "child_name": "John Fitzgerald Kennedy",
+      "parent_id": "@I0@",
+      "parent_name": "John Fitzgerald Kennedy",
+      "role": "father",
+      "generation": 1,
+      "severity": "ok",
+      "age_gap": 43,
+      "geo_verdict": "ok",
+      "geo_distance_km": 629,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "father alive ~9mo before birth holds",
+          "role": "father"
+        }
+      ]
+    },
+    {
+      "child_id": "@I55@",
+      "child_name": "Patrick Bouvier Kennedy",
+      "parent_id": "@I0@",
+      "parent_name": "John Fitzgerald Kennedy",
+      "role": "father",
+      "generation": 1,
+      "severity": "ok",
+      "age_gap": 46,
+      "geo_verdict": "insufficient_data",
+      "geo_distance_km": null,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "father alive ~9mo before birth holds",
+          "role": "father"
+        }
+      ]
+    },
+    {
+      "child_id": "@I1@",
+      "child_name": "Joseph Patrick Kennedy",
+      "parent_id": "@I44@",
+      "parent_name": "Patrick Joseph Kennedy",
+      "role": "father",
+      "generation": 2,
+      "severity": "ok",
+      "age_gap": 30,
+      "geo_verdict": "ok",
+      "geo_distance_km": 0,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "father alive ~9mo before birth holds",
+          "role": "father"
+        }
+      ]
+    },
+    {
+      "child_id": "@I1@",
+      "child_name": "Joseph Patrick Kennedy",
+      "parent_id": "@I45@",
+      "parent_name": "Mary Augusta Hickey",
+      "role": "mother",
+      "generation": 2,
+      "severity": "ok",
+      "age_gap": 31,
+      "geo_verdict": null,
+      "geo_distance_km": null,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "mother"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "mother"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "mother alive at birth holds",
+          "role": "mother"
+        }
+      ]
+    },
+    {
+      "child_id": "@I2@",
+      "child_name": "Rose Elizabeth Fitzgerald",
+      "parent_id": "@I50@",
+      "parent_name": "John Francis Fitzgerald",
+      "role": "father",
+      "generation": 2,
+      "severity": "ok",
+      "age_gap": 27,
+      "geo_verdict": "ok",
+      "geo_distance_km": 1,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "father alive ~9mo before birth holds",
+          "role": "father"
+        }
+      ]
+    },
+    {
+      "child_id": "@I2@",
+      "child_name": "Rose Elizabeth Fitzgerald",
+      "parent_id": "@I51@",
+      "parent_name": "Mary Josephine Hannon",
+      "role": "mother",
+      "generation": 2,
+      "severity": "ok",
+      "age_gap": null,
+      "geo_verdict": null,
+      "geo_distance_km": null,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "insufficient_data",
+          "reason": "missing or unparseable date",
+          "role": "mother"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "insufficient_data",
+          "reason": "missing or unparseable date",
+          "role": "mother"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "insufficient_data",
+          "reason": "missing or unparseable date",
+          "role": "mother"
+        }
+      ]
+    },
+    {
+      "child_id": "@I44@",
+      "child_name": "Patrick Joseph Kennedy",
+      "parent_id": "@I47@",
+      "parent_name": "Bridget Murphy",
+      "role": "mother",
+      "generation": 3,
+      "severity": "ok",
+      "age_gap": 37,
+      "geo_verdict": null,
+      "geo_distance_km": null,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "mother"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "mother"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "mother alive at birth holds",
+          "role": "mother"
+        }
+      ]
+    }
+  ],
+  "pass2_results": [
+    {
+      "child_id": "@I44@",
+      "child_name": "Patrick Joseph Kennedy",
+      "parent_id": "@I46@",
+      "parent_name": "Patrick Kennedy",
+      "role": "father",
+      "generation": 3,
+      "severity": "flagged",
+      "age_gap": 35,
+      "geo_verdict": "flag_strong",
+      "geo_distance_km": 4810,
+      "issues": [
+        "[GEO FLAG_STRONG] 4810km apart — trans-continental gap, requires migration-era or colonial context to be plausible"
+      ],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "father alive ~9mo before birth holds",
+          "role": "father"
+        }
+      ],
+      "deep_verdicts": [
+        "accept"
+      ],
+      "deep_confs": [
+        0.85
+      ],
+      "deep_elapsed": 39.6,
+      "deep_issues": [
+        "All evidence is from a single GEDCOM source with no independent vital records, census, or immigration documentation",
+        "Geographic gap of 4810km between father's birthplace (Dunganstown, Ireland) and subject's birthplace (Boston, MA) is unverified by immigration records, though this is the well-known Irish famine-era migration pattern",
+        "No sibling records supplied to cross-verify family unit @F8@ integrity"
+      ]
+    }
+  ]
+}

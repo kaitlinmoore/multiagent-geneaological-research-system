@@ -1,0 +1,1735 @@
+{
+  "audit_metadata": {
+    "kind": "audit_replay",
+    "timestamp": "20260430_080002",
+    "label": "queen_edward_vii",
+    "gedcom_path": "data/Queen.ged",
+    "encoding": "utf-8",
+    "generations": 4,
+    "pass1_elapsed_sec": 12.54,
+    "pass2_elapsed_sec": null
+  },
+  "root": {
+    "id": "@I3014@",
+    "name": "Edward VII Wettin",
+    "first_name": "Edward VII",
+    "surname": "Wettin",
+    "sex": "M",
+    "birth_date": "9 NOV 1841",
+    "birth_place": "Buckingham, Palace, London, England",
+    "death_date": "6 MAY 1910",
+    "death_place": "Buckingham, Palace, London, England",
+    "father_id": "@I3012@",
+    "mother_id": "@I3011@",
+    "spouse_ids": [
+      "@I3022@"
+    ],
+    "children_ids": [
+      "@I3023@",
+      "@I3024@",
+      "@I3025@",
+      "@I3026@",
+      "@I3027@",
+      "@I3028@"
+    ],
+    "famc": [
+      "@F1423@"
+    ],
+    "fams": [
+      "@F1424@"
+    ]
+  },
+  "generations": 4,
+  "subtree": {
+    "persons": [
+      {
+        "id": "@I3320@",
+        "name": "Frederick Louis Hanover",
+        "first_name": "Frederick Louis",
+        "surname": "Hanover",
+        "sex": "M",
+        "birth_date": "31 JAN 1701",
+        "birth_place": "Hanover",
+        "death_date": "31 MAR 1751",
+        "death_place": "Leicester-House, London, England",
+        "father_id": "@I3318@",
+        "mother_id": "@I3319@",
+        "spouse_ids": [
+          "@I3329@"
+        ],
+        "children_ids": [
+          "@I3330@",
+          "@I3138@",
+          "@I3331@",
+          "@I3332@",
+          "@I3333@",
+          "@I3334@",
+          "@I3335@",
+          "@I3336@",
+          "@I3337@"
+        ],
+        "famc": [
+          "@F1525@"
+        ],
+        "fams": [
+          "@F1526@"
+        ]
+      },
+      {
+        "id": "@I2148@",
+        "name": "Elizabeth of Saxe- Hildburghausen Albertin",
+        "first_name": "Elizabeth of Saxe- Hildburghausen",
+        "surname": "Albertin",
+        "sex": "F",
+        "birth_date": null,
+        "birth_place": null,
+        "death_date": null,
+        "death_place": null,
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I2147@"
+        ],
+        "children_ids": [
+          "@I3139@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F959@"
+        ]
+      },
+      {
+        "id": "@I3139@",
+        "name": "(Sophia) Charlotte",
+        "first_name": "(Sophia) Charlotte",
+        "surname": null,
+        "sex": "F",
+        "birth_date": "19 MAY 1744",
+        "birth_place": "Mirow",
+        "death_date": "17 NOV 1818",
+        "death_place": "Kew Palace",
+        "father_id": "@I2147@",
+        "mother_id": "@I2148@",
+        "spouse_ids": [
+          "@I3138@"
+        ],
+        "children_ids": [
+          "@I3149@",
+          "@I3209@",
+          "@I3210@",
+          "@I3211@",
+          "@I3141@",
+          "@I3216@",
+          "@I3217@",
+          "@I3219@",
+          "@I3220@",
+          "@I3140@",
+          "@I3221@",
+          "@I3222@",
+          "@I3223@",
+          "@I3224@",
+          "@I3225@"
+        ],
+        "famc": [
+          "@F959@"
+        ],
+        "fams": [
+          "@F1461@"
+        ]
+      },
+      {
+        "id": "@I2896@",
+        "name": "Caroline Erbach-Schonberg",
+        "first_name": "Caroline Erbach-Schonberg",
+        "surname": null,
+        "sex": "F",
+        "birth_date": "1727",
+        "birth_place": null,
+        "death_date": "1795",
+        "death_place": null,
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I2895@"
+        ],
+        "children_ids": [
+          "@I2614@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F1228@"
+        ]
+      },
+      {
+        "id": "@I2898@",
+        "name": "Sophia Antonia of Brunswick",
+        "first_name": "Sophia Antonia of Brunswick",
+        "surname": null,
+        "sex": "F",
+        "birth_date": "1724",
+        "birth_place": null,
+        "death_date": "1802",
+        "death_place": null,
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I2897@"
+        ],
+        "children_ids": [
+          "@I2448@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F1360@"
+        ]
+      },
+      {
+        "id": "@I3011@",
+        "name": "Victoria Hanover",
+        "first_name": "Victoria",
+        "surname": "Hanover",
+        "sex": "F",
+        "birth_date": "24 MAY 1819",
+        "birth_place": "Kensington, Palace, London, England",
+        "death_date": "22 JAN 1901",
+        "death_place": "Osborne House, Isle of Wight, England",
+        "father_id": "@I3141@",
+        "mother_id": "@I3146@",
+        "spouse_ids": [
+          "@I3012@"
+        ],
+        "children_ids": [
+          "@I3013@",
+          "@I3014@",
+          "@I3015@",
+          "@I3016@",
+          "@I3017@",
+          "@I3018@",
+          "@I3019@",
+          "@I3020@",
+          "@I3021@"
+        ],
+        "famc": [
+          "@F1464@"
+        ],
+        "fams": [
+          "@F1423@"
+        ]
+      },
+      {
+        "id": "@I2895@",
+        "name": "Henry XXIV Reuss-Ebersdorf",
+        "first_name": "Henry XXIV Reuss-Ebersdorf",
+        "surname": null,
+        "sex": "M",
+        "birth_date": "1724",
+        "birth_place": null,
+        "death_date": "1779",
+        "death_place": null,
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I2896@"
+        ],
+        "children_ids": [
+          "@I2614@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F1228@"
+        ]
+      },
+      {
+        "id": "@I2448@",
+        "name": "Francis Frederick of Saxe-Coburg",
+        "first_name": "Francis Frederick of Saxe-Coburg",
+        "surname": null,
+        "sex": "M",
+        "birth_date": "1750",
+        "birth_place": null,
+        "death_date": "1806",
+        "death_place": null,
+        "father_id": "@I2897@",
+        "mother_id": "@I2898@",
+        "spouse_ids": [
+          "@I2614@"
+        ],
+        "children_ids": [
+          "@I3147@",
+          "@I3212@",
+          "@I3146@",
+          "@I1696@",
+          "@I2973@",
+          "@I2974@",
+          "@I2975@"
+        ],
+        "famc": [
+          "@F1360@"
+        ],
+        "fams": [
+          "@F1147@",
+          "@F1367@"
+        ]
+      },
+      {
+        "id": "@I2147@",
+        "name": "Charles Louis Frederick",
+        "first_name": "Charles Louis Frederick",
+        "surname": null,
+        "sex": "M",
+        "birth_date": null,
+        "birth_place": null,
+        "death_date": null,
+        "death_place": null,
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I2148@"
+        ],
+        "children_ids": [
+          "@I3139@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F959@"
+        ]
+      },
+      {
+        "id": "@I2897@",
+        "name": "Ernest Frederick of Saxe-Coburg",
+        "first_name": "Ernest Frederick of Saxe-Coburg",
+        "surname": null,
+        "sex": "M",
+        "birth_date": "1724",
+        "birth_place": null,
+        "death_date": "1800",
+        "death_place": null,
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I2898@"
+        ],
+        "children_ids": [
+          "@I2448@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F1360@"
+        ]
+      },
+      {
+        "id": "@I3147@",
+        "name": "Ernest I of Saxe-Coburg- Saalfeld",
+        "first_name": "Ernest I of Saxe-Coburg- Saalfeld",
+        "surname": null,
+        "sex": "M",
+        "birth_date": "1784",
+        "birth_place": null,
+        "death_date": "29 JAN 1844",
+        "death_place": null,
+        "father_id": "@I2448@",
+        "mother_id": "@I2614@",
+        "spouse_ids": [
+          "@I3148@"
+        ],
+        "children_ids": [
+          "@I1737@",
+          "@I3012@"
+        ],
+        "famc": [
+          "@F1147@"
+        ],
+        "fams": [
+          "@F1368@",
+          "@F1465@"
+        ]
+      },
+      {
+        "id": "@I3141@",
+        "name": "Edward Augustus Hanover",
+        "first_name": "Edward Augustus",
+        "surname": "Hanover",
+        "sex": "M",
+        "birth_date": "2 NOV 1767",
+        "birth_place": "Buckingham House, London, England",
+        "death_date": "23 JAN 1820",
+        "death_place": "Sidmouth, Devon, England",
+        "father_id": "@I3138@",
+        "mother_id": "@I3139@",
+        "spouse_ids": [
+          "@I3146@"
+        ],
+        "children_ids": [
+          "@I3011@"
+        ],
+        "famc": [
+          "@F1461@"
+        ],
+        "fams": [
+          "@F1464@"
+        ]
+      },
+      {
+        "id": "@I3329@",
+        "name": "Augusta of Saxe-Gotha",
+        "first_name": "Augusta of Saxe-Gotha",
+        "surname": null,
+        "sex": "F",
+        "birth_date": "30 NOV 1719",
+        "birth_place": "Gotha",
+        "death_date": "8 FEB 1772",
+        "death_place": "Carlton House",
+        "father_id": "@I2142@",
+        "mother_id": "@I2143@",
+        "spouse_ids": [
+          "@I3320@"
+        ],
+        "children_ids": [
+          "@I3330@",
+          "@I3138@",
+          "@I3331@",
+          "@I3332@",
+          "@I3333@",
+          "@I3334@",
+          "@I3335@",
+          "@I3336@",
+          "@I3337@"
+        ],
+        "famc": [
+          "@F956@"
+        ],
+        "fams": [
+          "@F1526@"
+        ]
+      },
+      {
+        "id": "@I3014@",
+        "name": "Edward VII Wettin",
+        "first_name": "Edward VII",
+        "surname": "Wettin",
+        "sex": "M",
+        "birth_date": "9 NOV 1841",
+        "birth_place": "Buckingham, Palace, London, England",
+        "death_date": "6 MAY 1910",
+        "death_place": "Buckingham, Palace, London, England",
+        "father_id": "@I3012@",
+        "mother_id": "@I3011@",
+        "spouse_ids": [
+          "@I3022@"
+        ],
+        "children_ids": [
+          "@I3023@",
+          "@I3024@",
+          "@I3025@",
+          "@I3026@",
+          "@I3027@",
+          "@I3028@"
+        ],
+        "famc": [
+          "@F1423@"
+        ],
+        "fams": [
+          "@F1424@"
+        ]
+      },
+      {
+        "id": "@I2614@",
+        "name": "Augusta Reuss-Ebersdorf",
+        "first_name": "Augusta Reuss-Ebersdorf",
+        "surname": null,
+        "sex": "F",
+        "birth_date": "1757",
+        "birth_place": null,
+        "death_date": "1831",
+        "death_place": null,
+        "father_id": "@I2895@",
+        "mother_id": "@I2896@",
+        "spouse_ids": [
+          "@I2448@"
+        ],
+        "children_ids": [
+          "@I3147@",
+          "@I3212@",
+          "@I3146@",
+          "@I1696@",
+          "@I2973@",
+          "@I2974@",
+          "@I2975@"
+        ],
+        "famc": [
+          "@F1228@"
+        ],
+        "fams": [
+          "@F1147@"
+        ]
+      },
+      {
+        "id": "@I3148@",
+        "name": "Louise of Saxe-Coburg- Altenburg",
+        "first_name": "Louise of Saxe-Coburg- Altenburg",
+        "surname": null,
+        "sex": "F",
+        "birth_date": "1800",
+        "birth_place": "Thuringia",
+        "death_date": "1831",
+        "death_place": "Paris, France",
+        "father_id": null,
+        "mother_id": null,
+        "spouse_ids": [
+          "@I3147@"
+        ],
+        "children_ids": [
+          "@I1737@",
+          "@I3012@"
+        ],
+        "famc": [],
+        "fams": [
+          "@F1465@"
+        ]
+      },
+      {
+        "id": "@I3138@",
+        "name": "George III Hanover",
+        "first_name": "George III",
+        "surname": "Hanover",
+        "sex": "M",
+        "birth_date": "4 JUN 1738",
+        "birth_place": "Norfolk-House, St. James Square, London, England",
+        "death_date": "29 JAN 1820",
+        "death_place": "Windsor Castle, Windsor, Berkshire, England",
+        "father_id": "@I3320@",
+        "mother_id": "@I3329@",
+        "spouse_ids": [
+          "@I3139@"
+        ],
+        "children_ids": [
+          "@I3149@",
+          "@I3209@",
+          "@I3210@",
+          "@I3211@",
+          "@I3141@",
+          "@I3216@",
+          "@I3217@",
+          "@I3219@",
+          "@I3220@",
+          "@I3140@",
+          "@I3221@",
+          "@I3222@",
+          "@I3223@",
+          "@I3224@",
+          "@I3225@"
+        ],
+        "famc": [
+          "@F1526@"
+        ],
+        "fams": [
+          "@F1461@"
+        ]
+      },
+      {
+        "id": "@I3012@",
+        "name": "Albert Augustus Charles",
+        "first_name": "Albert Augustus Charles",
+        "surname": null,
+        "sex": "M",
+        "birth_date": "26 AUG 1819",
+        "birth_place": "Schloss Rosenau, Near Coburg, Germany",
+        "death_date": "14 DEC 1861",
+        "death_place": "Windsor Castle, Berkshire, England",
+        "father_id": "@I3147@",
+        "mother_id": "@I3148@",
+        "spouse_ids": [
+          "@I3011@"
+        ],
+        "children_ids": [
+          "@I3013@",
+          "@I3014@",
+          "@I3015@",
+          "@I3016@",
+          "@I3017@",
+          "@I3018@",
+          "@I3019@",
+          "@I3020@",
+          "@I3021@"
+        ],
+        "famc": [
+          "@F1465@"
+        ],
+        "fams": [
+          "@F1423@"
+        ]
+      },
+      {
+        "id": "@I3146@",
+        "name": "Victoria Mary Louisa",
+        "first_name": "Victoria Mary Louisa",
+        "surname": null,
+        "sex": "F",
+        "birth_date": "17 AUG 1786",
+        "birth_place": "Coburg",
+        "death_date": "16 MAR 1861",
+        "death_place": "Frogmore House, Windsor, England",
+        "father_id": "@I2448@",
+        "mother_id": "@I2614@",
+        "spouse_ids": [
+          "@I3141@"
+        ],
+        "children_ids": [
+          "@I3011@"
+        ],
+        "famc": [
+          "@F1147@"
+        ],
+        "fams": [
+          "@F1409@",
+          "@F1464@"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "child_id": "@I3014@",
+        "parent_id": "@I3012@",
+        "role": "father",
+        "generation": 1
+      },
+      {
+        "child_id": "@I3012@",
+        "parent_id": "@I3147@",
+        "role": "father",
+        "generation": 2
+      },
+      {
+        "child_id": "@I3147@",
+        "parent_id": "@I2448@",
+        "role": "father",
+        "generation": 3
+      },
+      {
+        "child_id": "@I2448@",
+        "parent_id": "@I2897@",
+        "role": "father",
+        "generation": 4
+      },
+      {
+        "child_id": "@I2448@",
+        "parent_id": "@I2898@",
+        "role": "mother",
+        "generation": 4
+      },
+      {
+        "child_id": "@I3147@",
+        "parent_id": "@I2614@",
+        "role": "mother",
+        "generation": 3
+      },
+      {
+        "child_id": "@I2614@",
+        "parent_id": "@I2895@",
+        "role": "father",
+        "generation": 4
+      },
+      {
+        "child_id": "@I2614@",
+        "parent_id": "@I2896@",
+        "role": "mother",
+        "generation": 4
+      },
+      {
+        "child_id": "@I3012@",
+        "parent_id": "@I3148@",
+        "role": "mother",
+        "generation": 2
+      },
+      {
+        "child_id": "@I3014@",
+        "parent_id": "@I3011@",
+        "role": "mother",
+        "generation": 1
+      },
+      {
+        "child_id": "@I3011@",
+        "parent_id": "@I3141@",
+        "role": "father",
+        "generation": 2
+      },
+      {
+        "child_id": "@I3141@",
+        "parent_id": "@I3138@",
+        "role": "father",
+        "generation": 3
+      },
+      {
+        "child_id": "@I3138@",
+        "parent_id": "@I3320@",
+        "role": "father",
+        "generation": 4
+      },
+      {
+        "child_id": "@I3138@",
+        "parent_id": "@I3329@",
+        "role": "mother",
+        "generation": 4
+      },
+      {
+        "child_id": "@I3141@",
+        "parent_id": "@I3139@",
+        "role": "mother",
+        "generation": 3
+      },
+      {
+        "child_id": "@I3139@",
+        "parent_id": "@I2147@",
+        "role": "father",
+        "generation": 4
+      },
+      {
+        "child_id": "@I3139@",
+        "parent_id": "@I2148@",
+        "role": "mother",
+        "generation": 4
+      },
+      {
+        "child_id": "@I3011@",
+        "parent_id": "@I3146@",
+        "role": "mother",
+        "generation": 2
+      },
+      {
+        "child_id": "@I3146@",
+        "parent_id": "@I2448@",
+        "role": "father",
+        "generation": 3
+      },
+      {
+        "child_id": "@I3146@",
+        "parent_id": "@I2614@",
+        "role": "mother",
+        "generation": 3
+      }
+    ],
+    "root": {
+      "id": "@I3014@",
+      "name": "Edward VII Wettin",
+      "first_name": "Edward VII",
+      "surname": "Wettin",
+      "sex": "M",
+      "birth_date": "9 NOV 1841",
+      "birth_place": "Buckingham, Palace, London, England",
+      "death_date": "6 MAY 1910",
+      "death_place": "Buckingham, Palace, London, England",
+      "father_id": "@I3012@",
+      "mother_id": "@I3011@",
+      "spouse_ids": [
+        "@I3022@"
+      ],
+      "children_ids": [
+        "@I3023@",
+        "@I3024@",
+        "@I3025@",
+        "@I3026@",
+        "@I3027@",
+        "@I3028@"
+      ],
+      "famc": [
+        "@F1423@"
+      ],
+      "fams": [
+        "@F1424@"
+      ]
+    },
+    "generations_reached": 4
+  },
+  "pass1_results": [
+    {
+      "child_id": "@I3014@",
+      "child_name": "Edward VII Wettin",
+      "parent_id": "@I3012@",
+      "parent_name": "Albert Augustus Charles",
+      "role": "father",
+      "generation": 1,
+      "severity": "ok",
+      "age_gap": 22,
+      "geo_verdict": "insufficient_data",
+      "geo_distance_km": null,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "father alive ~9mo before birth holds",
+          "role": "father"
+        }
+      ]
+    },
+    {
+      "child_id": "@I3014@",
+      "child_name": "Edward VII Wettin",
+      "parent_id": "@I3011@",
+      "parent_name": "Victoria Hanover",
+      "role": "mother",
+      "generation": 1,
+      "severity": "ok",
+      "age_gap": 22,
+      "geo_verdict": "ok",
+      "geo_distance_km": 3,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "mother"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "mother"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "mother alive at birth holds",
+          "role": "mother"
+        }
+      ]
+    },
+    {
+      "child_id": "@I3024@",
+      "child_name": "George V Windsor",
+      "parent_id": "@I3014@",
+      "parent_name": "Edward VII Wettin",
+      "role": "father",
+      "generation": 1,
+      "severity": "ok",
+      "age_gap": 24,
+      "geo_verdict": "ok",
+      "geo_distance_km": 1,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "father alive ~9mo before birth holds",
+          "role": "father"
+        }
+      ]
+    },
+    {
+      "child_id": "@I3012@",
+      "child_name": "Albert Augustus Charles",
+      "parent_id": "@I3147@",
+      "parent_name": "Ernest I of Saxe-Coburg- Saalfeld",
+      "role": "father",
+      "generation": 2,
+      "severity": "ok",
+      "age_gap": 35,
+      "geo_verdict": null,
+      "geo_distance_km": null,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "father alive ~9mo before birth holds",
+          "role": "father"
+        }
+      ]
+    },
+    {
+      "child_id": "@I3012@",
+      "child_name": "Albert Augustus Charles",
+      "parent_id": "@I3148@",
+      "parent_name": "Louise of Saxe-Coburg- Altenburg",
+      "role": "mother",
+      "generation": 2,
+      "severity": "ok",
+      "age_gap": 19,
+      "geo_verdict": "insufficient_data",
+      "geo_distance_km": null,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "mother"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "mother"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "mother alive at birth holds",
+          "role": "mother"
+        }
+      ]
+    },
+    {
+      "child_id": "@I3011@",
+      "child_name": "Victoria Hanover",
+      "parent_id": "@I3141@",
+      "parent_name": "Edward Augustus Hanover",
+      "role": "father",
+      "generation": 2,
+      "severity": "ok",
+      "age_gap": 52,
+      "geo_verdict": "ok",
+      "geo_distance_km": 20,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "father alive ~9mo before birth holds",
+          "role": "father"
+        }
+      ]
+    },
+    {
+      "child_id": "@I3011@",
+      "child_name": "Victoria Hanover",
+      "parent_id": "@I3146@",
+      "parent_name": "Victoria Mary Louisa",
+      "role": "mother",
+      "generation": 2,
+      "severity": "ok",
+      "age_gap": 33,
+      "geo_verdict": "ok",
+      "geo_distance_km": 794,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "mother"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "mother"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "mother alive at birth holds",
+          "role": "mother"
+        }
+      ]
+    },
+    {
+      "child_id": "@I3042@",
+      "child_name": "George VI Windsor",
+      "parent_id": "@I3024@",
+      "parent_name": "George V Windsor",
+      "role": "father",
+      "generation": 2,
+      "severity": "ok",
+      "age_gap": 30,
+      "geo_verdict": "ok",
+      "geo_distance_km": 154,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "father alive ~9mo before birth holds",
+          "role": "father"
+        }
+      ]
+    },
+    {
+      "child_id": "@I3147@",
+      "child_name": "Ernest I of Saxe-Coburg- Saalfeld",
+      "parent_id": "@I2448@",
+      "parent_name": "Francis Frederick of Saxe-Coburg",
+      "role": "father",
+      "generation": 3,
+      "severity": "ok",
+      "age_gap": 34,
+      "geo_verdict": null,
+      "geo_distance_km": null,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "father alive ~9mo before birth holds",
+          "role": "father"
+        }
+      ]
+    },
+    {
+      "child_id": "@I3147@",
+      "child_name": "Ernest I of Saxe-Coburg- Saalfeld",
+      "parent_id": "@I2614@",
+      "parent_name": "Augusta Reuss-Ebersdorf",
+      "role": "mother",
+      "generation": 3,
+      "severity": "ok",
+      "age_gap": 27,
+      "geo_verdict": null,
+      "geo_distance_km": null,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "mother"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "mother"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "mother alive at birth holds",
+          "role": "mother"
+        }
+      ]
+    },
+    {
+      "child_id": "@I3141@",
+      "child_name": "Edward Augustus Hanover",
+      "parent_id": "@I3138@",
+      "parent_name": "George III Hanover",
+      "role": "father",
+      "generation": 3,
+      "severity": "ok",
+      "age_gap": 29,
+      "geo_verdict": "insufficient_data",
+      "geo_distance_km": null,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "father alive ~9mo before birth holds",
+          "role": "father"
+        }
+      ]
+    },
+    {
+      "child_id": "@I3141@",
+      "child_name": "Edward Augustus Hanover",
+      "parent_id": "@I3139@",
+      "parent_name": "(Sophia) Charlotte",
+      "role": "mother",
+      "generation": 3,
+      "severity": "ok",
+      "age_gap": 23,
+      "geo_verdict": "ok",
+      "geo_distance_km": 890,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "mother"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "mother"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "mother alive at birth holds",
+          "role": "mother"
+        }
+      ]
+    },
+    {
+      "child_id": "@I3146@",
+      "child_name": "Victoria Mary Louisa",
+      "parent_id": "@I2448@",
+      "parent_name": "Francis Frederick of Saxe-Coburg",
+      "role": "father",
+      "generation": 3,
+      "severity": "ok",
+      "age_gap": 36,
+      "geo_verdict": null,
+      "geo_distance_km": null,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "father alive ~9mo before birth holds",
+          "role": "father"
+        }
+      ]
+    },
+    {
+      "child_id": "@I3146@",
+      "child_name": "Victoria Mary Louisa",
+      "parent_id": "@I2614@",
+      "parent_name": "Augusta Reuss-Ebersdorf",
+      "role": "mother",
+      "generation": 3,
+      "severity": "ok",
+      "age_gap": 29,
+      "geo_verdict": null,
+      "geo_distance_km": null,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "mother"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "mother"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "mother alive at birth holds",
+          "role": "mother"
+        }
+      ]
+    },
+    {
+      "child_id": "@I3062@",
+      "child_name": "Elizabeth II Alexandra Mary Windsor",
+      "parent_id": "@I3042@",
+      "parent_name": "George VI Windsor",
+      "role": "father",
+      "generation": 3,
+      "severity": "ok",
+      "age_gap": 31,
+      "geo_verdict": "insufficient_data",
+      "geo_distance_km": null,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "father alive ~9mo before birth holds",
+          "role": "father"
+        },
+        {
+          "check": "death_before_birth",
+          "verdict": "insufficient_data",
+          "reason": "missing or unparseable date"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "insufficient_data",
+          "reason": "missing or unparseable date"
+        }
+      ]
+    },
+    {
+      "child_id": "@I2448@",
+      "child_name": "Francis Frederick of Saxe-Coburg",
+      "parent_id": "@I2897@",
+      "parent_name": "Ernest Frederick of Saxe-Coburg",
+      "role": "father",
+      "generation": 4,
+      "severity": "ok",
+      "age_gap": 26,
+      "geo_verdict": null,
+      "geo_distance_km": null,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "father alive ~9mo before birth holds",
+          "role": "father"
+        }
+      ]
+    },
+    {
+      "child_id": "@I2448@",
+      "child_name": "Francis Frederick of Saxe-Coburg",
+      "parent_id": "@I2898@",
+      "parent_name": "Sophia Antonia of Brunswick",
+      "role": "mother",
+      "generation": 4,
+      "severity": "ok",
+      "age_gap": 26,
+      "geo_verdict": null,
+      "geo_distance_km": null,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "mother"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "mother"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "mother alive at birth holds",
+          "role": "mother"
+        }
+      ]
+    },
+    {
+      "child_id": "@I2614@",
+      "child_name": "Augusta Reuss-Ebersdorf",
+      "parent_id": "@I2895@",
+      "parent_name": "Henry XXIV Reuss-Ebersdorf",
+      "role": "father",
+      "generation": 4,
+      "severity": "ok",
+      "age_gap": 33,
+      "geo_verdict": null,
+      "geo_distance_km": null,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "father alive ~9mo before birth holds",
+          "role": "father"
+        }
+      ]
+    },
+    {
+      "child_id": "@I2614@",
+      "child_name": "Augusta Reuss-Ebersdorf",
+      "parent_id": "@I2896@",
+      "parent_name": "Caroline Erbach-Schonberg",
+      "role": "mother",
+      "generation": 4,
+      "severity": "ok",
+      "age_gap": 30,
+      "geo_verdict": null,
+      "geo_distance_km": null,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "mother"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "mother"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "mother alive at birth holds",
+          "role": "mother"
+        }
+      ]
+    },
+    {
+      "child_id": "@I3138@",
+      "child_name": "George III Hanover",
+      "parent_id": "@I3320@",
+      "parent_name": "Frederick Louis Hanover",
+      "role": "father",
+      "generation": 4,
+      "severity": "ok",
+      "age_gap": 37,
+      "geo_verdict": "insufficient_data",
+      "geo_distance_km": null,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "father alive ~9mo before birth holds",
+          "role": "father"
+        }
+      ]
+    },
+    {
+      "child_id": "@I3138@",
+      "child_name": "George III Hanover",
+      "parent_id": "@I3329@",
+      "parent_name": "Augusta of Saxe-Gotha",
+      "role": "mother",
+      "generation": 4,
+      "severity": "ok",
+      "age_gap": 19,
+      "geo_verdict": "insufficient_data",
+      "geo_distance_km": null,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "ok",
+          "reason": "parent is not younger than child",
+          "role": "mother"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "ok",
+          "reason": "parent age plausible (>= 12)",
+          "role": "mother"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "ok",
+          "reason": "mother alive at birth holds",
+          "role": "mother"
+        }
+      ]
+    },
+    {
+      "child_id": "@I3139@",
+      "child_name": "(Sophia) Charlotte",
+      "parent_id": "@I2147@",
+      "parent_name": "Charles Louis Frederick",
+      "role": "father",
+      "generation": 4,
+      "severity": "ok",
+      "age_gap": null,
+      "geo_verdict": null,
+      "geo_distance_km": null,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "insufficient_data",
+          "reason": "missing or unparseable date",
+          "role": "father"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "insufficient_data",
+          "reason": "missing or unparseable date",
+          "role": "father"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "insufficient_data",
+          "reason": "missing or unparseable date",
+          "role": "father"
+        }
+      ]
+    },
+    {
+      "child_id": "@I3139@",
+      "child_name": "(Sophia) Charlotte",
+      "parent_id": "@I2148@",
+      "parent_name": "Elizabeth of Saxe- Hildburghausen Albertin",
+      "role": "mother",
+      "generation": 4,
+      "severity": "ok",
+      "age_gap": null,
+      "geo_verdict": null,
+      "geo_distance_km": null,
+      "issues": [],
+      "tier1_results": [
+        {
+          "check": "death_before_birth",
+          "verdict": "ok",
+          "reason": "death is not before birth"
+        },
+        {
+          "check": "implausible_lifespan",
+          "verdict": "ok",
+          "reason": "lifespan within 120 years"
+        },
+        {
+          "check": "parent_younger_than_child",
+          "verdict": "insufficient_data",
+          "reason": "missing or unparseable date",
+          "role": "mother"
+        },
+        {
+          "check": "parent_too_young_at_birth",
+          "verdict": "insufficient_data",
+          "reason": "missing or unparseable date",
+          "role": "mother"
+        },
+        {
+          "check": "parent_died_before_conception",
+          "verdict": "insufficient_data",
+          "reason": "missing or unparseable date",
+          "role": "mother"
+        }
+      ]
+    }
+  ],
+  "pass2_results": null
+}
