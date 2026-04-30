@@ -124,7 +124,7 @@ _STRUCTURAL_FIELD_BLOCKLIST = {
 
 
 def profile_synthesizer_node(state: GenealogyState) -> dict:
-    trace = list(state.get("trace_log") or [])
+    trace: list[str] = []
     trace.append("profile_synthesizer: enter")
 
     records = state.get("retrieved_records") or []

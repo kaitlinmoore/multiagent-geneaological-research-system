@@ -35,6 +35,7 @@ CRITICAL CRITIC-ISOLATION INVARIANT:
 from __future__ import annotations
 
 import json
+import os
 from typing import Optional
 
 from langchain_anthropic import ChatAnthropic
@@ -43,10 +44,39 @@ from langchain_core.messages import HumanMessage, SystemMessage
 from agents.hypothesis_schema import make_hypothesis
 from state import GenealogyState
 from tools.date_utils import get_year, normalize_gedcom_date
+from tools.fuzzy_match import name_match_score
 from tools.geo_utils import place_distance_km
 
 
-llm = ChatAnthropic(model="claude-sonnet-4-6", max_tokens=2048)
+# Default Hypothesizer model. Production uses Anthropic Sonnet 4.6.
+# A cross-vendor variant (e.g. weak OpenAI Hypothesizer + Anthropic Critic)
+# is available for the asymmetric-capability experiment by setting:
+#   HYPOTHESIZER_VENDOR=openai     HYPOTHESIZER_MODEL=gpt-4o-mini
+#   HYPOTHESIZER_VENDOR=anthropic  HYPOTHESIZER_MODEL=claude-sonnet-4-6  (default)
+_DEFAULT_VENDOR = "anthropic"
+_DEFAULT_MODEL = "claude-sonnet-4-6"
+
+
+def build_hypothesizer_llm(vendor: Optional[str] = None, model: Optional[str] = None):
+    """Construct a Hypothesizer LLM. Defaults to Anthropic Sonnet 4.6.
+
+    Override via env vars (HYPOTHESIZER_VENDOR, HYPOTHESIZER_MODEL) or arguments.
+    """
+    vendor = (vendor or os.environ.get("HYPOTHESIZER_VENDOR") or _DEFAULT_VENDOR).lower()
+    model = model or os.environ.get("HYPOTHESIZER_MODEL") or _DEFAULT_MODEL
+
+    if vendor == "anthropic":
+        return ChatAnthropic(model=model, max_tokens=2048)
+    if vendor == "openai":
+        from langchain_openai import ChatOpenAI
+        return ChatOpenAI(model=model, max_tokens=2048)
+    if vendor == "google":
+        from langchain_google_genai import ChatGoogleGenerativeAI
+        return ChatGoogleGenerativeAI(model=model, max_output_tokens=2048)
+    raise ValueError(f"unknown HYPOTHESIZER_VENDOR: {vendor!r}")
+
+
+llm = build_hypothesizer_llm()
 
 
 # Keyword → relationship-type routing.
@@ -109,7 +139,7 @@ Return ONLY valid JSON. No prose, no markdown fences.
 
 
 def relationship_hypothesizer_node(state: GenealogyState) -> dict:
-    trace = list(state.get("trace_log") or [])
+    trace: list[str] = []
     trace.append("relationship_hypothesizer: enter")
 
     profiles = state.get("profiles") or []
@@ -139,6 +169,19 @@ def relationship_hypothesizer_node(state: GenealogyState) -> dict:
             trace=trace,
         )
         hypotheses.extend(profile_hypotheses)
+
+    # Corroboration step: scan external records for evidence that supports
+    # each hypothesis, and append matching citations to the evidence chain.
+    _append_external_corroboration(
+        hypotheses, retrieved_records, person_by_id, trace
+    )
+
+    # DNA corroboration: if DNA Analyst output is available AND the
+    # hypothesis subject IS the DNA test subject, look for the hypothesis's
+    # related person in the DNA cross-references. Add a DNA evidence item
+    # — supporting if the cM is consistent with the proposed relationship,
+    # contradicting if not.
+    _append_dna_corroboration(hypotheses, state.get("dna_analysis"), trace)
 
     trace.append(
         f"relationship_hypothesizer: generated {len(hypotheses)} hypotheses"
@@ -503,3 +546,257 @@ def _strip_markdown_fences(text: str) -> str:
             body = body[4:]
         return body.strip()
     return text
+
+
+# ---------------------------------------------------------------------------
+# External source corroboration — appends to existing evidence chains
+# ---------------------------------------------------------------------------
+
+# Minimum fuzzy-match score to consider an external record corroborating.
+_CORROBORATION_NAME_THRESHOLD = 0.70
+
+
+def _append_external_corroboration(
+    hypotheses: list[dict],
+    retrieved_records: list[dict],
+    person_by_id: dict[str, dict],
+    trace: list[str],
+) -> None:
+    """Scan external records for evidence supporting each hypothesis.
+
+    For each hypothesis, checks Wikidata and FindAGrave records in
+    retrieved_records. If an external record names the same related person
+    (by fuzzy name match), a corroboration entry is appended to the
+    hypothesis's evidence_chain with the external record_id.
+
+    Modifies hypotheses in place. Additive only — never removes or replaces
+    existing GEDCOM evidence items.
+    """
+    external_records = [
+        r for r in retrieved_records
+        if r.get("source_type") in ("wikidata", "findagrave", "wikitree")
+    ]
+    if not external_records:
+        return
+
+    total_added = 0
+    for hyp in hypotheses:
+        related_id = hyp.get("related_id")
+        related_person = person_by_id.get(related_id)
+        if not related_person:
+            continue
+
+        related_name = related_person.get("name") or ""
+        relationship = (hyp.get("proposed_relationship") or "").lower()
+        evidence_chain = hyp.get("evidence_chain") or []
+
+        # Determine which relationship field to check on external records.
+        # Wikidata records have father/mother/spouse fields as labels.
+        role_field = _relationship_to_wikidata_field(relationship)
+
+        for ext in external_records:
+            source_type = ext.get("source_type")
+            ext_data = ext.get("data") or {}
+            record_id = ext.get("record_id")
+
+            corroboration = _check_corroboration(
+                ext_data=ext_data,
+                source_type=source_type,
+                related_name=related_name,
+                role_field=role_field,
+                relationship=relationship,
+            )
+            if corroboration:
+                evidence_chain.append({
+                    "claim": corroboration,
+                    "source": record_id,
+                })
+                total_added += 1
+
+    if total_added:
+        trace.append(
+            f"relationship_hypothesizer: appended {total_added} external "
+            f"corroboration item(s) to evidence chains"
+        )
+
+
+def _append_dna_corroboration(
+    hypotheses: list[dict],
+    dna_analysis: Optional[dict],
+    trace: list[str],
+) -> None:
+    """Append DNA-derived evidence items to hypotheses where applicable.
+
+    Conditions for adding a DNA evidence item to hypothesis (subject -> related):
+      1. DNA Analyst identified a GEDCOM ID for the DNA test subject
+      2. That ID matches the hypothesis's subject_id (the cM values describe
+         shared DNA between this subject and the matches)
+      3. The hypothesis's related person appears in cross_references
+      4. The cM value can be checked against the proposed relationship via
+         the Shared cM Project lookup table
+
+    The evidence item explicitly notes whether DNA SUPPORTS or CONTRADICTS
+    the proposed relationship. The Critic can then evaluate that claim.
+    """
+    if not dna_analysis or not dna_analysis.get("cross_references"):
+        return
+
+    dna_subject_id = dna_analysis.get("subject_gedcom_id")
+    if not dna_subject_id:
+        trace.append(
+            "relationship_hypothesizer: DNA data present but test subject "
+            "not identified — DNA reasoning skipped"
+        )
+        return
+
+    from tools.shared_cm_lookup import is_consistent
+
+    cross_refs = dna_analysis["cross_references"]
+    cross_ref_by_id = {xr.get("gedcom_id"): xr for xr in cross_refs if xr.get("gedcom_id")}
+
+    total_added = 0
+    for hyp in hypotheses:
+        subject_id = hyp.get("subject_id")
+        if subject_id != dna_subject_id:
+            continue  # cM data isn't between this subject and the match list
+
+        related_id = hyp.get("related_id")
+        xr = cross_ref_by_id.get(related_id)
+        if not xr:
+            continue  # related person not in DNA matches
+
+        relationship = hyp.get("proposed_relationship", "")
+        cm_value = xr.get("shared_cM")
+        if cm_value is None:
+            continue
+
+        check = is_consistent(cm_value, relationship)
+        evidence_chain = hyp.get("evidence_chain") or []
+        match_id = xr.get("match_id") or "unknown"
+        platform = dna_analysis.get("platform", "dna")
+        record_id = f"{platform}:{match_id}"
+
+        if check.get("consistent"):
+            evidence_chain.append({
+                "claim": (
+                    f"DNA evidence supports {relationship}: shared "
+                    f"{cm_value} cM with {xr.get('dna_name')} (matched to "
+                    f"{xr.get('gedcom_name')}) is within expected range "
+                    f"{check.get('expected_range')} for {check.get('claimed', relationship)}"
+                ),
+                "source": record_id,
+            })
+            trace.append(
+                f"relationship_hypothesizer: DNA SUPPORTS {hyp.get('hypothesis_id')} "
+                f"({cm_value} cM consistent with {relationship})"
+            )
+        else:
+            evidence_chain.append({
+                "claim": (
+                    f"DNA evidence inconsistent with {relationship}: "
+                    f"{cm_value} cM with {xr.get('dna_name')} is "
+                    f"{check.get('deviation', 'outside expected range')}"
+                ),
+                "source": record_id,
+            })
+            trace.append(
+                f"relationship_hypothesizer: DNA CONTRADICTS {hyp.get('hypothesis_id')} "
+                f"({cm_value} cM inconsistent with {relationship})"
+            )
+        total_added += 1
+
+    if total_added:
+        trace.append(
+            f"relationship_hypothesizer: appended {total_added} DNA "
+            f"corroboration item(s) to evidence chains"
+        )
+
+
+def _relationship_to_wikidata_field(relationship: str) -> Optional[str]:
+    """Map a hypothesis relationship label to the Wikidata data field."""
+    rel = relationship.lower().strip()
+    if "father" in rel:
+        return "father"
+    if "mother" in rel:
+        return "mother"
+    if "spouse" in rel or "wife" in rel or "husband" in rel:
+        return "spouse"
+    return None
+
+
+def _check_corroboration(
+    ext_data: dict,
+    source_type: str,
+    related_name: str,
+    role_field: Optional[str],
+    relationship: str,
+) -> Optional[str]:
+    """Check if an external record corroborates the proposed relationship.
+
+    Returns a claim string if corroborating, None otherwise.
+    """
+    if source_type in ("wikidata", "wikitree") and role_field:
+        return _check_structured_source_corroboration(
+            ext_data, related_name, role_field, relationship, source_type
+        )
+    if source_type == "findagrave":
+        return _check_findagrave_corroboration(
+            ext_data, related_name, relationship
+        )
+    return None
+
+
+def _check_structured_source_corroboration(
+    ext_data: dict,
+    related_name: str,
+    role_field: str,
+    relationship: str,
+    source_type: str,
+) -> Optional[str]:
+    """Check a structured external record's family fields against the related
+    person's name. Works for any source with father/mother/spouse label fields
+    (Wikidata, WikiTree).
+    """
+    source_value = ext_data.get(role_field)
+    if not source_value or not related_name:
+        return None
+
+    score = name_match_score(related_name, source_value)
+    if score >= _CORROBORATION_NAME_THRESHOLD:
+        source_label = source_type.capitalize()
+        source_name = ext_data.get("name") or source_label
+        return (
+            f"Independent source ({source_label}, {source_name}) confirms "
+            f"{relationship}: '{source_value}' matches GEDCOM name "
+            f"'{related_name}' (similarity {score:.2f})"
+        )
+    return None
+
+
+def _check_findagrave_corroboration(
+    ext_data: dict,
+    related_name: str,
+    relationship: str,
+) -> Optional[str]:
+    """Check FindAGrave memorial name + dates against the related person.
+
+    FindAGrave records don't carry family relationship fields, so we can
+    only corroborate that the related person EXISTS as an independent
+    memorial record (name + date match). This is weaker than Wikidata's
+    explicit family links but still constitutes independent documentary
+    evidence of the person's existence.
+    """
+    fg_name = ext_data.get("name")
+    if not fg_name or not related_name:
+        return None
+
+    score = name_match_score(related_name, fg_name)
+    if score >= _CORROBORATION_NAME_THRESHOLD:
+        fg_birth = ext_data.get("birth_date") or "unknown"
+        fg_death = ext_data.get("death_date") or "unknown"
+        return (
+            f"Independent memorial record (FindAGrave) confirms existence of "
+            f"'{fg_name}' (b.{fg_birth}, d.{fg_death}), matching "
+            f"'{related_name}' (similarity {score:.2f})"
+        )
+    return None

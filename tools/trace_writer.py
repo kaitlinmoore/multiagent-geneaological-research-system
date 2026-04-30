@@ -128,6 +128,7 @@ def _build_serializable_payload(
     payload["profiles"] = state.get("profiles") or []
     payload["hypotheses"] = state.get("hypotheses") or []
     payload["critiques"] = state.get("critiques") or []
+    payload["dna_analysis"] = state.get("dna_analysis")
     payload["trace_log"] = state.get("trace_log") or []
     payload["final_report"] = state.get("final_report") or ""
 

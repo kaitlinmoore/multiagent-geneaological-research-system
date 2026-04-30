@@ -56,6 +56,7 @@ Critique dict shape (extends CLAUDE.md spec):
 from __future__ import annotations
 
 import json
+import os
 from typing import Optional
 
 from langchain_anthropic import ChatAnthropic
@@ -70,7 +71,45 @@ from tools.date_utils import run_all_tier1_checks
 from tools.geo_utils import check_geographic_plausibility
 
 
-llm = ChatAnthropic(model="claude-sonnet-4-6", max_tokens=2048)
+# Default Critic model. The production system uses Anthropic Claude Opus 4.7.
+# A cross-vendor variant (Anthropic Hypothesizer + non-Anthropic Critic) is
+# available for the cross-vendor experiment by setting the env vars below
+# OR by directly overriding `llm` from an experiment harness:
+#
+#   CRITIC_VENDOR=openai     CRITIC_MODEL=gpt-5.5
+#   CRITIC_VENDOR=anthropic  CRITIC_MODEL=claude-opus-4-7   (default)
+#
+# The cross-vendor design rationale: an adversarial Critic from a different
+# vendor cannot share training-data assumptions or systematic failure modes
+# with the Hypothesizer. Same-vendor Critics may quietly agree because they
+# share priors, defeating the adversarial-isolation guarantee.
+_DEFAULT_VENDOR = "anthropic"
+_DEFAULT_MODEL = "claude-opus-4-7"
+
+
+def build_critic_llm(vendor: Optional[str] = None, model: Optional[str] = None):
+    """Construct a Critic LLM. Defaults to Anthropic Opus 4.7.
+
+    Override via env vars (CRITIC_VENDOR, CRITIC_MODEL) or arguments.
+    """
+    vendor = (vendor or os.environ.get("CRITIC_VENDOR") or _DEFAULT_VENDOR).lower()
+    model = model or os.environ.get("CRITIC_MODEL") or _DEFAULT_MODEL
+
+    if vendor == "anthropic":
+        return ChatAnthropic(model=model, max_tokens=2048)
+    if vendor == "openai":
+        from langchain_openai import ChatOpenAI
+        return ChatOpenAI(model=model, max_tokens=2048)
+    if vendor == "google":
+        from langchain_google_genai import ChatGoogleGenerativeAI
+        # Gemini sometimes uses more output tokens for the same critique
+        # length than Anthropic/OpenAI; 4096 prevents JSON truncation on
+        # larger inputs (e.g. gap-mode hypotheses with rich record context).
+        return ChatGoogleGenerativeAI(model=model, max_output_tokens=4096)
+    raise ValueError(f"unknown CRITIC_VENDOR: {vendor!r} (use anthropic, openai, or google)")
+
+
+llm = build_critic_llm()
 
 # The geographic check itself now uses graded soft-flag tiers (see
 # tools/geo_utils.check_geographic_plausibility). There is no Critic-level
@@ -153,7 +192,7 @@ Return ONLY valid JSON. No prose, no markdown fences.
 
 
 def adversarial_critic_node(state: GenealogyState) -> dict:
-    trace = list(state.get("trace_log") or [])
+    trace: list[str] = []
     trace.append("adversarial_critic: enter")
 
     raw_hypotheses = state.get("hypotheses") or []
@@ -192,6 +231,7 @@ def adversarial_critic_node(state: GenealogyState) -> dict:
     profiles = state.get("profiles") or []
     retrieved_records = state.get("retrieved_records") or []
     gedcom_persons = state.get("gedcom_persons") or []
+    dna_analysis = state.get("dna_analysis")
     person_by_id = {p["id"]: p for p in gedcom_persons if p.get("id")}
 
     critiques: list[dict] = []
@@ -203,6 +243,7 @@ def adversarial_critic_node(state: GenealogyState) -> dict:
             retrieved_records=retrieved_records,
             person_by_id=person_by_id,
             isolation_mode=isolation_mode,
+            dna_analysis=dna_analysis,
             trace=trace,
         )
         critiques.append(critique)
@@ -248,6 +289,7 @@ def _critique_one(
     retrieved_records: list[dict],
     person_by_id: dict[str, dict],
     isolation_mode: str,
+    dna_analysis: Optional[dict],
     trace: list[str],
 ) -> dict:
     hypothesis_id = isolated_hyp.get("hypothesis_id", "<unknown>")
@@ -293,12 +335,25 @@ def _critique_one(
         }
 
     # Step 4: LLM reasoning for evidence sufficiency.
+    # DNA evidence relevant to THIS hypothesis (only if DNA test subject
+    # matches the hypothesis subject — the cM data describes shared DNA
+    # between this person and the match list).
+    dna_relevant = _extract_relevant_dna_evidence(isolated_hyp, dna_analysis)
+    if dna_relevant:
+        trace.append(
+            f"adversarial_critic: {hypothesis_id} DNA relevant — "
+            f"{len(dna_relevant.get('cross_references_for_related') or [])} "
+            f"cross-ref(s) for related person, "
+            f"deterministic check: {dna_relevant.get('cm_consistency_verdict')}"
+        )
+
     llm_verdict = _llm_critique(
         isolated_hyp=isolated_hyp,
         profiles=profiles,
         retrieved_records=retrieved_records,
         tier1_results=tier1_results,
         geo_result=geo_result,
+        dna_relevant=dna_relevant,
         trace=trace,
     )
 
@@ -311,7 +366,66 @@ def _critique_one(
         "justification": llm_verdict["justification"],
         "tier1_results": tier1_results,
         "geo_result": geo_result,
+        "dna_relevant": dna_relevant,
         "isolation_mode": isolation_mode,
+    }
+
+
+def _extract_relevant_dna_evidence(
+    isolated_hyp: dict, dna_analysis: Optional[dict]
+) -> Optional[dict]:
+    """Extract the DNA evidence specifically relevant to one hypothesis.
+
+    Returns None if DNA data is absent, the test subject isn't identified,
+    or the DNA test subject isn't this hypothesis's subject. Otherwise
+    returns:
+        {
+            "dna_subject_gedcom_id": str,
+            "test_subject_matches_hypothesis_subject": bool,
+            "cross_references_for_related": list[dict],
+            "cm_consistency_verdict": str,  # "supports" | "contradicts" | "no match in DNA list"
+            "platform": str,
+            "total_matches": int,
+        }
+    """
+    if not dna_analysis:
+        return None
+    dna_subject_id = dna_analysis.get("subject_gedcom_id")
+    if not dna_subject_id:
+        return None
+
+    subject_id = isolated_hyp.get("subject_id")
+    related_id = isolated_hyp.get("related_id")
+    if subject_id != dna_subject_id:
+        # cM data is between dna_subject_id and the matches; doesn't apply
+        # to a hypothesis where the subject is someone else.
+        return None
+
+    cross_refs = dna_analysis.get("cross_references") or []
+    refs_for_related = [
+        xr for xr in cross_refs if xr.get("gedcom_id") == related_id
+    ]
+
+    # Compute deterministic consistency verdict if we have a cross-ref.
+    from tools.shared_cm_lookup import is_consistent
+    relationship = isolated_hyp.get("proposed_relationship", "")
+    cm_verdict = "no match in DNA list"
+    cm_check = None
+    if refs_for_related:
+        xr = refs_for_related[0]
+        cm = xr.get("shared_cM")
+        if cm is not None:
+            cm_check = is_consistent(cm, relationship)
+            cm_verdict = "supports" if cm_check.get("consistent") else "contradicts"
+
+    return {
+        "dna_subject_gedcom_id": dna_subject_id,
+        "test_subject_matches_hypothesis_subject": True,
+        "cross_references_for_related": refs_for_related,
+        "cm_consistency_verdict": cm_verdict,
+        "cm_consistency_detail": cm_check,
+        "platform": dna_analysis.get("platform"),
+        "total_matches": dna_analysis.get("total_matches"),
     }
 
 
@@ -378,6 +492,7 @@ def _llm_critique(
     retrieved_records: list[dict],
     tier1_results: list[dict],
     geo_result: Optional[dict],
+    dna_relevant: Optional[dict],
     trace: list[str],
 ) -> dict:
     subject_id = isolated_hyp.get("subject_id")
@@ -397,6 +512,7 @@ def _llm_critique(
         relevant_records=relevant_records,
         tier1_results=tier1_results,
         geo_result=geo_result,
+        dna_relevant=dna_relevant,
     )
 
     try:
@@ -467,7 +583,26 @@ def _build_prompt_body(
     relevant_records: list[dict],
     tier1_results: list[dict],
     geo_result: Optional[dict],
+    dna_relevant: Optional[dict],
 ) -> str:
+    dna_section = ""
+    if dna_relevant:
+        dna_section = (
+            "\nDNA evidence (relevant to this hypothesis only):\n"
+            f"{json.dumps(dna_relevant, default=str, indent=2)}\n\n"
+            "Interpret the DNA evidence as follows:\n"
+            "  - cm_consistency_verdict='supports' means the cM falls within the "
+            "expected range for the proposed relationship (positive evidence).\n"
+            "  - cm_consistency_verdict='contradicts' means the cM is outside that "
+            "range (negative evidence — actively undermines the hypothesis).\n"
+            "  - cm_consistency_verdict='no match in DNA list' means the related "
+            "person was NOT found in the DNA match list. Treat this as a soft "
+            "absence-of-evidence signal: for close relationships (parent, sibling, "
+            "1st cousin) it's surprising and arguably negative; for distant "
+            "relationships (4th+ cousin) it's unsurprising and not informative.\n"
+            "  - DNA cross-references are based on FUZZY name matching against "
+            "GEDCOM persons; a match is a candidate, not a confirmed identity.\n"
+        )
     return (
         "Isolated hypothesis (reasoning narrative intentionally absent):\n"
         f"{json.dumps(isolated_hyp, default=str, indent=2)}\n\n"
@@ -478,7 +613,8 @@ def _build_prompt_body(
         "Tier 1 deterministic check results:\n"
         f"{json.dumps(tier1_results, default=str, indent=2)}\n\n"
         "Geographic plausibility (soft signal):\n"
-        f"{json.dumps(geo_result, default=str, indent=2)}\n\n"
+        f"{json.dumps(geo_result, default=str, indent=2)}\n"
+        f"{dna_section}\n"
         "Return your critique JSON now:"
     )
 
