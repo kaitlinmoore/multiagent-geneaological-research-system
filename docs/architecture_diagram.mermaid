@@ -28,30 +28,52 @@ flowchart TD
     Start(["query + target<br/>+ GEDCOM + DNA csv"])
     Start --> Scout
 
-    Scout["Record Scout<br/><small>GEDCOM fuzzy match · FindAGrave<br/>Wikidata · WikiTree</small>"]
-    Scout -->|"records"| DNA
+    subgraph Orch["LangGraph Orchestrator (workflow, not an agent)"]
+      direction TB
 
-    DNA["DNA Analyst<br/><small>parse · cM lookup · cross-ref<br/>identify subject in GEDCOM</small>"]
-    DNA -->|"dna_analysis"| Synth
+      Scout["Record Scout<br/><small>GEDCOM fuzzy match · FindAGrave<br/>Wikidata · WikiTree</small>"]
+      Scout -->|"records"| DNA
 
-    Synth["Profile Synthesizer<br/><small>disambiguation · cited facts</small>"]
-    Synth -->|"profiles"| Hypo
+      DNA["DNA Analyst<br/><small>parse · cM lookup · cross-ref<br/>identify subject in GEDCOM</small>"]
+      DNA -->|"dna_analysis"| Synth
 
-    Hypo["Relationship Hypothesizer<br/><small>+ DNA corroboration in<br/>evidence chain</small>"]
-    Hypo ==>|"hypotheses<br/>(public + internal)"| Boundary
+      Synth["Profile Synthesizer<br/><small>disambiguation · cited facts</small>"]
+      Synth -->|"profiles"| Hypo
 
-    Boundary{{"Isolation Filter<br/><small>filter_hypothesis_for_critic()<br/>strips internal fields</small>"}}
-    Boundary ==>|"public-only view"| Critic
+      Hypo["Relationship Hypothesizer<br/><small>+ DNA corroboration in<br/>evidence chain</small>"]
+      Hypo ==>|"hypotheses<br/>(public + internal)"| Boundary
 
-    Critic["Adversarial Critic<br/><small>Tier 1 fail-fast · geo plausibility<br/>LLM reasoning · DNA-aware</small>"]
-    Critic --> Router
+      Boundary{{"Isolation Filter<br/><small>filter_hypothesis_for_critic()<br/>strips internal fields</small>"}}
+      Boundary ==>|"public-only view"| Critic
 
-    Router{"verdict = reject<br/>AND revisions &lt; 2?"}
-    Router -->|"yes"| Hypo
-    Router -->|"no"| Writer
+      Critic["Adversarial Critic<br/><small>Tier 1 fail-fast · geo plausibility<br/>LLM reasoning · DNA-aware</small>"]
+      Critic --> Router
 
-    Writer["Final Report Writer<br/><small>deterministic · escalation logic</small>"]
+      Router{"verdict = reject<br/>AND revisions &lt; 2?"}
+      Router -->|"yes"| Hypo
+      Router -->|"no"| Writer
+
+      Writer["Final Report Writer<br/><small>deterministic · escalation logic</small>"]
+    end
+
     Writer --> End(["final_report.md<br/>+ trace JSON"])
+
+    OrchNote["<small><i>Orchestrator owns:<br/>· state passing &amp; reducers<br/>· conditional edges<br/>· revision counter (max 2)<br/>· isolation_mode toggle</i></small>"]
+    Orch -.- OrchNote
+
+    subgraph Mem["Memory"]
+      direction TB
+      Working["Working state<br/><small>GenealogyState TypedDict<br/>(in-memory, per run)</small>"]
+      Trace["Within-run trace<br/><small>trace_log<br/>(Annotated reducer)</small>"]
+      Episodic["Episodic / persisted<br/><small>traces/*.json<br/>(cross-run, replay)</small>"]
+      Semantic["Semantic / reference<br/><small>GEDCOM · Shared cM table<br/>(read-only)</small>"]
+    end
+
+    Orch -.->|"reads"| Semantic
+    Orch -.->|"reads / writes"| Working
+    Orch -.->|"appends"| Trace
+    Trace -.->|"persisted at end"| Episodic
+    Episodic -.->|"--replay"| Orch
 
     style Start fill:#d4edda,stroke:#155724,stroke-width:2px
     style End fill:#d4edda,stroke:#155724,stroke-width:2px
@@ -60,4 +82,11 @@ flowchart TD
     style Router fill:#d1ecf1,stroke:#0c5460
     style DNA fill:#e8daef,stroke:#6c3483,stroke-width:2px
     style Writer fill:#e2e3e5,stroke:#383d41,stroke-width:1px
+    style Orch fill:#f5f5f5,stroke:#666,stroke-width:1px,stroke-dasharray:4 3
+    style Mem fill:#eef5fb,stroke:#5b7a9a,stroke-width:1px,stroke-dasharray:4 3
+    style OrchNote fill:#fafafa,stroke:#bbb,stroke-width:1px
+    style Working fill:#ffffff,stroke:#5b7a9a
+    style Trace fill:#ffffff,stroke:#5b7a9a
+    style Episodic fill:#ffffff,stroke:#5b7a9a
+    style Semantic fill:#ffffff,stroke:#5b7a9a
 ```
