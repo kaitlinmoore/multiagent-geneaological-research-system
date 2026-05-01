@@ -1,6 +1,8 @@
 # Multi-Agent Genealogical Research System with Adversarial Critique
 
-A multi-agent pipeline that investigates genealogical questions using GEDCOM family tree data, multi-source web retrieval, and DNA match data. The pipeline pairs a Hypothesizer with an isolated Adversarial Critic, runs deterministic checks before LLM reasoning, and produces cited research reports with calibrated confidence and explicit escalation triggers for human review. Built for **94815 Agentic Technologies** (CMU Heinz College.
+A multi-agent pipeline that investigates genealogical questions using GEDCOM family tree data, multi-source web retrieval, and DNA match data. The pipeline pairs a Hypothesizer with an isolated Adversarial Critic, runs deterministic checks before LLM reasoning, and produces cited research reports with calibrated confidence and explicit escalation triggers for human review. Built for **94-815 Agentic Technologies** (CMU Heinz College, Spring 2026).
+
+**Author:** Kaitlin Moore (solo project) · **Track:** A — Technical Build
 
 ## For Graders | Evaluate without an API Key
 
@@ -251,6 +253,32 @@ multiagent-geneaological-research-system/
 - **Phase 2** (Architecture, Prototype, Evaluation Plan): Complete.
 - **Phase 3** (Final Product, Evidence, Reflection): Deliverables in final review.
 
+## Outputs Included in the Repository
+
+The repo ships a complete reproducibility set so a grader can inspect the system without running anything:
+
+- **Pipeline traces** — `traces/demos/` (six committed: three query + DNA, three gap-mode) and `traces/redacted/` (one pseudonymized real-tree run)
+- **Audit traces** — `traces/demos/audit_*` (three: Habsburg / Queen / Kennedy subtrees)
+- **Synthetic DNA demos** — `data/DNA_demo/` (hand-built ground truth for Kennedy, Maria Theresia, Queen Victoria — exercises the DNA path without committing personal match data)
+- **Evaluation results** — `eval/results/` with per-experiment summary docs (`trap_suite_summary.md`, `ablation_summary.md`, `isolation_ab_summary.md`, `cross_vendor_summary.md`, `multi_critic_summary.md`) plus raw JSON for every recorded run
+- **Structured eval artifacts** — `eval/test_cases.md` (16 cases), `eval/failure_log.md` (5 failures), `eval/version_notes.md` (phase-by-phase change log)
+- **Final report** — `docs/Multi-Agent Genealogy - Phase 3 - Kaitlin Moore.pdf` and the source `docs/phase3_report.md`
+- **Architecture diagram** — `docs/architecture_diagram.png` plus the Mermaid source
+- **UI screenshots** — eight captures in `docs/screenshots/` with `screenshot_index.md`
+- **Failure case analysis** — `docs/failure_cases.md` (deep narrative form)
+- **Video stills + script** — `docs/video_stills.pptx`, `docs/video_script.md`
+
+## Known Limitations
+
+- **Cross-session memory** — none, by design. Each pipeline run is stateless. This avoids the failure mode where an early misconception poisons later runs but means the system cannot learn between runs.
+- **DNA clustering** — not implemented. The DNA Analyst uses the Shared cM Project lookup table for relationship prediction without DBSCAN/scikit-learn-style clustering. Multi-match cluster detection is documented as future work.
+- **Migration map visualization** — originally scoped (Folium + Newberry Atlas centroids) but deferred. PoC code in `app/` is not wired into pipeline output. Conceptual design preserved in the final report's Future Work section.
+- **FamilySearch API integration** — stubbed in `tools/familysearch_search.py` but not implemented. Wikidata + WikiTree provide equivalent independent sources without the API-key registration cost.
+- **GEDCOM encoding** — `python-gedcom-2` hardcodes UTF-8; the Habsburg tree (Latin-1) requires a workaround at every call site (see `tools/gedcom_parser.py`). Documented in `eval/failure_log.md` as F-04.
+- **Inter-agent vocabulary contracts** — relationship strings flowing from Hypothesizer to the shared-cM lookup are guarded by an alias table rather than a typed enum. The alias-table layer is sufficient for current behavior but a runtime-contract or typed-enum boundary is the proper architectural fix; tracked as F-03 follow-up in the failure log.
+- **Geocoding** — uses Nominatim with a 1 req/sec rate limit. Period-correct geocoding (place names that have shifted political boundaries over centuries) is approximate; documented as future work.
+- **Reproducibility caveat** — replay mode is fully deterministic, but live runs against external LLMs are not byte-stable across model versions. The committed traces preserve the exact state at the time of each recorded run.
+
 ## AI Usage
 
-This project used generative AI tools (Claude via claude.ai and Claude Code) extensively across all three phases for brainstorming, research, code generation anddebugging, document drafting andfeedback, and uaditing. Every use is logged in `AI_USAGE.md` with the tool used, what was asked, what was changed manually, and what was independently verified. Domain selection, evaluation criteria, and final design decisions are the developer's; AI-generated outputs were reviewed and corrected before inclusion.
+This project used generative AI tools (Claude via claude.ai and Claude Code) extensively across all three phases for brainstorming, research, code generation and debugging, document drafting and feedback, and auditing. Every use is logged in `AI_USAGE.md` with the tool used, what was asked, what was changed manually, and what was independently verified. Domain selection, evaluation criteria, and final design decisions are the developer's; AI-generated outputs were reviewed and corrected before inclusion.
